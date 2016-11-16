@@ -1,0 +1,49 @@
+
+.project
+.settings
+.classpath
+.idea
+
+######################
+# OS generated files #
+######################
+
+__MACOSX
+.DS_Store
+._*
+
+bootstrap.*
+
+.Spotlight-V100
+.Trashes
+
+ehthumbs.db
+Thumbs.db
+
+############
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+
+
+############
+# Ext JS Artifacts #
+############
+
+temp/
+
+.sencha_backup/
+
+.sass-cache/
+
+build/
+
+bootstrap.js
