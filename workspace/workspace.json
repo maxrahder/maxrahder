@@ -4,7 +4,9 @@
      */
     "apps": [
         "TestEditView",
-        "Foo"
+        "Foo",
+        "packages/local/DeckTheme/.sencha/temp/Themer",
+        "packages/local/MyTheme/.sencha/temp/Themer"
     ],
 
     /**

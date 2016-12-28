@@ -11,14 +11,14 @@ Ext.define('EditView.view.editview.AceEditor', {
         theme: 'ace/theme/chrome'
     },
 
-    updateMode: function (mode) {
+    updateMode: function(mode) {
         if (this.rendered) {
             var modePath = 'ace/mode/' + mode;
             this.editor.getSession().setMode(modePath);
         }
     },
 
-    onRender: function () {
+    onRender: function() {
         var me = this;
 
         me.callParent();
@@ -38,7 +38,7 @@ Ext.define('EditView.view.editview.AceEditor', {
         me.editor.setReadOnly(me.getReadOnly());
         me.editor.setHighlightActiveLine(false);
 
-        me.editor.on('change', function () {
+        me.editor.on('change', function() {
             me.setText(me.editor.getValue());
         }, me);
 
@@ -46,12 +46,12 @@ Ext.define('EditView.view.editview.AceEditor', {
 
     },
 
-    beautify: function () {
-        this.editor.setValue(js_beautify(this.editor.getValue()));
+    beautify: function() {
+        this.editor.setValue(js_beautify(this.editor.getValue().trim()));
         this.focusEditor();
     },
 
-    focusEditor: function () {
+    focusEditor: function() {
         if (this.rendered) {
             this.editor.resize(true); // This is required when the editor isn't initially being shown
             this.editor.clearSelection();
@@ -63,12 +63,12 @@ Ext.define('EditView.view.editview.AceEditor', {
             }
         }
     },
-    applyText: function (text) {
+    applyText: function(text) {
         if (Ext.isString(text)) {
             return text;
         }
     },
-    updateText: function (text) {
+    updateText: function(text) {
         var me = this;
         if (me.rendered && (text !== me.editor.getValue())) {
             me.editor.setValue(text);

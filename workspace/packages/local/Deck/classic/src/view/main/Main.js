@@ -19,7 +19,12 @@ Ext.define('Deck.view.main.Main', {
         collapsible: true,
         collapseMode: 'mini',
         titleCollapse: true,
+        reference: 'tree',
+        split: true,
         width: 200,
+        listeners: {
+            itemclick: 'onTreeItemClick'
+        },
         bind: {
             selection: '{node}',
             store: '{topics}'
@@ -29,6 +34,9 @@ Ext.define('Deck.view.main.Main', {
         reference: 'content',
         bind: {
             node: '{node}'
+        },
+        listeners: {
+            navigate: 'onNavigate'
         },
         region: 'center'
     }]

@@ -58,20 +58,40 @@
 </head>
 
 <body class="x-hidden">
-    <div id="test">
-        <h1>Hi there</h1>
-        <pre class="x-hidden run classic 200">
+
+<h1>Start</h1>
+
+        <pre class="runnable run classic 200">
             Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Button' }] }); Ext.application({
             name: 'MyApp', mainView: 'MyApp.view.Main' });
         </pre>
+
+
+
+
+<pre class="runnable run classic 200">
+    Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Foo' }] }); Ext.application({
+    name: 'MyApp', mainView: 'MyApp.view.Main' });
+</pre>
+
+
+        <h1>Hi there</h1>
+
+        <pre class="runnable run classic 200">
+            Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Button' }] }); Ext.application({
+            name: 'MyApp', mainView: 'MyApp.view.Main' });
+        </pre>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
             sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
         <pre class="x-hidden run modern">
             Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Button' }] }); Ext.application({
             name: 'MyApp', mainView: 'MyApp.view.Main' });
         </pre>
+
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
             eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
             ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
@@ -88,9 +108,14 @@
                 <person>Ringo</person>
             </people>
         </pre>
+<pre class="runnable run classic 200">
+    Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Button' }] }); Ext.application({
+    name: 'MyApp', mainView: 'MyApp.view.Main' });
+</pre>
         <p>This is a paragraph.</p>
-        <pre class="x-hidden run modern 200 readonly">Ext.create('Ext.Button', { // readonly text: 'Button', fullscreen: true });
-        </pre>
+<pre class="runnable run modern 200">
+    Ext.create('Ext.Button', { // readonly text: 'Button', fullscreen: true });
+</pre>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
@@ -99,12 +124,16 @@
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
             sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <pre class="readonly 40">This is a pre</pre>
+
+<pre class="readonly text 40">This is a pre</pre>
+
+        <h1>Foo</h1>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
             sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+
 </body>
 
 </html>

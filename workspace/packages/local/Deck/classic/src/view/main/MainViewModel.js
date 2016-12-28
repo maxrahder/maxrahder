@@ -3,6 +3,7 @@ Ext.define('Deck.view.main.MainViewModel', {
     alias: 'viewmodel.deck-mainviewmodel',
     requires: [
         'Deck.model.Node',
+        'Deck.store.Topics'
     ],
 
     data: {},
@@ -10,8 +11,9 @@ Ext.define('Deck.view.main.MainViewModel', {
     stores: {
         topics: {
             type: 'tree',
+            model: 'Deck.model.Node',
             root: {
-
+                leaf: true
             }
         }
     }

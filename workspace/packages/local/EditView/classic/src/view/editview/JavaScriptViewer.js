@@ -11,6 +11,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
 
     statics: {
         touch2: {
+            version: 'Sencha Touch 2.4.1',
             libraryHeadHtml: [
                 '<link rel="stylesheet" href="//extjs.cachefly.net/touch/sencha-touch-2.4.1/resources/css/sencha-touch.css">'
             ],
@@ -18,11 +19,13 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
             wrapTheCode: 'Ext.application({ name: "LivePreview", launch: function() {\n{0}\n}});'
         },
         ext4: {
+            version: 'Sencha Ext JS 4.2.1',
             libraryHeadHtml: ['<link rel="stylesheet" href="//extjs.cachefly.net/ext/gpl/4.2.1/resources/css/ext-all-neptune.css">'],
             scriptUrls: ['//extjs.cachefly.net/ext/gpl/4.2.1/ext-all-rtl.js'],
             wrapTheCode: 'Ext.application({ name: "LivePreview", launch: function() {\n{0}\n}});'
         },
         ext5: {
+            version: 'Sencha 5.1.1',
             libraryHeadHtml: [
                 '<link rel="stylesheet" href="//cdn.sencha.com/ext/commercial/5.1.1/build/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css">',
                 '<link rel="stylesheet" href="//cdn.sencha.com/ext/commercial/5.1.1/build/packages/ext-ux/build/crisp/resources/ext-ux-all.css">',
@@ -38,6 +41,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
             wrapTheCode: 'Ext.application({ name: "LivePreview", launch: function() {\n{0}\n}});'
         },
         classic: {
+            version: 'Sencha Ext JS 6.2.0.981, classic toolkit',
             libraryHeadHtml: [
 
                 '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">',
@@ -46,7 +50,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
                 '<link rel="stylesheet" href="_resources/ext-6.2-build/packages/ux/classic/triton/resources/ux-all.css">',
                 '<link rel="stylesheet" href="_resources/ext-6.2-build/packages/charts/classic/triton/resources/charts-all.css">',
 
-                '<link rel="stylesheet" href="resources/stylesheets/frame.css">',
+                // '<link rel="stylesheet" href="resources/stylesheets/frame.css">',
 
                 '<link rel="stylesheet" href="_resources/ext-6.2-addons/packages/pivot/build/classic/triton/resources/pivot-all.css">',
                 '<link rel="stylesheet" href="_resources/ext-6.2-addons/packages/calendar/build/classic/triton/resources/calendar-all.css">'
@@ -67,6 +71,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
             wrapTheCode: '{0};'
         },
         modern: {
+            version: 'Sencha Ext JS 6.2.0.981, modern toolkit',
             libraryHeadHtml: [
 
                 '<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">',
@@ -76,7 +81,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
                 '<link rel="stylesheet" href="_resources/ext-6.2-build/modern/theme-triton/resources/theme-triton-all.css">',
                 '<link rel="stylesheet" href="_resources/ext-6.2-build/packages/charts/modern/modern-triton/resources/charts-all.css">',
 
-                '<link rel="stylesheet" href="resources/stylesheets/frame.css">'
+                // '<link rel="stylesheet" href="resources/stylesheets/frame.css">'
 
             ],
             scriptUrls: [
