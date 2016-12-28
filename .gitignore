@@ -44,5 +44,5 @@ temp/
 
 .sass-cache/
 
-build/
+workspace/build/
 
