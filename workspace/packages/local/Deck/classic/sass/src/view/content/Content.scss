@@ -1,0 +1,25 @@
+.deckcontentview {
+    font-family   : "Gotham", sans-serif;
+    letter-spacing: 1px;
+
+    p,
+    ul {
+        font-size  : 1.6em;
+        line-height: 130%;
+        color      : #222222;
+    }
+
+    pre code {
+        font-size  : 1.6em;
+        line-height: 130%;
+    }
+
+    .title {
+        font-size       : $deck_title_font_size;
+        font-weight     : bold;
+        background-color: white;
+        color           : #888888;
+        height          : 60em;
+        padding         : 0.4em 0 0.4em 0.4em;
+    }
+}

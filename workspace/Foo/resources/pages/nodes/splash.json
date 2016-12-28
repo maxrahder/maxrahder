@@ -1,0 +1,10 @@
+{
+    "id": "splash",
+    "i18n": {
+        "_default": {
+            "title": "Ext JS 6 Training",
+            "fileType": 'html',
+            "translated": true
+        }
+    }
+}
