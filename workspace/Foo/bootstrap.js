@@ -10,9 +10,8 @@ var Ext = Ext || {};
  * @class Ext.Boot
  * @singleton
  * @private
- *
  */
-Ext.Boot = Ext.Boot || (function(emptyFn) {
+Ext.Boot = Ext.Boot || (function (emptyFn) {
 
     var doc = document,
         _emptyArray = [],
@@ -25,7 +24,8 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
              */
             disableCaching: (/[?&](?:cache|disableCacheBuster)\b/i.test(location.search) ||
                 !(/http[s]?\:/i.test(location.href)) ||
-                /(^|[ ;])ext-cache=1/.test(doc.cookie)) ? false : true,
+                /(^|[ ;])ext-cache=1/.test(doc.cookie)) ? false :
+                true,
 
             /**
              * @cfg {String} [disableCachingParam="_dc"]
@@ -55,7 +55,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             charset: 'UTF-8'
         },
 
-        _assetConfig = {},
+        _assetConfig= {},
 
         cssRe = /\.css(?:\?|$)/i,
         resolverEl = doc.createElement('a'),
@@ -70,10 +70,10 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         // All calls to _debug are commented out to speed up old browsers a bit;
         // yes that makes a difference because the cost of concatenating strings
         // and passing them into _debug() adds up pretty quickly.
-        _debug = function(message) {
+        _debug = function (message) {
             //console.log(message);
         },
-        _apply = function(object, config, defaults) {
+        _apply = function (object, config, defaults) {
             if (defaults) {
                 _apply(object, defaults);
             }
@@ -106,31 +106,30 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             return obj;
         },
         _getKeys = (typeof Object.keys == 'function') ?
-
-        function(object) {
-            if (!object) {
-                return [];
-            }
-            return Object.keys(object);
-        } :
-        function(object) {
-            var keys = [],
-                property;
-
-            for (property in object) {
-                if (object.hasOwnProperty(property)) {
-                    keys.push(property);
+            function(object){
+                if (!object) {
+                    return [];
                 }
-            }
+                return Object.keys(object);
+            } :
+            function(object) {
+                var keys = [],
+                    property;
 
-            return keys;
-        },
-        /*
-         * The Boot loader class manages Request objects that contain one or
-         * more individual urls that need to be loaded.  Requests can be performed
-         * synchronously or asynchronously, but will always evaluate urls in the
-         * order specified on the request object.
-         */
+                for (property in object) {
+                    if (object.hasOwnProperty(property)) {
+                        keys.push(property);
+                    }
+                }
+
+                return keys;
+            },
+    /*
+     * The Boot loader class manages Request objects that contain one or
+     * more individual urls that need to be loaded.  Requests can be performed
+     * synchronously or asynchronously, but will always evaluate urls in the
+     * order specified on the request object.
+     */
         Boot = {
             loading: 0,
             loaded: 0,
@@ -284,12 +283,12 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
              * in the platform map accordingly.  Examples are iOS, android, tablet, etc.
              * @param tags the set of tags to populate
              */
-            detectPlatformTags: function() {
+            detectPlatformTags: function () {
                 var me = this,
                     ua = navigator.userAgent,
                     isMobile = /Mobile(\/|\s)/.test(ua),
                     element = document.createElement('div'),
-                    isEventSupported = function(name, tag) {
+                    isEventSupported = function (name, tag) {
                         if (tag === undefined) {
                             tag = window;
                         }
@@ -314,7 +313,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     },
 
                     // Browser Detection
-                    getBrowsers = function() {
+                    getBrowsers = function () {
                         var browsers = {},
                             maxIEVersion, prefix,
                             value, key, index, len, match, version, matched;
@@ -362,7 +361,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     },
 
                     //OS Detection
-                    getOperatingSystems = function() {
+                    getOperatingSystems = function () {
                         var systems = {},
                             value, key, keys, index, len, match, matched, version, activeCount;
 
@@ -410,7 +409,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     },
 
                     // Device Detection
-                    getDevices = function() {
+                    getDevices = function () {
                         var devices = {},
                             value, key, keys, index, len, match;
 
@@ -440,12 +439,12 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     (_tags.windowsphone));
 
                 _tags.tablet = !!(!_tags.phone && (
-                    _tags.ipad ||
-                    _tags.android ||
-                    _tags.silk ||
-                    _tags.rimtablet ||
-                    (_tags.ie10 && /; Touch/.test(ua))
-                ));
+                        _tags.ipad ||
+                        _tags.android ||
+                        _tags.silk ||
+                        _tags.rimtablet ||
+                        (_tags.ie10 && /; Touch/.test(ua))
+                    ));
 
                 _tags.touch =
                     // if the browser has touch events we can be reasonably sure the device has
@@ -481,12 +480,11 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
              *
              * @returns {Object} the platform tags supplied by the query string
              */
-            loadPlatformsParam: function() {
+            loadPlatformsParam: function () {
                 // Check if the ?platform parameter is set in the URL
                 var paramsString = window.location.search.substr(1),
                     paramsArray = paramsString.split("&"),
-                    params = {},
-                    i,
+                    params = {}, i,
                     platforms = {},
                     tmpArray, tmplen, platform, name, enabled;
 
@@ -500,7 +498,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     for (tmplen = tmpArray.length, i = 0; i < tmplen; i++) {
                         platform = tmpArray[i].split(":");
                         name = platform[0];
-                        enabled = true;
+                        enabled=true;
                         if (platform.length > 1) {
                             enabled = platform[1];
                             if (enabled === 'false' || enabled === '0') {
@@ -513,7 +511,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 return platforms;
             },
 
-            filterPlatform: function(platform, excludes) {
+            filterPlatform: function (platform, excludes) {
                 platform = _emptyArray.concat(platform || _emptyArray);
                 excludes = _emptyArray.concat(excludes || _emptyArray);
 
@@ -535,7 +533,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 return include;
             },
 
-            init: function() {
+            init: function () {
                 var scriptEls = doc.getElementsByTagName('script'),
                     script = scriptEls[0],
                     len = scriptEls.length,
@@ -547,7 +545,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 Boot.hasAsync = ("async" in script);
                 Boot.hasDefer = ("defer" in script);
                 Boot.hasOnLoad = ("onload" in script);
-
+                
                 // Feature detecting IE
                 Boot.isIE8 = Boot.hasReadyState && !Boot.hasAsync && Boot.hasDefer && !Boot.hasOnLoad;
                 Boot.isIE9 = Boot.hasReadyState && !Boot.hasAsync && Boot.hasDefer && Boot.hasOnLoad;
@@ -555,7 +553,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
 
                 Boot.isIE10 = (new Function('/*@cc_on return @_jscript_version @*/')()) === 10;
                 Boot.isIE10m = Boot.isIE10 || Boot.isIE9 || Boot.isIE8;
-
+                
                 // IE11 does not support conditional compilation so we detect it by exclusion
                 Boot.isIE11 = Boot.isIE10p && !Boot.isIE10;
 
@@ -575,11 +573,11 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     }
 
                     if (!Boot.scripts[key = Boot.canonicalUrl(src)]) {
-                        //                         _debug("creating entry " + key + " in Boot.init");
+//                         _debug("creating entry " + key + " in Boot.init");
                         entry = new Entry({
                             key: key,
                             url: src,
-                            done: state === null || // non-IE
+                            done: state === null ||  // non-IE
                                 state === 'loaded' || state === 'complete', // IE only
                             el: script,
                             prop: 'src'
@@ -597,7 +595,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     window.location.protocol +
                     "//" +
                     window.location.hostname +
-                    (window.location.port ? ':' + window.location.port : '');
+                    (window.location.port ? ':' + window.location.port: '');
                 Boot.origin = origin;
 
                 Boot.detectPlatformTags();
@@ -618,13 +616,13 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
              *
              * @private
              */
-            canonicalUrl: function(url) {
+            canonicalUrl: function (url) {
                 // *WARNING WARNING WARNING*
                 // This method yields the most correct result we can get but it is EXPENSIVE!
                 // In ALL browsers! When called multiple times in a sequence, as if when
                 // we resolve dependencies for entries, it will cause garbage collection events
                 // and overall painful slowness. This is why we try to avoid it as much as we can.
-                //
+                // 
                 // @TODO - see if we need this fallback logic
                 // http://stackoverflow.com/questions/470832/getting-an-absolute-url-from-a-relative-one-ie6-issue
                 resolverEl.href = url;
@@ -654,7 +652,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
              * @param {String} name The config property name
              * @return {Object}
              */
-            getConfig: function(name) {
+            getConfig: function (name) {
                 return name ? Boot.config[name] : Boot.config;
             },
 
@@ -663,7 +661,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
              * @param {Object} config The config object to override the default values.
              * @return {Ext.Boot} this
              */
-            setConfig: function(name, value) {
+            setConfig: function (name, value) {
                 if (typeof name === 'string') {
                     Boot.config[name] = value;
                 } else {
@@ -674,39 +672,39 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 return Boot;
             },
 
-            getHead: function() {
+            getHead: function () {
                 return Boot.docHead ||
                     (Boot.docHead = doc.head ||
                         doc.getElementsByTagName('head')[0]);
             },
 
-            create: function(url, key, cfg) {
+            create: function (url, key, cfg) {
                 var config = cfg || {};
                 config.url = url;
                 config.key = key;
                 return Boot.scripts[key] = new Entry(config);
             },
 
-            getEntry: function(url, cfg, canonicalPath) {
+            getEntry: function (url, cfg, canonicalPath) {
                 var key, entry;
-
+                
                 // Canonicalizing URLs via anchor element href yields the most correct result
                 // but is *extremely* resource heavy so we need to avoid it whenever possible
                 key = canonicalPath ? url : Boot.canonicalUrl(url);
                 entry = Boot.scripts[key];
-
+                
                 if (!entry) {
                     entry = Boot.create(url, key, cfg);
-
+                    
                     if (canonicalPath) {
                         entry.canonicalPath = true;
                     }
                 }
-
+                
                 return entry;
             },
 
-            registerContent: function(url, type, content) {
+            registerContent: function (url, type, content) {
                 var cfg = {
                     content: content,
                     loaded: true,
@@ -720,8 +718,8 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 request.loadEntries(sync);
             },
 
-            load: function(request) {
-                //                 _debug("Boot.load called");
+            load: function (request) {
+//                 _debug("Boot.load called");
                 var request = new Request(request);
 
                 if (request.sync || Boot.syncMode) {
@@ -731,7 +729,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 // If there is a request in progress, we must
                 // queue this new request to be fired  when the current request completes.
                 if (Boot.currentRequest) {
-                    //                     _debug("current active request, suspending this request");
+//                     _debug("current active request, suspending this request");
                     // trigger assignment of entries now to ensure that overlapping
                     // entries with currently running requests will synchronize state
                     // with this pending one as they complete
@@ -744,8 +742,8 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 return Boot;
             },
 
-            loadSync: function(request) {
-                //                 _debug("Boot.loadSync called");
+            loadSync: function (request) {
+//                 _debug("Boot.loadSync called");
                 var request = new Request(request);
 
                 Boot.syncMode++;
@@ -771,10 +769,10 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
 
                 if (Boot.currentRequest === request) {
                     Boot.currentRequest = null;
-                    while (Boot.suspendedQueue.length > 0) {
+                    while(Boot.suspendedQueue.length > 0) {
                         next = Boot.suspendedQueue.shift();
-                        if (!next.done) {
-                            //                             _debug("resuming suspended request");
+                        if(!next.done) {
+//                             _debug("resuming suspended request");
                             Boot.load(next);
                             break;
                         }
@@ -785,18 +783,18 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 }
             },
 
-            isLoading: function() {
+            isLoading: function () {
                 return !Boot.currentRequest && Boot.suspendedQueue.length == 0;
             },
 
-            fireListeners: function() {
+            fireListeners: function () {
                 var listener;
                 while (Boot.isLoading() && (listener = Boot.listeners.shift())) {
                     listener();
                 }
             },
 
-            onBootReady: function(listener) {
+            onBootReady: function (listener) {
                 if (!Boot.isLoading()) {
                     listener();
                 } else {
@@ -808,21 +806,21 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
              * this is a helper function used by Ext.Loader to flush out
              * 'uses' arrays for classes in some Ext versions
              */
-            getPathsFromIndexes: function(indexMap, loadOrder) {
+            getPathsFromIndexes: function (indexMap, loadOrder) {
                 // In older versions indexMap was an object instead of a sparse array
                 if (!('length' in indexMap)) {
                     var indexArray = [],
                         index;
-
+                    
                     for (index in indexMap) {
                         if (!isNaN(+index)) {
                             indexArray[+index] = indexMap[index];
                         }
                     }
-
+                    
                     indexMap = indexArray;
                 }
-
+                
                 return Request.prototype.getPathsFromIndexes(indexMap, loadOrder);
             },
 
@@ -831,11 +829,11 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             },
 
             fetch: function(url, complete, scope, async) {
-                async = (async === undefined) ? !!complete: async;
+                async = (async === undefined) ? !!complete : async;
 
                 var xhr = new XMLHttpRequest(),
                     result, status, content, exception = false,
-                    readyStateChange = function() {
+                    readyStateChange = function () {
                         if (xhr && xhr.readyState == 4) {
                             status = (xhr.status === 1223) ? 204 :
                                 (xhr.status === 0 && ((self.location || {}).protocol === 'file:' ||
@@ -859,7 +857,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 }
 
                 try {
-                    //                     _debug("fetching " + url + " " + (async ? "async" : "sync"));
+//                     _debug("fetching " + url + " " + (async ? "async" : "sync"));
                     xhr.open('GET', url, async);
                     xhr.send(null);
                 } catch (err) {
@@ -881,32 +879,30 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         };
 
     function Request(cfg) {
-        //The request class encapsulates a series of Entry objects
-        //and provides notification around the completion of all Entries
-        //in this request.
+         //The request class encapsulates a series of Entry objects
+         //and provides notification around the completion of all Entries
+         //in this request.
 
-        if (cfg.$isRequest) {
+        if(cfg.$isRequest) {
             return cfg;
         }
 
-        var cfg = cfg.url ? cfg : {
-                url: cfg
-            },
+        var cfg = cfg.url ? cfg : {url: cfg},
             url = cfg.url,
-            urls = url.charAt ? [url] : url,
+            urls = url.charAt ? [ url ] : url,
             charset = cfg.charset || Boot.config.charset;
 
         _apply(this, cfg);
-
+            
         delete this.url;
         this.urls = urls;
         this.charset = charset;
     };
-
+    
     Request.prototype = {
         $isRequest: true,
 
-        createLoadOrderMap: function(loadOrder) {
+        createLoadOrderMap: function (loadOrder) {
             var len = loadOrder.length,
                 loadOrderMap = {},
                 i, element;
@@ -919,17 +915,17 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             return loadOrderMap;
         },
 
-        getLoadIndexes: function(item, indexMap, loadOrder, includeUses, skipLoaded) {
+        getLoadIndexes: function (item, indexMap, loadOrder, includeUses, skipLoaded) {
             var resolved = [],
                 queue = [item],
                 itemIndex = item.idx,
                 queue, entry, dependencies, depIndex, i, len;
-
+            
             if (indexMap[itemIndex]) {
                 // prevent cycles
                 return resolved;
             }
-
+            
             // Both indexMap and resolved are sparse arrays keyed by indexes.
             // This gives us a naturally sorted sequence of indexes later on
             // when we need to convert them to paths.
@@ -938,25 +934,27 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             // of all dependencies for the current item that are not included
             // in indexMap.
             indexMap[itemIndex] = resolved[itemIndex] = true;
-
+            
             while (item = queue.shift()) {
                 // Canonicalizing URLs is expensive, we try to avoid it
                 if (item.canonicalPath) {
                     entry = Boot.getEntry(item.path, null, true);
-                } else {
+                }
+                else {
                     entry = Boot.getEntry(this.prepareUrl(item.path));
                 }
-
+                
                 if (!(skipLoaded && entry.done)) {
                     if (includeUses && item.uses && item.uses.length) {
                         dependencies = item.requires.concat(item.uses);
-                    } else {
+                    }
+                    else {
                         dependencies = item.requires;
                     }
-
+                    
                     for (i = 0, len = dependencies.length; i < len; i++) {
                         depIndex = dependencies[i];
-
+                        
                         if (!indexMap[depIndex]) {
                             indexMap[depIndex] = resolved[depIndex] = true;
                             queue.push(loadOrder[depIndex]);
@@ -964,87 +962,87 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     }
                 }
             }
-
+            
             return resolved;
         },
 
-        getPathsFromIndexes: function(indexes, loadOrder) {
+        getPathsFromIndexes: function (indexes, loadOrder) {
             var paths = [],
                 index, len;
-
+            
             // indexes is a sparse array with values being true for defined indexes
             for (index = 0, len = indexes.length; index < len; index++) {
                 if (indexes[index]) {
                     paths.push(loadOrder[index].path);
                 }
             }
-
+            
             return paths;
         },
 
-        expandUrl: function(url, loadOrder, loadOrderMap, indexMap, includeUses, skipLoaded) {
+        expandUrl: function (url, loadOrder, loadOrderMap, indexMap, includeUses, skipLoaded) {
             var item, resolved;
-
+            
             if (loadOrder) {
                 item = loadOrderMap[url];
-
+                
                 if (item) {
                     resolved = this.getLoadIndexes(item, indexMap, loadOrder, includeUses, skipLoaded);
-
+                    
                     if (resolved.length) {
                         return this.getPathsFromIndexes(resolved, loadOrder);
                     }
                 }
             }
-
+            
             return [url];
         },
 
-        expandUrls: function(urls, includeUses) {
+        expandUrls: function (urls, includeUses) {
             var me = this,
                 loadOrder = me.loadOrder,
                 expanded = [],
                 expandMap = {},
                 indexMap = [],
                 loadOrderMap, tmpExpanded, i, len, t, tlen, tUrl;
-
+            
             if (typeof urls === "string") {
                 urls = [urls];
             }
-
+            
             if (loadOrder) {
                 loadOrderMap = me.loadOrderMap;
-
+                
                 if (!loadOrderMap) {
                     loadOrderMap = me.loadOrderMap = me.createLoadOrderMap(loadOrder);
                 }
             }
-
+            
             for (i = 0, len = urls.length; i < len; i++) {
                 // We don't want to skip loaded entries (last argument === false).
                 // There are some overrides that get loaded before their respective classes,
                 // and when the class dependencies are processed we don't want to skip over
                 // the overrides' dependencies just because they were loaded first.
                 tmpExpanded = this.expandUrl(urls[i], loadOrder, loadOrderMap, indexMap, includeUses, false);
-
+                
                 for (t = 0, tlen = tmpExpanded.length; t < tlen; t++) {
                     tUrl = tmpExpanded[t];
-
+                    
                     if (!expandMap[tUrl]) {
                         expandMap[tUrl] = true;
                         expanded.push(tUrl);
                     }
                 }
             }
-
+            
             if (expanded.length === 0) {
                 expanded = urls;
             }
-
+            
             return expanded;
         },
 
-        expandLoadOrder: function() {
+        expandLoadOrder: function () {
             var me = this,
                 urls = me.urls,
                 expanded;
@@ -1067,51 +1065,51 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             return me;
         },
 
-        getUrls: function() {
+        getUrls: function () {
             this.expandLoadOrder();
             return this.urls;
         },
 
         prepareUrl: function(url) {
-            if (this.prependBaseUrl) {
+            if(this.prependBaseUrl) {
                 return Boot.baseUrl + url;
             }
             return url;
         },
 
-        getEntries: function() {
+        getEntries: function () {
             var me = this,
                 entries = me.entries,
                 loadOrderMap, item, i, entry, urls, url;
-
+            
             if (!entries) {
                 entries = [];
                 urls = me.getUrls();
-
+                
                 // If we have loadOrder array then the map will be expanded by now
                 if (me.loadOrder) {
                     loadOrderMap = me.loadOrderMap;
                 }
-
+                
                 for (i = 0; i < urls.length; i++) {
                     url = me.prepareUrl(urls[i]);
-
+                    
                     if (loadOrderMap) {
                         item = loadOrderMap[url];
                     }
-
+                    
                     entry = Boot.getEntry(url, {
                         buster: me.buster,
                         charset: me.charset
                     }, item && item.canonicalPath);
-
+                    
                     entry.requests.push(me);
                     entries.push(entry);
                 }
-
+                
                 me.entries = entries;
             }
-
+            
             return entries;
         },
 
@@ -1122,23 +1120,23 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 start = me.loadStart || 0,
                 continueLoad, entries, entry, i;
 
-            if (sync !== undefined) {
+            if(sync !== undefined) {
                 me.sync = sync;
             }
 
             me.loaded = me.loaded || 0;
             me.loading = me.loading || len;
 
-            for (i = start; i < len; i++) {
+            for(i = start; i < len; i++) {
                 entry = entries[i];
-                if (!entry.loaded) {
+                if(!entry.loaded) {
                     continueLoad = entries[i].load(me.sync);
                 } else {
                     continueLoad = true;
                 }
-                if (!continueLoad) {
+                if(!continueLoad) {
                     me.loadStart = i;
-                    entry.onDone(function() {
+                    entry.onDone(function(){
                         me.loadEntries(sync);
                     });
                     break;
@@ -1147,7 +1145,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             me.processLoadedEntries();
         },
 
-        processLoadedEntries: function() {
+        processLoadedEntries: function () {
             var me = this,
                 entries = me.getEntries(),
                 len = entries.length,
@@ -1175,18 +1173,20 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             }
         },
 
-        notify: function() {
+        notify: function () {
             var me = this;
             if (!me.done) {
                 var error = me.error,
                     fn = me[error ? 'failure' : 'success'],
-                    delay = ('delay' in me) ? me.delay : (error ? 1 : Boot.config.chainDelay),
+                    delay = ('delay' in me)
+                        ? me.delay
+                        : (error ? 1 : Boot.config.chainDelay),
                     scope = me.scope || me;
                 me.done = true;
                 if (fn) {
                     if (delay === 0 || delay > 0) {
                         // Free the stack (and defer the next script)
-                        setTimeout(function() {
+                        setTimeout(function () {
                             fn.call(scope, me);
                         }, delay);
                     } else {
@@ -1201,7 +1201,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         onDone: function(listener) {
             var me = this,
                 listeners = me.listeners || (me.listeners = []);
-            if (me.done) {
+            if(me.done) {
                 listener(me);
             } else {
                 listeners.push(listener);
@@ -1211,9 +1211,9 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         fireListeners: function() {
             var listeners = this.listeners,
                 listener;
-            if (listeners) {
-                //                 _debug("firing request listeners");
-                while ((listener = listeners.shift())) {
+            if(listeners) {
+//                 _debug("firing request listeners");
+                while((listener = listeners.shift())) {
                     listener(this);
                 }
             }
@@ -1221,15 +1221,15 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
     };
 
     function Entry(cfg) {
-        //The Entry class is a token to manage the load and evaluation
-        //state of a particular url.  It is used to notify all Requests
-        //interested in this url that the content is available.
+         //The Entry class is a token to manage the load and evaluation
+         //state of a particular url.  It is used to notify all Requests
+         //interested in this url that the content is available.
 
-        if (cfg.$isEntry) {
+        if(cfg.$isEntry) {
             return cfg;
         }
 
-        //         _debug("creating entry for " + cfg.url);
+//         _debug("creating entry for " + cfg.url);
 
         var charset = cfg.charset || Boot.config.charset,
             manifest = Ext.manifest,
@@ -1255,12 +1255,12 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         }
 
         _apply(this, cfg);
-
+        
         this.charset = charset;
         this.buster = buster;
         this.requests = [];
     };
-
+    
     Entry.prototype = {
         $isEntry: true,
         done: false,
@@ -1269,14 +1269,14 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
 
         isCrossDomain: function() {
             var me = this;
-            if (me.crossDomain === undefined) {
-                //                 _debug("checking " + me.getLoadUrl() + " for prefix " + Boot.origin);
+            if(me.crossDomain === undefined) {
+//                 _debug("checking " + me.getLoadUrl() + " for prefix " + Boot.origin);
                 me.crossDomain = (me.getLoadUrl().indexOf(Boot.origin) !== 0);
             }
             return me.crossDomain;
         },
 
-        isCss: function() {
+        isCss: function () {
             var me = this;
             if (me.css === undefined) {
                 if (me.url) {
@@ -1289,19 +1289,19 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             return this.css;
         },
 
-        getElement: function(tag) {
+        getElement: function (tag) {
             var me = this,
                 el = me.el;
             if (!el) {
-                //                 _debug("creating element for " + me.url);
+//                 _debug("creating element for " + me.url);
                 if (me.isCss()) {
                     tag = tag || "link";
                     el = doc.createElement(tag);
-                    if (tag == "link") {
+                    if(tag == "link") {
                         el.rel = 'stylesheet';
                         me.prop = 'href';
                     } else {
-                        me.prop = "textContent";
+                        me.prop="textContent";
                     }
                     el.type = "text/css";
                 } else {
@@ -1323,19 +1323,21 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             return el;
         },
 
-        getLoadUrl: function() {
+        getLoadUrl: function () {
             var me = this,
                 url;
-
+            
             url = me.canonicalPath ? me.url : Boot.canonicalUrl(me.url);
-
+            
             if (!me.loadUrl) {
-                me.loadUrl = !!me.buster ? (url + (url.indexOf('?') === -1 ? '?' : '&') + me.buster) : url;
+                me.loadUrl = !!me.buster
+                    ? (url + (url.indexOf('?') === -1 ? '?' : '&') + me.buster)
+                    : url;
             }
             return me.loadUrl;
         },
 
-        fetch: function(req) {
+        fetch: function (req) {
             var url = this.getLoadUrl(),
                 async = !!req.async,
                 complete = req.complete;
@@ -1343,7 +1345,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             Boot.fetch(url, complete, this, async);
         },
 
-        onContentLoaded: function(response) {
+        onContentLoaded: function (response) {
             var me = this,
                 status = response.status,
                 content = response.content,
@@ -1359,9 +1361,14 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                         "asynchronous loading instead.") ||
                     true;
                 me.evaluated = true;
-            } else if ((status >= 200 && status < 300) || status === 304 || _environment.phantom || (status === 0 && content.length > 0)) {
+            }
+            else if ((status >= 200 && status < 300) || status === 304
+                || _environment.phantom
+                || (status === 0 && content.length > 0)
+                ) {
                 me.content = content;
-            } else {
+            }
+            else {
                 me.error =
                     ("Failed loading synchronously via XHR: '" + url +
                         "'. Please verify that the file exists. XHR status code: " +
@@ -1374,18 +1381,18 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         createLoadElement: function(callback) {
             var me = this,
                 el = me.getElement();
-
+            
             me.preserve = true;
-
+            
             el.onerror = function() {
                 me.error = true;
-
+                
                 if (callback) {
                     callback();
                     callback = null;
                 }
             };
-
+            
             if (Boot.isIE10m) {
                 el.onreadystatechange = function() {
                     if (this.readyState === 'loaded' || this.readyState === 'complete') {
@@ -1395,13 +1402,14 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                         }
                     }
                 };
-            } else {
+            }
+            else {
                 el.onload = function() {
                     callback();
                     callback = this.onload = this.onerror = null;
                 };
             }
-
+            
             // IE starts loading here
             el[me.prop] = me.getLoadUrl();
         },
@@ -1411,8 +1419,8 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             this.evaluated = true;
         },
 
-        inject: function(content, asset) {
-            //             _debug("injecting content for " + this.url);
+        inject: function (content, asset) {
+//             _debug("injecting content for " + this.url);
             var me = this,
                 head = Boot.getHead(),
                 url = me.url,
@@ -1424,7 +1432,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 basePath = key.substring(0, key.lastIndexOf("/") + 1);
                 base = doc.createElement('base');
                 base.href = basePath;
-                if (head.firstChild) {
+                if(head.firstChild) {
                     head.insertBefore(base, head.firstChild);
                 } else {
                     head.appendChild(base);
@@ -1442,7 +1450,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 ieMode = ('styleSheet' in el);
 
                 head.appendChild(base);
-                if (ieMode) {
+                if(ieMode) {
                     head.appendChild(el);
                     el.styleSheet.cssText = content;
                 } else {
@@ -1465,13 +1473,13 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
 
         loadCrossDomain: function() {
             var me = this,
-                complete = function() {
+                complete = function(){
                     me.el.onerror = me.el.onload = emptyFn;
                     me.el = null;
                     me.loaded = me.evaluated = me.done = true;
                     me.notifyRequests();
                 };
-            me.createLoadElement(function() {
+            me.createLoadElement(function(){
                 complete();
             });
             me.evaluateLoadElement();
@@ -1483,13 +1491,13 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
 
         loadElement: function() {
             var me = this,
-                complete = function() {
+                complete = function(){
                     me.el.onerror = me.el.onload = emptyFn;
                     me.el = null;
                     me.loaded = me.evaluated = me.done = true;
                     me.notifyRequests();
                 };
-            me.createLoadElement(function() {
+            me.createLoadElement(function(){
                 complete();
             });
             me.evaluateLoadElement();
@@ -1500,7 +1508,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             var me = this;
             me.fetch({
                 async: false,
-                complete: function(response) {
+                complete: function (response) {
                     me.onContentLoaded(response);
                 }
             });
@@ -1508,10 +1516,10 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             me.notifyRequests();
         },
 
-        load: function(sync) {
+        load: function (sync) {
             var me = this;
             if (!me.loaded) {
-                if (me.loading) {
+                if(me.loading) {
                     // if we're calling back through load and we're loading but haven't
                     // yet loaded, then we should be in a sequential, cross domain
                     // load scenario which means we can't continue the load on the
@@ -1536,12 +1544,14 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     // for IE, use the readyStateChange allows us to load scripts in parallel
                     // but serialize the evaluation by appending the script node to the
                     // document
-                    else if (!me.isCss() && Boot.hasReadyState) {
-                        me.createLoadElement(function() {
+                    else if(!me.isCss() && Boot.hasReadyState) {
+                        me.createLoadElement(function () {
                             me.loaded = true;
                             me.notifyRequests();
                         });
-                    } else if (Boot.useElements &&
+                    }
+
+                    else if(Boot.useElements &&
                         // older webkit, phantomjs included, won't fire load for link elements
                         !(me.isCss() && _environment.phantom)) {
                         return me.loadElement();
@@ -1551,7 +1561,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                     else {
                         me.fetch({
                             async: !sync,
-                            complete: function(response) {
+                            complete: function (response) {
                                 me.onContentLoaded(response);
                                 me.notifyRequests();
                             }
@@ -1570,7 +1580,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             return true;
         },
 
-        evaluateContent: function() {
+        evaluateContent: function () {
             this.inject(this.content);
             this.content = null;
         },
@@ -1579,16 +1589,16 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             Boot.getHead().appendChild(this.getElement());
         },
 
-        evaluate: function() {
+        evaluate: function () {
             var me = this;
-            if (!me.evaluated) {
-                if (me.evaluating) {
+            if(!me.evaluated) {
+                if(me.evaluating) {
                     return;
                 }
                 me.evaluating = true;
-                if (me.content !== undefined) {
+                if(me.content !== undefined) {
                     me.evaluateContent();
-                } else if (!me.error) {
+                } else if(!me.error) {
                     me.evaluateLoadElement();
                 }
                 me.evaluated = me.done = true;
@@ -1596,7 +1606,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             }
         },
 
-        cleanup: function() {
+        cleanup: function () {
             var me = this,
                 el = me.el,
                 prop;
@@ -1617,7 +1627,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                             // will try and request a script at './null'
                             el[prop] = null;
                         }
-                        delete el[prop]; // and prepare for GC
+                        delete el[prop];      // and prepare for GC
                     } catch (cleanEx) {
                         //ignore
                     }
@@ -1630,7 +1640,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
             el.onload = el.onerror = el.onreadystatechange = emptyFn;
         },
 
-        notifyRequests: function() {
+        notifyRequests: function () {
             var requests = this.requests,
                 len = requests.length,
                 i, request;
@@ -1638,7 +1648,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
                 request = requests[i];
                 request.processLoadedEntries();
             }
-            if (this.done) {
+            if(this.done) {
                 this.fireListeners();
             }
         },
@@ -1646,7 +1656,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         onDone: function(listener) {
             var me = this,
                 listeners = me.listeners || (me.listeners = []);
-            if (me.done) {
+            if(me.done) {
                 listener(me);
             } else {
                 listeners.push(listener);
@@ -1656,9 +1666,9 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
         fireListeners: function() {
             var listeners = this.listeners,
                 listener;
-            if (listeners && listeners.length > 0) {
-                //                 _debug("firing event listeners for url " + this.url);
-                while ((listener = listeners.shift())) {
+            if(listeners && listeners.length > 0) {
+//                 _debug("firing event listeners for url " + this.url);
+                while((listener = listeners.shift())) {
                     listener(this);
                 }
             }
@@ -1673,7 +1683,7 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
      * @param {Boolean} disable True to disable the cache buster.
      * @param {String} [path="/"] An optional path to scope the cookie.
      */
-    Ext.disableCacheBuster = function(disable, path) {
+    Ext.disableCacheBuster = function (disable, path) {
         var date = new Date();
         date.setTime(date.getTime() + (disable ? 10 * 365 : -1) * 24 * 60 * 60 * 1000);
         date = date.toGMTString();
@@ -1684,9 +1694,10 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
     Boot.init();
     return Boot;
 
-    // NOTE: We run the eval at global scope to protect the body of the function and allow
-    // compressors to still process it.
-}(function() {})); //(eval("/*@cc_on!@*/!1"));
+// NOTE: We run the eval at global scope to protect the body of the function and allow
+// compressors to still process it.
+}(function () {
+}));//(eval("/*@cc_on!@*/!1"));
 
 /**
  * This method evaluates the given code free of any local variable. This
@@ -1696,26 +1707,24 @@ Ext.Boot = Ext.Boot || (function(emptyFn) {
  * @method
  * @member Ext
  */
-Ext.globalEval = Ext.globalEval || (this.execScript ? function(code) {
-    execScript(code);
-} : function($$code) {
-    eval.call(window, $$code);
-});
+Ext.globalEval = Ext.globalEval || (this.execScript
+    ? function (code) { execScript(code); }
+    : function ($$code) { eval.call(window, $$code); });
 
 /*
  * Only IE8 & IE/Quirks lack Function.prototype.bind so we polyfill that here.
  */
 if (!Function.prototype.bind) {
-    (function() {
+    (function () {
         var slice = Array.prototype.slice,
-            // To reduce overhead on call of the bound fn we have two flavors based on
-            // whether we have args to prepend or not:
-            bind = function(me) {
+        // To reduce overhead on call of the bound fn we have two flavors based on
+        // whether we have args to prepend or not:
+            bind = function (me) {
                 var args = slice.call(arguments, 1),
                     method = this;
 
                 if (args.length) {
-                    return function() {
+                    return function () {
                         var t = arguments;
                         // avoid the slice/concat if the caller does not supply args
                         return method.apply(me, t.length ? args.concat(slice.call(t)) : args);
@@ -1724,7 +1733,7 @@ if (!Function.prototype.bind) {
                 // this is the majority use case - just fn.bind(this) and no args
 
                 args = null;
-                return function() {
+                return function () {
                     return method.apply(me, arguments);
                 };
             };
@@ -1735,7 +1744,7 @@ if (!Function.prototype.bind) {
 
 //</editor-fold>
 
-Ext.setResourcePath = function(poolName, path) {
+Ext.setResourcePath = function (poolName, path) {
     var manifest = Ext.manifest || (Ext.manifest = {}),
         paths = manifest.resources || (manifest.resources = {});
 
@@ -1749,7 +1758,7 @@ Ext.setResourcePath = function(poolName, path) {
     }
 };
 
-Ext.getResourcePath = function(path, poolName, packageName) {
+Ext.getResourcePath = function (path, poolName, packageName) {
     if (typeof path !== 'string') {
         poolName = path.pool;
         packageName = path.packageName;
@@ -1792,12 +1801,12 @@ var Ext = Ext || window['Ext'] || {};
  * @private
  * @singleton
  */
-Ext.Microloader = Ext.Microloader || (function() {
+Ext.Microloader = Ext.Microloader || (function () {
     var Boot = Ext.Boot,
-        _debug = function(message) {
+        _debug = function (message) {
             //console.log(message);
         },
-        _warn = function(message) {
+        _warn = function (message) {
             console.log("[WARN] " + message);
         },
         _privatePrefix = '_ext:' + location.pathname,
@@ -1812,13 +1821,13 @@ Ext.Microloader = Ext.Microloader || (function() {
          * 'Microloader.appId' is unique to the application and will differentiate apps on the same host (dev mode running app watch against multiple apps)
          */
         getStorageKey = function(url, profileId) {
-            return _privatePrefix + url + '-' + (profileId ? profileId + '-' : '') + Microloader.appId;
+            return  _privatePrefix + url + '-' + (profileId ? profileId + '-' : '') + Microloader.appId;
         },
         postProcessor, _storage;
 
     try {
         _storage = window['localStorage'];
-    } catch (ex) {
+    } catch(ex) {
         // ignore
     }
 
@@ -1826,7 +1835,7 @@ Ext.Microloader = Ext.Microloader || (function() {
         // Local Storage Controller
         LocalStorage = {
             clearAllPrivate: function(manifest) {
-                if (_storage) {
+                if(_storage) {
 
                     //Remove the entry for the manifest first
                     _storage.removeItem(manifest.key);
@@ -1843,8 +1852,8 @@ Ext.Microloader = Ext.Microloader || (function() {
                         }
                     }
 
-                    for (i in removeKeys) {
-                        _debug("Removing " + removeKeys[i] + " from Local Storage");
+                    for(i in removeKeys) {
+                        _debug("Removing "+ removeKeys[i] + " from Local Storage");
                         _storage.removeItem(removeKeys[i]);
                     }
                 }
@@ -1852,10 +1861,11 @@ Ext.Microloader = Ext.Microloader || (function() {
             /**
              * @private
              */
-            retrieveAsset: function(key) {
+            retrieveAsset: function (key) {
                 try {
                     return _storage.getItem(key);
-                } catch (e) {
+                }
+                catch (e) {
                     // Private browsing mode
                     return null;
                 }
@@ -1868,7 +1878,8 @@ Ext.Microloader = Ext.Microloader || (function() {
                     } else {
                         _storage.setItem(key, content);
                     }
-                } catch (e) {
+                }
+                catch (e) {
                     if (_storage && e.code == e.QUOTA_EXCEEDED_ERR) {
                         _warn("LocalStorage Quota exceeded, cannot store " + key + " locally");
                     }
@@ -1876,177 +1887,178 @@ Ext.Microloader = Ext.Microloader || (function() {
             }
         };
 
-    var Asset = function(cfg) {
-        if (typeof cfg.assetConfig === 'string') {
-            this.assetConfig = {
-                path: cfg.assetConfig
-            };
-        } else {
-            this.assetConfig = cfg.assetConfig;
-        }
-
-        this.type = cfg.type;
-        this.key = getStorageKey(this.assetConfig.path, cfg.manifest.profile);
-
-        if (cfg.loadFromCache) {
-            this.loadFromCache();
-        }
-    };
-
-    Asset.prototype = {
-        shouldCache: function() {
-            return _storage && this.assetConfig.update && this.assetConfig.hash && !this.assetConfig.remote;
-        },
-
-        is: function(asset) {
-            return (!!asset && this.assetConfig && asset.assetConfig && (this.assetConfig.hash === asset.assetConfig.hash))
-        },
-
-        cache: function(content) {
-            if (this.shouldCache()) {
-                LocalStorage.setAsset(this.key, content || this.content);
+        var Asset = function (cfg) {
+            if (typeof cfg.assetConfig === 'string') {
+                this.assetConfig = {
+                    path: cfg.assetConfig
+                };
+            } else {
+                this.assetConfig = cfg.assetConfig;
             }
-        },
 
-        uncache: function() {
-            LocalStorage.setAsset(this.key, null);
-        },
+            this.type = cfg.type;
+            this.key = getStorageKey(this.assetConfig.path, cfg.manifest.profile);
 
-        updateContent: function(content) {
-            this.content = content;
-        },
-
-        getSize: function() {
-            return this.content ? this.content.length : 0;
-        },
-
-        loadFromCache: function() {
-            if (this.shouldCache()) {
-                this.content = LocalStorage.retrieveAsset(this.key);
+            if (cfg.loadFromCache) {
+                this.loadFromCache();
             }
-        }
-    };
+        };
 
-    var Manifest = function(cfg) {
-        if (typeof cfg.content === "string") {
-            this.content = JSON.parse(cfg.content);
-        } else {
-            this.content = cfg.content;
-        }
-        this.assetMap = {};
+        Asset.prototype = {
+            shouldCache: function() {
+                return _storage && this.assetConfig.update && this.assetConfig.hash && !this.assetConfig.remote;
+            },
 
-        this.url = cfg.url;
-        this.fromCache = !!cfg.cached;
-        this.assetCache = !(cfg.assetCache === false);
-        this.key = getStorageKey(this.url);
+            is: function (asset) {
+                return (!!asset && this.assetConfig && asset.assetConfig && (this.assetConfig.hash === asset.assetConfig.hash))
+            },
 
-        // Pull out select properties for repetitive use
-        this.profile = this.content.profile;
-        this.hash = this.content.hash;
-        this.loadOrder = this.content.loadOrder;
-        this.deltas = this.content.cache ? this.content.cache.deltas : null;
-        this.cacheEnabled = this.content.cache ? this.content.cache.enable : false;
-
-        this.loadOrderMap = (this.loadOrder) ? Boot.createLoadOrderMap(this.loadOrder) : null;
-
-        var tags = this.content.tags,
-            platformTags = Ext.platformTags;
-
-        if (tags) {
-            if (tags instanceof Array) {
-                for (var i = 0; i < tags.length; i++) {
-                    platformTags[tags[i]] = true;
+            cache: function(content) {
+                if (this.shouldCache()) {
+                    LocalStorage.setAsset(this.key, content || this.content);
                 }
+            },
+
+            uncache: function() {
+                LocalStorage.setAsset(this.key, null);
+            },
+
+            updateContent: function (content) {
+                this.content = content;
+            },
+
+            getSize: function () {
+                return this.content ? this.content.length : 0;
+            },
+
+            loadFromCache: function() {
+                if (this.shouldCache()) {
+                    this.content = LocalStorage.retrieveAsset(this.key);
+                }
+            }
+        };
+
+        var Manifest = function (cfg) {
+            if (typeof cfg.content === "string") {
+                this.content = JSON.parse(cfg.content);
             } else {
-                Boot.apply(platformTags, tags);
+                this.content = cfg.content;
+            }
+            this.assetMap = {};
+
+            this.url = cfg.url;
+            this.fromCache = !!cfg.cached;
+            this.assetCache = !(cfg.assetCache === false);
+            this.key = getStorageKey(this.url);
+
+            // Pull out select properties for repetitive use
+            this.profile = this.content.profile;
+            this.hash = this.content.hash;
+            this.loadOrder = this.content.loadOrder;
+            this.deltas = this.content.cache ? this.content.cache.deltas : null;
+            this.cacheEnabled = this.content.cache ? this.content.cache.enable : false;
+
+            this.loadOrderMap = (this.loadOrder) ? Boot.createLoadOrderMap(this.loadOrder) : null;
+
+            var tags = this.content.tags,
+                platformTags = Ext.platformTags;
+
+            if (tags) {
+                if (tags instanceof Array) {
+                    for (var i = 0; i < tags.length; i++) {
+                        platformTags[tags[i]] = true;
+                    }
+                } else {
+                    Boot.apply(platformTags, tags);
+                }
+
+                // re-apply the query parameters, so that the params as specified
+                // in the url always has highest priority
+                Boot.apply(platformTags, Boot.loadPlatformsParam());
             }
 
-            // re-apply the query parameters, so that the params as specified
-            // in the url always has highest priority
-            Boot.apply(platformTags, Boot.loadPlatformsParam());
-        }
+            // Convert all assets into Assets
+            this.js = this.processAssets(this.content.js, 'js');
+            this.css = this.processAssets(this.content.css, 'css');
+        };
 
-        // Convert all assets into Assets
-        this.js = this.processAssets(this.content.js, 'js');
-        this.css = this.processAssets(this.content.css, 'css');
-    };
+        Manifest.prototype = {
+            processAsset:  function(assetConfig, type) {
+                var processedAsset = new Asset({
+                    manifest: this,
+                    assetConfig: assetConfig,
+                    type: type,
+                    loadFromCache: this.assetCache
+                });
+                this.assetMap[assetConfig.path] = processedAsset;
+                return processedAsset;
+            },
 
-    Manifest.prototype = {
-        processAsset: function(assetConfig, type) {
-            var processedAsset = new Asset({
-                manifest: this,
-                assetConfig: assetConfig,
-                type: type,
-                loadFromCache: this.assetCache
-            });
-            this.assetMap[assetConfig.path] = processedAsset;
-            return processedAsset;
-        },
+            processAssets: function(assets, type) {
+                var results = [],
+                    ln = assets.length,
+                    i, assetConfig;
 
-        processAssets: function(assets, type) {
-            var results = [],
-                ln = assets.length,
-                i, assetConfig;
+                for (i = 0; i < ln; i++) {
+                    assetConfig = assets[i];
+                    results.push(this.processAsset(assetConfig, type));
+                }
 
-            for (i = 0; i < ln; i++) {
-                assetConfig = assets[i];
-                results.push(this.processAsset(assetConfig, type));
+                return results;
+            },
+
+            useAppCache: function() {
+                return true;
+            },
+
+            // Concatenate all assets for easy access
+            getAssets: function () {
+                return this.css.concat(this.js);
+            },
+
+            getAsset: function (path) {
+                return this.assetMap[path];
+            },
+
+            shouldCache: function() {
+                return this.hash && this.cacheEnabled;
+            },
+
+            cache: function(content) {
+                if (this.shouldCache()) {
+                    LocalStorage.setAsset(this.key, JSON.stringify(content || this.content));
+                }
+                else {
+                    _debug("Manifest caching is disabled.");
+                }
+            },
+
+            is: function(manifest) {
+                _debug("Testing Manifest: " + this.hash + " VS " +  manifest.hash);
+                return this.hash === manifest.hash;
+            },
+
+            // Clear the manifest from local storage
+            uncache: function() {
+                LocalStorage.setAsset(this.key, null);
+            },
+
+            exportContent: function() {
+                return Boot.apply({
+                    loadOrderMap: this.loadOrderMap
+                }, this.content);
             }
+        };
 
-            return results;
-        },
-
-        useAppCache: function() {
-            return true;
-        },
-
-        // Concatenate all assets for easy access
-        getAssets: function() {
-            return this.css.concat(this.js);
-        },
-
-        getAsset: function(path) {
-            return this.assetMap[path];
-        },
-
-        shouldCache: function() {
-            return this.hash && this.cacheEnabled;
-        },
-
-        cache: function(content) {
-            if (this.shouldCache()) {
-                LocalStorage.setAsset(this.key, JSON.stringify(content || this.content));
-            } else {
-                _debug("Manifest caching is disabled.");
-            }
-        },
-
-        is: function(manifest) {
-            _debug("Testing Manifest: " + this.hash + " VS " + manifest.hash);
-            return this.hash === manifest.hash;
-        },
-
-        // Clear the manifest from local storage
-        uncache: function() {
-            LocalStorage.setAsset(this.key, null);
-        },
-
-        exportContent: function() {
-            return Boot.apply({
-                loadOrderMap: this.loadOrderMap
-            }, this.content);
-        }
-    };
-
-    /**
-     * Microloader
-     * @type {Array}
-     * @private
-     */
-    var _listeners = [],
+        /**
+         * Microloader
+         * @type {Array}
+         * @private
+         */
+        var _listeners = [],
         _loaded = false,
         Microloader = {
-            init: function() {
+            init: function () {
                 Ext.microloaded = true;
 
                 // data-app is in the dev template for an application and is also
@@ -2061,7 +2073,7 @@ Ext.Microloader = Ext.Microloader || (function() {
 
                 var readyHandler = Ext._beforereadyhandler;
 
-                Ext._beforereadyhandler = function() {
+                Ext._beforereadyhandler = function () {
                     if (Ext.Boot !== Boot) {
                         Ext.apply(Ext.Boot, Boot);
                         Ext.Boot = Boot;
@@ -2085,13 +2097,15 @@ Ext.Microloader = Ext.Microloader || (function() {
 
                 if (typeof manifest === "string") {
                     var extension = ".json",
-                        url = manifest.indexOf(extension) === manifest.length - extension.length ? manifest : manifest + ".json",
+                        url = manifest.indexOf(extension) === manifest.length - extension.length
+                            ? manifest
+                            : manifest + ".json",
                         key = getStorageKey(url),
                         content = LocalStorage.retrieveAsset(key);
 
                     // Manifest found in local storage, use this for immediate boot except in PhantomJS environments for building.
                     if (content) {
-                        _debug("Manifest file, '" + url + "', was found in Local Storage");
+                            _debug("Manifest file, '" + url + "', was found in Local Storage");
                         manifest = new Manifest({
                             url: url,
                             content: content,
@@ -2103,23 +2117,24 @@ Ext.Microloader = Ext.Microloader || (function() {
                         Microloader.load(manifest);
 
 
-                        // Manifest is not in local storage. Fetch it from the server
+                    // Manifest is not in local storage. Fetch it from the server
                     } else {
                         _debug("Manifest file was not found in Local Storage, loading: " + url);
 
                         if (location.href.indexOf('file:/') === 0) {
                             Manifest.url = Microloader.applyCacheBuster(url + 'p');
                             Boot.load(Manifest.url);
-                        } else {
+                        }
+                        else {
                             Boot.fetch(Microloader.applyCacheBuster(url), function(result) {
                                 Microloader.setManifest(result.content);
                             });
                         }
                     }
 
-                    // Embedded Manifest into JS file
+                // Embedded Manifest into JS file
                 } else {
-                    _debug("Manifest was embedded into application javascript file");
+                        _debug("Manifest was embedded into application javascript file");
                     manifest = new Manifest({
                         content: manifest
                     });
@@ -2146,7 +2161,7 @@ Ext.Microloader = Ext.Microloader || (function() {
             /**
              * @param {Manifest} manifest
              */
-            load: function(manifest) {
+            load: function (manifest) {
                 Microloader.urls = [];
                 Microloader.manifest = manifest;
                 Ext.manifest = Microloader.manifest.exportContent();
@@ -2163,21 +2178,19 @@ Ext.Microloader = Ext.Microloader || (function() {
                         if (manifest.shouldCache() && asset.shouldCache()) {
                             // Asset already has content from localStorage, instantly seed that into boot
                             if (asset.content) {
-                                _debug("Asset: " + asset.assetConfig.path + " was found in local storage. No remote load for this file");
+                                    _debug("Asset: " + asset.assetConfig.path + " was found in local storage. No remote load for this file");
                                 entry = Boot.registerContent(asset.assetConfig.path, asset.type, asset.content);
                                 if (entry.evaluated) {
                                     _warn("Asset: " + asset.assetConfig.path + " was evaluated prior to local storage being consulted.");
                                 }
-                                //load via AJAX and seed content into Boot
+                            //load via AJAX and seed content into Boot
                             } else {
-                                _debug("Asset: " + asset.assetConfig.path + " was NOT found in local storage. Adding to load queue");
+                                    _debug("Asset: " + asset.assetConfig.path + " was NOT found in local storage. Adding to load queue");
                                 cachedAssets.push(asset);
                             }
                         }
                         Microloader.urls.push(asset.assetConfig.path);
-                        Boot.assetConfig[asset.assetConfig.path] = Boot.apply({
-                            type: asset.type
-                        }, asset.assetConfig);
+                        Boot.assetConfig[asset.assetConfig.path] = Boot.apply({type: asset.type}, asset.assetConfig);
                     }
                 }
 
@@ -2186,7 +2199,7 @@ Ext.Microloader = Ext.Microloader || (function() {
                     Microloader.remainingCachedAssets = cachedAssets.length;
                     while (cachedAssets.length > 0) {
                         asset = cachedAssets.pop();
-                        _debug("Preloading/Fetching Cached Assets from: " + asset.assetConfig.path);
+                            _debug("Preloading/Fetching Cached Assets from: " + asset.assetConfig.path);
                         Boot.fetch(asset.assetConfig.path, (function(asset) {
                             return function(result) {
                                 Microloader.onCachedAssetLoaded(asset, result);
@@ -2199,7 +2212,7 @@ Ext.Microloader = Ext.Microloader || (function() {
             },
 
             // Load the asset and seed its content into Boot to be evaluated in sequence
-            onCachedAssetLoaded: function(asset, result) {
+            onCachedAssetLoaded: function (asset, result) {
                 var checksum;
                 result = Microloader.parseResult(result);
                 Microloader.remainingCachedAssets--;
@@ -2213,7 +2226,7 @@ Ext.Microloader = Ext.Microloader || (function() {
                         asset.uncache();
                     }
 
-                    _debug("Checksum for Cached Asset: " + asset.assetConfig.path + " is " + checksum);
+                        _debug("Checksum for Cached Asset: " + asset.assetConfig.path + " is " + checksum);
                     Boot.registerContent(asset.assetConfig.path, asset.type, result.content);
                     asset.updateContent(result.content);
                     asset.cache();
@@ -2229,7 +2242,7 @@ Ext.Microloader = Ext.Microloader || (function() {
                 }
             },
 
-            onCachedAssetsReady: function() {
+            onCachedAssetsReady: function(){
                 Boot.load({
                     url: Microloader.urls,
                     loadOrder: Microloader.manifest.loadOrder,
@@ -2245,17 +2258,18 @@ Ext.Microloader = Ext.Microloader || (function() {
                 Microloader.notify();
 
                 if (navigator.onLine !== false) {
-                    _debug("Application is online, checking for updates");
+                        _debug("Application is online, checking for updates");
                     Microloader.checkAllUpdates();
-                } else {
-                    _debug("Application is offline, adding online listener to check for updates");
-                    if (window['addEventListener']) {
+                }
+                else {
+                        _debug("Application is offline, adding online listener to check for updates");
+                    if(window['addEventListener']) {
                         window.addEventListener('online', Microloader.checkAllUpdates, false);
                     }
                 }
             },
 
-            onMicroloaderReady: function(listener) {
+            onMicroloaderReady: function (listener) {
                 if (_loaded) {
                     listener();
                 } else {
@@ -2266,16 +2280,16 @@ Ext.Microloader = Ext.Microloader || (function() {
             /**
              * @private
              */
-            notify: function() {
-                _debug("notifying microloader ready listeners.");
+            notify: function () {
+                    _debug("notifying microloader ready listeners.");
                 var listener;
-                while ((listener = _listeners.shift())) {
+                while((listener = _listeners.shift())) {
                     listener();
                 }
             },
 
             // Delta patches content
-            patch: function(content, delta) {
+            patch: function (content, delta) {
                 var output = [],
                     chunk, i, ln;
 
@@ -2283,12 +2297,13 @@ Ext.Microloader = Ext.Microloader || (function() {
                     return content;
                 }
 
-                for (i = 0, ln = delta.length; i < ln; i++) {
+                for (i = 0,ln = delta.length; i < ln; i++) {
                     chunk = delta[i];
 
                     if (typeof chunk === 'number') {
                         output.push(content.substring(chunk, chunk + delta[++i]));
-                    } else {
+                    }
+                    else {
                         output.push(chunk);
                     }
                 }
@@ -2297,12 +2312,12 @@ Ext.Microloader = Ext.Microloader || (function() {
             },
 
             checkAllUpdates: function() {
-                _debug("Checking for All Updates");
-                if (window['removeEventListener']) {
+                    _debug("Checking for All Updates");
+                if(window['removeEventListener']) {
                     window.removeEventListener('online', Microloader.checkAllUpdates, false);
                 }
 
-                if (_cache) {
+                if(_cache) {
                     Microloader.checkForAppCacheUpdate();
                 }
 
@@ -2313,12 +2328,12 @@ Ext.Microloader = Ext.Microloader || (function() {
             },
 
             checkForAppCacheUpdate: function() {
-                _debug("Checking App Cache status");
+                    _debug("Checking App Cache status");
                 if (_cache.status === _cache.UPDATEREADY || _cache.status === _cache.OBSOLETE) {
-                    _debug("App Cache is already in an updated");
+                        _debug("App Cache is already in an updated");
                     Microloader.appCacheState = 'updated';
                 } else if (_cache.status !== _cache.IDLE && _cache.status !== _cache.UNCACHED) {
-                    _debug("App Cache is checking or downloading updates, adding listeners");
+                        _debug("App Cache is checking or downloading updates, adding listeners");
                     Microloader.appCacheState = 'checking';
                     _cache.addEventListener('error', Microloader.onAppCacheError);
                     _cache.addEventListener('noupdate', Microloader.onAppCacheNotUpdated);
@@ -2326,14 +2341,14 @@ Ext.Microloader = Ext.Microloader || (function() {
                     _cache.addEventListener('updateready', Microloader.onAppCacheReady);
                     _cache.addEventListener('obsolete', Microloader.onAppCacheObsolete);
                 } else {
-                    _debug("App Cache is current or uncached");
+                        _debug("App Cache is current or uncached");
                     Microloader.appCacheState = 'current';
                 }
             },
 
             checkForUpdates: function() {
                 // Fetch the Latest Manifest from the server
-                _debug("Checking for updates at: " + Microloader.manifest.url);
+                    _debug("Checking for updates at: " + Microloader.manifest.url);
                 Boot.fetch(Microloader.applyCacheBuster(Microloader.manifest.url), Microloader.onUpdatedManifestLoaded);
             },
 
@@ -2354,13 +2369,13 @@ Ext.Microloader = Ext.Microloader || (function() {
             },
 
             appCacheUpdated: function() {
-                _debug("App Cache Updated");
+                    _debug("App Cache Updated");
                 Microloader.appCacheState = 'updated';
                 Microloader.notifyUpdateReady();
             },
 
             onAppCacheNotUpdated: function() {
-                _debug("App Cache Not Updated Callback");
+                    _debug("App Cache Not Updated Callback");
                 Microloader.appCacheState = 'current';
                 Microloader.notifyUpdateReady();
             },
@@ -2368,13 +2383,13 @@ Ext.Microloader = Ext.Microloader || (function() {
 
             filterAsset: function(asset) {
                 var cfg = (asset && asset.assetConfig) || {};
-                if (cfg.platform || cfg.exclude) {
+                if(cfg.platform || cfg.exclude) {
                     return Boot.filterPlatform(cfg.platform, cfg.exclude);
                 }
                 return true;
             },
 
-            onUpdatedManifestLoaded: function(result) {
+            onUpdatedManifestLoaded: function (result) {
                 result = Microloader.parseResult(result);
 
                 if (!result.error) {
@@ -2418,11 +2433,8 @@ Ext.Microloader = Ext.Microloader || (function() {
                             include = Microloader.filterAsset(newAsset);
 
                             if (include && (!currentAsset || (newAsset.shouldCache() && (!currentAsset.is(newAsset))))) {
-                                _debug("New/Updated Version of Asset: " + newAsset.assetConfig.path + " was found in new manifest");
-                                updatingAssets.push({
-                                    _new: newAsset,
-                                    _current: currentAsset
-                                });
+                                    _debug("New/Updated Version of Asset: " + newAsset.assetConfig.path + " was found in new manifest");
+                                updatingAssets.push({_new: newAsset, _current: currentAsset});
                             }
                         }
 
@@ -2435,8 +2447,7 @@ Ext.Microloader = Ext.Microloader || (function() {
                             include = !Microloader.filterAsset(newAsset);
 
                             if (!include || !newAsset || (currentAsset.shouldCache() && !newAsset.shouldCache())) {
-                                _debug("Asset: " + currentAsset.assetConfig.path +
-                                    " was not found in new manifest, has been filtered out or has been switched to not cache. Marked for removal");
+                                    _debug("Asset: " + currentAsset.assetConfig.path + " was not found in new manifest, has been filtered out or has been switched to not cache. Marked for removal");
                                 Microloader.removedAssets.push(currentAsset);
                             }
                         }
@@ -2459,31 +2470,34 @@ Ext.Microloader = Ext.Microloader || (function() {
                                     }
 
                                     // Load the asset and cache its  its content into Boot to be evaluated in sequence
-                                    Boot.fetch(newAsset.assetConfig.path, (function(asset) {
-                                        return function(result) {
-                                            Microloader.onFullAssetUpdateLoaded(asset, result)
-                                        };
-                                    }(newAsset)));
+                                    Boot.fetch(newAsset.assetConfig.path, (function (asset) {
+                                            return function (result) {
+                                                Microloader.onFullAssetUpdateLoaded(asset, result)
+                                            };
+                                        }(newAsset))
+                                    );
 
                                     // Delta updates will be given a delta patch
                                 } else if (newAsset.assetConfig.update === "delta") {
                                     deltas = manifest.deltas;
                                     deltaPath = deltas + "/" + newAsset.assetConfig.path + "/" + currentAsset.assetConfig.hash + ".json";
                                     // Fetch the Delta Patch and update the contents of the asset
-                                    _debug("Delta update found for: " + newAsset.assetConfig.path + " fetching");
-                                    Boot.fetch(deltaPath, (function(asset, oldAsset) {
-                                        return function(result) {
-                                            Microloader.onDeltaAssetUpdateLoaded(asset, oldAsset, result)
-                                        };
-                                    }(newAsset, currentAsset)));
+                                        _debug("Delta update found for: " + newAsset.assetConfig.path + " fetching");
+                                    Boot.fetch(deltaPath,
+                                        (function (asset, oldAsset) {
+                                            return function (result) {
+                                                Microloader.onDeltaAssetUpdateLoaded(asset, oldAsset, result)
+                                            };
+                                        }(newAsset, currentAsset))
+                                    );
                                 }
                             }
                         } else {
-                            _debug("No Assets needed updating");
+                                _debug("No Assets needed updating");
                             Microloader.onAllUpdatedAssetsReady();
                         }
                     } else {
-                        _debug("Manifest files have matching hash's");
+                            _debug("Manifest files have matching hash's");
                         Microloader.onAllUpdatedAssetsReady();
                     }
                 } else {
@@ -2499,9 +2513,9 @@ Ext.Microloader = Ext.Microloader || (function() {
 
                 if (!result.error) {
                     checksum = Microloader.checksum(result.content, asset.assetConfig.hash);
-                    _debug("Checksum for Full asset: " + asset.assetConfig.path + " is " + checksum);
+                        _debug("Checksum for Full asset: " + asset.assetConfig.path + " is " + checksum);
                     if (!checksum) {
-                        _debug("Full Update Asset: " + asset.assetConfig.path + " has failed checksum. This asset will be uncached for future loading");
+                            _debug("Full Update Asset: " + asset.assetConfig.path + " has failed checksum. This asset will be uncached for future loading");
 
                         // uncache this asset as there is a new version somewhere that has not been loaded.
                         asset.uncache();
@@ -2510,14 +2524,14 @@ Ext.Microloader = Ext.Microloader || (function() {
                         Microloader.updatedAssets.push(asset);
                     }
                 } else {
-                    _debug("Error loading file at" + asset.assetConfig.path + ". This asset will be uncached for future loading");
+                        _debug("Error loading file at" + asset.assetConfig.path + ". This asset will be uncached for future loading");
 
                     // uncache this asset as there is a new version somewhere that has not been loaded.
                     asset.uncache();
                 }
 
                 if (Microloader.remainingUpdatingAssets === 0) {
-                    Microloader.onAllUpdatedAssetsReady();
+                        Microloader.onAllUpdatedAssetsReady();
                 }
             },
 
@@ -2527,14 +2541,14 @@ Ext.Microloader = Ext.Microloader || (function() {
                 Microloader.remainingUpdatingAssets--;
 
                 if (!result.error) {
-                    _debug("Delta patch loaded successfully, patching content");
+                        _debug("Delta patch loaded successfully, patching content");
                     try {
                         json = JSON.parse(result.content);
                         content = Microloader.patch(oldAsset.content, json);
                         checksum = Microloader.checksum(content, asset.assetConfig.hash);
-                        _debug("Checksum for Delta Patched asset: " + asset.assetConfig.path + " is " + checksum);
+                            _debug("Checksum for Delta Patched asset: " + asset.assetConfig.path + " is " + checksum);
                         if (!checksum) {
-                            _debug("Delta Update Asset: " + asset.assetConfig.path + " has failed checksum. This asset will be uncached for future loading");
+                                _debug("Delta Update Asset: " + asset.assetConfig.path + " has failed checksum. This asset will be uncached for future loading");
 
                             // uncache this asset as there is a new version somewhere that has not been loaded.
                             asset.uncache();
@@ -2543,14 +2557,12 @@ Ext.Microloader = Ext.Microloader || (function() {
                             Microloader.updatedAssets.push(asset);
                         }
                     } catch (e) {
-                        _warn("Error parsing delta patch for " + asset.assetConfig.path + " with hash " + oldAsset.assetConfig.hash +
-                            " . This asset will be uncached for future loading");
+                        _warn("Error parsing delta patch for " + asset.assetConfig.path + " with hash " + oldAsset.assetConfig.hash + " . This asset will be uncached for future loading");
                         // uncache this asset as there is a new version somewhere that has not been loaded.
                         asset.uncache();
                     }
                 } else {
-                    _warn("Error loading delta patch for " + asset.assetConfig.path + " with hash " + oldAsset.assetConfig.hash +
-                        " . This asset will be uncached for future loading");
+                    _warn("Error loading delta patch for " + asset.assetConfig.path + " with hash " + oldAsset.assetConfig.hash + " . This asset will be uncached for future loading");
 
                     // uncache this asset as there is a new version somewhere that has not been loaded.
                     asset.uncache();
@@ -2568,7 +2580,7 @@ Ext.Microloader = Ext.Microloader || (function() {
                 if (Microloader.updatedManifest) {
                     while (Microloader.removedAssets.length > 0) {
                         asset = Microloader.removedAssets.pop();
-                        _debug("Asset: " + asset.assetConfig.path + " was removed, un-caching");
+                            _debug("Asset: " + asset.assetConfig.path + " was removed, un-caching");
                         asset.uncache();
                     }
 
@@ -2579,7 +2591,7 @@ Ext.Microloader = Ext.Microloader || (function() {
 
                     while (Microloader.updatedAssets.length > 0) {
                         asset = Microloader.updatedAssets.pop();
-                        _debug("Asset: " + asset.assetConfig.path + " was updated, re-caching");
+                            _debug("Asset: " + asset.assetConfig.path + " was updated, re-caching");
                         asset.cache();
                     }
 
@@ -2588,10 +2600,10 @@ Ext.Microloader = Ext.Microloader || (function() {
                 Microloader.notifyUpdateReady();
             },
 
-            notifyUpdateReady: function() {
+            notifyUpdateReady: function () {
                 if (Microloader.appCacheState !== 'checking' && Microloader.updatedAssetsReady) {
                     if (Microloader.appCacheState === 'updated' || Microloader.updatedManifest) {
-                        _debug("There was an update here you will want to reload the app, trigger an event");
+                            _debug("There was an update here you will want to reload the app, trigger an event");
                         Microloader.appUpdate = {
                             updated: true,
                             app: Microloader.appCacheState === 'updated',
@@ -2599,7 +2611,8 @@ Ext.Microloader = Ext.Microloader || (function() {
                         };
 
                         Microloader.fireAppUpdate();
-                    } else {
+                    }
+                    else {
                         _debug("AppCache and LocalStorage Cache are current, no updating needed");
                         Microloader.appUpdate = {};
                     }
@@ -2617,7 +2630,7 @@ Ext.Microloader = Ext.Microloader || (function() {
             },
 
             checksum: function(content, hash) {
-                if (!content || !hash) {
+                if(!content || !hash) {
                     return false;
                 }
 
@@ -2644,8 +2657,10 @@ Ext.Microloader = Ext.Microloader || (function() {
                 var rst = {};
                 if ((result.exception || result.status === 0) && !Boot.env.phantom) {
                     rst.error = true;
-                } else if ((result.status >= 200 && result.status < 300) || result.status === 304 || Boot.env.phantom || (result.status === 0 && result.content.length >
-                        0)) {
+                } else if ((result.status >= 200 && result.status < 300) || result.status === 304
+                    || Boot.env.phantom
+                    || (result.status === 0 && result.content.length > 0)
+                ) {
                     rst.content = result.content;
                 } else {
                     rst.error = true;

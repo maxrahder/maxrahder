@@ -12,6 +12,56 @@ Ext.define('Deck.view.main.Main', {
         type: 'deck-mainviewmodel'
     },
 
+    initComponent: function() {
+        this.callParent(arguments);
+        if (Deck.util.Global.editing) {
+            this.addDocked({
+                xtype: 'toolbar',
+                items: [{
+                    xtype: 'component',
+                    tpl: '<img src={url} />',
+                    bind: {
+                        data: '{languageIcon}'
+                    },
+                    height: 48,
+                    width: 48
+                }, {
+                    width: 180,
+                    xtype: 'segmentedbutton',
+                    value: '_default',
+                    bind: {
+                        value: '{language}'
+                    },
+                    defaults: {
+                        flex: 1
+                    },
+                    items: [{
+                        text: 'en-US',
+                        value: '_default'
+                    }, {
+                        text: 'fr-FR',
+                        value: 'fr-FR'
+                    }, {
+                        text: 'jp-JP',
+                        value: 'jp-JP'
+                    }]
+                }, {
+                    xtype: 'tbspacer'
+                }, {
+                    xtype: 'tbspacer'
+                }, {
+                    xtype: 'textfield',
+                    labelWidth: 30,
+                    fieldLabel: 'Title',
+                    bind: {
+                        value: '{node.title}'
+                    },
+                    dock: 'top'
+                }]
+            });
+        }
+    },
+
     layout: 'border',
     items: [{
         xtype: 'deck-topics',

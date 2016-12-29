@@ -1,6 +1,6 @@
 Ext.define('Deck.model.Node', {
     extend: 'Ext.data.TreeModel',
-    requires: ['Deck.util.Global'],
+    requires: ['Deck.util.Global', 'Deck.util.Backend'],
     statics: {
         cache: {},
         getCachedContent: function(fileId) {
@@ -31,6 +31,20 @@ Ext.define('Deck.model.Node', {
             return record.data.leaf || !record.data.children;
         }
     }],
+    // TODO: Finish this method
+    getPersistableNode: function() {
+        var o = {
+            "id": node.data.id,
+            "i18n": Ext.clone(node.data.i18n),
+            "leaf": node.isLeaf()
+        };
+        if (!node.isLeaf() && node.childNodes) {
+            o.children = [];
+            Ext.Array.forEach(node.childNodes, function(item) {
+                o.children.push(item.data.id);
+            });
+        }
+    },
 
     getContent: function() {
         var me = this;
@@ -76,6 +90,16 @@ Ext.define('Deck.model.Node', {
         }
 
     },
+
+    persistNode: function() {
+        // Call the web service and persist chages to the node.
+        Deck.util.Backend.persistNode(this);
+    },
+    persistContent: function(language) {
+        lanuage = language || '_default';
+        // Call the web service and persist chages to the node.
+    },
+
     cacheContent: function(text) {
         if (this.data.id) {
             Deck.model.Node.cache[this.data.id] = text;
