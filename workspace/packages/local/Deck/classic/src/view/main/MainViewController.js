@@ -1,6 +1,7 @@
 Ext.define('Deck.view.main.MainViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.maincontroller',
+    mixins: ['Deck.view.main.Editing'],
     requires: ['Deck.store.Topics', 'Deck.model.Node'],
 
     routes: {
@@ -12,6 +13,10 @@ Ext.define('Deck.view.main.MainViewController', {
         }
     },
 
+    init: function(view) {
+        this.initComponentEditing(view);
+    },
+
     initViewModel: function(vm) {
         var me = this;
 
@@ -19,12 +24,30 @@ Ext.define('Deck.view.main.MainViewController', {
 
         vm.bind('{node}', me.updateRoute, me);
 
+        // Once the topics store actually exists, detect changes
+        // to {language} in order to update node text.
+        vm.bind('{topics}', function(topics) {
+            vm.bind('{language}', me.updateLanguage, me);
+        });
+
     },
+
+    updateLanguage: function(language) {
+        var me = this;
+        var store = me.getViewModel().get('topics');
+        var root = store.getRootNode();
+        root.cascadeBy(function(node) {
+            node.set('language', language);
+        });
+    },
+
     updateRoute: function(node) {
         this.redirectTo(node.data.id);
     },
 
     onTreeItemClick: function(tree, record) {
+        // By default, trees only expand and collapse using the icon at the left
+        // of the node. This method expands node when the node itself is selected.
         if (record.isExpanded()) {
             record.collapse();
         } else {
@@ -33,6 +56,10 @@ Ext.define('Deck.view.main.MainViewController', {
     },
 
     initializeTopics: function() {
+        var me = this;
+        // Ideally, the store would be there, empty, and we'd fetch the data and
+        // update it. But I couldn't get that to work. Instead, the store doesn't
+        // exist at all, the this code fetches the data then creates the store.
         var vm = this.getViewModel();
         Deck.store.Topics.loadNodes().then(function(data) {
             var tree = Ext.create('Deck.store.Topics', {
@@ -43,45 +70,9 @@ Ext.define('Deck.view.main.MainViewController', {
         });
     },
 
-    getTestData: function() {
-        return {
-            "fileId": "_root",
-            "i18n": {
-                "_default": {
-                    "title": "Root"
-                }
-            },
-            "leaf": false,
-            "children": [{
-                "fileId": "1",
-                "i18n": {
-                    "_default": {
-                        "title": "One",
-                        "translated": true
-                    },
-                    "fr": {
-                        "title": "Un"
-                    }
-                },
-                "leaf": true,
-                "hidden": false
-            }, {
-                "fileId": "2",
-                "i18n": {
-                    "_default": {
-                        "title": "Two",
-                        "translated": true
-                    },
-                    "fr": {
-                        "title": "Deux"
-                    }
-                },
-                "leaf": true,
-                "hidden": false
-            }],
-            "hidden": false
-        };
-    },
+    // Called when the user uses arrow keys to navigate. The method changes {node}
+    // to the prev or next node, moving up or down the hierarchy if needed. This
+    // method is not well tested.
     onNavigate: function(content, key) {
         var vm = this.getViewModel();
         var node = vm.get('node');

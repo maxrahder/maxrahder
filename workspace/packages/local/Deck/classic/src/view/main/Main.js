@@ -5,61 +5,12 @@ Ext.define('Deck.view.main.Main', {
         'Deck.view.main.MainViewController',
         'Deck.view.main.MainViewModel',
         'Deck.view.topics.Topics',
-        'Deck.view.content.Content'
+        'Deck.view.content.Content',
+        'Deck.view.edit.Toolbar'
     ],
     controller: 'maincontroller',
     viewModel: {
         type: 'deck-mainviewmodel'
-    },
-
-    initComponent: function() {
-        this.callParent(arguments);
-        if (Deck.util.Global.editing) {
-            this.addDocked({
-                xtype: 'toolbar',
-                items: [{
-                    xtype: 'component',
-                    tpl: '<img src={url} />',
-                    bind: {
-                        data: '{languageIcon}'
-                    },
-                    height: 48,
-                    width: 48
-                }, {
-                    width: 180,
-                    xtype: 'segmentedbutton',
-                    value: '_default',
-                    bind: {
-                        value: '{language}'
-                    },
-                    defaults: {
-                        flex: 1
-                    },
-                    items: [{
-                        text: 'en-US',
-                        value: '_default'
-                    }, {
-                        text: 'fr-FR',
-                        value: 'fr-FR'
-                    }, {
-                        text: 'jp-JP',
-                        value: 'jp-JP'
-                    }]
-                }, {
-                    xtype: 'tbspacer'
-                }, {
-                    xtype: 'tbspacer'
-                }, {
-                    xtype: 'textfield',
-                    labelWidth: 30,
-                    fieldLabel: 'Title',
-                    bind: {
-                        value: '{node.title}'
-                    },
-                    dock: 'top'
-                }]
-            });
-        }
     },
 
     layout: 'border',
@@ -90,4 +41,25 @@ Ext.define('Deck.view.main.Main', {
         },
         region: 'center'
     }]
+});
+
+
+Ext.define('MyApp.view.', {
+    extend: 'Ext.app.ViewModel',
+    alias: 'viewmodel.myalias',
+
+    data: {},
+    formulas: {},
+    stores: {}
+
+
+});
+
+Ext.define('MyApp.view.', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.myalias',
+
+    init: function() {},
+    initViewModel: function(vm) {},
+
 });

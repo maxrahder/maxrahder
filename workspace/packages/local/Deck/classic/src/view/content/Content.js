@@ -46,9 +46,12 @@ Ext.define('Deck.view.content.Content', {
         cls: 'title',
         tpl: '{text}',
         height: 38,
-        data: {
-            text: ''
+        bind: {
+            data: '{node.text}'
         }
+        // data: {
+        //     text: ''
+        // }
     }]
 
 });

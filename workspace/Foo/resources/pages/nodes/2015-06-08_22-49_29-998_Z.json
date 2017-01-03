@@ -1,1 +1,12 @@
-{"id":"2015-06-08_22-49_29-998_Z","i18n":{"_default":{"title":"Daily Schedule","translated":true}}}
+{
+    "id": "2015-06-08_22-49_29-998_Z",
+    "i18n": {
+        "_default": {
+            "title": "Daily Schedule",
+            "translated": true
+        },
+        "jp-JP": {
+            "title": '毎日のスケジュール'
+        }
+    }
+}

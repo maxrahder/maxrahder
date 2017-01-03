@@ -7,30 +7,58 @@ Ext.define('Deck.model.Node', {
             return Deck.model.Node.cache[fileId];
         },
     },
-    i18nProperty: function(property) {
-        var me = this;
-        if (!me.data.i18n) return '';
-        var language = Deck.util.Global.language;
-        var i18n = me.data.i18n[language];
-        var result;
-        if (i18n) {
-            result = (i18n[property] || me.data.i18n._default[property]);
-        } else {
-            result = me.data.i18n._default[property];
-        }
-        return result;
-    },
     fields: ['i18n', {
         name: 'text',
         convert: function(value, record) {
-            return record.i18nProperty('title');
-        }
+            var i18n = record.data.i18n;
+            if (!i18n) return '';
+            var result;
+            var language = record.data.language;
+            // Use the entry for the language, if there is one.
+            if (i18n[language]) {
+                result = i18n[language].title;
+            };
+            // If there is a value, use it. Else, use the default.
+            result = (result || record.data.i18n._default.title);
+            if (record.data.id === '2015-06-08_22-34_58-147_Z') {
+                console.log(result);
+            }
+            return result;
+        },
+        depends: ['language', 'i18n']
+    }, {
+        name: 'language',
+        defaultValue: '_default'
     }, {
         name: 'leaf',
         convert: function(value, record) {
             return record.data.leaf || !record.data.children;
         }
     }],
+
+    // Updates the i18n node language entry with the specified text.
+    updateText: function(text) {
+        var me = this;
+        var language = me.data.language;
+
+        // Bail out if the text isn't any different.
+        if (me.data.i18n[language] && (me.data.i18n[language].title === text)) return;
+
+        // Get the current value of i18n. If there is no entry for the
+        // language, create it. Then update the language entry's title.
+        // Finally, replace the i18n item, which is a depends, which will
+        // cause the text to be recalculated. If there is a way to simply
+        // update the text (and have stores know about it), that would
+        // work too.
+        var i18n = Ext.clone(me.data.i18n);
+        i18n[language] = i18n[language] || {
+            persisted: false,
+            title: ''
+        };
+        i18n[language].title = text;
+        me.set('i18n', i18n);
+    },
+
     // TODO: Finish this method
     getPersistableNode: function() {
         var o = {
@@ -65,7 +93,7 @@ Ext.define('Deck.model.Node', {
             var language = Deck.util.Global.language;
             var i18n = me.data.i18n;
             var fileId = me.data.id;
-            console.log(i18n);
+            // console.log(i18n);
             var text = Deck.model.Node.getCachedContent(fileId);
             if (text) {
                 deferred.resolve(text);

@@ -4,6 +4,10 @@
         "_default": {
             "title": "Who are You and Why are You Here?",
             "translated": true
+        },
+        "fr-FR": {
+            "title": "Qui êtes-vous et pourquoi êtes-vous ici",
+            "translated": false
         }
     }
 }
