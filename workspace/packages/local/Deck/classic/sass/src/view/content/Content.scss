@@ -1,12 +1,65 @@
 .deckcontentview {
-    font-family   : "Gotham", sans-serif;
-    letter-spacing: 1px;
+    .path {
+        font-family   : "Courier New",Courier,monospace;
+        font-size     : 1.1em;
+        letter-spacing: 0;
+        color         : blue;
+    }
 
-    p,
+    .code {
+        font-family   : "Courier New",Courier,monospace;
+        font-size     : 1.1em;
+        letter-spacing: 0;
+        color         : red;
+    }
+    font-family   : "Open Sans", sans-serif;
+    letter-spacing: 1px;
+    font-size     : 1.6em;
+
+    .x-panel-body {
+        width: 80%;
+    }
+
+    p {
+        font-family: "Open Sans", sans-serif;
+        line-height: 130%;
+        font-size  : 1.6em;
+        width      : 80%;
+        margin     : 0 0 1em;
+        color      : $text-color;
+    }
+
+    kbd {
+        @extend .path;
+    }
+
+    code {
+        @extend .code;
+    }
+
+    em,
+    i {
+        font-family   : 'Palatino', 'Times New Roman', serif;
+        color         : lighten($text-color, 10%);
+        font-size     : 1.05em;
+        letter-spacing: 0.025em;
+        font-style    : italic;
+    }
+
     ul {
+        font-family: "Open Sans", sans-serif;
         font-size  : 1.6em;
         line-height: 130%;
-        color      : #222222;
+        color      : $text-color;
+        padding    : 0 0 1em 1em;
+
+        code {
+            @extend .code;
+        }
+
+        kbd {
+            @extend .path;
+        }
     }
 
     pre code {
@@ -15,11 +68,11 @@
     }
 
     .title {
-        font-size       : $deck_title_font_size;
-        font-weight     : bold;
+        font-size       : $deck-title-font-size;
+        font-weight     : $deck-title-font-weight;
         background-color: white;
-        color           : #888888;
-        height          : 60em;
-        padding         : 0.4em 0 0.4em 0.4em;
+        color           : $deck-title-font-color;
+        height          : 50em;
+        padding         : 0.2em 0.4em 0.4em;
     }
 }

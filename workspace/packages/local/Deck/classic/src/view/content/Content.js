@@ -43,9 +43,10 @@ Ext.define('Deck.view.content.Content', {
         xtype: 'component',
         dock: 'top',
         itemId: 'title',
+        reference: 'title',
         cls: 'title',
         tpl: '{text}',
-        height: 38,
+        height: 48,
         bind: {
             data: '{node.text}'
         }

@@ -118,7 +118,7 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 				dock: 'top',
 				xtype: 'toolbar',
 				items: tbarItems
-			})
+			});
 		}
 
 		if (settings.allowEditing) {
@@ -183,7 +183,7 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 		var editor = this.down('#aceeditor');
 
 		this.getLayout().setActiveItem(editor);
-		// editor.focusEditor();
+		editor.focusEditor();
 
 
 	},
