@@ -1,1 +1,14 @@
-{"id":"2016-11-04_22-58_15-208_Z","i18n":{"_default":{"title":"An Awesome JavaScript Component Library","translated":true}}}
+{
+    "id": "2016-11-04_22-58_15-208_Z",
+    "i18n": {
+        "_default": {
+            "title": "An Awesome JavaScript Component Library",
+            "translated": true
+        },
+        "fr-FR": {
+            "persisted": false,
+            "title": "Une extraordinaire biblioth\u00e8que de composants JavaScript"
+        }
+    },
+    "leaf": true
+}

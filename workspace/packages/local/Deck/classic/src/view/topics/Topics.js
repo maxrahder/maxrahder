@@ -15,5 +15,27 @@ Ext.define('Deck.view.topics.Topics', {
         type: 'minus'
     }, {
         type: 'plus'
+    }],
+    bbar: [{
+        xtype: 'textfield',
+        flex: 1,
+        enableKeyEvents: true,
+        emptyText: 'Find topic',
+        listeners: {
+            keyup: 'onSearchFieldKeyUp'
+        }
+    }, {
+        xtype: 'segmentedbutton',
+        allowToggle: false,
+        defaults: {
+            listeners: {
+                click: 'onSearchClick'
+            }
+        },
+        items: [{
+            iconCls: 'x-fa fa-arrow-left'
+        }, {
+            iconCls: 'x-fa fa-arrow-right'
+        }]
     }]
 });

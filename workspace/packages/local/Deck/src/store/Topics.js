@@ -91,6 +91,72 @@ Ext.define('Deck.store.Topics', {
                 }
             }
         }
+    },
+    // Return an array of node IDs in traversal order starting with the root.
+    getNodeArray: function(recalculate) {
+        var me = this;
+        recalculate = !!recalculate;
+        if (recalculate || !me._nodeArray) {
+            me._nodeArray = [];
+            var root = me.getRoot();
+            root.cascadeBy(function(node) {
+                if (!node.isRoot()) {
+                    me._nodeArray.push(node);
+                }
+            });
+        }
+        return me._nodeArray;
+    },
+
+    // We need a few similar things:
+    // Find the next node matching an id or text, circular.
+    // Find the previous node matching an id or text, circular.
+    // Find the next node
+    // Find the previous node
+    findNextOrPrevious: function(node, previous) {
+        previous = !!previous;
+        var i = Ext.Array.indexOf(this.getNodeArray(), node);
+        if (i === -1) {
+            return null;
+        } else {
+            var a = this.getNodeArray();
+            if (previous) {
+                // One less, or if we're already at the first, return the last.
+                result = ((i === 0) ? a[a.length - 1] : a[i - 1]);
+            } else {
+                // One more, or if we're already at the last, return the first.
+                result = ((i === (a.length - 1)) ? a[0] : a[i + 1]);
+            }
+        }
+        return result;
+    },
+    // Starting with node, look for the node matching the id or text.
+    findNode: function(node, s, forward) {
+        forward = Ext.isDefined(forward) ? forward : true;
+        var re = new RegExp(s.trim(), 'i');
+        var array = this.getNodeArray();
+        if (!forward) {
+            array = array.clone().reverse();
+        }
+        for (var i = 0; i < a.length; i++) {
+            if (array[i].data.id.match(re) || array[i].data.text.match(re)) {
+                break;
+            }
+        }
+        if (i >= array.length) {
+            // Not found
+            result = node;
+        } else {
+            result = array[i];
+        }
+        return result;
+    },
+
+    // Get next when next is true, else prev.
+    getNext: function(node, next) {
+        var a = this.getNodeArray();
+        var result = Deck.util.Global.getNext(a, node, next);
+        return result;
     }
 
 });

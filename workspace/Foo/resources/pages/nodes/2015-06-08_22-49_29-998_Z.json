@@ -6,7 +6,12 @@
             "translated": true
         },
         "jp-JP": {
-            "title": '毎日のスケジュール'
+            "title": "\u6bce\u65e5\u306e\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb"
+        },
+        "fr-FR": {
+            "persisted": false,
+            "title": "Horaire quotidien"
         }
-    }
+    },
+    "leaf": true
 }

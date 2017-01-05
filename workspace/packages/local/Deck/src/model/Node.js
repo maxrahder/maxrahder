@@ -1,5 +1,6 @@
 Ext.define('Deck.model.Node', {
     extend: 'Ext.data.TreeModel',
+    extend: 'Ext.data.TreeModel',
     requires: ['Deck.util.Global', 'Deck.util.Backend'],
     statics: {
         cache: {},
@@ -131,27 +132,6 @@ Ext.define('Deck.model.Node', {
     cacheContent: function(text) {
         if (this.data.id) {
             Deck.model.Node.cache[this.data.id] = text;
-        }
-    },
-    next: function() {
-        // If on a leaf, find sibling or next uncle
-        // If on a parent, get first child
-        if (key.keyCode === Ext.event.Event.LEFT) {
-            this.lookup('tree').getSelectionModel().selectPrevious();
-        } else if (key.keyCode === Ext.event.Event.RIGHT) {
-            if (node.isLeaf()) {
-                newNode = node.nextSibling;
-            } else {
-                newNode = node.firstChild;
-                node.expand();
-            }
-            // If there isn't a child or sibling, up up and get the uncle
-            if (!newNode) {
-                parent = node.parentNode;
-                if (parent && !parent.isRoot()) {
-                    newNode = parent.nextSibling;
-                }
-            }
         }
     }
 
