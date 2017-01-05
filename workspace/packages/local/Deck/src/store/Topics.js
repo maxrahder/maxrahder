@@ -136,9 +136,11 @@ Ext.define('Deck.store.Topics', {
         var re = new RegExp(s.trim(), 'i');
         var array = this.getNodeArray();
         if (!forward) {
-            array = array.clone().reverse();
+            // Clone the array then referce the items. We want a Clone
+            // because referse() changes the array itself.
+            array = array.slice().reverse(); // Clone the array, then reverse the items
         }
-        for (var i = 0; i < a.length; i++) {
+        for (var i = 0; i < array.length; i++) {
             if (array[i].data.id.match(re) || array[i].data.text.match(re)) {
                 break;
             }

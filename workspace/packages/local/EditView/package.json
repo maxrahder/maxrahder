@@ -257,5 +257,33 @@
      *          }
      *      }
      */
-    "requires": ["ux"]
+
+    "js": [{
+        "path": "resources/lib/ace/src-min/ace.js",
+        "bundle": true
+    }, {
+        "path": "resources/lib/String/string.min.js",
+        "bundle": true
+    }, {
+        "path": "resources/lib/jsbeautify/lib/beautify.js",
+        "bundle": true
+    }],
+
+    "requires": ["ux"],
+    "framework": "ext",
+    "builds": {
+        "classic": {
+            "toolkit": "classic",
+            "theme": "theme-triton"
+        },
+        "modern": {
+            "toolkit": "modern",
+            "theme": "theme-material"
+        }
+    },
+    "development": {
+        "tests": {
+            "path": "test/project.json"
+        }
+    }
 }
