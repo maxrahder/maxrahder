@@ -1,6 +1,5 @@
 Ext.define('Deck.model.Node', {
     extend: 'Ext.data.TreeModel',
-    extend: 'Ext.data.TreeModel',
     requires: ['Deck.util.Global', 'Deck.util.Backend'],
     statics: {
         cache: {},
@@ -43,7 +42,17 @@ Ext.define('Deck.model.Node', {
         var language = me.data.language;
 
         // Bail out if the text isn't any different.
-        if (me.data.i18n[language] && (me.data.i18n[language].title === text)) return;
+        if (me.data.language) {
+            // There is a language property. If the text is unchangd, bail out.
+            if (me.data.i18n[language].title === text) {
+                return;
+            }
+        } else {
+            // No language property is there yet. If the text matches the default, bail out.
+            if (me.data.i18n._default.title === text) {
+                return;
+            }
+        }
 
         // Get the current value of i18n. If there is no entry for the
         // language, create it. Then update the language entry's title.
