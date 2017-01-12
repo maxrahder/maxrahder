@@ -1,0 +1,14 @@
+{
+    "i18n": {
+        "_default": {
+            "title": "One",
+            "fileId": "1.md",
+            "translated": true
+        },
+        "fr": {
+            "title": "Un",
+            "fileId": "1.md",
+        }
+    },
+    "leaf": true
+}

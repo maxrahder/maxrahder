@@ -1,0 +1,17 @@
+{
+    "id": "root",
+    "i18n": {
+        "_default": {
+            "title": "Topics",
+            "translated": true
+        },
+        "fr-fr": {
+            "title": "My french word"
+        }
+    },
+    "children": ["splash",
+        "2016-11-04_22-53_50-366_Z",
+        "whatis", "itunes", "mechanics", "architecture", "views", "controllers", "viewmodels", "data", "dataaware", "advanced",
+        "goingintoproduction", "modern", "appendix"
+    ]
+}

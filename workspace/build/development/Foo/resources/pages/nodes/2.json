@@ -1,0 +1,13 @@
+{
+    "i18n": {
+        "_default": {
+            "title": "Two",
+            "fileId": "2.md",
+            "translated": true
+        },
+        "fr": {
+            "title": "Deux"
+        }
+    },
+    "leaf": true
+}

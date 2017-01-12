@@ -1,0 +1,36 @@
+{
+    "i18n": {
+        "_default": {
+            "title": "Root"
+        }
+    },
+    "leaf": false,
+    "children": [{
+        "fileId": "1",
+        "i18n": {
+            "_default": {
+                "title": "One",
+                "translated": true
+            },
+            "fr": {
+                "title": "Un"
+            }
+        },
+        "leaf": true,
+        "hidden": false
+    }, {
+        "fileId": "2",
+        "i18n": {
+            "_default": {
+                "title": "Two",
+                "translated": true
+            },
+            "fr": {
+                "title": "Deux"
+            }
+        },
+        "leaf": true,
+        "hidden": false
+    }],
+    "hidden": false
+}
