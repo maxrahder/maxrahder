@@ -3,15 +3,13 @@ Ext.define('Deck.view.topics.Topics', {
     xtype: 'deck-topics',
     requires: ['Deck.view.topics.TopicsViewController', 'Deck.util.Global'],
     controller: 'topicsviewcontroller',
+    viewModel: {},
     rootVisible: false,
     useArrows: true,
     initComponent: function() {
         this.callParent(arguments);
     },
     tools: [{
-        type: 'save',
-        callback: 'onSaveToolClick'
-    }, {
         type: 'minus'
     }, {
         type: 'plus'
@@ -20,6 +18,7 @@ Ext.define('Deck.view.topics.Topics', {
         xtype: 'textfield',
         flex: 1,
         enableKeyEvents: true,
+        reference: 'searchfield',
         emptyText: 'Find topic',
         listeners: {
             keyup: 'onSearchFieldKeyUp'
@@ -32,10 +31,19 @@ Ext.define('Deck.view.topics.Topics', {
                 click: 'onSearchClick'
             }
         },
+        defaults: {
+            handler: 'onArrowClick',
+            disabled: true,
+            bind: {
+                disabled: '{!searchfield.value}'
+            }
+        },
         items: [{
-            iconCls: 'x-fa fa-arrow-left'
+            iconCls: 'x-fa fa-arrow-left',
+            itemId: 'left'
         }, {
-            iconCls: 'x-fa fa-arrow-right'
+            iconCls: 'x-fa fa-arrow-right',
+            itemId: 'right'
         }]
     }]
 });

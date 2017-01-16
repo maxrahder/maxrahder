@@ -1,8 +1,9 @@
 Ext.application({
     name: 'TestEditView',
 
-    launch: function () {
-        Ext.select('pre').each(function (element) {
+    launch: function() {
+
+        Ext.select('pre').each(function(element) {
 
             console.dir(element);
 

@@ -670,8 +670,8 @@ $relative-image-path-for-uis: $theme-base-resource-path;
 @import '../../../../ext/modern/theme-base/sass/etc/all';
 
 /* including package font-awesome */
-$font-awesome-resource-root: 'font-awesome' !default;
-$font-awesome-resource-path: 'font-awesome/images' !default;
+$font-awesome-resource-root: '' !default;
+$font-awesome-resource-path: 'images' !default;
 $current-package: 'font-awesome';
 $current-resource-root: $font-awesome-resource-root;
 $relative-image-path-for-uis: $font-awesome-resource-path;

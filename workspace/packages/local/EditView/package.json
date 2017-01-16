@@ -259,7 +259,7 @@
      */
 
     "js": [{
-        "path": "resources/lib/ace/src-min/ace.js",
+        "path": "resources/lib/ace/src/ace.js",
         "bundle": true
     }, {
         "path": "resources/lib/String/string.min.js",

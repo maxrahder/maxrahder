@@ -142,7 +142,7 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 				itemId: 'viewwrapper',
 				library: settings.library,
 				headHtml: me.getHeadHtml(),
-				code: me.getText()
+				// code: me.getText() // Hack -- see the Ext.delay() below
 			});
 		}
 
@@ -156,7 +156,10 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 		if (settings.run) {
 			me.showView();
 		} else {
-			me.showCode();
+			// Hack, because code wasn't showing up initially.
+			Ext.defer(function() {
+				me.showCode();
+			}, 1);
 		}
 
 		if (createToolbar) {

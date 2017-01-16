@@ -3,8 +3,13 @@ Ext.define('Deck.view.topics.TopicsViewController', {
     alias: 'controller.topicsviewcontroller',
     requires: ['Deck.store.Topics', 'Deck.model.Node', 'Ext.event.Event'],
 
-    onSaveToolClick: function(panel, tool) {
-        this.getViewModel().get('node').persistNode();
+    onArrowClick: function(button) {
+        var me = this;
+        var value = me.lookup('searchfield').getValue();
+        if (value) {
+            var forward = (button.itemId === 'right');
+            me.goToPage(value, forward);
+        }
     },
     onSearchFieldKeyUp: function(field, event) {
         var me = this;
@@ -13,17 +18,24 @@ Ext.define('Deck.view.topics.TopicsViewController', {
             if (value) {
                 // Pressing enter searches forward, shift-enter searhces backwards.
                 var forward = event.shiftKey;
-                var vm = me.getViewModel();
-                var store = vm.get('topics');
-                var node = vm.get('node');
-                var found = store.findNode(node, value, forward);
-                if (found) {
-                    me.getView().setSelection(found);
-                    var parent = found.parentNode;
-                    while (parent) {
-                        parent.expand();
-                        parent = parent.parentNode;
-                    }
+                me.goToPage(value, forward);
+            }
+        }
+    },
+    goToPage: function(value, forward) {
+        var me = this;
+        if (value) {
+            // Pressing enter searches forward, shift-enter searhces backwards.
+            var vm = me.getViewModel();
+            var store = vm.get('topics');
+            var node = vm.get('node');
+            var found = store.findNode(node, value, forward);
+            if (found) {
+                me.getView().setSelection(found);
+                var parent = found.parentNode;
+                while (parent) {
+                    parent.expand();
+                    parent = parent.parentNode;
                 }
             }
         }

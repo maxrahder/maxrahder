@@ -9,7 +9,7 @@ Ext.define('Deck.view.main.MainViewController', {
     },
     processRoute: function(id) {
         if (id) {
-            // console.log(id);
+            console.log(id);
         }
     },
 

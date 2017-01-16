@@ -5557,8 +5557,8 @@
     /* FONT PATH
  * -------------------------- */
     font-family: 'FontAwesome';
-    src: url('../../resources/font-awesome/fonts/fontawesome-webfont.eot?v=4.4.0');
-    src: url('../../resources/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('../../resources/font-awesome/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('../../resources/font-awesome/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('../../resources/font-awesome/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('../../resources/font-awesome/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+    src: url('../../resources/fonts/fontawesome-webfont.eot?v=4.4.0');
+    src: url('../../resources/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('../../resources/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('../../resources/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('../../resources/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('../../resources/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -8206,8 +8206,8 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/packages/font-ext/sass/src/all.scss:3 */
 @font-face {
     font-family: 'ExtJS';
-    src: url('../../classic/resources/font-ext/fonts/ExtJS.eot?-tqegh9');
-    src: url('../../classic/resources/font-ext/fonts/ExtJS.eot?#iefix-tqegh9') format('embedded-opentype'), url('../../classic/resources/font-ext/fonts/ExtJS.ttf?-tqegh9') format('truetype'), url('../../classic/resources/font-ext/fonts/ExtJS.woff?-tqegh9') format('woff'), url('../../classic/resources/font-ext/fonts/ExtJS.svg?-tqegh9#ExtJS') format('svg');
+    src: url('../../classic/resources/fonts/ExtJS.eot?-tqegh9');
+    src: url('../../classic/resources/fonts/ExtJS.eot?#iefix-tqegh9') format('embedded-opentype'), url('../../classic/resources/fonts/ExtJS.ttf?-tqegh9') format('truetype'), url('../../classic/resources/fonts/ExtJS.woff?-tqegh9') format('woff'), url('../../classic/resources/fonts/ExtJS.svg?-tqegh9#ExtJS') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -9060,16 +9060,12 @@
     background: -moz-linear-gradient(top, #fff 0%, #000 100%);
     /* FF3.6+ */
     background: -webkit-linear-gradient(top, #fff 0%, #000 100%);
-    /* FF3.6+ */
     /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top, #fff 0%, #000 100%);
-    /* Chrome10+,Safari5.1+ */
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #fff 0%, #000 100%);
-    /* Opera 11.10+ */
     /* IE10+ */
     background: linear-gradient(to bottom, #fff 0%, #000 100%);
-    /* IE10+ */
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
 }
@@ -9078,16 +9074,12 @@
     background: -moz-linear-gradient(top, red 0%, #000 100%);
     /* FF3.6+ */
     background: -webkit-linear-gradient(top, red 0%, #000 100%);
-    /* FF3.6+ */
     /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top, red 0%, #000 100%);
-    /* Chrome10+,Safari5.1+ */
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, red 0%, #000 100%);
-    /* Opera 11.10+ */
     /* IE10+ */
     background: linear-gradient(to bottom, red 0%, #000 100%);
-    /* IE10+ */
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#000000',GradientType=0 );
 }
