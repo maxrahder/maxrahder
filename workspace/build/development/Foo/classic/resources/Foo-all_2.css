@@ -8444,202 +8444,6 @@
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:232 */
-.x-toolbar-Test {
-    padding: 6px 0 6px 8px;
-    border-style: solid;
-    border-color: #d1d1d1;
-    border-width: 1px;
-    background-image: none;
-    background-color: #fff;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:236 */
-.x-toolbar-Test.x-rtl {
-    padding: 6px 8px 6px 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:248 */
-.x-toolbar-Test .x-tool-img {
-    color: #929292;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:263 */
-.x-toolbar-Test .x-toolbar-item {
-    margin: 0 8px 0 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:267 */
-.x-toolbar-Test .x-toolbar-item.x-rtl {
-    margin: 0 0 0 8px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:273 */
-.x-toolbar-Test .x-toolbar-separator-horizontal {
-    margin: 0 8px 0 0;
-    height: 14px;
-    border-style: solid;
-    border-width: 0 0 0 1px;
-    border-left-color: #d1d1d1;
-    border-right-color: #fff;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:282 */
-.x-toolbar-Test .x-box-menu-after {
-    margin: 0 8px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:287 */
-.x-toolbar-Test-vertical {
-    padding: 6px 8px 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:291 */
-.x-toolbar-Test-vertical.x-rtl {
-    padding: 6px 8px 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:296 */
-.x-toolbar-Test-vertical .x-toolbar-item {
-    margin: 0 0 6px 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:299 */
-.x-toolbar-Test-vertical .x-toolbar-item.x-rtl {
-    margin: 0 0 6px 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:305 */
-.x-toolbar-Test-vertical .x-toolbar-separator-vertical {
-    margin: 0 5px 6px;
-    border-style: solid none;
-    border-width: 1px 0 0;
-    border-top-color: #d1d1d1;
-    border-bottom-color: #fff;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:313 */
-.x-toolbar-Test-vertical .x-box-menu-after {
-    margin: 6px 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:320 */
-.x-nlg .x-toolbar-Test {
-    background-image: url(images/toolbar/toolbar-Test-bg.gif) !important;
-    background-repeat: repeat-x;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:328 */
-.x-toolbar-text-Test {
-    padding: 0 4px;
-    color: #4d4d4d;
-    font: 300 13px/16px 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:334 */
-.x-toolbar-spacer-Test {
-    width: 2px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:170 */
-.x-toolbar-Test-scroller .x-box-scroller-body-horizontal {
-    margin-left: 24px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:175 */
-.x-toolbar-Test-scroller.x-rtl .x-box-scroller-body-horizontal {
-    margin-left: 0;
-    margin-right: 24px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:183 */
-.x-toolbar-Test-vertical-scroller .x-box-scroller-body-vertical {
-    margin-top: 26px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:188 */
-.x-box-scroller-toolbar-Test {
-    cursor: pointer;
-    color: #929292;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
-    opacity: 0.6;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:198 */
-.x-box-scroller-toolbar-Test.x-box-scroller-hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    opacity: 0.8;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:204 */
-.x-box-scroller-toolbar-Test.x-box-scroller-pressed {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    opacity: 1;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:210 */
-.x-box-scroller-toolbar-Test.x-box-scroller-disabled {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
-    opacity: 0.25;
-    cursor: default;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:220 */
-.x-box-scroller-toolbar-Test.x-box-scroller-left,
-.x-box-scroller-toolbar-Test.x-box-scroller-right {
-    width: 24px;
-    height: 24px;
-    top: 50%;
-    margin-top: -12px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:247 */
-.x-box-scroller-toolbar-Test.x-box-scroller-left {
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-bottom: 0;
-    font: 16px/24px FontAwesome;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:126 */
-.x-box-scroller-toolbar-Test.x-box-scroller-left:before {
-    content: "\f053";
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:272 */
-.x-box-scroller-toolbar-Test.x-box-scroller-right {
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-bottom: 0;
-    font: 16px/24px FontAwesome;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:126 */
-.x-box-scroller-toolbar-Test.x-box-scroller-right:before {
-    content: "\f054";
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:299 */
-.x-box-scroller-toolbar-Test.x-box-scroller-top,
-.x-box-scroller-toolbar-Test.x-box-scroller-bottom {
-    height: 24px;
-    width: 24px;
-    left: 50%;
-    margin-left: -12px;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:326 */
-.x-box-scroller-toolbar-Test.x-box-scroller-top {
-    margin-top: 4px;
-    margin-right: 0;
-    margin-bottom: 4px;
-    font: 16px/24px FontAwesome;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:126 */
-.x-box-scroller-toolbar-Test.x-box-scroller-top:before {
-    content: "\f077";
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:351 */
-.x-box-scroller-toolbar-Test.x-box-scroller-bottom {
-    margin-top: 4px;
-    margin-right: 0;
-    margin-bottom: 4px;
-    font: 16px/24px FontAwesome;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:126 */
-.x-box-scroller-toolbar-Test.x-box-scroller-bottom:before {
-    content: "\f078";
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:376 */
-.x-ie8 .x-box-scroller-toolbar-Test {
-    background-color: #fff;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/toolbar/Toolbar.scss:382 */
-.x-toolbar-more-icon {
-    font: 16px/1 FontAwesome;
-    color: #929292;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/etc/mixins/font-icon.scss:126 */
-.x-toolbar-more-icon:before {
-    content: "\f0c9";
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
-.x-cmd-slicer.x-toolbar-Test:before {
-    /*<if slicer>*/
-    display: none;
-    content: "x-slicer:, bg:url(images/toolbar/toolbar-Test-bg.gif), stretch:bottom" !important;
-}
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/packages/ux/sass/src/Gauge.scss:1 */
 .x-gauge-text {
     position: absolute;
@@ -9252,6 +9056,58 @@ tr.x-grid-subtable-row {
     font-size: 1.6em;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:2 */
+.deckcontentview div.expander {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.6em;
+    letter-spacing: 0;
+    line-height: 130%;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:9 */
+.deckcontentview div.expander.expanded .content {
+    -webkit-transition-property: -webkit-opacity -webkit-padding;
+    -moz-transition-property: -moz-opacity -moz-padding;
+    -o-transition-property: -o-opacity -o-padding;
+    transition-property: opacity, padding;
+    -webkit-transition-duration: 1s, 0.3s;
+    -moz-transition-duration: 1s, 0.3s;
+    -o-transition-duration: 1s, 0.3s;
+    transition-duration: 1s, 0.3s;
+    height: auto;
+    opacity: 1;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 2em 1em;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:19 */
+.deckcontentview div.expander.collapsed .content {
+    -webkit-transition-property: -webkit-opacity -webkit-padding;
+    -moz-transition-property: -moz-opacity -moz-padding;
+    -o-transition-property: -o-opacity -o-padding;
+    transition-property: opacity, padding;
+    -webkit-transition-duration: 1s, 0.3s;
+    -moz-transition-duration: 1s, 0.3s;
+    -o-transition-duration: 1s, 0.3s;
+    transition-duration: 1s, 0.3s;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin: 0 0 0 1em;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:28 */
+.deckcontentview div.expanded:before {
+    font-family: "FontAwesome";
+    color: #aaa;
+    content: "\f056";
+    margin: 0 4px 0 0;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:35 */
+.deckcontentview div.collapsed:before {
+    font-family: "FontAwesome";
+    color: #aaa;
+    content: "\f055";
+    margin: 0 4px 0 0;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:42 */
 .deckcontentview .path,
 .deckcontentview kbd {
     font-family: "Courier New", Courier, monospace;
@@ -9259,7 +9115,7 @@ tr.x-grid-subtable-row {
     letter-spacing: 0;
     color: blue;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:9 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:49 */
 .deckcontentview .code,
 .deckcontentview code {
     font-family: "Courier New", Courier, monospace;
@@ -9267,11 +9123,11 @@ tr.x-grid-subtable-row {
     letter-spacing: 0;
     color: red;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:19 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:59 */
 .deckcontentview .x-panel-body {
     width: 80%;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:23 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:63 */
 .deckcontentview p {
     font-family: "Open Sans", sans-serif;
     line-height: 130%;
@@ -9280,7 +9136,7 @@ tr.x-grid-subtable-row {
     margin: 0 0 1em;
     color: #444;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:40 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:80 */
 .deckcontentview em,
 .deckcontentview i {
     font-family: 'Palatino', 'Times New Roman', serif;
@@ -9289,7 +9145,7 @@ tr.x-grid-subtable-row {
     letter-spacing: 0.025em;
     font-style: italic;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:49 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:89 */
 .deckcontentview ul {
     font-family: "Open Sans", sans-serif;
     font-size: 1.6em;
@@ -9297,12 +9153,12 @@ tr.x-grid-subtable-row {
     color: #444;
     padding: 0 0 1em 1em;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:65 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:105 */
 .deckcontentview pre code {
     font-size: 1.6em;
     line-height: 130%;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:70 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:110 */
 .deckcontentview .title {
     font-size: 2em;
     font-weight: light;

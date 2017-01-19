@@ -106,13 +106,13 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
 
     },
 
-    constructor: function (config) {
+    constructor: function(config) {
         var c = config.library ? EditView.view.editview.JavaScriptViewer[config.library] : {};
         config = Ext.apply(c, config);
         this.callParent(arguments);
     },
 
-    onRender: function () {
+    onRender: function() {
         var me = this;
         me.callParent();
         // EditView.util.SenchaCdnToken.refresh(function() {
@@ -120,15 +120,20 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
         // });
     },
 
-    destroy: function () {
-        this.getFrame().contentWindow.onerror = null;
+    destroy: function() {
+        // TODO: I can't remember what this code regarding onerror is all about.
+        // Maybe that's the event handler set up as the iframe was created, and
+        // we're just cleaning up.
+        if (this.iframeEl && this.iframeEl.contentWindow) {
+            this.iframeEl.contentWindow.onerror = null;
+        };
         this.callParent();
     },
 
 
     html: '<iframe width="100%" height="100%" frameborder="0"></iframe>',
 
-    runJavaScript: function (javascript) {
+    runJavaScript: function(javascript) {
         var me = this;
 
         var doc = me.getDoc();
@@ -141,7 +146,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
         doc.write('<!DOCTYPE html>');
         doc.close();
 
-        me.getFrame().contentWindow.onerror = function (message, source, line, column, error) {
+        me.getFrame().contentWindow.onerror = function(message, source, line, column, error) {
             line--; // Our code IS inserted on the second relative line
             if (error) {
                 doc.body.innerHTML = '<p>' + error.message + ' on line ' + line + ', column ' + column + '.</p>';
@@ -182,7 +187,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
             script = doc.createElement('script');
             script.type = 'text/javascript';
             script.src = url;
-            script.onload = function () {
+            script.onload = function() {
                 sequentiallyLoadScriptUrls(urls);
             };
             head.appendChild(script);

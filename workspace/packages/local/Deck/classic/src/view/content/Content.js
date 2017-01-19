@@ -50,9 +50,6 @@ Ext.define('Deck.view.content.Content', {
         bind: {
             data: '{node.text}'
         }
-        // data: {
-        //     text: ''
-        // }
     }]
 
 });

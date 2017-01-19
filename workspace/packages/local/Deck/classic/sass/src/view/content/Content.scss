@@ -1,4 +1,44 @@
 .deckcontentview {
+    div.expander {
+        font-family   : "Courier New",Courier,monospace;
+        font-size     : 1.6em;
+        letter-spacing: 0;
+        line-height   : 130%;
+    }
+
+    div.expander.expanded .content {
+        @include transition-property(opacity, padding);
+        @include transition-duration(1s, 0.3s);
+        height  : auto;
+        opacity : 1;
+        overflow: hidden;
+        padding : 0;
+        margin  : 0 0 2em 1em;
+    }
+
+    div.expander.collapsed .content {
+        @include transition-property(opacity, padding);
+        @include transition-duration(1s, 0.3s);
+        height  : 0;
+        overflow: hidden;
+        opacity : 0;
+        margin  : 0 0 0 1em;
+    }
+
+    div.expanded:before {
+        font-family: "FontAwesome";
+        color      : #aaa;
+        content    : "\f056";
+        margin     : 0 4px 0 0;
+    }
+
+    div.collapsed:before {
+        font-family: "FontAwesome";
+        color      : #aaa;
+        content    : "\f055";
+        margin     : 0 4px 0 0;
+    }
+
     .path {
         font-family   : "Courier New",Courier,monospace;
         font-size     : 1.1em;

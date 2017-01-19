@@ -21,9 +21,8 @@ Ext.define('Deck.view.content.ContentMethods', {
         // may not be necessary.
         me.suspendEvents();
 
-        // me.addCls('x-hidden');
-
-        // me.removeAll();
+        // Clean up old HTML
+        me.getEl().select('div.expander', true).clearListeners();
 
         me.setHtml(html);
 
@@ -50,22 +49,24 @@ Ext.define('Deck.view.content.ContentMethods', {
                 pre: element,
                 renderTo: element
             });
-            // preTag.addCls('x-hidden');
             me.preTags.push(preTag);
         });
 
-        // Ext.defer(10, function(){
-        //     Ext.Array.forEach(me.preTags, function(item) {
-        //         me.preTags.removeCls('x-hidden');
-        //     });
-        // })
+        me.getEl().select('div.expander', true).on('click', function(event) {
+            if (Ext.fly(event.target).hasCls('expanded')) {
+                Ext.fly(event.target).removeCls('expanded');
+                Ext.fly(event.target).addCls('collapsed');
+            } else {
+                Ext.fly(event.target).removeCls('collapsed');
+                Ext.fly(event.target).addCls('expanded');
+            }
+        });
 
         // The idea is to make sure the user always sees the start of a given
         // page, but I'm not sure it does anything.
         me.scrollTo(0, 0);
 
-        // me.removeCls('x-hidden');
-
         me.resumeEvents();
     }
+
 });

@@ -59,7 +59,7 @@
     "builds": {
         "classic": {
             "toolkit": "classic",
-            "theme": "theme-triton"
+            "theme": "DeckTheme"
         },
         "modern": {
             "toolkit": "modern",

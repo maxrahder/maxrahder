@@ -1,6 +1,7 @@
 Ext.define('Deck.view.topics.Topics', {
-    extend: 'Ext.tree.Panel',
     xtype: 'deck-topics',
+    extend: 'Ext.tree.Panel',
+    mixins: ['Deck.view.topics.TopicsMethods'],
     requires: ['Deck.view.topics.TopicsViewController', 'Deck.util.Global'],
     controller: 'topicsviewcontroller',
     viewModel: {},
@@ -27,16 +28,12 @@ Ext.define('Deck.view.topics.Topics', {
         xtype: 'segmentedbutton',
         allowToggle: false,
         defaults: {
-            listeners: {
-                click: 'onSearchClick'
-            }
-        },
-        defaults: {
             handler: 'onArrowClick',
-            disabled: true,
-            bind: {
-                disabled: '{!searchfield.value}'
-            }
+            // TODO: This binding isn't working!
+            // disabled: true,
+            // bind: {
+            //     disabled: '{searchfield.value}'
+            // }
         },
         items: [{
             iconCls: 'x-fa fa-arrow-left',

@@ -17,7 +17,6 @@ Ext.define('Deck.store.Topics', {
             var danglingReferences = [];
             var readCount = 0;
 
-            // Traverse all children, but skipping children in skip:[]
             readFile(loadNodesRoot, '_root', skippedPages);
 
             return deferred;

@@ -141,8 +141,7 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 				xtype: 'javascriptviewwrapper',
 				itemId: 'viewwrapper',
 				library: settings.library,
-				headHtml: me.getHeadHtml(),
-				// code: me.getText() // Hack -- see the Ext.delay() below
+				headHtml: me.getHeadHtml()
 			});
 		}
 
@@ -213,10 +212,11 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 	getTbarConfig: function() {
 		return [{
 			xtype: 'button',
-			text: 'Source',
-			width: 100,
+			// text: 'Source',
+			// width: 100,
 			iconCls: 'x-fa fa-file-code-o',
 			itemId: 'showcode',
+			tooltip: 'Source code',
 			allowDepress: false,
 			handler: function(button) {
 				this.up('pretageditandview').showCode();
@@ -224,8 +224,8 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 			hidden: true
 		}, {
 			xtype: 'button',
-			text: 'Run',
-			width: 100,
+			// text: 'Run',
+			// width: 100,
 			iconCls: 'x-fa fa-play-circle',
 			//tooltip: 'Run',
 			itemId: 'showview',
@@ -235,8 +235,8 @@ Ext.define('EditView.view.editview.PreTagEditAndView', {
 			hidden: true
 		}, {
 			xtype: 'button',
-			text: 'Beautify',
-			width: 100,
+			// text: 'Beautify',
+			// width: 100,
 			iconCls: 'x-fa fa-magic',
 			tooltip: 'Beautify',
 			itemId: 'beautify',

@@ -20,9 +20,6 @@ Ext.define('Deck.model.Node', {
             };
             // If there is a value, use it. Else, use the default.
             result = (result || record.data.i18n._default.title);
-            if (record.data.id === '2015-06-08_22-34_58-147_Z') {
-                console.log(result);
-            }
             return result;
         },
         depends: ['language', 'i18n']
@@ -104,7 +101,7 @@ Ext.define('Deck.model.Node', {
             var i18n = me.data.i18n;
             var fileId = me.data.id;
             // console.log(i18n);
-            var text = Deck.model.Node.getCachedContent(fileId);
+            var text = ''; // Deck.model.Node.getCachedContent(fileId);
             if (text) {
                 deferred.resolve(text);
             } else {
