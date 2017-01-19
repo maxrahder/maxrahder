@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pivot Grid | Ext JS 6.2.0 </title>
+    <!--  Generated on November, 11 2016 at 0:39 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta property="og:image" content="../../home-images/sencha-200.png" />
+    <meta property="og:title" content="Pivot Grid | Ext JS 6.2.0 " />
+    <meta property="og:description" content="Pivot Grid in Ext JS 6.2 The Pivot Grid component enables rapid summarization of large sets of data.  It provides a simple way to condense many data points i..." />
+    <meta property="og:site_name" content="Sencha Documentation" />
+    <meta property="og:url" content="http://docs.sencha.com/extjs/6.2.0/components/pivot_grid.html" />
+    <meta name="description" content="Pivot Grid in Ext JS 6.2 The Pivot Grid component enables rapid summarization of large sets of data.  It provides a simple way to condense many data points i...">
+    <style>
+        /*!
+         *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+         *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+         */
+        /* FONT PATH
+         * -------------------------- */
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../css/fonts/fontawesome-webfont.eot?v=4.5.0');
+            src: url('../../css/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+            url('../../css/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+            url('../../css/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+            url('../../css/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+            url('../../css/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="../../css/prism.css">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+</head>
+<body class=" is-guide  has-guides  has-quick-start  has-api tree-shown">
+    <script type="text/javascript">
+        function getOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            } else if(userAgent.match(/Android/i)) {
+                return 'android';
+            }
+        }
+
+        var hash = document.location.hash,
+                rawhash, newhash, prop, member,
+                isIE8 = false;
+
+        if(hash.indexOf('#!') > -1) {
+            hash    = hash.replace('#!/api/','');
+            rawhash = hash.split('-'),
+            prop    = (rawhash[1] == 'static') ? rawhash[2] : rawhash[1],
+            member  = (rawhash[1] == 'static') ? rawhash[3] : rawhash[2],
+            newhash = rawhash[0] + '.html';
+
+            if (prop && member) {
+                newhash += '#' + prop + '-' + member;
+            }
+
+            document.location.href = newhash;
+        }
+
+        document.body.className += ' ' + getOS();
+    </script>
+    <!--[if IE 8]>
+    <script type='text/javascript'>
+        isIE8 = true;
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        var ExtL = ExtL || {},
+            specificId = 'components_-_pivot_grid',
+            isClassTemplate = false,
+            isHome = false,
+            isLanding = false,
+            isApi = false,
+            isGuide = true,
+            isQuickStart = false,
+            hasApi = true,
+            hasGuides = true,
+            hasQuickStart = true
+            singleton = false,
+            pageName = 'Pivot Grid',
+            pageTitle = 'Ext JS',
+            homePath = '../../',
+            product = 'extjs',
+            pversion = '6.2.0-modern',
+            hasVersions = true,
+            myToolkit = 'modern',
+            myVersion = '6.2.0',
+            appliesToToolkit = 'universal';
+
+            if (!isIE8) {
+                document.write('<script type=\"text/javascript\" src=\"../../js/prism.js\"><\/script>');
+            }
+    </script>
+    <script type="text/javascript" src="../../js/ace.js"></script>
+    <script type="text/javascript" src="../../js/beautify.js"></script>
+    <script type="text/javascript" src="../../js/app.js"></script>
+    <div id="help-wrap">
+        <div class="help-header">
+            Docs Help
+            <div id="help-close"></div>
+        </div>
+        <div class="classText">
+            <div class="toc">
+                <h2>Contents</h2>
+                    <a class="toc-page-h2" href="#terms-icons-and-labels">Terms, Icons, and Labels</a>
+                    <a class="toc-page-h3" href="#access-levels">Access Levels</a>
+                    <a class="toc-page-h3" href="#member-types">Member Types</a>
+                    <a class="toc-page-h3" href="#member-syntax">Member Syntax</a>
+                    <a class="toc-page-h3" href="#member-flags">Member Flags</a>
+                    <a class="toc-page-h3" href="#class-icons">Class Icons</a>
+                    <a class="toc-page-h3" href="#member-icons">Member Icons</a>
+                    <a class="toc-page-h2" href="#navigation-and-features">Navigation and Features</a>
+                    <a class="toc-page-h3" href="#class-member-quick-nav-menu">Class Member Quick-Nav Menu</a>
+                    <a class="toc-page-h3" href="#getter-and-setter-methods">Getter and Setter Methods</a>
+                    <a class="toc-page-h3" href="#history-bar">History Bar</a>
+                    <a class="toc-page-h3" href="#search-and-filters">Search and Filters</a>
+                    <a class="toc-page-h3" href="#api-doc-class-metadata">API Doc Class Metadata</a>
+                    <a class="toc-page-h3" href="#expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</a>
+                    <a class="toc-page-h3" href="#desktop-vs-mobile-view">Desktop -vs- Mobile View</a>
+                    <a class="toc-page-h3" href="#viewing-the-class-source">Viewing the Class Source</a>
+            </div>
+            <h2 id="terms-icons-and-labels">Terms, Icons, and Labels</h2>
+    <p>Many classes have shortcut names used when creating (instantiating) a class with a 
+    configuration object.  The shortcut name is referred to as an <code>alias</code> (or <code>xtype</code> if the 
+    class extends Ext.Component).  The alias/xtype is listed next to the class name of 
+    applicable classes for quick reference.</p>
+    <h3 id="access-levels">Access Levels</h3>
+    <p>Framework classes or their members may be specified as <code>private</code> or <code>protected</code>.  Else, 
+    the class / member is <code>public</code>.  <code>Public</code>, <code>protected</code>, and <code>private</code> are access 
+    descriptors used to convey how and when the class or class member should be used.</p>
+    <ul>
+    <li><p><strong>Public</strong> classes and class members are available for use by any other class or 
+    application code and may be relied upon as a stable and persistent within major product 
+    versions.  Public classes and members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Protected</strong> class members are stable <code>public</code> members intended to be used by the 
+    owning class or its subclasses.  Protected members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Private</strong> classes and class members are used internally by the framework and are not 
+    intended to be used by application developers.  Private classes and members may change or 
+    be omitted from the framework at any time without notice and should not be relied upon in 
+    application logic.</p>
+    </li>
+    </ul>
+    <h3 id="member-types">Member Types</h3>
+    <ul>
+    <li><strong>Config</strong> - The configuration options for a class.</li>
+    <li><strong>Property</strong> - Set once a class is instantiated. *See Read Only below.</li>
+    <li><strong>Method</strong> - Actions that can be performed by a class.  Methods should be read as 
+    instance methods and can only be called from a instance of a given class.  Static methods 
+    that can be called directly from the class itself will have a <code>static</code> label next to the 
+    method name.  *See Static below.</li>
+    <li><strong>Event</strong> - Events are specific to the framework event system allowing for classes to 
+    programmatically raise an event to be handled by one or more event handler methods.  DOM 
+    events, while handled by the framework event system, are not specifically described 
+    within the API documentation.  *For DOM events refer to the 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events">event reference</a> page from MDN.</li>
+    <li><strong>Theme Variable</strong> - Variables used by the visual theme engine employed by the 
+    framework.</li>
+    <li><strong>Theme Mixin</strong> - Functions used by the visual theme engine employed by the framework 
+    and may use values set in various Theme Variables.</li>
+    </ul>
+    <h3 id="member-syntax">Member Syntax</h3>
+    <p>Below is an example class member that we can disect to show the syntax of a class member 
+    (the lookupComponent method as viewed from the Ext.button.Button class in this case).</p>
+    <div style="position: relative;" class="show-inherited show-protected members">
+        <div style="border: 1px solid #E4E4E4;" class="classmembers member-protected isNotStatic isInherited member-temp-expanded" data-member-name="lookupComponent">
+            <div class="collapse-toggle"></div>
+            <div class="source-class"><a href="javascript:void(0);">Ext.container.Container</a><div class="viewSource"><a href="javascript:void(0);"></a><a target="_blank" href="javascript:void(0);">view source</a></div></div>
+            <div class="member-header">
+            <a href="javascript:void(0);" class="member-name-link"><span data-ref="method-lookupComponent" class="member-name"><strong>lookup</strong>Component</span></a>
+            <span class="params-list"> ( item )</span> : <span class="memberType">Ext.Component</span>
+            <div class="member-tags"><span class="protected">protected</span></div>
+        </div>
+            <p>Called when a raw config object is added to this container either during initialization of the <a href="javascript:void(0);">items</a> config,
+        or when new items are <a href="javascript:void(0);">added), or {@link #insert inserted</a>.</p>
+        <p>This method converts the passed object into an instanced child component.</p>
+        <p>This may be overridden in subclasses when special processing needs to be applied to child creation.</p>
+                    <div class="detail-header">Parameters</div>
+                <p><span class="params-list">item</span> :
+                        <span class="memberType">&nbsp;Object</span>
+                </p>
+                <div class="params-desc"><p>The config object being added.</p></div>
+                <div class="detail-header">Returns</div>
+                <span style="margin-left:12px;" class="memberType">Ext.Component</span>
+                <div class="return-desc"><p>The component to be added.</p>
+            </div>
+        </div>
+    </div>
+    
+    <p>Let&#39;s look at each part of the member row:</p>
+    <ul>
+    <li><strong>Expand/Collapse</strong> - On the left-hand size of the member row is a control used to 
+    expand and collapse each member row to show / hide member details.</li>
+    <li><strong>Member Name</strong> - The name of the class member (<code>lookupComponent</code> in this example)</li>
+    <li><strong>Method Param</strong> - Any required or optional params used by a method (or passed to an 
+    event handler method) will be listed next to the method name within parenthesis 
+    (<code>( item )</code> in this example)</li>
+    <li><strong>Return type</strong> - The class instance or javascript object returned by the method or 
+    property (<code>Ext.Component</code> in this case).  This may be omitted for methods that do not 
+    return anything other than <code>undefined</code> or may display as multiple possible values 
+    separated by a forward slash <code>/</code> signifying that what is returned may depend on the 
+    results of the method call (i.e. a method may return a Component if a get method calls is 
+    successful or <code>false</code> if unsuccessful which would be displayed as 
+    <code>Ext.Component/Boolean</code>).</li>
+    <li><strong>Flags</strong> - Any flags applicable to the member will be displayed next (<code>PROTECTED</code> in 
+    this example - see the Flags section below)</li>
+    <li><strong>Member Origin</strong> - On the right-hand side of the member row is the class where the 
+    member was initially described (<code>Ext.container.Container</code> in this example).  The source 
+    class will be displayed as a blue link if the member originates from the current class 
+    and gray if it is inherited from an ancestor or mixed-in class.</li>
+    <li><strong>Member Source</strong> - On the right-hand side below the member origin class is a link to 
+    view the member&#39;s source (<code>view source</code> in the example)</li>
+    <li><strong>Params List</strong> - Each param for a class method will be listed using the same name 
+    found above in parenthesis, the type of class or object expected, and a description of 
+    the param (<code>item : Object</code> in the example).</li>
+    <li><strong>Returns</strong> - If a class returns a value other than <code>undefined</code> a &quot;Returns&quot; section 
+    will note the type of class or object returned and a description (<code>Ext.Component</code> in the 
+    example)</li>
+    <li><strong>Since</strong> (<em>not shown in the example</em>) - Some members will show which version of the 
+    product the member was first introduced (i.e. <code>Available since 3.4.0</code> - <em>not pictured in 
+    the example</em>) just after the member description</li>
+    <li><strong>Default</strong> (<em>not shown in the example</em>) - Configs often show the default config value 
+    to be applied to a class instance if not overridden (i.e. <code>Defaults to: false</code>)</li>
+    </ul>
+    <h3 id="member-flags">Member Flags</h3>
+    <p>The API documentation uses a number of flags to further commnicate the class member&#39;s 
+    function and intent.  The label may be represented by a text label, an abbreviation, or 
+    an icon.</p>
+    <ul>
+    <li><strong>Required</strong> - Required config when instantiating a class</li>
+    <li><strong>Bindable</strong> - The config has a setter which allows this config to be set via ViewModel 
+    binding</li>
+    <li><strong>Read Only</strong> - The property may be read, but cannot be used to configure / 
+    re-configure a class instance at runtime</li>
+    <li><strong>Singleton</strong> - Singleton classes are instantiated immediately once defined and may not 
+    be instantiated manually</li>
+    <li><strong>Static</strong> - A static method or property is a method or property belonging to the class 
+    itself, not an instance of the class</li>
+    <li><strong>Chainable</strong> - Refers to methods that return the class instance back when called.<br>This enables chained method calls like: <code>classInstance.method1().method2().etc();</code></li>
+    <li><strong>Deprecated</strong> - A class or member that is scheduled for removal in a future 
+    framework version and is provided in the current version for backwards compatibility.<br>Deprecated classes and members will have a message directing you to the preferred class / 
+    method going forward.</li>
+    <li><strong>Removed</strong> - A removed class or member that exists in documentation only as a 
+    reference for users upgrading between framework versions</li>
+    <li><strong>Template</strong> - A method defined within a base class designed to be overridden by 
+    subclasses</li>
+    <li><strong>Abstract</strong> - A class or member may be be defined as abstract.  Abstract classes and 
+    members establish a class structure and provide limited, if any, code.  Class-specific 
+    code will be furnished via overrides in subclasses.</li>
+    <li><strong>Preventable</strong> - Events marked preventable will not fire if <code>false</code> is returned from 
+    an event handler</li>
+    </ul>
+    <h3 id="class-icons">Class Icons</h3>
+    <p><span class="icon-demo class-icon"></span> - Indicates a framework class  </p>
+    <p><span class="icon-demo singleton-icon"></span> - A singleton framework class. *See the 
+    singleton flag for more information  </p>
+    <p><span class="icon-demo component-icon"></span> - A component-type framework class (any 
+    class within the Ext JS framework that extends Ext.Component)  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h3 id="member-icons">Member Icons</h3>
+    <p><span class="icon-demo fa fa-cubes"></span> - Indicates a class member of type <code>config</code>  </p>
+    <p><span class="icon-demo fa fa-book"></span> - Indicates a class member of type <code>property</code>  </p>
+    <p><span class="icon-demo fa fa-object-group"></span> - Indicates a class member of type 
+    <code>method</code>  </p>
+    <p><span class="icon-demo fa fa-bolt"></span> - Indicates a class member of type <code>event</code>  </p>
+    <p><span class="icon-demo fa fa-paint-brush"></span> - Indicates a class member of type 
+    <code>theme variable</code>  </p>
+    <p><span class="icon-demo fa fa-tint"></span> - Indicates a class member of type 
+    <code>theme mixin</code>  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h2 id="navigation-and-features">Navigation and Features</h2>
+    <h3 id="class-member-quick-nav-menu">Class Member Quick-Nav Menu</h3>
+    <p>Just below the class name on an API doc page is a row of buttons corresponding to the 
+    types of members owned by the current class.  Each button shows a count of members by 
+    type (this count is updated as filters are applied).  Clicking the button will navigate 
+    you to that member section.  Hovering over the member-type button will reveal a popup 
+    menu of all members of that type for quick navigation.</p>
+    <h3 id="getter-and-setter-methods">Getter and Setter Methods</h3>
+    <p>Getting and setter methods that correlate to a class config option will show up in the 
+    methods section as well as in the configs section of both the API doc and the member-type 
+    menus just beneath the config they work with.  The getter and setter method documentation 
+    will be found in the config row for easy reference.</p>
+    <h3 id="history-bar">History Bar</h3>
+    <p>Your page history is kept in localstorage and displayed (using the available real estate) 
+    just below the top title bar.  By default, the only search results shown are the pages 
+    matching the product / version you&#39;re currently viewing.  You can expand what is 
+    displayed by clicking on the <span class="icon-demo history-config"></span> button on the 
+    right-hand side of the history bar and choosing the &quot;All&quot; radio option.  This will show 
+    all recent pages in the history bar for all products / versions.</p>
+    <p>Within the history config menu you will also see a listing of your recent page visits. 
+    The results are filtered by the &quot;Current Product / Version&quot; and &quot;All&quot; radio options. 
+    Clicking on the <span class="icon-demo history-clear"></span> button will clear the history bar as 
+    well as the history kept in local storage.</p>
+    <p>If &quot;All&quot; is selected in the history config menu the checkbox option for &quot;Show product 
+    details in the history bar&quot; will be enabled.  When checked, the product/version for each 
+    historic page will show alongside the page name in the history bar.  Hovering the cursor 
+    over the page names in the history bar will also show the product/version as a tooltip.</p>
+    <h3 id="search-and-filters">Search and Filters</h3>
+    <p>Both API docs and guides can be searched for using the search field at the top of the 
+    page.</p>
+    <p>On API doc pages there is also a filter input field that filters the member rows 
+    using the filter string.  In addition to filtering by string you can filter the class 
+    members by access level and inheritance.  This is done using the checkboxes at the top of 
+    the page.  <strong>Note</strong> that filtering out <code>private</code> members also filters the API class 
+    navigation tree.</p>
+    <p>Clicking on an empty search field will show your last 10 searches for quick navigation.</p>
+    <h3 id="api-doc-class-metadata">API Doc Class Metadata</h3>
+    <p>Each API doc page (with the exception of Javascript primitives pages) has a menu view of 
+    metadata relating to that class.  This metadata view will have one or more of the 
+    following:</p>
+    <ul>
+    <li><strong>Alternate Name</strong> - One or more additional class name synonymns (in Ext JS 6.0.0 the 
+    <code>Ext.button.Button</code> class has an alternate class name of <code>Ext.Button</code>).  Alternate class 
+    names are commonly maintained for backward compatibility.</li>
+    <li><strong>Hierarchy</strong> - The hierararchy view lists the inheritance chain of the current class 
+    up through its ancestor classes up to the root base class.</li>
+    <li><strong>Mixins</strong> - A list of classes that are mixed into the current class</li>
+    <li><strong>Inherited Mixins</strong> - A list of classes that are mixed into an ancestor of the current 
+    class</li>
+    <li><strong>Requires</strong> - All classes required to be defined for the class to be instantiated</li>
+    <li><strong>Uses</strong> - A list of classes potentially used by the class at some point in its 
+    lifecycle, but not necessarily requried for the class to initially be instantiated</li>
+    <li><strong>Subclasses</strong> - Classes that extend the current class</li>
+    </ul>
+    <h3 id="expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</h3>
+    <p>Runnable examples (Fiddles) are expanded on a page by default.  You can collapse and 
+    expand example code blocks individually using the arrow on the top-left of the code 
+    block.  You can also toggle the collapse state of all examples using the toggle button on 
+    the top-right of the page.  The toggle-all state will be remembered between page loads.</p>
+    <p>Class members are collapsed on a page by default.  You can expand and collapse members 
+    using the arrow icon on the left of the member row or globally using the expand / 
+    collapse all toggle button top-right.</p>
+    <h3 id="desktop-vs-mobile-view">Desktop -vs- Mobile View</h3>
+    <p>Viewing the docs on narrower screens or browsers will result in a view optimized for a 
+    smaller form factor.  The primary differences between the desktop and &quot;mobile&quot; view are:</p>
+    <ul>
+    <li>Global navigation will be located in a menu on the left-hand side accessible via the 
+    hamburger menu icon.  The menu houses the following (on most pages):<ul>
+    <li>The name of the current product (as a link to the product landing page)</li>
+    <li>The Sencha icon used to navigate back to the documentation home page</li>
+    <li>The product menu drop-down button</li>
+    <li>Tabs of navigation trees for the API docs and guides</li>
+    </ul>
+    </li>
+    <li>Current context navigation and tools is located on the right-hand side accessible via 
+    the gear icon.  The context menu houses teh following:<ul>
+    <li>The global search input field</li>
+    <li>(<em>API doc</em>) A &quot;Filters&quot; tab with the member filter, expand / collapse all examples 
+    button, expand / collapse all member rows button, the access level filter checkboxes, 
+    and the counts of each member</li>
+    <li>(<em>API doc</em>) A &quot;Related Classes&quot; tab containing the menu of metadata related to the 
+    current class</li>
+    <li>(<em>Guides</em>) The table of contents for the guide</li>
+    </ul>
+    </li>
+    </ul>
+    <h3 id="viewing-the-class-source">Viewing the Class Source</h3>
+    <p>The class source can be viewed by clicking on the class name at the top of an API doc 
+    page.  The source for class members can be viewed by clicking on the &quot;view source&quot; link 
+    on the right-hand side of the member row.</p>
+    
+        </div>
+    </div>
+    <div id="header">
+        <div class="logo">
+            <a href="http://docs.sencha.com"><img height="32" src="../../home-images/sencha_logo_thumb.png"/></a>
+        </div>
+        <span id="mobile-main-nav-menu-btn" class="fa fa-bars"></span>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl landing-product-menu-btn"><div class="callout callout-b"></div></span>
+            <div class="page-title">Pivot Grid</div>
+        <span id="mobile-context-menu-btn" class="fa fa-cog"></span>
+    </div>
+    <div id="centerContent">
+        <div id="history-nav">
+            <span id="history-config" class="history-config tooltip tooltip-tr-br" data-tip="Configure / Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="class-tree-ct" class="class-tree">
+            <h2 class="product-header">
+                <div class="logo">
+                    <a href="http://docs.sencha.com"><img src="../../home-images/sencha_logo1x.png"/></a>
+                </div>
+                <a href="../../index.html">Ext JS 6.2.0 </a>
+                <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn  tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+            </h2>
+            <div id="tree-header" class="pre-load">
+                    <div id="quickStartTab" class="toolbarHeaderButton">
+                        Quick Start
+                    </div>
+                <div id="guideTab" class="toolbarHeaderButton active-tab">
+                    Guides
+                </div>
+                <div id="apiTab" class="toolbarHeaderButton">
+                    API
+                </div>
+                <div id="hide-class-tree"></div>
+            </div>
+            <div id="tree-scroller">
+                <div id="tree" class="show-private show-protected is-tree hide">
+                        <div id="toolkit-tab-ct">
+        <div id="modernTab" class="active-tab">modern</div>
+        <div id="classicTab">classic</div>
+    </div>
+
+    <div id="toolkit-tree-ct">
+        <div id="modernTree" class="is-tree">
+            
+        </div>
+
+        <div id="classicTree" class="is-tree hide">
+            
+        </div>
+    </div>
+<div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Classes" data-collapse="Collapse All Classes"><div class="callout callout-b"></div></div>
+                </div>
+                <div id="guide-tree" class="hide is-tree">
+                    <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-getting_started" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Getting Started</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../getting_started/getting_started.html" class="tree-leaf-content isLeaf universal-decoration" id="node-getting_started_-_getting_started" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Setup</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">What's New?</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/whats_new.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_whats_new" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">What's New</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/release_notes.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_release_notes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Release Notes</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/extjs_upgrade_guide.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_extjs_upgrade_guide" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS 6.2.0 Upgrade Guide</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new_-_api_diffs" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">API Diffs</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_modern_diff.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/620_modern_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_classic_diff.html" class="tree-leaf-content isLeaf display-new classic-decoration" id="node-whats_new_-_api_diffs/620_classic_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Classic - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/modern_theme_refactor.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/modern_theme_refactor" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern Theming Refactor</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-examples" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Examples</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="http://examples.sencha.com/extjs/6.2.0-ea/examples" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-examples_-_620examples" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">6.2.0 Examples</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Core Concepts</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/classes.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_classes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">The Class System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/layouts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_layouts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Layouts and Containers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/components.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_components" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Components</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/data_package.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_data_package" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Data Package</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/gestures.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_gestures" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Gestures</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/events.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_events" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Events</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/drag_drop.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_drag_drop.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_modern_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Modern Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/theming.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Theming System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_theming.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_modern_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Theming in the Modern Toolkit</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/material_theme.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_material_theme" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Material Theme</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/memory_management.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_memory_management" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Memory Management</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/d3.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-core_concepts_-_d3" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using D3 in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts_-_draw" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Draw Package</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/drawing.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/drawing" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Draw Package</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt1.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt1" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 1</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt2.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt2" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 2</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt3.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt3" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 3</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/accessibility.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_accessibility" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Accessibility</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/localization.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_localization" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Localization</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/rtl.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_rtl" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Right to Left in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/font_ext.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_font_ext" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Sencha Font Packages</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/tablet_support.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_tablet_support" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Tablet Support</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-application_architecture" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Architecture</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/application_architecture.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_application_architecture" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Intro to App Architecture</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/developing_for_multiple_screens_and_environments.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_developing_for_multiple_screens_and_environments" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Multiple Screens</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_controllers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_controllers" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Controllers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_models_data_binding.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_models_data_binding" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Models &amp; Binding</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_model_internals.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_model_internals" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Model Internals</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/router.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_router" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using the Router</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-components" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">UI Components</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../components/carousel.html" class="tree-leaf-content isLeaf modern-decoration" id="node-components_-_carousel" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Carousel</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/calendar.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_calendar" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Calendar</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/forms.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_forms" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Forms</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/introduction_to_charting.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_introduction_to_charting" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Introduction to Charting</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/trees.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_trees" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Trees</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/grids.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_grids" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Grids</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/pivot_grid.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_pivot_grid" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Pivot Grid</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/exporter.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_exporter" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Exporter</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/widgets_widgets_columns.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_widgets_widgets_columns" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Using Components in Grids</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-tutorials" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Tutorials</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../tutorials/login_app.html" class="tree-leaf-content isLeaf classic-decoration" id="node-tutorials_-_login_app" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Sample Login App</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Backend Connectors</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/soap.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_soap" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">SOAP Services</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/amf.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_amf" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">AMF Data Sources</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors_-_direct" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Ext Direct</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/specification.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_direct/specification" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Ext Direct Specification</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/mysql_php.html" class="tree-leaf-content isLeaf classic-decoration" id="node-backend_connectors_-_direct/mysql_php" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Using MySQL and PHP</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-other_resources" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Other Resources</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/extjs_faq.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_extjs_faq" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS - FAQ</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/oop_concepts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_oop_concepts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Basics of OOP</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/ecosystem.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_ecosystem" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS Ecosystem</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/sencha_blog.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_sencha_blog" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">From the Sencha Blog</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <a href="../supported_browsers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-supported_browsers" isLeaf="true">
+        <span class="tree-expando hidden">▸</span>
+                    <span class="universal-guide guide"></span>
+                <span class="tree-leaf-text">Supported Browsers</span>
+    </a>
+</div>
+
+                    <div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Guides" data-collapse="Collapse All Guides"><div class="callout callout-b"></div></div>
+                </div>
+                    <div id="quick-start-tree" class="hide is-tree">
+                        <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_introduction" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/introduction.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">1</span>
+                <div class="quick-start-text">Introduction</div>
+                <div class="quick-start-summary">An introduction to the Ext JS JavaScript framework</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_components" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/components.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">2</span>
+                <div class="quick-start-text">Components</div>
+                <div class="quick-start-summary">Explore Ext JS components and learn how to configure them</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_containers" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/containers.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">3</span>
+                <div class="quick-start-text">Containers</div>
+                <div class="quick-start-summary">Learn to nest components within container components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_presenting_data" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/presenting_data.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">4</span>
+                <div class="quick-start-text">Presenting Data</div>
+                <div class="quick-start-summary">Connect your data to your view components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_handling_events" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/handling_events.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">5</span>
+                <div class="quick-start-text">Handling Events</div>
+                <div class="quick-start-summary">Respond to users interacting with your application with events</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_forms" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_forms.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">6</span>
+                <div class="quick-start-text">Data Forms</div>
+                <div class="quick-start-summary">Present data in form fields so that values can be modified</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_binding" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_binding.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">7</span>
+                <div class="quick-start-text">Data Binding</div>
+                <div class="quick-start-summary">Bind data to component configs for automatic responses to change</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_getting_organized" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/getting_organized.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">8</span>
+                <div class="quick-start-text">Getting Organized</div>
+                <div class="quick-start-summary">Move your code into an organized structure by defining its parts</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_bringing_it_together" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/bringing_it_together.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">9</span>
+                <div class="quick-start-text">Bringing it Together</div>
+                <div class="quick-start-summary">Add extra functionality to make this application more useful</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_going_to_production" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/going_to_production.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">10</span>
+                <div class="quick-start-text">Going to Production</div>
+                <div class="quick-start-summary">Use Sencha Cmd to make your application lightweight and efficient</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_helpful_resources" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/helpful_resources.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">11</span>
+                <div class="quick-start-text">Helpful Resources</div>
+                <div class="quick-start-summary">Continue your Ext JS education with more helpful resources</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+                    </div>
+            </div>
+        </div>
+        <a href="#" id="back-to-top">top </a>
+        <div id="rightMembers" class="">
+            
+            <div class="context-menu-ct">
+    <div class="context-header">
+        <div id="hide-context-menu" class="fa fa-caret-right"></div>
+    </div>
+    <div class="search">
+        <form autocomplete="off">
+                <div class="toolkit-search-filter-ct">
+                    <span id="modern-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Modern Search Results"><div class="callout callout-b"></div></span>
+                    <span id="classic-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Classic Search Results"><div class="callout callout-b"></div></span>
+                </div>
+
+            <input type="text" type="search" placeholder="search" id="searchtext">
+            <i id="filtersubmit" class="fa fa-search"></i>
+            <span id="help-btn" data-tip="Docs Help" class="tooltip tooltip-tr-br"><div class="callout callout-b"></div></span>
+        </form>
+    </div>
+    <div id="toc-context-ct">
+        <!-- context content added at runtime -->
+    </div>
+</div>
+<div class="guide-body-wrap">
+    <div class="body-wrap-inner">
+        <div class="classText">
+                <div class="toolkit-badge-ct universal-badge">
+                    Guide applies to:
+                    <span class="toolkit-badge universal">
+                        
+                        
+                        classic &amp; modern
+                    </span>
+                </div>
+
+            <div id="toggleExamples" class="fa fa-code tooltip tooltip-tr-br" data-expand="Expand All Examples" data-collapse="Collapse All Examples"><div class="callout callout-b"></div></div>
+                <div class="toc">
+                    <h2>Contents</h2>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_requirements">Requirements</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_ext_js">Ext JS</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_sencha_cmd">Sencha Cmd</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_installation">Installation</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_using_the_pivot_grid_with_sencha_cmd">Using the Pivot Grid with Sencha Cmd</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_using_the_pivot_grid_without_sencha_cmd">Using the Pivot Grid without Sencha Cmd</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_using_pivot_grid">Using Pivot Grid</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_axis">Axis</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_aggregation">Aggregation</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_functionality">Functionality</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_sorting_results">Sorting Results</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_multiple_grand_totals">Multiple Grand Totals</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_range_grouping">Range Grouping</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_filtering">Filtering</a>
+                        <a class="toc-page-h4" href="#components-_-pivot_grid_-_label_filter">Label filter</a>
+                        <a class="toc-page-h4" href="#components-_-pivot_grid_-__value_filter_"></a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_buffered_rendering">Buffered Rendering</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_appearance">Appearance</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_layout">Layout</a>
+                        <a class="toc-page-h4" href="#components-_-pivot_grid_-_outline">outline</a>
+                        <a class="toc-page-h4" href="#components-_-pivot_grid_-_compact">compact</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_totals_positioning">Totals Positioning</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_renderers">Renderers</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_styling">Styling</a>
+                        <a class="toc-page-h4" href="#components-_-pivot_grid_-_classic_toolkit">Classic toolkit</a>
+                        <a class="toc-page-h4" href="#components-_-pivot_grid_-_modern_toolkit">Modern toolkit</a>
+                        <a class="toc-page-h5" href="#components-_-pivot_grid_-_viewmodel_on_rows">ViewModel on rows</a>
+                        <a class="toc-page-h5" href="#components-_-pivot_grid_-_viewmodel_on_cells">ViewModel on cells</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_stateful">Stateful</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_locked_grids">Locked Grids</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_plugins">Plugins</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_cell_editing">Cell editing</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_range_editor">Range editor</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_drill_down">Drill down</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_exporter">Exporter</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_configurator">Configurator</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_matrix_class">Matrix Class</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_events">Events</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_base_matrix">Base matrix</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_local_matrix">Local matrix</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_remote_matrix">Remote matrix</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_faq">FAQ</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_what_is_sent_to_the_server_">What is sent to the server?</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_what_should_the_json_response_look_like_">What should the JSON response look like?</a>
+                        <a class="toc-page-h3" href="#components-_-pivot_grid_-_how_do_i_calculate_on_the_server_">How do I calculate on the server?</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_error_handling">Error Handling</a>
+                        <a class="toc-page-h2" href="#components-_-pivot_grid_-_conclusion">Conclusion</a>
+                </div>
+                <span class="guide-tags"><span class="premium">premium</span></span>
+            <h1 id="components-_-pivot_grid_-_pivot_grid_in_ext_js_6_2">Pivot Grid in Ext JS 6.2<a class="quick-link" href="#components-_-pivot_grid_-_pivot_grid_in_ext_js_6_2"></a></h1>
+<p>The Pivot Grid component enables rapid summarization of large sets of data.  It provides 
+a simple way to condense many data points into a format that makes trends and insights 
+more apparent.  A classic example is sales data.  A company will often have a record of 
+all sales it makes for a given period. This will often encompass thousands of rows of 
+data.  The Pivot Grid allows you to see how well each salesperson performed, which 
+cities generate the most revenue, how products perform between cities, etc.</p>
+<p><strong>Note:</strong> This guide covers the pivot package bundled in the 
+Premium version of the Ext JS 6.2 SDK.</p>
+<p>Imagine you had the following grid panel:</p>
+<p><img src="images/pivot_image_0.png" alt="image alt text"></p>
+<p>How could you easily implement a client-side solution that answered the following 
+questions?</p>
+<ol>
+<li><p>What is John Doe&#39;s total order amount?</p>
+</li>
+<li><p>What are the total order amounts by country?</p>
+</li>
+<li><p>How did a salespeople perform in a specific year?</p>
+</li>
+</ol>
+<p>These are the sorts of challenges that the Pivot Grid solves.  Let&#39;s take a look at how 
+the answers may be visualized.</p>
+<p><img src="images/pivot_image_1.png" alt="image alt text"></p>
+<p><img src="images/pivot_image_2.png" alt="image alt text"></p>
+<p>The Pivot Grid is not bundled within the Ext JS framework, but is easy to require into 
+your application.  Whether you&#39;re working with an application generated by Sencha Cmd or 
+with an application structure of your own design, including the Pivot Grid code and 
+styling only requires a couple of steps.</p>
+<h2 id="components-_-pivot_grid_-_requirements">Requirements<a class="quick-link" href="#components-_-pivot_grid_-_requirements"></a></h2>
+<h3 id="components-_-pivot_grid_-_ext_js">Ext JS<a class="quick-link" href="#components-_-pivot_grid_-_ext_js"></a></h3>
+<p>Sencha Pivot Grid works with both classic and modern toolkits of Sencha Ext JS 6.2.</p>
+<h3 id="components-_-pivot_grid_-_sencha_cmd">Sencha Cmd<a class="quick-link" href="#components-_-pivot_grid_-_sencha_cmd"></a></h3>
+<p>Sencha Cmd is not required to utilize the Pivot Grid.  However, using Cmd allows you to 
+seamlessly include the Pivot Grid package via your application&#39;s <code>app.json</code> file.</p>
+<h2 id="components-_-pivot_grid_-_installation">Installation<a class="quick-link" href="#components-_-pivot_grid_-_installation"></a></h2>
+<h3 id="components-_-pivot_grid_-_using_the_pivot_grid_with_sencha_cmd">Using the Pivot Grid with Sencha Cmd<a class="quick-link" href="#components-_-pivot_grid_-_using_the_pivot_grid_with_sencha_cmd"></a></h3>
+<p>The Pivot Grid is delivered with full source code that is packaged in a way that makes 
+it easy to deploy to your application&#39;s packages folder.</p>
+<p>To include the Pivot Grid in an application then simply modify 
+your <code>app.json</code> file in your application root directory to require the Pivot Grid package:</p>
+<pre><code class="language-javascript">{
+
+    &quot;name&quot;: &quot;YourApp&quot;,
+
+    &quot;requires&quot;: [
+
+        &quot;pivot&quot;
+
+    ],
+
+    &quot;id&quot;: &quot;391a5ff6-2fd8-4e10-84d3-9114e1980e2d&quot;
+
+}
+</code></pre><p>The package supports both classic and modern toolkits so there&#39;s no need for toolkit dependent configs.</p>
+<h3 id="components-_-pivot_grid_-_using_the_pivot_grid_without_sencha_cmd">Using the Pivot Grid without Sencha Cmd<a class="quick-link" href="#components-_-pivot_grid_-_using_the_pivot_grid_without_sencha_cmd"></a></h3>
+<p>The SDK contains a compiled version of the Pivot Grid&#39;s code that is available for those 
+not using Sencha Cmd.  To include the Pivot Grid in this manner, link the following 
+assets from your index page:</p>
+<pre><code class="language-javascript">{unzippedFolder}/packages/pivot/build/{toolkit}/pivot.js
+
+{unzippedFolder}/packages/pivot/build/{toolkit}/{themeName}/resources/pivot-all.css
+</code></pre><p>Include the following in your application directory:</p>
+<pre><code class="language-javascript">{unzippedFolder}/packages/pivot/build/{toolkit}/{themeName}/resources/images/
+</code></pre><h2 id="components-_-pivot_grid_-_using_pivot_grid">Using Pivot Grid<a class="quick-link" href="#components-_-pivot_grid_-_using_pivot_grid"></a></h2>
+<p>The Pivot Grid relies on two pieces that extend the native grid panel - Axis and 
+Aggregation.  Axis allows you to determine row and column placement while aggregation 
+manages the grouping calculations. These pieces need to be defined on the pivot matrix
+object used by the Pivot Grid.</p>
+<h3 id="components-_-pivot_grid_-_axis">Axis<a class="quick-link" href="#components-_-pivot_grid_-_axis"></a></h3>
+<p>Let&#39;s delve into the Pivot Grid by imagining the use case we discussed above.  First, 
+we&#39;ll break the dataset into salespeople and years.  We can do this by configuring the 
+top and left axis:</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        leftAxis: [{
+
+            width: 80,
+
+            dataIndex: &#39;salesperson&#39;,
+
+            header: &#39;Salesperson&#39;
+
+        }],
+
+        topAxis: [{
+
+            dataIndex: &#39;year&#39;,
+
+            header: &#39;Year&#39;,
+
+            direction: &#39;ASC&#39;
+
+        }]
+
+        // ... more configs
+    }
+}    
+</code></pre><p>This results in a view like this:</p>
+<p><img src="images/pivot_image_3.png" alt="image alt text"></p>
+<h3 id="components-_-pivot_grid_-_aggregation">Aggregation<a class="quick-link" href="#components-_-pivot_grid_-_aggregation"></a></h3>
+<p>Next, we&#39;ll set up the aggregation so the cell values can be appropriately calculated.<br>The Pivot Grid includes many aggregation methods out of the box.</p>
+<ul>
+<li><p><strong>sum</strong></p>
+</li>
+<li><p><strong>average</strong></p>
+</li>
+<li><p><strong>min</strong></p>
+</li>
+<li><p><strong>max</strong></p>
+</li>
+<li><p><strong>count</strong></p>
+</li>
+<li><p><strong>groupSumPercentage</strong> - If John sold items in the US and Germany you may want to see 
+what percentage was sold to US from the total sales.  The groupSumPercentage method 
+calculates the percentage of the current item sum out of the parent item sum.</p>
+</li>
+<li><p><strong>groupCountPercentage</strong> - This is the same as groupSumPercentage, but uses count 
+instead of sum.</p>
+</li>
+<li><p><strong>variance</strong></p>
+</li>
+<li><p><strong>varianceP</strong></p>
+</li>
+<li><p><strong>stdDev</strong></p>
+</li>
+<li><p><strong>stdDevP</strong></p>
+</li>
+</ul>
+<p>You may also provide your own aggregation function for customized 
+processing.  The following example demonstrates how to aggregate multiple fields (sales 
+and quantity) by configuring each aggregator in the aggregate array.  As you can see, 
+we&#39;re using a custom aggregator for Quantity.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        aggregate: [{
+
+            measure: &#39;amount&#39;,
+
+            header: &#39;Sales&#39;,
+
+            aggregator: &#39;sum&#39;,
+
+            align: &#39;right&#39;,
+
+            width: 85,
+
+            renderer: Ext.util.Format.numberRenderer(&#39;0,000.00&#39;)
+
+        }, {
+
+            measure: &#39;orderid&#39;,
+
+            header: &#39;Qnt&#39;,
+
+            aggregator: function(records, measure, matrix, rowGroupKey, colGroupKey) {
+
+                // custom aggregator logic
+
+                return records.length;
+
+            },
+
+            align: &#39;right&#39;,
+
+            width: 85,
+
+            renderer: Ext.util.Format.numberRenderer(&#39;0,000.00&#39;)
+
+        }]
+
+        // ... more configs
+    }
+}    
+</code></pre><p>The above is a simple example to show what&#39;s possible.  If you are writing your own 
+aggregation methods, it&#39;s best to override <a href='../../../6.2.0/classic/Ext.pivot.Aggregators.html'>Ext.pivot.Aggregators</a>.  In the override 
+you can add your functions and use the function name as the aggregator config name.</p>
+<pre><code class="language-javascript">Ext.define(&#39;Overrides.pivot.Aggregators&#39;, {
+
+    override: &#39;Ext.pivot.Aggregators&#39;,
+
+    myOwnFnText: &#39;My special fn&#39;, // useful when using the Configurator plugin
+    myOwnFn: function(records) {
+
+        // custom aggregator logic
+
+        return records.length;
+
+    }
+
+});
+
+// Then you can define your aggregate config in this manner
+
+aggregate: [{
+
+    // ...
+
+    dataIndex:    &#39;field&#39;,
+
+    aggregator: &#39;myOwnFn&#39;
+
+    // ...
+
+}]
+</code></pre><p>It is also possible to define the aggregate function in a ViewController.</p>
+<pre><code class="language-javascript">Ext.define(&#39;App.view.Pivot&#39;, {
+    extend: &#39;Ext.pivot.Grid&#39;,
+    controller: &#39;pivot&#39;,
+
+    matrix: {
+        aggregate: [{
+
+            // ...
+
+            dataIndex: &#39;field&#39;,
+
+            aggregator: &#39;myOwnFn&#39;
+
+            // ...
+
+        }]
+
+        // ...
+    }
+});
+
+Ext.define(&#39;App.view.PivotController&#39;, {
+    extend: &#39;Ext.app.ViewController&#39;,
+
+    alias: &#39;controller.pivot&#39;,
+
+    myOwnFn: function(records, measure, matrix, rowGroupKey, colGroupKey){
+        // custom aggregate function
+        return records.length;
+    }
+});
+</code></pre><h2 id="components-_-pivot_grid_-_functionality">Functionality<a class="quick-link" href="#components-_-pivot_grid_-_functionality"></a></h2>
+<h3 id="components-_-pivot_grid_-_sorting_results">Sorting Results<a class="quick-link" href="#components-_-pivot_grid_-_sorting_results"></a></h3>
+<p>When defining a dimension, you can set the following configs to affect sorting results.</p>
+<ul>
+<li><p><strong>sortable</strong>: True to sort the results (<em>default is <strong>true</strong></em>).</p>
+</li>
+<li><p><strong>direction</strong>: You may specify whether you want the results to be sorted (ascending) 
+ASC or (descending) DESC (<em>default is <strong>ASC</strong></em>).</p>
+</li>
+<li><p><strong>caseSensitiveSort</strong>: Configure as true to make the filtering match with exact case 
+matching (<em>default is <strong>true</strong></em>).</p>
+</li>
+<li><p><strong>sorterFn</strong>: Custom sorter function.</p>
+</li>
+<li><p><strong>sortIndex</strong>: You may want to sort your results using the value of another field on 
+the record. Let&#39;s say you have one field &quot;month-name&quot; with values like Jan, Feb,  etc. 
+and another field &quot;month-value&quot; with values like 1, 2, etc.  It makes sense to have the 
+results from &quot;month-name&quot; (dataIndex) and sort by &quot;month-value&quot; (sortIndex).</p>
+</li>
+</ul>
+<h3 id="components-_-pivot_grid_-_multiple_grand_totals">Multiple Grand Totals<a class="quick-link" href="#components-_-pivot_grid_-_multiple_grand_totals"></a></h3>
+<p>By default, the Pivot Grid calculates grand totals on rows.  You may choose whether or 
+not to display the grand total.  Adding multiple grand totals on rows is possible in two 
+ways:</p>
+<ul>
+<li><p>You can listen to the <code>pivotbuildtotals</code> event, which is fired by the Pivot Grid.  The 
+event handler is passed as a parameter, which contains an array of grand total values 
+and the default value.  Each object in that array should have a &quot;title&quot; and a &quot;values&quot; 
+array that will be used to generate the totals record.</p>
+</li>
+<li><p>You can extend one of the matrix classes and use the template method <code>onBuildTotals</code> 
+to perform the same logic as above.</p>
+</li>
+</ul>
+<p>The new grand totals that you provide will be styled as the default grand total in the 
+Pivot Grid.</p>
+<pre><code class="language-javascript">// ...
+
+listeners: {
+
+    pivotbuildtotals: function(matrix, totals) {
+
+        var dataAvg = {},
+
+            dataMax = {};
+
+        Ext.Array.each(matrix.model, function(field) {
+
+            var result,
+
+            agg;
+
+            if (field.col &amp;&amp; field.agg) {
+
+                agg = matrix.aggregate.getByKey(field.agg);
+
+                result = matrix.results.get(matrix.grandTotalKey, field.col);
+
+                if (result &amp;&amp; agg) {
+
+                    dataAvg[field.name] = result.calculateByFn(
+                                            &#39;totalavg&#39;, 
+                                            agg.dataIndex, 
+                                            Ext.pivot.Aggregators.avg);
+
+                    dataMax[field.name] = result.calculateByFn(
+                                            &#39;totalmax&#39;, 
+                                            agg.dataIndex, 
+                                            Ext.pivot.Aggregators.max);
+
+                }
+
+            }
+
+        });
+
+        totals.push({
+
+            title: &#39;Grand total (avg)&#39;,
+
+            values: dataAvg
+
+        }, {
+
+            title: &#39;Grand total (max)&#39;,
+
+            values: dataMax
+
+        });
+
+    }
+
+}
+
+// ...
+</code></pre><h3 id="components-_-pivot_grid_-_range_grouping">Range Grouping<a class="quick-link" href="#components-_-pivot_grid_-_range_grouping"></a></h3>
+<p>Let&#39;s say that you have results for years on one axis and you want to group them as 80&#39;, 
+90&#39;, and so on. You can achieve this in two ways:</p>
+<ul>
+<li><p>You can define a &quot;grouperFn&quot; on the dimension that will will be passed the record and 
+should return the group value (i.e. 80&#39;, 90&#39; etc).</p>
+</li>
+<li><p>You can define a new field on the source model that has a &quot;convert&quot; function and does 
+the same thing as above.</p>
+</li>
+</ul>
+<p>grouperFn example:</p>
+<pre><code class="language-javascript">leftAxis: [{
+
+    // ...
+
+    grouperFn: function(record) {
+
+        var dataIndex = this.dataIndex,
+
+            recIndex = record.get(dataIndex);
+
+        if (recIndex &gt;= 1980 &amp;&amp; recIndex &lt; 1990) return &quot;80&#39;&quot;;
+
+        if (recIndex &gt;= 1990 &amp;&amp; recIndex &lt; 2000) return &quot;90&#39;&quot;;
+
+        return &#39;Rest&#39;;
+
+    }
+
+    // ...
+
+}]
+</code></pre><h3 id="components-_-pivot_grid_-_filtering">Filtering<a class="quick-link" href="#components-_-pivot_grid_-_filtering"></a></h3>
+<p>The Pivot Grid provides two types of filters:</p>
+<h4 id="components-_-pivot_grid_-_label_filter">Label filter<a class="quick-link" href="#components-_-pivot_grid_-_label_filter"></a></h4>
+<p>The label filter allows you to filter results by evaluating the values generated for top 
+or left axis results (i.e. begins with, does not begin with, ends with, etc.).</p>
+<h4 id="components-_-pivot_grid_-__value_filter_"><strong>Value filter</strong><a class="quick-link" href="#components-_-pivot_grid_-__value_filter_"></a></h4>
+<p>The value filter allows you to filter results by evaluating the values calculated for 
+each top/left axis pair (i.e. equals to, greater than, top 10 items, top 10 percent, top 
+10 sum, etc.).</p>
+<p>The filter is configured on a dimension item of the left or top axis.</p>
+<pre><code class="language-javascript">aggregate: [{
+    id: &#39;agg1&#39;,
+
+    dataIndex: &#39;value&#39;,
+
+    aggregator: &#39;sum&#39;,
+
+    header: &#39;Total&#39;
+}],
+
+leftAxis: [{
+
+    // ...
+
+    filter: {
+
+        type: &#39;value&#39;,
+
+        operator: &#39;top10&#39;,
+
+        topOrder: &#39;top&#39;,
+
+        topType: &#39;sum&#39;,
+
+        value: 9500,
+
+        dimensionId: &#39;agg1&#39;
+
+    }
+
+    // ...
+
+}]
+</code></pre><p>For more information check out the filter classes (Ext.pivot.filter.*).</p>
+<h3 id="components-_-pivot_grid_-_buffered_rendering">Buffered Rendering<a class="quick-link" href="#components-_-pivot_grid_-_buffered_rendering"></a></h3>
+<p>There may be thousands of records in the Pivot store once the Pivot Grid&#39;s calculations 
+have completed.  To prevent the DOM from being overwhelmed, you may want to use the 
+BufferedRenderer plugin.  BufferedRenderer has been available since version Ext JS 
+4.2.0.  In version 5+ BufferedRendering is used on the grid panel by default.</p>
+<p>The BufferedRenderer allows users to scroll through thousand of records without the 
+performance penalties of rendering all of the records on screen at once.</p>
+<h2 id="components-_-pivot_grid_-_appearance">Appearance<a class="quick-link" href="#components-_-pivot_grid_-_appearance"></a></h2>
+<h3 id="components-_-pivot_grid_-_layout">Layout<a class="quick-link" href="#components-_-pivot_grid_-_layout"></a></h3>
+<p>Pivot Grid provides two layout types with the <code>viewLayoutType</code> config: outline and 
+compact.</p>
+<h4 id="components-_-pivot_grid_-_outline">outline<a class="quick-link" href="#components-_-pivot_grid_-_outline"></a></h4>
+<p><img src="images/pivot_image_4.png" alt="image alt text"></p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        viewLayoutType: &#39;outline&#39;
+
+        // ... more configs
+    }
+}
+</code></pre><h4 id="components-_-pivot_grid_-_compact">compact<a class="quick-link" href="#components-_-pivot_grid_-_compact"></a></h4>
+<p><img src="images/pivot_image_5.png" alt="image alt text"></p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        viewLayoutType: &#39;compact&#39;,
+
+        compactViewColumnWidth: 250,
+
+        textRowLabels: &#39;Row labels&#39;
+
+        // ... more configs
+    }
+}
+</code></pre><h3 id="components-_-pivot_grid_-_totals_positioning">Totals Positioning<a class="quick-link" href="#components-_-pivot_grid_-_totals_positioning"></a></h3>
+<p>The position of the grand totals can be configured for both the left and top axis.  The 
+total can be set as <code>first</code>, <code>last</code>, or <code>none</code>.</p>
+<p>The group totals will always be visible when the group is collapsed.  This occurs 
+regardless of what is configured for the totals when you have multiple dimensions 
+configured on one axis.  The same configuration will also be used when the group is 
+expanded.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        rowSubTotalsPosition:       &#39;first&#39;,
+
+        rowGrandTotalsPosition:     &#39;last&#39;,
+
+        colSubTotalsPosition:       &#39;last&#39;,
+
+        colGrandTotalsPosition:     &#39;last&#39;
+
+        // ... more configs
+    }
+}
+</code></pre><h3 id="components-_-pivot_grid_-_renderers">Renderers<a class="quick-link" href="#components-_-pivot_grid_-_renderers"></a></h3>
+<p>Renderers can be used to format labels for axis results. For example:</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        topAxis: {
+            dataIndex: &#39;month&#39;,
+
+            labelRenderer: function(value){
+                return Ext.Date.monthNames[value];
+            }
+        }
+
+        // ... more configs
+    }
+}
+</code></pre><p>Can also be used to format the output value on the aggregate dimensions:</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        aggregate: [{
+            dataIndex: &#39;amount&#39;,
+
+            aggregator: &#39;sum&#39;,
+
+            formatter: &#39;number(&quot;0,000.00&quot;)&#39;
+        }, {
+            dataIndex: &#39;qty&#39;,
+
+            aggregator: &#39;sum&#39;,
+
+            renderer: Ext.util.Format.numberRenderer(&#39;0,000.00&#39;)
+        }]
+
+        // ... more configs
+    }
+}
+</code></pre><p>A ViewController could also be used to define renderers.</p>
+<pre><code class="language-javascript">Ext.define(&#39;App.view.Pivot&#39;, {
+    extend: &#39;Ext.pivot.Grid&#39;,
+    controller: &#39;pivot&#39;,
+
+    matrix: {
+        topAxis: {
+            // ...
+
+            dataIndex: &#39;month&#39;,
+
+            labelRenderer: &#39;monthRenderer&#39;
+
+            // ...
+        },
+
+        aggregate: [{
+            // ...
+
+            dataIndex: &#39;field&#39;,
+
+            renderer: &#39;myOwnFn&#39;
+
+            // ...
+        }]
+
+        // ...
+    }
+});
+
+Ext.define(&#39;App.view.PivotController&#39;, {
+    extend: &#39;Ext.app.ViewController&#39;,
+
+    alias: &#39;controller.pivot&#39;,
+
+    monthRenderer: function(value){
+        return Ext.Date.monthNames[value];
+    },
+
+    myOwnFn: function(value, meta, record){
+        // custom renderer function
+        return value;
+    }
+});
+</code></pre><h3 id="components-_-pivot_grid_-_styling">Styling<a class="quick-link" href="#components-_-pivot_grid_-_styling"></a></h3>
+<p>Styling the Pivot Grid depends on the toolkit used.</p>
+<h4 id="components-_-pivot_grid_-_classic_toolkit">Classic toolkit<a class="quick-link" href="#components-_-pivot_grid_-_classic_toolkit"></a></h4>
+<p>The aggregate dimension renderer can be used to style the cell and to format the output value:</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        aggregate: {
+            dataIndex: &#39;amount&#39;,
+
+            aggregator: &#39;sum&#39;,
+
+            renderer: function(value, meta, record) {
+
+                if (value &gt; 40000) {
+
+                    meta.style = &quot;background-color: yellow;&quot;;
+
+                }
+
+                return Ext.util.Format.number(value, &#39;0,000.00&#39;);
+
+            }
+        }
+
+        // ... more configs
+    }
+}
+</code></pre><p>Using the above renderer, the resulting grid output would appear as:</p>
+<p><img src="images/pivot_image_6.png" alt="image alt text"></p>
+<p>The renderer config can be used on left axis dimensions as well to style cells.</p>
+<p>You can also define more complex logic in the renderer function.  For instance, the 
+below renderer styles the cell differently when the sum is lower than the average of 
+some other field on the model.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    matrix: {
+
+        aggregate: {
+            dataIndex: &#39;amount&#39;,
+
+            aggregator: &#39;sum&#39;,
+
+            renderer: function(value, meta, record, recordIndex, columnIndex, store, view) {
+
+                var grid = view.up(&#39;pivotgrid&#39;),
+
+                    topItem = grid.getTopAxisItem(meta.column),
+
+                    leftItem = grid.getLeftAxisItem(record),
+
+                    result;
+
+                if (topItem &amp;&amp; leftItem) {
+
+                    result = grid.getMatrix().results.get(leftItem.key, topItem.key);
+
+                    // if you already have the avg configured on another 
+                    // dimension just fetch the result
+
+                    // result.getValue(&#39;avg&#39;)
+
+                    // otherwise calculate the result
+
+                    result.calculateByFn(&#39;avg&#39;, &#39;some-other-field&#39;, Ext.pivot.Aggregators.avg);
+
+                    if (value &lt; result.getValue(&#39;avg&#39;)) {
+
+                        meta.style = &quot;background-color: yellow;&quot;;
+
+                    }
+
+                }
+
+                return Ext.util.Format.number(value, &#39;0,000.00&#39;);
+
+            }
+
+        }
+
+        // ... more configs
+    }
+}
+</code></pre><h4 id="components-_-pivot_grid_-_modern_toolkit">Modern toolkit<a class="quick-link" href="#components-_-pivot_grid_-_modern_toolkit"></a></h4>
+<h5 id="components-_-pivot_grid_-_viewmodel_on_rows">ViewModel on rows<a class="quick-link" href="#components-_-pivot_grid_-_viewmodel_on_rows"></a></h5>
+<p>Let&#39;s have a look at this example:</p>
+<pre><code class="language-javascript"> {
+     xtype: &#39;pivotgrid&#39;,
+     itemConfig: {
+         viewModel: {
+             type: &#39;pivot-row-model&#39;
+         },
+         bind: {
+             userCls: &#39;{rowStyle}&#39;
+             // or you can define a template
+             //userCls: &#39;{record.isRowGroupHeader:pick(&quot;&quot;,&quot;pivotRowHeader&quot;)}&#39;
+         }
+     }
+     // ... more configs
+ }
+</code></pre><p>In the ViewModel we would declare a formula that will use the record data. The record
+has all values that are displayed for that row and the following additional fields:</p>
+<ul>
+<li>isRowGroupHeader</li>
+<li>isRowGroupTotal</li>
+<li>isRowGrandTotal</li>
+<li>leftAxisKey: This is either the grand total key or a key that identifies the left axis item</li>
+</ul>
+<p>All these properties can help us style the entire row without knowing anything about the generated columns.</p>
+<p>In some case we may want to style positive and negative values generated in the pivot grid. This can be done
+as following.</p>
+<pre><code class="language-javascript"> {
+     xtype: &#39;pivotgrid&#39;,
+     itemConfig: {
+         viewModel: {
+             type: &#39;default&#39;
+         }
+     },
+     topAxisCellConfig: {
+         bind: {
+             userCls: &#39;{value:sign(&quot;pivotCellNegative&quot;,&quot;pivotCellPositive&quot;)}&#39;
+         }
+     }
+     // ... more configs
+ }
+</code></pre><p>The following data is available for use in the bind template:</p>
+<ul>
+<li>column<ul>
+<li>isColGroupTotal: this tells us that the column for that specific cell is a group total</li>
+<li>isColGrandTotal: this tells us that the column for that specific cell is a grand total</li>
+</ul>
+</li>
+<li>value: cell value</li>
+</ul>
+<p><strong>Note:</strong> In such cases you cannot use formulas because the column and value are generated dynamically
+and can&#39;t be replaced in formulas.</p>
+<p>It is also possible to style a specific dimension from left axis or aggregate:</p>
+<pre><code class="language-javascript"> {
+     xtype: &#39;pivotgrid&#39;,
+     itemConfig: {
+         viewModel: {
+             type: &#39;default&#39;
+         }
+     },
+     matrix: {
+         aggregate: [{
+             dataIndex:  &#39;value&#39;,
+             aggregator: &#39;sum&#39;,
+             align:      &#39;right&#39;,
+             cellConfig: {
+                 bind: {
+                     userCls: &#39;{value:sign(&quot;pivotCellNegative&quot;,&quot;pivotCellPositive&quot;)}&#39;
+                 }
+             }
+         },{
+             dataIndex:  &#39;value&#39;,
+             aggregator: &#39;count&#39;
+         }],
+         leftAxis: [{
+             dataIndex:  &#39;person&#39;,
+             // This is used only when `viewLayoutType` is `outline`
+             cellConfig: {
+                 bind: {
+                     userCls: &#39;{record.isRowGroupHeader::pick(&quot;&quot;,&quot;pivotRowHeader&quot;)}&#39;
+                 }
+             }
+         },{
+             dataIndex:  &#39;country&#39;
+         }]
+         // ... more configs
+     }
+ }
+</code></pre><h5 id="components-_-pivot_grid_-_viewmodel_on_cells">ViewModel on cells<a class="quick-link" href="#components-_-pivot_grid_-_viewmodel_on_cells"></a></h5>
+<p>This scenario allows you to define formulas to use in cell binding. Be careful that this means that
+each cell will have an own ViewModel and this may decrease the pivot grid performance. Use it only
+if necessary.</p>
+<pre><code class="language-javascript"> {
+     xtype: &#39;pivotgrid&#39;,
+     leftAxisCellConfig: {
+         viewModel: {
+             type: &#39;default&#39;
+         },
+         bind: {
+             userCls: &#39;{record.isRowGroupHeader::pick(&quot;&quot;,&quot;pivotRowHeader&quot;)}&#39;
+         }
+     },
+     topAxisCellConfig: {
+         viewModel: {
+             type: &#39;pivot-cell-model&#39; // to be able to define your own formulas
+         },
+         bind: {
+             userCls: &#39;{value:sign(&quot;pivotCellNegative&quot;,&quot;pivotCellPositive&quot;)}&#39;
+             //userCls: &#39;{column.isColGrandTotal:pick(null,&quot;pivotCellGrandTotal&quot;)}&#39;
+             //userCls: &#39;{cellCls}
+         }
+     }
+     // ... more configs
+ }
+</code></pre><p>This approach lets you use record, column and value in both bind templates and formulas.</p>
+<p>If multiple aggregate dimensions are available and you want to style one of them you can define the
+binding on that dimension like this:</p>
+<pre><code class="language-javascript"> {
+     xtype: &#39;pivotgrid&#39;,
+     matrix: {
+         aggregate: [{
+             dataIndex:  &#39;value&#39;,
+             aggregator: &#39;sum&#39;,
+             align:      &#39;right&#39;,
+             cellConfig: {
+                 viewModel: {
+                     type: &#39;pivot-cell-model&#39;
+                 },
+                 bind: {
+                     userCls: &#39;{value:sign(&quot;pivotCellNegative&quot;,&quot;pivotCellPositive&quot;)}&#39;
+                     //userCls: &#39;{column.isColGrandTotal:pick(null,&quot;pivotCellGrandTotal&quot;)}&#39;
+                     //userCls: &#39;{cellCls}
+                 }
+             }
+         },{
+             dataIndex:  &#39;value&#39;,
+             aggregator: &#39;count&#39;
+         }]
+         // ... more configs
+     }
+ }
+</code></pre><h3 id="components-_-pivot_grid_-_stateful">Stateful<a class="quick-link" href="#components-_-pivot_grid_-_stateful"></a></h3>
+<p>Pivot Grids may be configured as stateful by using <code>stateful: true</code> along with a 
+<code>stateId</code>.  The state will save all dimension configs that you provided for the left, 
+top, and aggregate.  It will additionally recall the state of expanded or collapsed 
+groups.</p>
+<p><strong>Note:</strong> This feature is only available in the classic toolkit.</p>
+<h3 id="components-_-pivot_grid_-_locked_grids">Locked Grids<a class="quick-link" href="#components-_-pivot_grid_-_locked_grids"></a></h3>
+<p>You can &quot;lock&quot; left axis columns by setting <code>enableLocking: true</code> on the Pivot Grid.<br>This allows you scroll <strong>just</strong> the top axis generated columns.</p>
+<p><strong>Note:</strong> This feature is only available in the classic toolkit.</p>
+<h2 id="components-_-pivot_grid_-_plugins">Plugins<a class="quick-link" href="#components-_-pivot_grid_-_plugins"></a></h2>
+<h3 id="components-_-pivot_grid_-_cell_editing">Cell editing<a class="quick-link" href="#components-_-pivot_grid_-_cell_editing"></a></h3>
+<p>This plugin allows users to edit Pivot Grid cells. It uses updaters to process the 
+records behind a Pivot Grid cell.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    plugins: [{
+        ptype: &#39;pivotcellediting&#39;,
+        clicksToEdit: 1,
+        defaultUpdater: &#39;uniform&#39; // define here the type of editing: &#39;overwrite&#39;, &#39;increment&#39;, &#39;percentage&#39;, &#39;uniform&#39;
+    }]
+
+    // ... more configs
+}
+</code></pre><p>More updaters could be defined. For more information check out the updater classes (Ext.pivot.update.*).</p>
+<p>The plugin also provides two events fired on the Pivot Grid that you can use to pre / post process the 
+edit: <code>pivotbeforeupdate</code> and <code>pivotupdate</code>.</p>
+<p><strong>Note:</strong> This feature is only available in the classic toolkit.</p>
+<h3 id="components-_-pivot_grid_-_range_editor">Range editor<a class="quick-link" href="#components-_-pivot_grid_-_range_editor"></a></h3>
+<p>This plugin allows users to edit Pivot Grid results.  Users can double click a Pivot 
+Grid cell which opens a window that contains various fields to update.  The following 
+types of edits are available:</p>
+<ul>
+<li><p><strong>percentage</strong>:  The provided value is a percentage that should be used to increase 
+the values on all records behind that cell.</p>
+</li>
+<li><p><strong>increment</strong>:  The provided value will be added to the existing value on each record.</p>
+</li>
+<li><p><strong>overwrite</strong>:  The provided value will replace the existing value on each record.</p>
+</li>
+<li><p><strong>uniform</strong>:  The provided value will be distributed uniformly on all records.</p>
+</li>
+</ul>
+<p>The plugin also provides two events fired on the Pivot Grid that you can use to pre / post process the 
+edit: <code>pivotbeforeupdate</code> and <code>pivotupdate</code>.</p>
+<h3 id="components-_-pivot_grid_-_drill_down">Drill down<a class="quick-link" href="#components-_-pivot_grid_-_drill_down"></a></h3>
+<p>The drill down plugin allows the user to drill down into Pivot Grid results.  Users can 
+double click a Pivot Grid cell which opens a dialog window housing a grid containing 
+records sourced by the cell.</p>
+<p>The grid presented in that drill down window may be customized by configuring the 
+<code>columns</code> config on the plugin in the same way as a normal Ext JS grid.</p>
+<p>When using remote calculations in the Pivot Grid the <code>remoteStore</code> config needs to be provided which will
+be filtered by the plugin.</p>
+<h3 id="components-_-pivot_grid_-_exporter">Exporter<a class="quick-link" href="#components-_-pivot_grid_-_exporter"></a></h3>
+<p>The Exporter plugin allows Pivot Grid results export to any Exporter type available in
+the class system. The plugin uses the <code>exporter</code> package which comes out of the box with the 
+following exporters:</p>
+<ul>
+<li><p><strong>excel</strong> Excel 2007 xlsx format</p>
+</li>
+<li><p><strong>xml</strong> Excel 2003 xml format</p>
+</li>
+<li><p><strong>csv</strong> CSV file</p>
+</li>
+<li><p><strong>tsv</strong> TSV file</p>
+</li>
+<li><p><strong>html</strong> Html file</p>
+</li>
+</ul>
+<p>The plugin adds two new methods to the Pivot Grid component:</p>
+<ul>
+<li><p><strong>saveDocumentAs</strong>: This function will save the exported file</p>
+</li>
+<li><p><strong>getDocumentData</strong>: Returns the export document content</p>
+</li>
+</ul>
+<p>Both functions accept a config object as parameter:</p>
+<ul>
+<li><p><strong>type</strong>: This is the exporter type (_defaults to <strong>excel</strong>).</p>
+</li>
+<li><p><strong>onlyExpandedNodes</strong>: Set to true to export only the expanded groups (<em>defaults to 
+<strong>false</strong></em>).</p>
+</li>
+<li><p><strong>showSummary</strong>: Set to false to exclude the totals from the export (<em>defaults 
+to <strong>true</strong></em>).</p>
+</li>
+<li><p><strong>title</strong>: Set a title to be shown above column headers in the exported document.</p>
+</li>
+<li><p><strong>fileName</strong>: Name of the saved file.</p>
+</li>
+</ul>
+<p>Each Exporter may come with its own set of additional configs. Those can be provided
+to the above config object when one of those functions is called.</p>
+<p><strong>saveDocumentAs</strong> tries to save the document using browser specific features. If the browser 
+has no features to save files then the content of the generated file is sent to a server script
+and the server responds back with the proper headers for a downloadable file.</p>
+<p>The URL for the server script can be customized in <a href='../../../6.2.0/classic/Ext.exporter.File.html#property-url'>Ext.exporter.File#property-url</a> and the
+server script could be hosted in-house. Implementations for Node and PHP can be found
+in the server folder in the root of the <code>exporter</code> package.</p>
+<h3 id="components-_-pivot_grid_-_configurator">Configurator<a class="quick-link" href="#components-_-pivot_grid_-_configurator"></a></h3>
+<p>The configurator plugin allows the user to easily configure a Pivot Grid with drag and 
+drop functionality. </p>
+<p>The most important config of this plugin is <code>fields</code>. This must be an array of fields that
+can be used via DND to configure the Pivot Grid. The plugin will automatically extract all 
+fields from the store model when using a Local matrix if the fields config is empty.</p>
+<p>Each <a href='../../../6.2.0/classic/Ext.pivot.plugin.configurator.Field.html'>field</a> has a <code>settings</code> config
+that provides some restrictions for field usage. The following configs can be defined in <code>settings</code>:</p>
+<ul>
+<li><p><strong>cls</strong>: CSS class to add to this configurator field</p>
+</li>
+<li><p><strong>style</strong>: Similar to <a href='../../../6.2.0/classic/Ext.Component.html#cfg-style'>Ext.Component#cfg-style</a>.</p>
+</li>
+<li><p><strong>fixed</strong>: If you want a field to be fixed in a specific area then you must define those areas here.
+Possible values: <code>aggregate</code>, <code>leftAxis</code>, <code>topAxis</code>.</p>
+</li>
+<li><p><strong>allowed</strong>: Define here the areas where this field can be used. Possible values: <code>aggregate</code>, <code>leftAxis</code>, <code>topAxis</code>.</p>
+</li>
+<li><p><strong>aggregators</strong>: Define here the functions that can be used when the field is configured as an aggregate.</p>
+</li>
+<li><p><strong>renderers</strong>: These renderers are used only on the aggregate dimensions.</p>
+</li>
+<li><p><strong>formatters</strong>: Formatters are used only on the aggregate dimensions.</p>
+</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-javascript">Ext.define(&#39;App.view.Pivot&#39;, {
+    extend: &#39;Ext.pivot.Grid&#39;,
+    controller: &#39;pivot&#39;,
+
+    plugins: {
+        ptype: &#39;pivotconfigurator&#39;, // use `type` for modern toolkit
+
+        fields: [{
+            dataIndex:  &#39;quantity&#39;,
+            header:     &#39;Qty&#39;,
+            // You can even provide a default aggregator function to be used when this field is dropped
+            // on the agg dimensions
+            aggregator: &#39;min&#39;,
+            formatter: &#39;number(&quot;0&quot;)&#39;,
+
+            settings: {
+                // Define here in which areas this field could be used
+                allowed: [&#39;aggregate&#39;],
+                // Set a custom style for this field to inform the user that it can be dragged only to &quot;Values&quot;
+                style: {
+                    fontWeight: &#39;bold&#39;
+                },
+                // Define here custom formatters that ca be used on this dimension
+                formatters: {
+                    &#39;0&#39;: &#39;number(&quot;0&quot;)&#39;,
+                    &#39;0%&#39;: &#39;number(&quot;0%&quot;)&#39;
+                }
+            }
+        }, {
+            dataIndex:  &#39;amount&#39;,
+            header:     &#39;Value&#39;,
+
+            settings: {
+                // Define here in which areas this field could be used
+                allowed: &#39;aggregate&#39;,
+                // Define here what aggregator functions can be used when this field is
+                // used as an aggregate dimension
+                aggregators: [&#39;sum&#39;, &#39;avg&#39;, &#39;count&#39;],
+                // Set a custom style for this field to inform the user that it can be dragged only to &quot;Values&quot;
+                style: {
+                    fontWeight: &#39;bold&#39;
+                },
+                // Define here custom renderers that can be used on this dimension
+                renderers: {
+                    &#39;Colored 0,000.00&#39;: &#39;coloredRenderer&#39; // coloredRenderer is a function on the ViewController
+                },
+                // Define here custom formatters that ca be used on this dimension
+                formatters: {
+                    &#39;0&#39;: &#39;number(&quot;0&quot;)&#39;,
+                    &#39;0.00&#39;: &#39;number(&quot;0.00&quot;)&#39;,
+                    &#39;0,000.00&#39;: &#39;number(&quot;0,000.00&quot;)&#39;,
+                    &#39;0%&#39;: &#39;number(&quot;0%&quot;)&#39;,
+                    &#39;0.00%&#39;: &#39;number(&quot;0.00%&quot;)&#39;
+                }
+            }
+        }, {
+            dataIndex:  &#39;year&#39;,
+            header:     &#39;Year&#39;,
+
+            settings: {
+                // Define here the areas in which this field is fixed and cannot be moved from
+                fixed: [&#39;topAxis&#39;]
+            }
+        }, {
+            dataIndex:      &#39;month&#39;,
+            header:         &#39;Month&#39;,
+            labelRenderer:  &#39;monthLabelRenderer&#39;, // monthLabelRenderer is a function available on the ViewController
+
+            settings: {
+                // Define here what aggregator functions can be used when this field is
+                // used as an aggregate dimension
+                aggregators: [&#39;count&#39;],
+                // Define here in which areas this field could be used
+                allowed: [&#39;leftAxis&#39;, &#39;topAxis&#39;]
+            }
+        }]
+    }
+});
+
+Ext.define(&#39;App.view.PivotController&#39;, {
+    extend: &#39;Ext.app.ViewController&#39;,
+
+    alias: &#39;controller.pivot&#39;,
+
+    monthLabelRenderer: function(value){
+        return Ext.Date.monthNames[value];
+    },
+
+    // implementation for classic toolkit
+    //coloredRenderer: function(v, meta){
+    //    if(meta) {
+    //        meta.style = Ext.String.format(&#39;color: {0};&#39;, v &gt; 500 ? &#39;green&#39; : &#39;red&#39;);
+    //    }
+    //    return Ext.util.Format.number(v, &#39;0,000.00&#39;);
+    //}
+
+    // implementation for modern toolkit
+    coloredRenderer: function(v, record, dataIndex, cell, column){
+        cell.setStyle( Ext.String.format(&#39;color: {0};&#39;, v &gt; 500 ? &#39;green&#39; : &#39;red&#39;) );
+        return Ext.util.Format.number(v, &#39;0,000.00&#39;);
+    }
+});
+</code></pre><p>The Configurator plugin fires events on the Pivot Grid which allow you to further customize
+the user interaction. In the classic toolkit implementation one such event is <code>beforeshowconfigfieldmenu</code>
+which allows you to define more menus in the configurator field menu.</p>
+<p><img src="images/pg_custom_menu.png" alt="image alt text"></p>
+<pre><code class="language-javascript">Ext.define(&#39;App.view.Pivot&#39;, {
+    extend: &#39;Ext.pivot.Grid&#39;,
+    controller: &#39;pivot&#39;,
+
+    plugins: &#39;pivotconfigurator&#39;,
+
+    matrix: {
+        // ...
+    },
+
+    listeners: {
+        beforeshowconfigfieldmenu: &#39;getCustomMenus&#39;        
+    }
+});
+
+Ext.define(&#39;App.view.PivotController&#39;, {
+    extend: &#39;Ext.app.ViewController&#39;,
+
+    alias: &#39;controller.pivot&#39;,
+
+    getCustomMenus: function (panel, options) {
+        options.menu.add({
+            text: &#39;Custom menu item&#39;,
+            handler: function(){
+                Ext.Msg.alert(&#39;Custom menu item&#39;, Ext.String.format(&#39;Do something for &quot;{0}&quot;&#39;, options.field.getHeader()));
+            }
+        });
+    }
+
+});
+</code></pre><h2 id="components-_-pivot_grid_-_matrix_class">Matrix Class<a class="quick-link" href="#components-_-pivot_grid_-_matrix_class"></a></h2>
+<h3 id="components-_-pivot_grid_-_events">Events<a class="quick-link" href="#components-_-pivot_grid_-_events"></a></h3>
+<p>Most events fired by matrix classes are relayed to the Pivot Grid along with a <code>pivot</code> 
+prefix.</p>
+<h3 id="components-_-pivot_grid_-_base_matrix">Base matrix<a class="quick-link" href="#components-_-pivot_grid_-_base_matrix"></a></h3>
+<p>The Base matrix class builds the top and left axis items.  It also calculates the 
+result for each left / top item pair.</p>
+<h3 id="components-_-pivot_grid_-_local_matrix">Local matrix<a class="quick-link" href="#components-_-pivot_grid_-_local_matrix"></a></h3>
+<p>Setting your matrix type to <code>local</code> indicates that the browser will be responsible for 
+calculating data.  The Local matrix is ideal for small to medium-sized data sets.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    // ...
+
+    matrix: {
+
+        type: &#39;local&#39;, // default value
+
+        store: &#39;YourStore&#39;,
+
+        recordsPerJob: 1000,
+
+        timeBetweenJobs: 2,
+
+        leftAxis: [],
+
+        topAxis: [],
+
+        aggregate: []
+
+    }
+
+    // ...
+
+}
+</code></pre><p>The Local matrix processes store records in multiple jobs to help prevent overloading 
+the browser when working with medium-sized data sets.  You can optionally configure how 
+many records should be processed per job and how long to wait between jobs. </p>
+<h3 id="components-_-pivot_grid_-_remote_matrix">Remote matrix<a class="quick-link" href="#components-_-pivot_grid_-_remote_matrix"></a></h3>
+<p>Calculating large data sets in the browser can take a lot of time and may cause the 
+browser to become unresponsive.  If you are working with large data sets, you should use 
+the Remote matrix.  The Remote matrix will serialize all of your configs and send them 
+to the server so that you may perform your calculations remotely.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotgrid&#39;,
+
+    // ...
+
+    matrix: {
+
+        type: &#39;remote&#39;,
+
+        url: &#39;http://your-backend-url&#39;,
+
+        timeout: 3000, // optional config used by the Ajax call
+
+        leftAxis: [],
+
+        topAxis: [],
+
+        aggregate: []
+
+    }
+
+    // ...
+
+}
+</code></pre><h2 id="components-_-pivot_grid_-_faq">FAQ<a class="quick-link" href="#components-_-pivot_grid_-_faq"></a></h2>
+<h3 id="components-_-pivot_grid_-_what_is_sent_to_the_server_">What is sent to the server?<a class="quick-link" href="#components-_-pivot_grid_-_what_is_sent_to_the_server_"></a></h3>
+<p>The leftAxis, topAxis, and aggregate are arrays of dimension item objects.  These arrays 
+are serialized and sent as params in the Ajax request.</p>
+<pre><code class="language-javascript">params = {
+
+    leftAxis: leftAxis,
+
+    topAxis: topAxis,
+
+    aggregate: aggregate,
+
+    grandTotalKey: &#39;grandtotal&#39;, // the value configured for grandTotalKey on the matrix
+
+    keysSeparator: &#39;#_#&#39; // the value configured for keysSeparator on the matrix
+
+};
+
+// ...
+
+Ext.Ajax.request({
+
+    // ...
+
+    url: me.url,
+
+    timeout: me.timeout,
+
+    jsonData: params,
+
+    // ...
+
+});
+</code></pre><p>Before doing the Ajax call, additional params are collected via the <code>beforerequest</code> 
+event (which is actually relayed to the Pivot Grid as <code>pivotbeforerequest</code>) or via the 
+template method <code>onBeforeRequest</code>.</p>
+<h3 id="components-_-pivot_grid_-_what_should_the_json_response_look_like_">What should the JSON response look like?<a class="quick-link" href="#components-_-pivot_grid_-_what_should_the_json_response_look_like_"></a></h3>
+<p>The Pivot Grid expects a JSON response in a specific format.  The response should return 
+an array of items for the leftAxis and topAxis and all results for the left / top item 
+pairs.  </p>
+<p><strong>Note:</strong> The &quot;id&quot; property is very important.  An id will be generated if not 
+specified.</p>
+<pre><code class="language-javascript">{
+
+    success: true,
+
+    leftAxis: [{
+
+        key: &#39;-1276511163&#39;, // provide your own key but be careful to avoid conflicts with keysSeparator
+
+        value: &#39;Macromedia&#39;,
+
+        // following is the id of the dimension, the one that you 
+        // provided or was generated
+
+        dimensionId: &#39;leftAxis1&#39;
+
+    }, {
+
+        // when multiple dimensions are provided then the result key 
+        // should be formatted like this
+
+        key: &#39;-1276511163#_#243243&#39;, // use the keysSeparator that was sent to the server
+
+        value: &#39;Steve&#39;,
+
+        // following is the id of the dimension, the one that you 
+        // provided or was generated
+
+        dimensionId: &#39;leftAxis2&#39;
+
+    }],
+
+    topAxis: [{
+
+        // same like leftAxis
+
+    }],
+
+    results: [{
+
+        leftKey: &#39;-1276511163&#39;,
+
+        topKey: &#39;34535345435&#39;,
+
+        values: {
+
+            agg1: 4345.34, // agg1 is the id of the aggregate dimension
+
+            agg2: 244 // agg2 is the id of the 2nd aggregate dimension defined
+
+        }
+
+    }]
+
+}
+</code></pre><p>A key called &quot;grandtotal&quot; is generated for the matrix in regards to grand total calculations.
+You can modify this naming scheme by changing the value of <code>matrix.grandTotalKey</code>.</p>
+<p>If used on both <code>leftKey</code> and <code>topKey</code>, it represents the grand total for both axis.</p>
+<p>If used for <code>leftKey</code>, it represents the grand total for columns for each topKey 
+provided.</p>
+<p>If used for <code>topKey</code>, it represents the grand total for rows for each leftKey provided.</p>
+<h3 id="components-_-pivot_grid_-_how_do_i_calculate_on_the_server_">How do I calculate on the server?<a class="quick-link" href="#components-_-pivot_grid_-_how_do_i_calculate_on_the_server_"></a></h3>
+<p>The server folder in the <code>pivot</code> package contains a PHP example that shows one approach to server side 
+calculations.  That said, you can also author your own implementation in any server-side 
+language as long as it returns the JSON object described above.</p>
+<h2 id="components-_-pivot_grid_-_error_handling">Error Handling<a class="quick-link" href="#components-_-pivot_grid_-_error_handling"></a></h2>
+<p>If server calculations fail, you can send back <code>success: false</code> along with any 
+additional metadata information you may wish to process in the Pivot client.  The Remote 
+matrix class will recognize that the call failed and will fire the &quot;requestexception&quot; 
+event, which is relayed to the Pivot Grid as &quot;pivotrequestexception&quot;.  </p>
+<h2 id="components-_-pivot_grid_-_conclusion">Conclusion<a class="quick-link" href="#components-_-pivot_grid_-_conclusion"></a></h2>
+<p>The Sencha Pivot Grid provides an ideal solution for gleaning summarization from large 
+datasets. Specific fields from the dataset can be highlighted as quantitative roll-ups 
+of the complete dataset, which allows users to visualize the dataset from multiple 
+viewpoints.  </p>
+<p>For more examples of how to configure the Pivot Grid see the KitchenSink examples folder in the SDK 
+download.</p>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            <a href="https://www.facebook.com/senchainc/" target="_blank"><img class="social" src="../../home-images/fb.png"/></a>
+            <a href="https://www.linkedin.com/company/sencha-inc" target="_blank"><img class="social" src="../../home-images/in.png"/></a>
+            <a href="https://twitter.com/Sencha" target="_blank"><img class="social" src="../../home-images/twt.png"/></a>
+            Ext JS 6.2.0  | <a href='https://www.sencha.com/legal/terms-of-use/' target='_blank'>Terms of Use</a>
+        </p>
+    </div>
+</div>
+
+            
+            
+        </div>
+    </div>
+    <h2 class="product-header"><a href="../../index.html">Ext JS 6.2.0 </a>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+        <div id="peekaboo-input" class="peekaboo-input">
+            <input type="text" id="mobile-input" />
+        </div>
+    </h2>
+
+    <div id="product-tree-ct" class="hide">
+        <div id="product-tree">
+            <div class="product-name-ct">
+                    <div id="product-menu-extjs" class="product-name-item">Ext JS</div>
+                    <div id="product-menu-sencha_test" class="product-name-item">Sencha Test</div>
+                    <div id="product-menu-cmd" class="product-name-item">Cmd</div>
+                    <div id="product-menu-themer" class="product-name-item">Sencha Themer</div>
+                    <div id="product-menu-gxt" class="product-name-item">GXT</div>
+                    <div id="product-menu-ide_plugins" class="product-name-item">IDE Plugins</div>
+                    <div id="product-menu-sencha_inspector" class="product-name-item">Sencha Inspector</div>
+                    <div id="product-menu-architect" class="product-name-item">Architect</div>
+                    <div id="product-menu-fiddle" class="product-name-item">Sencha Fiddle</div>
+                    <div id="product-menu-touch" class="product-name-item">Touch</div>
+            </div>
+                <div class="product-version-ct hide extjs">
+                        <h2>Ext JS</h2>
+                            <h3>6.x</h3>
+                                        <a class="product-item" href="../../index.html">6.2.0</a>
+                                        <a class="product-item" href="../../../6.0.2/index.html">6.0.2</a>
+                                        <a class="product-item" href="../../../6.0.1/index.html">6.0.1</a>
+                                        <a class="product-item" href="../../../6.0.0/index.html">6.0.0</a>
+                            <h3>5.x</h3>
+                                        <a class="product-item" href="../../../5.1.3/index.html">5.1.3</a>
+                                        <a class="product-item" href="../../../5.1.2/index.html">5.1.2</a>
+                                        <a class="product-item" href="../../../5.1.1/index.html">5.1.1</a>
+                                        <a class="product-item" href="../../../5.1.0/index.html">5.1.0</a>
+                                        <a class="product-item" href="../../../5.0.1/index.html">5.0.1</a>
+                                        <a class="product-item" href="../../../5.0.0/index.html">5.0.0</a>
+                            <h3>4.x</h3>
+                                        <a class="product-item" href="../../../4.2.6/">4.2.6</a>
+                                        <a class="product-item" href="../../../4.1.3/">4.1.3</a>
+                                        <a class="product-item" href="../../../4.0.7/">4.0.7</a>
+                            <h3>3.x</h3>
+                                        <a class="product-item" href="../../../3.4.0/">3.4.0</a>
+                </div>
+                <div class="product-version-ct hide sencha_test">
+                        <h2>Sencha Test</h2>
+                                <a class="product-item" href="../../../../sencha_test/2.0.0/">2.0.0 EA</a>
+                                <a class="product-item" href="../../../../sencha_test/1.0.3/">1.0.3</a>
+                </div>
+                <div class="product-version-ct hide cmd">
+                        <h2>Cmd</h2>
+                        <a  href="../../../../cmd/index.html">Cmd</a>
+                </div>
+                <div class="product-version-ct hide themer">
+                        <h2>Sencha Themer</h2>
+                                <a class="product-item" href="../../../../themer/1.1/">1.1.0 EA</a>
+                                <a class="product-item" href="../../../../themer/1.0/">1.0.1</a>
+                </div>
+                <div class="product-version-ct hide gxt">
+                        <h2>GXT</h2>
+                                <a class="product-item" href="../../../../gxt/5.x/index.html">5.x EA</a>
+                                <a class="product-item" href="../../../../gxt/4.x/index.html">4.x</a>
+                                <a class="product-item" href="../../../../gxt/3.x/index.html">3.x</a>
+                </div>
+                <div class="product-version-ct hide ide_plugins">
+                        <h2>IDE Plugins</h2>
+                        <a  href="../../../../ide_plugins/index.html">IDE Plugins</a>
+                </div>
+                <div class="product-version-ct hide sencha_inspector">
+                        <h2>Sencha Inspector</h2>
+                        <a  href="../../../../sencha_inspector/index.html">Sencha Inspector</a>
+                </div>
+                <div class="product-version-ct hide architect">
+                        <h2>Architect</h2>
+                                <a class="product-item" href="../../../../architect/4.1/index.html">Architect 4.1 EA</a>
+                                <a class="product-item" href="../../../../architect/4/index.html">Architect 4</a>
+                                <a class="product-item" href="../../../../architect/3/index.html">Architect 3</a>
+                </div>
+                <div class="product-version-ct hide fiddle">
+                        <h2>Sencha Fiddle</h2>
+                        <a  href="../../../../fiddle/index.html">Sencha Fiddle</a>
+                </div>
+                <div class="product-version-ct hide touch">
+                        <h2>Touch</h2>
+                            <h3>2.x</h3>
+                                        <a class="product-item" href="../../../../touch/2.4/index.html">Touch 2.4</a>
+                                        <a class="product-item" href="../../../../touch/2.3.1/">Touch 2.3</a>
+                                        <a class="product-item" href="../../../../touch/2.2.1/">Touch 2.2</a>
+                                        <a class="product-item" href="../../../../touch/2.0.2/">Touch 2.0</a>
+                </div>
+        </div>
+    </div>
+
+    <div id="historyConfigPanel">
+        <div class="history-type-selector">
+            <input id="historyTypeCurrent" type="radio" name="historyType" value="current" checked="true" />
+            <label for="historyTypeCurrent">Current Product / Version</label><br>
+            <input id="historyTypeAll" type="radio" name="historyType" value="all" />
+            <label for="historyTypeAll">All</label><br>
+            <div id="history-label-toggle">
+                <input id="history-all-labels" type="checkbox" checked="true" />
+                <label for="history-all-labels">Show product details in the history bar</label>
+                <div class="mask"></div>
+            </div>
+            <span id="history-clear" class="history-clear tooltip tooltip-tr-br" data-tip="Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="history-full-list"></div>
+    </div>
+
+    <div id="search-history-panel"></div>
+
+    <div id="modal-placeholder" class="modal">
+        <span id="modal-close">&times;</span>
+        <img id="modal-content">
+        <div id="modal-caption"></div>
+    </div>
+
+</body>
+    <script type="text/javascript" src="../../js/searchIndex.js"></script>
+    <script type="text/javascript" src="../../js/guideSearch.js"></script>
+<!--[if lt IE 9 ]>
+<script type="text/javascript" src="../../js/media-query-poly.js"></script>
+<style>
+    span.da-inline-fiddle-nav-fiddle.x-fa.fa-play-circle {
+        display: none;
+    }
+</style>
+<![endif]-->
+<script>
+    if (navigator.userAgent.indexOf("Safari") > -1) {
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload()
+            }
+        };
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+            //
+        }
+    }
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1396058-28', 'auto');
+    ga('send', 'pageview');
+</script>
+</html>

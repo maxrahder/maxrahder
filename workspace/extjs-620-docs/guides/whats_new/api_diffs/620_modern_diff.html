@@ -1,0 +1,3317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modern - 6.0.2 and 6.2.0 | Ext JS 6.2.0 </title>
+    <!--  Generated on November, 11 2016 at 0:39 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta property="og:image" content="../../../home-images/sencha-200.png" />
+    <meta property="og:title" content="Modern - 6.0.2 and 6.2.0 | Ext JS 6.2.0 " />
+    <meta property="og:description" content="Differences Between Ext JS 6.0.2 and Ext JS 6.2.0 Modern Toolkit While we believe these guides are extremely helpful to developers planning to upgrade their ..." />
+    <meta property="og:site_name" content="Sencha Documentation" />
+    <meta property="og:url" content="http://docs.sencha.com/extjs/6.2.0/whats_new/api_diffs/620_modern_diff.html" />
+    <meta name="description" content="Differences Between Ext JS 6.0.2 and Ext JS 6.2.0 Modern Toolkit While we believe these guides are extremely helpful to developers planning to upgrade their ...">
+    <style>
+        /*!
+         *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+         *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+         */
+        /* FONT PATH
+         * -------------------------- */
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../../css/fonts/fontawesome-webfont.eot?v=4.5.0');
+            src: url('../../../css/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+            url('../../../css/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+            url('../../../css/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+            url('../../../css/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+            url('../../../css/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="../../../css/prism.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/app.css">
+</head>
+<body class=" is-guide  has-guides  has-quick-start  has-api tree-shown">
+    <script type="text/javascript">
+        function getOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            } else if(userAgent.match(/Android/i)) {
+                return 'android';
+            }
+        }
+
+        var hash = document.location.hash,
+                rawhash, newhash, prop, member,
+                isIE8 = false;
+
+        if(hash.indexOf('#!') > -1) {
+            hash    = hash.replace('#!/api/','');
+            rawhash = hash.split('-'),
+            prop    = (rawhash[1] == 'static') ? rawhash[2] : rawhash[1],
+            member  = (rawhash[1] == 'static') ? rawhash[3] : rawhash[2],
+            newhash = rawhash[0] + '.html';
+
+            if (prop && member) {
+                newhash += '#' + prop + '-' + member;
+            }
+
+            document.location.href = newhash;
+        }
+
+        document.body.className += ' ' + getOS();
+    </script>
+    <!--[if IE 8]>
+    <script type='text/javascript'>
+        isIE8 = true;
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        var ExtL = ExtL || {},
+            specificId = 'whats_new_-_api_diffs/620_modern_diff',
+            isClassTemplate = false,
+            isHome = false,
+            isLanding = false,
+            isApi = false,
+            isGuide = true,
+            isQuickStart = false,
+            hasApi = true,
+            hasGuides = true,
+            hasQuickStart = true
+            singleton = false,
+            pageName = 'Modern - 6.0.2 and 6.2.0',
+            pageTitle = 'Ext JS',
+            homePath = '../../../',
+            product = 'extjs',
+            pversion = '6.2.0-modern',
+            hasVersions = true,
+            myToolkit = 'modern',
+            myVersion = '6.2.0',
+            appliesToToolkit = 'modern';
+
+            if (!isIE8) {
+                document.write('<script type=\"text/javascript\" src=\"../../../js/prism.js\"><\/script>');
+            }
+    </script>
+    <script type="text/javascript" src="../../../js/ace.js"></script>
+    <script type="text/javascript" src="../../../js/beautify.js"></script>
+    <script type="text/javascript" src="../../../js/app.js"></script>
+    <div id="help-wrap">
+        <div class="help-header">
+            Docs Help
+            <div id="help-close"></div>
+        </div>
+        <div class="classText">
+            <div class="toc">
+                <h2>Contents</h2>
+                    <a class="toc-page-h2" href="#terms-icons-and-labels">Terms, Icons, and Labels</a>
+                    <a class="toc-page-h3" href="#access-levels">Access Levels</a>
+                    <a class="toc-page-h3" href="#member-types">Member Types</a>
+                    <a class="toc-page-h3" href="#member-syntax">Member Syntax</a>
+                    <a class="toc-page-h3" href="#member-flags">Member Flags</a>
+                    <a class="toc-page-h3" href="#class-icons">Class Icons</a>
+                    <a class="toc-page-h3" href="#member-icons">Member Icons</a>
+                    <a class="toc-page-h2" href="#navigation-and-features">Navigation and Features</a>
+                    <a class="toc-page-h3" href="#class-member-quick-nav-menu">Class Member Quick-Nav Menu</a>
+                    <a class="toc-page-h3" href="#getter-and-setter-methods">Getter and Setter Methods</a>
+                    <a class="toc-page-h3" href="#history-bar">History Bar</a>
+                    <a class="toc-page-h3" href="#search-and-filters">Search and Filters</a>
+                    <a class="toc-page-h3" href="#api-doc-class-metadata">API Doc Class Metadata</a>
+                    <a class="toc-page-h3" href="#expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</a>
+                    <a class="toc-page-h3" href="#desktop-vs-mobile-view">Desktop -vs- Mobile View</a>
+                    <a class="toc-page-h3" href="#viewing-the-class-source">Viewing the Class Source</a>
+            </div>
+            <h2 id="terms-icons-and-labels">Terms, Icons, and Labels</h2>
+    <p>Many classes have shortcut names used when creating (instantiating) a class with a 
+    configuration object.  The shortcut name is referred to as an <code>alias</code> (or <code>xtype</code> if the 
+    class extends Ext.Component).  The alias/xtype is listed next to the class name of 
+    applicable classes for quick reference.</p>
+    <h3 id="access-levels">Access Levels</h3>
+    <p>Framework classes or their members may be specified as <code>private</code> or <code>protected</code>.  Else, 
+    the class / member is <code>public</code>.  <code>Public</code>, <code>protected</code>, and <code>private</code> are access 
+    descriptors used to convey how and when the class or class member should be used.</p>
+    <ul>
+    <li><p><strong>Public</strong> classes and class members are available for use by any other class or 
+    application code and may be relied upon as a stable and persistent within major product 
+    versions.  Public classes and members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Protected</strong> class members are stable <code>public</code> members intended to be used by the 
+    owning class or its subclasses.  Protected members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Private</strong> classes and class members are used internally by the framework and are not 
+    intended to be used by application developers.  Private classes and members may change or 
+    be omitted from the framework at any time without notice and should not be relied upon in 
+    application logic.</p>
+    </li>
+    </ul>
+    <h3 id="member-types">Member Types</h3>
+    <ul>
+    <li><strong>Config</strong> - The configuration options for a class.</li>
+    <li><strong>Property</strong> - Set once a class is instantiated. *See Read Only below.</li>
+    <li><strong>Method</strong> - Actions that can be performed by a class.  Methods should be read as 
+    instance methods and can only be called from a instance of a given class.  Static methods 
+    that can be called directly from the class itself will have a <code>static</code> label next to the 
+    method name.  *See Static below.</li>
+    <li><strong>Event</strong> - Events are specific to the framework event system allowing for classes to 
+    programmatically raise an event to be handled by one or more event handler methods.  DOM 
+    events, while handled by the framework event system, are not specifically described 
+    within the API documentation.  *For DOM events refer to the 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events">event reference</a> page from MDN.</li>
+    <li><strong>Theme Variable</strong> - Variables used by the visual theme engine employed by the 
+    framework.</li>
+    <li><strong>Theme Mixin</strong> - Functions used by the visual theme engine employed by the framework 
+    and may use values set in various Theme Variables.</li>
+    </ul>
+    <h3 id="member-syntax">Member Syntax</h3>
+    <p>Below is an example class member that we can disect to show the syntax of a class member 
+    (the lookupComponent method as viewed from the Ext.button.Button class in this case).</p>
+    <div style="position: relative;" class="show-inherited show-protected members">
+        <div style="border: 1px solid #E4E4E4;" class="classmembers member-protected isNotStatic isInherited member-temp-expanded" data-member-name="lookupComponent">
+            <div class="collapse-toggle"></div>
+            <div class="source-class"><a href="javascript:void(0);">Ext.container.Container</a><div class="viewSource"><a href="javascript:void(0);"></a><a target="_blank" href="javascript:void(0);">view source</a></div></div>
+            <div class="member-header">
+            <a href="javascript:void(0);" class="member-name-link"><span data-ref="method-lookupComponent" class="member-name"><strong>lookup</strong>Component</span></a>
+            <span class="params-list"> ( item )</span> : <span class="memberType">Ext.Component</span>
+            <div class="member-tags"><span class="protected">protected</span></div>
+        </div>
+            <p>Called when a raw config object is added to this container either during initialization of the <a href="javascript:void(0);">items</a> config,
+        or when new items are <a href="javascript:void(0);">added), or {@link #insert inserted</a>.</p>
+        <p>This method converts the passed object into an instanced child component.</p>
+        <p>This may be overridden in subclasses when special processing needs to be applied to child creation.</p>
+                    <div class="detail-header">Parameters</div>
+                <p><span class="params-list">item</span> :
+                        <span class="memberType">&nbsp;Object</span>
+                </p>
+                <div class="params-desc"><p>The config object being added.</p></div>
+                <div class="detail-header">Returns</div>
+                <span style="margin-left:12px;" class="memberType">Ext.Component</span>
+                <div class="return-desc"><p>The component to be added.</p>
+            </div>
+        </div>
+    </div>
+    
+    <p>Let&#39;s look at each part of the member row:</p>
+    <ul>
+    <li><strong>Expand/Collapse</strong> - On the left-hand size of the member row is a control used to 
+    expand and collapse each member row to show / hide member details.</li>
+    <li><strong>Member Name</strong> - The name of the class member (<code>lookupComponent</code> in this example)</li>
+    <li><strong>Method Param</strong> - Any required or optional params used by a method (or passed to an 
+    event handler method) will be listed next to the method name within parenthesis 
+    (<code>( item )</code> in this example)</li>
+    <li><strong>Return type</strong> - The class instance or javascript object returned by the method or 
+    property (<code>Ext.Component</code> in this case).  This may be omitted for methods that do not 
+    return anything other than <code>undefined</code> or may display as multiple possible values 
+    separated by a forward slash <code>/</code> signifying that what is returned may depend on the 
+    results of the method call (i.e. a method may return a Component if a get method calls is 
+    successful or <code>false</code> if unsuccessful which would be displayed as 
+    <code>Ext.Component/Boolean</code>).</li>
+    <li><strong>Flags</strong> - Any flags applicable to the member will be displayed next (<code>PROTECTED</code> in 
+    this example - see the Flags section below)</li>
+    <li><strong>Member Origin</strong> - On the right-hand side of the member row is the class where the 
+    member was initially described (<code>Ext.container.Container</code> in this example).  The source 
+    class will be displayed as a blue link if the member originates from the current class 
+    and gray if it is inherited from an ancestor or mixed-in class.</li>
+    <li><strong>Member Source</strong> - On the right-hand side below the member origin class is a link to 
+    view the member&#39;s source (<code>view source</code> in the example)</li>
+    <li><strong>Params List</strong> - Each param for a class method will be listed using the same name 
+    found above in parenthesis, the type of class or object expected, and a description of 
+    the param (<code>item : Object</code> in the example).</li>
+    <li><strong>Returns</strong> - If a class returns a value other than <code>undefined</code> a &quot;Returns&quot; section 
+    will note the type of class or object returned and a description (<code>Ext.Component</code> in the 
+    example)</li>
+    <li><strong>Since</strong> (<em>not shown in the example</em>) - Some members will show which version of the 
+    product the member was first introduced (i.e. <code>Available since 3.4.0</code> - <em>not pictured in 
+    the example</em>) just after the member description</li>
+    <li><strong>Default</strong> (<em>not shown in the example</em>) - Configs often show the default config value 
+    to be applied to a class instance if not overridden (i.e. <code>Defaults to: false</code>)</li>
+    </ul>
+    <h3 id="member-flags">Member Flags</h3>
+    <p>The API documentation uses a number of flags to further commnicate the class member&#39;s 
+    function and intent.  The label may be represented by a text label, an abbreviation, or 
+    an icon.</p>
+    <ul>
+    <li><strong>Required</strong> - Required config when instantiating a class</li>
+    <li><strong>Bindable</strong> - The config has a setter which allows this config to be set via ViewModel 
+    binding</li>
+    <li><strong>Read Only</strong> - The property may be read, but cannot be used to configure / 
+    re-configure a class instance at runtime</li>
+    <li><strong>Singleton</strong> - Singleton classes are instantiated immediately once defined and may not 
+    be instantiated manually</li>
+    <li><strong>Static</strong> - A static method or property is a method or property belonging to the class 
+    itself, not an instance of the class</li>
+    <li><strong>Chainable</strong> - Refers to methods that return the class instance back when called.<br>This enables chained method calls like: <code>classInstance.method1().method2().etc();</code></li>
+    <li><strong>Deprecated</strong> - A class or member that is scheduled for removal in a future 
+    framework version and is provided in the current version for backwards compatibility.<br>Deprecated classes and members will have a message directing you to the preferred class / 
+    method going forward.</li>
+    <li><strong>Removed</strong> - A removed class or member that exists in documentation only as a 
+    reference for users upgrading between framework versions</li>
+    <li><strong>Template</strong> - A method defined within a base class designed to be overridden by 
+    subclasses</li>
+    <li><strong>Abstract</strong> - A class or member may be be defined as abstract.  Abstract classes and 
+    members establish a class structure and provide limited, if any, code.  Class-specific 
+    code will be furnished via overrides in subclasses.</li>
+    <li><strong>Preventable</strong> - Events marked preventable will not fire if <code>false</code> is returned from 
+    an event handler</li>
+    </ul>
+    <h3 id="class-icons">Class Icons</h3>
+    <p><span class="icon-demo class-icon"></span> - Indicates a framework class  </p>
+    <p><span class="icon-demo singleton-icon"></span> - A singleton framework class. *See the 
+    singleton flag for more information  </p>
+    <p><span class="icon-demo component-icon"></span> - A component-type framework class (any 
+    class within the Ext JS framework that extends Ext.Component)  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h3 id="member-icons">Member Icons</h3>
+    <p><span class="icon-demo fa fa-cubes"></span> - Indicates a class member of type <code>config</code>  </p>
+    <p><span class="icon-demo fa fa-book"></span> - Indicates a class member of type <code>property</code>  </p>
+    <p><span class="icon-demo fa fa-object-group"></span> - Indicates a class member of type 
+    <code>method</code>  </p>
+    <p><span class="icon-demo fa fa-bolt"></span> - Indicates a class member of type <code>event</code>  </p>
+    <p><span class="icon-demo fa fa-paint-brush"></span> - Indicates a class member of type 
+    <code>theme variable</code>  </p>
+    <p><span class="icon-demo fa fa-tint"></span> - Indicates a class member of type 
+    <code>theme mixin</code>  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h2 id="navigation-and-features">Navigation and Features</h2>
+    <h3 id="class-member-quick-nav-menu">Class Member Quick-Nav Menu</h3>
+    <p>Just below the class name on an API doc page is a row of buttons corresponding to the 
+    types of members owned by the current class.  Each button shows a count of members by 
+    type (this count is updated as filters are applied).  Clicking the button will navigate 
+    you to that member section.  Hovering over the member-type button will reveal a popup 
+    menu of all members of that type for quick navigation.</p>
+    <h3 id="getter-and-setter-methods">Getter and Setter Methods</h3>
+    <p>Getting and setter methods that correlate to a class config option will show up in the 
+    methods section as well as in the configs section of both the API doc and the member-type 
+    menus just beneath the config they work with.  The getter and setter method documentation 
+    will be found in the config row for easy reference.</p>
+    <h3 id="history-bar">History Bar</h3>
+    <p>Your page history is kept in localstorage and displayed (using the available real estate) 
+    just below the top title bar.  By default, the only search results shown are the pages 
+    matching the product / version you&#39;re currently viewing.  You can expand what is 
+    displayed by clicking on the <span class="icon-demo history-config"></span> button on the 
+    right-hand side of the history bar and choosing the &quot;All&quot; radio option.  This will show 
+    all recent pages in the history bar for all products / versions.</p>
+    <p>Within the history config menu you will also see a listing of your recent page visits. 
+    The results are filtered by the &quot;Current Product / Version&quot; and &quot;All&quot; radio options. 
+    Clicking on the <span class="icon-demo history-clear"></span> button will clear the history bar as 
+    well as the history kept in local storage.</p>
+    <p>If &quot;All&quot; is selected in the history config menu the checkbox option for &quot;Show product 
+    details in the history bar&quot; will be enabled.  When checked, the product/version for each 
+    historic page will show alongside the page name in the history bar.  Hovering the cursor 
+    over the page names in the history bar will also show the product/version as a tooltip.</p>
+    <h3 id="search-and-filters">Search and Filters</h3>
+    <p>Both API docs and guides can be searched for using the search field at the top of the 
+    page.</p>
+    <p>On API doc pages there is also a filter input field that filters the member rows 
+    using the filter string.  In addition to filtering by string you can filter the class 
+    members by access level and inheritance.  This is done using the checkboxes at the top of 
+    the page.  <strong>Note</strong> that filtering out <code>private</code> members also filters the API class 
+    navigation tree.</p>
+    <p>Clicking on an empty search field will show your last 10 searches for quick navigation.</p>
+    <h3 id="api-doc-class-metadata">API Doc Class Metadata</h3>
+    <p>Each API doc page (with the exception of Javascript primitives pages) has a menu view of 
+    metadata relating to that class.  This metadata view will have one or more of the 
+    following:</p>
+    <ul>
+    <li><strong>Alternate Name</strong> - One or more additional class name synonymns (in Ext JS 6.0.0 the 
+    <code>Ext.button.Button</code> class has an alternate class name of <code>Ext.Button</code>).  Alternate class 
+    names are commonly maintained for backward compatibility.</li>
+    <li><strong>Hierarchy</strong> - The hierararchy view lists the inheritance chain of the current class 
+    up through its ancestor classes up to the root base class.</li>
+    <li><strong>Mixins</strong> - A list of classes that are mixed into the current class</li>
+    <li><strong>Inherited Mixins</strong> - A list of classes that are mixed into an ancestor of the current 
+    class</li>
+    <li><strong>Requires</strong> - All classes required to be defined for the class to be instantiated</li>
+    <li><strong>Uses</strong> - A list of classes potentially used by the class at some point in its 
+    lifecycle, but not necessarily requried for the class to initially be instantiated</li>
+    <li><strong>Subclasses</strong> - Classes that extend the current class</li>
+    </ul>
+    <h3 id="expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</h3>
+    <p>Runnable examples (Fiddles) are expanded on a page by default.  You can collapse and 
+    expand example code blocks individually using the arrow on the top-left of the code 
+    block.  You can also toggle the collapse state of all examples using the toggle button on 
+    the top-right of the page.  The toggle-all state will be remembered between page loads.</p>
+    <p>Class members are collapsed on a page by default.  You can expand and collapse members 
+    using the arrow icon on the left of the member row or globally using the expand / 
+    collapse all toggle button top-right.</p>
+    <h3 id="desktop-vs-mobile-view">Desktop -vs- Mobile View</h3>
+    <p>Viewing the docs on narrower screens or browsers will result in a view optimized for a 
+    smaller form factor.  The primary differences between the desktop and &quot;mobile&quot; view are:</p>
+    <ul>
+    <li>Global navigation will be located in a menu on the left-hand side accessible via the 
+    hamburger menu icon.  The menu houses the following (on most pages):<ul>
+    <li>The name of the current product (as a link to the product landing page)</li>
+    <li>The Sencha icon used to navigate back to the documentation home page</li>
+    <li>The product menu drop-down button</li>
+    <li>Tabs of navigation trees for the API docs and guides</li>
+    </ul>
+    </li>
+    <li>Current context navigation and tools is located on the right-hand side accessible via 
+    the gear icon.  The context menu houses teh following:<ul>
+    <li>The global search input field</li>
+    <li>(<em>API doc</em>) A &quot;Filters&quot; tab with the member filter, expand / collapse all examples 
+    button, expand / collapse all member rows button, the access level filter checkboxes, 
+    and the counts of each member</li>
+    <li>(<em>API doc</em>) A &quot;Related Classes&quot; tab containing the menu of metadata related to the 
+    current class</li>
+    <li>(<em>Guides</em>) The table of contents for the guide</li>
+    </ul>
+    </li>
+    </ul>
+    <h3 id="viewing-the-class-source">Viewing the Class Source</h3>
+    <p>The class source can be viewed by clicking on the class name at the top of an API doc 
+    page.  The source for class members can be viewed by clicking on the &quot;view source&quot; link 
+    on the right-hand side of the member row.</p>
+    
+        </div>
+    </div>
+    <div id="header">
+        <div class="logo">
+            <a href="http://docs.sencha.com"><img height="32" src="../../../home-images/sencha_logo_thumb.png"/></a>
+        </div>
+        <span id="mobile-main-nav-menu-btn" class="fa fa-bars"></span>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl landing-product-menu-btn"><div class="callout callout-b"></div></span>
+            <div class="page-title">Modern - 6.0.2 and 6.2.0</div>
+        <span id="mobile-context-menu-btn" class="fa fa-cog"></span>
+    </div>
+    <div id="centerContent">
+        <div id="history-nav">
+            <span id="history-config" class="history-config tooltip tooltip-tr-br" data-tip="Configure / Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="class-tree-ct" class="class-tree">
+            <h2 class="product-header">
+                <div class="logo">
+                    <a href="http://docs.sencha.com"><img src="../../../home-images/sencha_logo1x.png"/></a>
+                </div>
+                <a href="../../../index.html">Ext JS 6.2.0 </a>
+                <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn  tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+            </h2>
+            <div id="tree-header" class="pre-load">
+                    <div id="quickStartTab" class="toolbarHeaderButton">
+                        Quick Start
+                    </div>
+                <div id="guideTab" class="toolbarHeaderButton active-tab">
+                    Guides
+                </div>
+                <div id="apiTab" class="toolbarHeaderButton">
+                    API
+                </div>
+                <div id="hide-class-tree"></div>
+            </div>
+            <div id="tree-scroller">
+                <div id="tree" class="show-private show-protected is-tree hide">
+                        <div id="toolkit-tab-ct">
+        <div id="modernTab" class="active-tab">modern</div>
+        <div id="classicTab">classic</div>
+    </div>
+
+    <div id="toolkit-tree-ct">
+        <div id="modernTree" class="is-tree">
+            
+        </div>
+
+        <div id="classicTree" class="is-tree hide">
+            
+        </div>
+    </div>
+<div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Classes" data-collapse="Collapse All Classes"><div class="callout callout-b"></div></div>
+                </div>
+                <div id="guide-tree" class="hide is-tree">
+                    <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-getting_started" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Getting Started</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../getting_started/getting_started.html" class="tree-leaf-content isLeaf universal-decoration" id="node-getting_started_-_getting_started" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Setup</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">What's New?</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../whats_new/whats_new.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_whats_new" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">What's New</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../whats_new/release_notes.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_release_notes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Release Notes</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../whats_new/extjs_upgrade_guide.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_extjs_upgrade_guide" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS 6.2.0 Upgrade Guide</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new_-_api_diffs" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">API Diffs</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../whats_new/api_diffs/620_modern_diff.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/620_modern_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../whats_new/api_diffs/620_classic_diff.html" class="tree-leaf-content isLeaf display-new classic-decoration" id="node-whats_new_-_api_diffs/620_classic_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Classic - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../whats_new/api_diffs/modern_theme_refactor.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/modern_theme_refactor" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern Theming Refactor</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-examples" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Examples</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="http://examples.sencha.com/extjs/6.2.0-ea/examples" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-examples_-_620examples" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">6.2.0 Examples</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Core Concepts</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/classes.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_classes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">The Class System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/layouts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_layouts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Layouts and Containers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/components.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_components" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Components</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/data_package.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_data_package" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Data Package</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/gestures.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_gestures" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Gestures</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/events.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_events" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Events</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/drag_drop.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/modern_drag_drop.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_modern_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Modern Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/theming.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Theming System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/modern_theming.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_modern_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Theming in the Modern Toolkit</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/material_theme.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_material_theme" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Material Theme</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/memory_management.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_memory_management" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Memory Management</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/d3.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-core_concepts_-_d3" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using D3 in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts_-_draw" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Draw Package</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../core_concepts/draw/drawing.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/drawing" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Draw Package</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../core_concepts/draw/creating_images_with_draw_pt1.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt1" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 1</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../core_concepts/draw/creating_images_with_draw_pt2.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt2" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 2</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../core_concepts/draw/creating_images_with_draw_pt3.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt3" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 3</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/accessibility.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_accessibility" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Accessibility</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/localization.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_localization" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Localization</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/rtl.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_rtl" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Right to Left in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/font_ext.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_font_ext" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Sencha Font Packages</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../core_concepts/tablet_support.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_tablet_support" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Tablet Support</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-application_architecture" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Architecture</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../application_architecture/application_architecture.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_application_architecture" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Intro to App Architecture</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../application_architecture/developing_for_multiple_screens_and_environments.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_developing_for_multiple_screens_and_environments" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Multiple Screens</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../application_architecture/view_controllers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_controllers" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Controllers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../application_architecture/view_models_data_binding.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_models_data_binding" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Models &amp; Binding</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../application_architecture/view_model_internals.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_model_internals" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Model Internals</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../application_architecture/router.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_router" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using the Router</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-components" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">UI Components</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/carousel.html" class="tree-leaf-content isLeaf modern-decoration" id="node-components_-_carousel" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Carousel</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/calendar.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_calendar" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Calendar</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/forms.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_forms" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Forms</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/introduction_to_charting.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_introduction_to_charting" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Introduction to Charting</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/trees.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_trees" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Trees</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/grids.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_grids" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Grids</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/pivot_grid.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_pivot_grid" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Pivot Grid</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/exporter.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_exporter" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Exporter</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../components/widgets_widgets_columns.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_widgets_widgets_columns" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Using Components in Grids</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-tutorials" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Tutorials</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../tutorials/login_app.html" class="tree-leaf-content isLeaf classic-decoration" id="node-tutorials_-_login_app" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Sample Login App</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Backend Connectors</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../backend_connectors/soap.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_soap" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">SOAP Services</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../backend_connectors/amf.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_amf" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">AMF Data Sources</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors_-_direct" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Ext Direct</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../backend_connectors/direct/specification.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_direct/specification" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Ext Direct Specification</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../../backend_connectors/direct/mysql_php.html" class="tree-leaf-content isLeaf classic-decoration" id="node-backend_connectors_-_direct/mysql_php" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Using MySQL and PHP</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-other_resources" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Other Resources</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../../other_resources/extjs_faq.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_extjs_faq" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS - FAQ</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../other_resources/oop_concepts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_oop_concepts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Basics of OOP</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../other_resources/ecosystem.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_ecosystem" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS Ecosystem</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../../other_resources/sencha_blog.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_sencha_blog" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">From the Sencha Blog</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <a href="../../supported_browsers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-supported_browsers" isLeaf="true">
+        <span class="tree-expando hidden">▸</span>
+                    <span class="universal-guide guide"></span>
+                <span class="tree-leaf-text">Supported Browsers</span>
+    </a>
+</div>
+
+                    <div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Guides" data-collapse="Collapse All Guides"><div class="callout callout-b"></div></div>
+                </div>
+                    <div id="quick-start-tree" class="hide is-tree">
+                        <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_introduction" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/introduction.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">1</span>
+                <div class="quick-start-text">Introduction</div>
+                <div class="quick-start-summary">An introduction to the Ext JS JavaScript framework</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_components" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/components.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">2</span>
+                <div class="quick-start-text">Components</div>
+                <div class="quick-start-summary">Explore Ext JS components and learn how to configure them</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_containers" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/containers.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">3</span>
+                <div class="quick-start-text">Containers</div>
+                <div class="quick-start-summary">Learn to nest components within container components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_presenting_data" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/presenting_data.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">4</span>
+                <div class="quick-start-text">Presenting Data</div>
+                <div class="quick-start-summary">Connect your data to your view components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_handling_events" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/handling_events.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">5</span>
+                <div class="quick-start-text">Handling Events</div>
+                <div class="quick-start-summary">Respond to users interacting with your application with events</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_forms" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/data_forms.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">6</span>
+                <div class="quick-start-text">Data Forms</div>
+                <div class="quick-start-summary">Present data in form fields so that values can be modified</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_binding" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/data_binding.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">7</span>
+                <div class="quick-start-text">Data Binding</div>
+                <div class="quick-start-summary">Bind data to component configs for automatic responses to change</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_getting_organized" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/getting_organized.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">8</span>
+                <div class="quick-start-text">Getting Organized</div>
+                <div class="quick-start-summary">Move your code into an organized structure by defining its parts</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_bringing_it_together" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/bringing_it_together.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">9</span>
+                <div class="quick-start-text">Bringing it Together</div>
+                <div class="quick-start-summary">Add extra functionality to make this application more useful</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_going_to_production" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/going_to_production.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">10</span>
+                <div class="quick-start-text">Going to Production</div>
+                <div class="quick-start-summary">Use Sencha Cmd to make your application lightweight and efficient</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_helpful_resources" isLeaf="true">
+        <a class="tree-leaf-text" href="../../quick_start/helpful_resources.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">11</span>
+                <div class="quick-start-text">Helpful Resources</div>
+                <div class="quick-start-summary">Continue your Ext JS education with more helpful resources</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+                    </div>
+            </div>
+        </div>
+        <a href="#" id="back-to-top">top </a>
+        <div id="rightMembers" class="">
+            
+            <div class="context-menu-ct">
+    <div class="context-header">
+        <div id="hide-context-menu" class="fa fa-caret-right"></div>
+    </div>
+    <div class="search">
+        <form autocomplete="off">
+                <div class="toolkit-search-filter-ct">
+                    <span id="modern-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Modern Search Results"><div class="callout callout-b"></div></span>
+                    <span id="classic-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Classic Search Results"><div class="callout callout-b"></div></span>
+                </div>
+
+            <input type="text" type="search" placeholder="search" id="searchtext">
+            <i id="filtersubmit" class="fa fa-search"></i>
+            <span id="help-btn" data-tip="Docs Help" class="tooltip tooltip-tr-br"><div class="callout callout-b"></div></span>
+        </form>
+    </div>
+    <div id="toc-context-ct">
+        <!-- context content added at runtime -->
+    </div>
+</div>
+<div class="guide-body-wrap">
+    <div class="body-wrap-inner">
+        <div class="classText">
+                <div class="toolkit-badge-ct modern-badge">
+                    Guide applies to:
+                    <span class="toolkit-badge modern">
+                        
+                        modern
+                        
+                    </span>
+                </div>
+
+            <div id="toggleExamples" class="fa fa-code tooltip tooltip-tr-br" data-expand="Expand All Examples" data-collapse="Collapse All Examples"><div class="callout callout-b"></div></div>
+                <div class="toc">
+                    <h2>Contents</h2>
+                        <a class="toc-page-h2" href="#whats_new-_-api_diffs-_-620_modern_diff_-_added">Added</a>
+                        <a class="toc-page-h2" href="#whats_new-_-api_diffs-_-620_modern_diff_-_removed">Removed</a>
+                        <a class="toc-page-h2" href="#whats_new-_-api_diffs-_-620_modern_diff_-_modified">Modified</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext">Ext</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_app_application">Ext.app.Application</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_array">Ext.Array</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_base">Ext.Base</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_button">Ext.Button</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_carousel_carousel">Ext.carousel.Carousel</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_abstractchart">Ext.chart.AbstractChart</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_segmenter_time">Ext.chart.axis.segmenter.Time</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_sprite_axis">Ext.chart.axis.sprite.Axis</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_time">Ext.chart.axis.Time</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_interactions_panzoom">Ext.chart.interactions.PanZoom</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_series_area">Ext.chart.series.Area</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_series_series">Ext.chart.series.Series</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_theme_base">Ext.chart.theme.Base</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_component">Ext.Component</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_abstractstore">Ext.data.AbstractStore</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_batch">Ext.data.Batch</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_field_date">Ext.data.field.Date</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_model">Ext.data.Model</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_nodeinterface">Ext.data.NodeInterface</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_treestore">Ext.data.TreeStore</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_component_container">Ext.dataview.component.Container</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_dataview">Ext.dataview.DataView</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_element_container">Ext.dataview.element.Container</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_indexbar">Ext.dataview.IndexBar</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_list">Ext.dataview.List</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_nestedlist">Ext.dataview.NestedList</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_date">Ext.Date</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_decorator">Ext.Decorator</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_direct_pollingprovider">Ext.direct.PollingProvider</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_direct_provider">Ext.direct.Provider</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dom_element">Ext.dom.Element</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dom_underlay">Ext.dom.Underlay</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_container">Ext.draw.Container</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_point">Ext.draw.Point</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_sprite_instancing">Ext.draw.sprite.Instancing</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_event_event">Ext.event.Event</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_factory">Ext.Factory</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_checkbox">Ext.field.Checkbox</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_field">Ext.field.Field</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_input">Ext.field.Input</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_radio">Ext.field.Radio</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_spinner">Ext.field.Spinner</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_text">Ext.field.Text</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_toggle">Ext.field.Toggle</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_form_fieldset">Ext.form.FieldSet</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_form_panel">Ext.form.Panel</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_base">Ext.grid.cell.Base</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_text">Ext.grid.cell.Text</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_widget">Ext.grid.cell.Widget</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_column_column">Ext.grid.column.Column</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_grid">Ext.grid.Grid</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_headercontainer">Ext.grid.HeaderContainer</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_editable">Ext.grid.plugin.Editable</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_multiselection">Ext.grid.plugin.MultiSelection</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_viewoptions">Ext.grid.plugin.ViewOptions</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_layout_box">Ext.layout.Box</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_messagebox">Ext.MessageBox</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_mixin_observable">Ext.mixin.Observable</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_number">Ext.Number</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_panel">Ext.Panel</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_panel_tool">Ext.panel.Tool</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_picker_picker">Ext.picker.Picker</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_picker_slot">Ext.picker.Slot</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_plugin_abstract">Ext.plugin.Abstract</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_plugin_pullrefresh">Ext.plugin.PullRefresh</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_progress">Ext.Progress</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_segmentedbutton">Ext.SegmentedButton</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_sheet">Ext.Sheet</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_slider_slider">Ext.slider.Slider</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_slider_thumb">Ext.slider.Thumb</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_supports">Ext.supports</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_tab_bar">Ext.tab.Bar</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_tab_tab">Ext.tab.Tab</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_titlebar">Ext.TitleBar</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_toast">Ext.Toast</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_toolbar">Ext.Toolbar</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_filter">Ext.util.Filter</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_format">Ext.util.Format</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_positionable">Ext.util.Positionable</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_region">Ext.util.Region</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_taskrunner">Ext.util.TaskRunner</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_ux_ajax_simlet">Ext.ux.ajax.Simlet</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_viewport_default">Ext.viewport.Default</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_widget">Ext.Widget</a>
+                        <a class="toc-page-h3" href="#whats_new-_-api_diffs-_-620_modern_diff_-_global_css">Global_CSS</a>
+                        <a class="toc-page-h2" href="#whats_new-_-api_diffs-_-620_modern_diff_-_summary">Summary</a>
+                </div>
+            <h1 id="whats_new-_-api_diffs-_-620_modern_diff_-_differences_between_ext_js_6_0_2_and_ext_js_6_2_0_modern_toolkit">Differences Between Ext JS 6.0.2 and Ext JS 6.2.0 Modern Toolkit<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_differences_between_ext_js_6_0_2_and_ext_js_6_2_0_modern_toolkit"></a></h1>
+<p>While we believe these guides are extremely helpful to developers planning to upgrade their applications,
+please be aware that the content is generated from documentation and may not always perfectly describe
+the actual code changes in the release. Incorrect changes may be indicated due to comment updates, formatting
+omissions, etc..</p>
+<p>If you see anything suspicious or inaccurate in this report, please report the problem on the
+<a href="https://www.sencha.com/forum/forumdisplay.php?132-Ext-JS-Community-Forums-6-x" class="external-link" target="_blank">Forums</a> or to
+<a href="https://support.sencha.com/" class="external-link" target="_blank">Sencha Support</a>.</p>
+<h2 id="whats_new-_-api_diffs-_-620_modern_diff_-_added">Added<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_added"></a></h2>
+<ul>
+<li>Ext.calendar.*</li>
+<li>Ext.chart.legend.*</li>
+<li>Ext.d3.*</li>
+<li>Ext.drag.*</li>
+<li>Ext.exporter.data.*</li>
+<li>Ext.exporter.file.*</li>
+<li>Ext.field.trigger.*</li>
+<li>Ext.form.FieldContainer</li>
+<li>Ext.Glyph</li>
+<li>Ext.google.data.*</li>
+<li>Ext.google.ux.Client</li>
+<li>Ext.grid.cell.Check</li>
+<li>Ext.grid.cell.Expander</li>
+<li>Ext.grid.cell.RowNumberer</li>
+<li>Ext.grid.cell.Summary</li>
+<li>Ext.grid.cell.Tree</li>
+<li>Ext.grid.column.Check</li>
+<li>Ext.grid.column.RowNumberer</li>
+<li>Ext.grid.column.Selection</li>
+<li>Ext.grid.column.Tree</li>
+<li>Ext.grid.plugin.Exporter</li>
+<li>Ext.grid.plugin.RowExpander</li>
+<li>Ext.grid.RowBody</li>
+<li>Ext.grid.RowHeader</li>
+<li>Ext.grid.Tree</li>
+<li>Ext.mixin.Dirty</li>
+<li>Ext.mixin.Keyboard</li>
+<li>Ext.mixin.Pluggable</li>
+<li>Ext.pivot.*</li>
+<li>Ext.sparkline.*</li>
+<li>Ext.tip.*</li>
+<li>Ext.util.Color</li>
+<li>Ext.ux.Gauge</li>
+</ul>
+<h2 id="whats_new-_-api_diffs-_-620_modern_diff_-_removed">Removed<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_removed"></a></h2>
+<ul>
+<li>Ext.BingMap</li>
+<li>Ext.ProgressIndicator</li>
+<li>Ext.scroll.DomScroller</li>
+<li>Ext.scroll.Indicator</li>
+<li>Ext.scroll.TouchScroller</li>
+</ul>
+<h2 id="whats_new-_-api_diffs-_-620_modern_diff_-_modified">Modified<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_modified"></a></h2>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext">Ext<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext"></a></h3>
+<ul>
+<li>Added Methods<ul>
+<li><code>fireEvent</code></li>
+</ul>
+</li>
+<li>Modified Methods<ul>
+<li><code>clone</code><ul>
+<li>Added <em>cloneDom</em> param</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_app_application">Ext.app.Application<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_app_application"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>quickTips</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_array">Ext.Array<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_array"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>findBy</code><ul>
+<li>Modified <em>fn</em> param<ul>
+<li>Modified <em>index</em> property<ul>
+<li><strong>type</strong> is Number (was String)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_base">Ext.Base<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_base"></a></h3>
+<ul>
+<li>Added Properties<ul>
+<li><code>clearPropertiesOnDestroy</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_button">Ext.Button<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_button"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$button-alt-ui</code></li>
+<li><code>$button-disabled-color</code></li>
+<li><code>$button-disabled-icon-color</code></li>
+<li><code>$button-flat-ui</code></li>
+<li><code>$button-plain-ui</code></li>
+<li><code>$button-pressed-shadow</code></li>
+<li><code>$button-segmented-ui</code></li>
+<li><code>$button-shadow</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$button-font-size-big</code><ul>
+<li><strong>value</strong> is null (was $button-font-size)</li>
+</ul>
+</li>
+<li><code>$button-icon-font-size</code><ul>
+<li><strong>value</strong> is $button-icon-size (was $button-line-height)</li>
+</ul>
+</li>
+<li><code>$button-icon-font-size-big</code><ul>
+<li><strong>value</strong> is $button-icon-size-big (was $button-line-height-big)</li>
+</ul>
+</li>
+<li><code>$button-icon-size</code><ul>
+<li><strong>value</strong> is $button-line-height (was 1em)</li>
+</ul>
+</li>
+<li><code>$button-icon-size-big</code><ul>
+<li><strong>value</strong> is $button-line-height-big (was 1em)</li>
+</ul>
+</li>
+<li><code>$button-line-height</code><ul>
+<li><strong>value</strong> is 1.2308em (was 1.23em)</li>
+</ul>
+</li>
+<li><code>$button-padding</code><ul>
+<li><strong>value</strong> is .2308em .6em (was .23em .6em)</li>
+</ul>
+</li>
+<li><code>$button-pressed-color</code><ul>
+<li><strong>value</strong> is $button-color (was button-color($button-pressed-background-color))</li>
+</ul>
+</li>
+<li><code>$button-pressed-icon-color</code><ul>
+<li><strong>value</strong> is $button-pressed-color (was button-color($button-pressed-background-color))</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_carousel_carousel">Ext.carousel.Carousel<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_carousel_carousel"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$carousel-dark-ui</code></li>
+<li><code>$carousel-light-ui</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$carousel-track-size</code><ul>
+<li><strong>value</strong> is 2em (was 1.5em)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_abstractchart">Ext.chart.AbstractChart<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_abstractchart"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>getLegendStore</code><ul>
+<li>Modified return<ul>
+<li><strong>type</strong> is Ext.chart.legend.store.Store (was Ext.data.Store)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_segmenter_time">Ext.chart.axis.segmenter.Time<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_segmenter_time"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>step</code><ul>
+<li>Added <em>unit</em> property</li>
+<li>Added <em>step</em> property</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_sprite_axis">Ext.chart.axis.sprite.Axis<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_sprite_axis"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>labelOffset</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_time">Ext.chart.axis.Time<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_axis_time"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>dateFormat</code><ul>
+<li><strong>type</strong> is String (was String/Boolean)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_interactions_panzoom">Ext.chart.interactions.PanZoom<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_interactions_panzoom"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>zoomOnPan</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_series_area">Ext.chart.series.Area<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_series_area"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>renderer</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_series_series">Ext.chart.series.Series<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_series_series"></a></h3>
+<ul>
+<li>Added Methods<ul>
+<li><code>getSprites</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>store</code><ul>
+<li><strong>access</strong> is public (was protected)</li>
+</ul>
+</li>
+<li><code>surface</code><ul>
+<li><strong>type</strong> is Ext.draw.Surface (was Object)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Modified Methods<ul>
+<li><code>provideLegendInfo</code><ul>
+<li>Modified <em>target</em> param<ul>
+<li>Added <em>mark</em> property</li>
+<li>Removed <em>markColor</em> property</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_theme_base">Ext.chart.theme.Base<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_chart_theme_base"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>legend</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_component">Ext.Component<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_component"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>axisLock</code></li>
+<li><code>hideOnMaskTap</code></li>
+<li><code>modal</code></li>
+<li><code>tooltip</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>center</code></li>
+</ul>
+</li>
+<li>Added Events<ul>
+<li><code>beforehide</code></li>
+<li><code>beforeshow</code></li>
+<li><code>positionedchange</code></li>
+</ul>
+</li>
+<li>Modified Methods<ul>
+<li><code>showBy</code><ul>
+<li>Added <em>options</em> param</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>disabledCls</code></li>
+<li><code>floatingCls</code></li>
+<li><code>hiddenCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_abstractstore">Ext.data.AbstractStore<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_abstractstore"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>getFilters</code><ul>
+<li>Modified <em>autoCreate</em> param<ul>
+<li><strong>access</strong> is public (was private)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>getSorters</code><ul>
+<li>Modified <em>autoCreate</em> param<ul>
+<li><strong>access</strong> is public (was private)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_batch">Ext.data.Batch<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_batch"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>start</code><ul>
+<li>Modified <em>index</em> param<ul>
+<li><strong>access</strong> is public (was private)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_field_date">Ext.data.field.Date<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_field_date"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>useStrict</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_model">Ext.data.Model<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_model"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>hasOne</code></li>
+</ul>
+</li>
+<li>Added Properties<ul>
+<li><code>crudState</code></li>
+<li><code>crudStateWas</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_nodeinterface">Ext.data.NodeInterface<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_nodeinterface"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>glyph</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>onRegisterTreeNode</code></li>
+<li><code>onUnregisterTreeNode</code></li>
+</ul>
+</li>
+<li>Modified Methods<ul>
+<li><code>copy</code><ul>
+<li>Added <em>session</em> param</li>
+</ul>
+</li>
+<li><code>updateInfo</code><ul>
+<li>Added return</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_treestore">Ext.data.TreeStore<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_data_treestore"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>collect</code><ul>
+<li>Modified <em>options</em> param<ul>
+<li>Added <em>allowNull</em> property</li>
+<li>Added <em>filtered</em> property</li>
+<li>Added <em>collapsed</em> property</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_component_container">Ext.dataview.component.Container<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_component_container"></a></h3>
+<ul>
+<li>Added Events<ul>
+<li><code>mouseout</code></li>
+<li><code>mouseover</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_dataview">Ext.dataview.DataView<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_dataview"></a></h3>
+<ul>
+<li>Added Events<ul>
+<li><code>itemmouseenter</code></li>
+<li><code>itemmouseleave</code></li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+<li><code>pressedCls</code></li>
+<li><code>selectedCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_element_container">Ext.dataview.element.Container<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_element_container"></a></h3>
+<ul>
+<li>Added Events<ul>
+<li><code>mouseout</code></li>
+<li><code>mouseover</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_indexbar">Ext.dataview.IndexBar<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_indexbar"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$indexbar-background-color</code></li>
+<li><code>$indexbar-border-radius</code></li>
+<li><code>$indexbar-border-radius-big</code></li>
+<li><code>$indexbar-color</code></li>
+<li><code>$indexbar-font-family</code></li>
+<li><code>$indexbar-font-size</code></li>
+<li><code>$indexbar-font-size-big</code></li>
+<li><code>$indexbar-font-weight</code></li>
+<li><code>$indexbar-height</code></li>
+<li><code>$indexbar-height-big</code></li>
+<li><code>$indexbar-horizontal-height</code></li>
+<li><code>$indexbar-horizontal-height-big</code></li>
+<li><code>$indexbar-horizontal-margin</code></li>
+<li><code>$indexbar-horizontal-margin-big</code></li>
+<li><code>$indexbar-horizontal-padding</code></li>
+<li><code>$indexbar-horizontal-padding-big</code></li>
+<li><code>$indexbar-horizontal-width</code></li>
+<li><code>$indexbar-horizontal-width-big</code></li>
+<li><code>$indexbar-margin</code></li>
+<li><code>$indexbar-margin-big</code></li>
+<li><code>$indexbar-opacity</code></li>
+<li><code>$indexbar-padding</code></li>
+<li><code>$indexbar-padding-big</code></li>
+<li><code>$indexbar-pressed-background-color</code></li>
+<li><code>$indexbar-pressed-color</code></li>
+<li><code>$indexbar-pressed-opacity</code></li>
+<li><code>$indexbar-width</code></li>
+<li><code>$indexbar-width-big</code></li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$index-bar-bg-color</code></li>
+<li><code>$index-bar-color</code></li>
+<li><code>$index-bar-width</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_list">Ext.dataview.List<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_list"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>pinnedHeader</code></li>
+<li><code>rowLines</code></li>
+<li><code>scrollDock</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>onItemDisclosure</code><ul>
+<li><strong>type</strong> is Boolean/Function/String/Object (was Boolean/Function/Object)</li>
+</ul>
+</li>
+<li><code>useComponents</code><ul>
+<li><strong>access</strong> is public (was private)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$list-group-header-background-color</code></li>
+<li><code>$list-group-header-border-color</code></li>
+<li><code>$list-group-header-color</code></li>
+<li><code>$list-group-header-font-family</code></li>
+<li><code>$list-group-header-font-size</code></li>
+<li><code>$list-group-header-font-size-big</code></li>
+<li><code>$list-group-header-font-weight</code></li>
+<li><code>$list-group-header-line-height</code></li>
+<li><code>$list-group-header-line-height-big</code></li>
+<li><code>$list-group-header-padding</code></li>
+<li><code>$list-group-header-padding-big</code></li>
+<li><code>$list-item-background-color</code></li>
+<li><code>$list-item-border-color</code></li>
+<li><code>$list-item-color</code></li>
+<li><code>$list-item-font-family</code></li>
+<li><code>$list-item-font-size</code></li>
+<li><code>$list-item-font-size-big</code></li>
+<li><code>$list-item-font-weight</code></li>
+<li><code>$list-item-line-height</code></li>
+<li><code>$list-item-line-height-big</code></li>
+<li><code>$list-item-padding</code></li>
+<li><code>$list-item-padding-big</code></li>
+<li><code>$list-item-pressed-background-color</code></li>
+<li><code>$list-item-selected-background-color</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_nestedlist">Ext.dataview.NestedList<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dataview_nestedlist"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>backButton</code><ul>
+<li><strong>value</strong> is {
+hidden: true
+} (was {
+ui: &#39;back&#39;,
+hidden: true
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_date">Ext.Date<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_date"></a></h3>
+<ul>
+<li>Added Properties<ul>
+<li><code>DAYS_IN_WEEK</code></li>
+<li><code>firstDayOfWeek</code></li>
+<li><code>MAX_DAYS_IN_MONTH</code></li>
+<li><code>MONTHS_IN_YEAR</code></li>
+<li><code>weekendDays</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>isWeekend</code></li>
+<li><code>localToUtc</code></li>
+<li><code>utc</code></li>
+<li><code>utcToLocal</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_decorator">Ext.Decorator<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_decorator"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>component</code><ul>
+<li><strong>value</strong> is <code>{ xtype: &#39;component&#39; }</code> (was <code>{}</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_direct_pollingprovider">Ext.direct.PollingProvider<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_direct_pollingprovider"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>timeout</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_direct_provider">Ext.direct.Provider<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_direct_provider"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>headers</code></li>
+</ul>
+</li>
+<li>Modified Events<ul>
+<li><code>exception</code><ul>
+<li>Added <em>provider</em> param</li>
+<li>Added <em>e</em> param</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dom_element">Ext.dom.Element<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dom_element"></a></h3>
+<ul>
+<li>Added Methods<ul>
+<li><code>addClsOnClick</code></li>
+<li><code>addClsOnFocus</code></li>
+<li><code>addClsOnOver</code></li>
+<li><code>getTouchAction</code></li>
+<li><code>monitorMouseLeave</code></li>
+<li><code>setTouchAction</code></li>
+</ul>
+</li>
+<li>Added Static-methods<ul>
+<li><code>fromPagePoint</code></li>
+<li><code>fromPoint</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_dom_underlay">Ext.dom.Underlay<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_dom_underlay"></a></h3>
+<ul>
+<li>Added Methods<ul>
+<li><code>beforeShow</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_container">Ext.draw.Container<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_container"></a></h3>
+<ul>
+<li>Added Methods<ul>
+<li><code>handleResize</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_point">Ext.draw.Point<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_point"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>rotate</code><ul>
+<li>Modified <em>center</em> param<ul>
+<li><strong>optional</strong> is true</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_sprite_instancing">Ext.draw.sprite.Instancing<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_draw_sprite_instancing"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>instances</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>add</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_event_event">Ext.event.Event<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_event_event"></a></h3>
+<ul>
+<li>Added Properties<ul>
+<li><code>pointerType</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>claimGesture</code></li>
+<li><code>startDrag</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_factory">Ext.Factory<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_factory"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>create</code><ul>
+<li>Modified <em>defaultType</em> param<ul>
+<li><strong>type</strong> is String/Object (was String)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_checkbox">Ext.field.Checkbox<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_checkbox"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$checkboxfield-checkbox-margin</code></li>
+<li><code>$checkboxfield-checkbox-margin-big</code></li>
+<li><code>$checkboxfield-checkbox-size-big</code></li>
+<li><code>$checkboxfield-checked-checkbox-color</code></li>
+<li><code>$checkboxfield-disabled-checkbox-color</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>component</code><ul>
+<li><strong>value</strong> is <code>{ xtype: &#39;checkboxinput&#39; }</code> (was <code>{ xtype: &#39;input&#39;, type: &#39;checkbox&#39;, useMask: true, cls: &#39;x-input-checkbox&#39; }</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$checkboxfield-checkbox-font-size</code><ul>
+<li><strong>value</strong> is $checkboxfield-checkbox-size (was 1.24rem)</li>
+</ul>
+</li>
+<li><code>$checkboxfield-checkbox-font-size-big</code><ul>
+<li><strong>value</strong> is $checkboxfield-checkbox-size-big (was 1.2rem)</li>
+</ul>
+</li>
+<li><code>$checkboxfield-checkbox-icon</code><ul>
+<li><strong>value</strong> is $fa-var-square-o (was $fa-var-square-o $checkboxfield-checkbox-font-size $font-icon-font-family)</li>
+</ul>
+</li>
+<li><code>$checkboxfield-checkbox-size</code><ul>
+<li><strong>value</strong> is px-to-rem(16px, 13px) (was 1em)</li>
+</ul>
+</li>
+<li><code>$checkboxfield-checked-checkbox-icon</code><ul>
+<li><strong>value</strong> is $fa-var-check-square-o (was $fa-var-check-square-o $checkboxfield-checkbox-font-size $font-icon-font-family)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_field">Ext.field.Field<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_field"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>bodyAlign</code></li>
+<li><code>labelTextAlign</code></li>
+</ul>
+</li>
+<li>Added Vars<ul>
+<li><code>$field-disabled-background-color</code></li>
+<li><code>$field-disabled-label-background-color</code></li>
+<li><code>$field-disabled-label-color</code></li>
+<li><code>$field-disabled-opacity</code></li>
+<li><code>$field-focused-background-color</code></li>
+<li><code>$field-focused-label-background-color</code></li>
+<li><code>$field-focused-label-color</code></li>
+<li><code>$field-invalid-background-color</code></li>
+<li><code>$field-invalid-label-background-color</code></li>
+<li><code>$field-invalid-label-color</code></li>
+<li><code>$field-required-indicator-font-family</code></li>
+<li><code>$field-required-indicator-font-size</code></li>
+<li><code>$field-required-indicator-font-weight</code></li>
+<li><code>$field-required-indicator-line-height</code></li>
+<li><code>$field-required-indicator-margin</code></li>
+<li><code>$field-required-indicator-margin-big</code></li>
+<li><code>$field-vertical-spacing</code></li>
+<li><code>$field-vertical-spacing-big</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>labelAlign</code><ul>
+<li><strong>type</strong> is &#39;top&#39;/&#39;left&#39;/&#39;bottom&#39;/&#39;right&#39; (was String)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$field-background-color</code><ul>
+<li><strong>value</strong> is null (was #fff)</li>
+</ul>
+</li>
+<li><code>$field-label-background-color</code><ul>
+<li><strong>value</strong> is null (was $neutral-light-color)</li>
+</ul>
+</li>
+<li><code>$field-label-font-size-big</code><ul>
+<li><strong>value</strong> is null (was $field-label-font-size)</li>
+</ul>
+</li>
+<li><code>$field-label-line-height</code><ul>
+<li><strong>value</strong> is px-to-em(16px, 13px) (was 1.23em)</li>
+</ul>
+</li>
+<li><code>$field-label-line-height-big</code><ul>
+<li><strong>value</strong> is px-to-em(24px, 15px) (was 1.6em)</li>
+</ul>
+</li>
+<li><code>$field-label-padding</code><ul>
+<li><strong>value</strong> is px-to-em(3px 6px 3px 0, 13px) (was .23em .6em)</li>
+</ul>
+</li>
+<li><code>$field-label-padding-big</code><ul>
+<li><strong>value</strong> is px-to-em(3px 6px 3px 0, 15px) (was .2em .6em)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+<li><code>requiredCls</code></li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$field-border-color</code></li>
+<li><code>$field-label-border-color</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_input">Ext.field.Input<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_input"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>isFocused</code></li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+<li><code>focusCls</code></li>
+</ul>
+</li>
+<li>Removed Events<ul>
+<li><code>clearicontap</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_radio">Ext.field.Radio<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_radio"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$radiofield-checkbox-margin</code></li>
+<li><code>$radiofield-checkbox-margin-big</code></li>
+<li><code>$radiofield-checkbox-size-big</code></li>
+<li><code>$radiofield-checked-checkbox-color</code></li>
+<li><code>$radiofield-disabled-checkbox-color</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$radiofield-checkbox-color</code><ul>
+<li><strong>value</strong> is null (was $checkboxfield-checkbox-color)</li>
+</ul>
+</li>
+<li><code>$radiofield-checkbox-font-size</code><ul>
+<li><strong>value</strong> is $radiofield-checkbox-size (was $checkboxfield-checkbox-font-size)</li>
+</ul>
+</li>
+<li><code>$radiofield-checkbox-font-size-big</code><ul>
+<li><strong>value</strong> is $radiofield-checkbox-size-big (was $checkboxfield-checkbox-font-size-big)</li>
+</ul>
+</li>
+<li><code>$radiofield-checkbox-icon</code><ul>
+<li><strong>value</strong> is $fa-var-circle-o (was $fa-var-circle-o $radiofield-checkbox-font-size $font-icon-font-family)</li>
+</ul>
+</li>
+<li><code>$radiofield-checkbox-size</code><ul>
+<li><strong>value</strong> is null (was $checkboxfield-checkbox-size)</li>
+</ul>
+</li>
+<li><code>$radiofield-checked-checkbox-icon</code><ul>
+<li><strong>value</strong> is $fa-var-dot-circle-o (was $fa-var-dot-circle-o $radiofield-checkbox-font-size $font-icon-font-family)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_spinner">Ext.field.Spinner<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_spinner"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>component</code><ul>
+<li><strong>value</strong> is <code>{ readOnly: true }</code> (was <code>{ disabled: true }</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_text">Ext.field.Text<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_text"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>labelAlign</code></li>
+<li><code>textAlign</code></li>
+<li><code>triggers</code></li>
+</ul>
+</li>
+<li>Added Vars<ul>
+<li><code>$textfield-disabled-input-background-color</code></li>
+<li><code>$textfield-disabled-input-border-color</code></li>
+<li><code>$textfield-disabled-input-color</code></li>
+<li><code>$textfield-focused-input-background-color</code></li>
+<li><code>$textfield-focused-input-border-color</code></li>
+<li><code>$textfield-focused-input-border-style</code></li>
+<li><code>$textfield-focused-input-border-width</code></li>
+<li><code>$textfield-focused-input-color</code></li>
+<li><code>$textfield-input-border-color</code></li>
+<li><code>$textfield-input-border-style</code></li>
+<li><code>$textfield-input-border-width</code></li>
+<li><code>$textfield-input-color</code></li>
+<li><code>$textfield-invalid-input-background-color</code></li>
+<li><code>$textfield-invalid-input-border-color</code></li>
+<li><code>$textfield-invalid-input-border-style</code></li>
+<li><code>$textfield-invalid-input-border-width</code></li>
+<li><code>$textfield-invalid-input-color</code></li>
+<li><code>$textfield-placeholder-color</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$textfield-input-background-color</code><ul>
+<li><strong>value</strong> is $background-color (was #fff)</li>
+</ul>
+</li>
+<li><code>$textfield-input-font-size-big</code><ul>
+<li><strong>value</strong> is null (was $textfield-input-font-size)</li>
+</ul>
+</li>
+<li><code>$textfield-input-line-height</code><ul>
+<li><strong>value</strong> is px-to-em(16px, 13px) (was 1.23em)</li>
+</ul>
+</li>
+<li><code>$textfield-input-line-height-big</code><ul>
+<li><strong>value</strong> is px-to-em(24px, 15px) (was 1.6em)</li>
+</ul>
+</li>
+<li><code>$textfield-input-padding</code><ul>
+<li><strong>value</strong> is px-to-em(3px 6px, 13px) (was .23em .4em)</li>
+</ul>
+</li>
+<li><code>$textfield-input-padding-big</code><ul>
+<li><strong>value</strong> is px-to-em(3px 6px, 15px) (was .2em .4em)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$textfield-clear-icon</code></li>
+<li><code>$textfield-clear-icon-color</code></li>
+<li><code>$textfield-clear-icon-font-size</code></li>
+<li><code>$textfield-clear-icon-font-size-big</code></li>
+<li><code>$textfield-clear-icon-size</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_toggle">Ext.field.Toggle<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_field_toggle"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$toggleslider-disabled-fill-background-color</code></li>
+<li><code>$toggleslider-disabled-fill-border-color</code></li>
+<li><code>$toggleslider-disabled-opacity</code></li>
+<li><code>$toggleslider-fill-background-color</code></li>
+<li><code>$toggleslider-fill-border-color</code></li>
+<li><code>$toggleslider-thumb-inset</code></li>
+<li><code>$toggleslider-track-background-color</code></li>
+<li><code>$toggleslider-track-border-color</code></li>
+<li><code>$toggleslider-track-border-radius</code></li>
+<li><code>$toggleslider-track-border-radius-big</code></li>
+<li><code>$toggleslider-track-border-style</code></li>
+<li><code>$toggleslider-track-border-width</code></li>
+<li><code>$toggleslider-track-height</code></li>
+<li><code>$toggleslider-track-height-big</code></li>
+<li><code>$toggleslider-width</code></li>
+<li><code>$toggleslider-width-big</code></li>
+</ul>
+</li>
+<li>Modified Events<ul>
+<li><code>change</code><ul>
+<li>Added <em>this</em> param</li>
+<li>Modified <em>newValue</em> param<ul>
+<li><strong>type</strong> is Number (was Boolean)</li>
+</ul>
+</li>
+<li>Modified <em>oldValue</em> param<ul>
+<li><strong>type</strong> is Number (was Boolean)</li>
+</ul>
+</li>
+<li>Removed <em>me</em> param</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>maxValueCls</code></li>
+<li><code>minValueCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_form_fieldset">Ext.form.FieldSet<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_form_fieldset"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$fieldset-border-style</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$fieldset-border-radius</code><ul>
+<li><strong>value</strong> is null (was .4em)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_form_panel">Ext.form.Panel<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_form_panel"></a></h3>
+<ul>
+<li>Modified Vars<ul>
+<li><code>$formpanel-body-background-color</code><ul>
+<li><strong>value</strong> is $background-color (was $neutral-highlight-color)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_base">Ext.grid.cell.Base<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_base"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>cellCls</code></li>
+<li><code>innerStyle</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_text">Ext.grid.cell.Text<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_text"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>zeroValue</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_widget">Ext.grid.cell.Widget<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_cell_widget"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>forceWidth</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_column_column">Ext.grid.column.Column<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_column_column"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>defaultWidth</code></li>
+<li><code>exportStyle</code></li>
+<li><code>formatter</code></li>
+<li><code>ignoreExport</code></li>
+<li><code>summaryFormatter</code></li>
+</ul>
+</li>
+<li>Added Vars<ul>
+<li><code>$gridcolumn-background-color</code></li>
+<li><code>$gridcolumn-border-color</code></li>
+<li><code>$gridcolumn-border-style</code></li>
+<li><code>$gridcolumn-border-width</code></li>
+<li><code>$gridcolumn-color</code></li>
+<li><code>$gridcolumn-font-family</code></li>
+<li><code>$gridcolumn-font-size</code></li>
+<li><code>$gridcolumn-font-size-big</code></li>
+<li><code>$gridcolumn-font-weight</code></li>
+<li><code>$gridcolumn-line-height</code></li>
+<li><code>$gridcolumn-line-height-big</code></li>
+<li><code>$gridcolumn-padding</code></li>
+<li><code>$gridcolumn-padding-big</code></li>
+<li><code>$gridcolumn-resizer-background-color</code></li>
+<li><code>$gridcolumn-sort-asc-icon</code></li>
+<li><code>$gridcolumn-sort-desc-icon</code></li>
+<li><code>$gridcolumn-sort-icon-color</code></li>
+<li><code>$gridcolumn-sort-icon-font-size</code></li>
+<li><code>$gridcolumn-sort-icon-font-size-big</code></li>
+<li><code>$gridcolumn-sort-icon-margin</code></li>
+<li><code>$gridcolumn-sort-icon-margin-big</code></li>
+<li><code>$gridcolumn-sort-icon-size</code></li>
+<li><code>$gridcolumn-sort-icon-size-big</code></li>
+<li><code>$gridcolumn-sorted-background-color</code></li>
+<li><code>$resizer-background-color</code></li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$grid-column-background-color</code></li>
+<li><code>$grid-column-border-color</code></li>
+<li><code>$grid-column-color</code></li>
+<li><code>$grid-column-font-family</code></li>
+<li><code>$grid-column-font-size</code></li>
+<li><code>$grid-column-font-size-big</code></li>
+<li><code>$grid-column-font-weight</code></li>
+<li><code>$grid-column-line-height</code></li>
+<li><code>$grid-column-line-height-big</code></li>
+<li><code>$grid-column-padding</code></li>
+<li><code>$grid-column-padding-big</code></li>
+<li><code>$grid-column-sort-asc-icon</code></li>
+<li><code>$grid-column-sort-desc-icon</code></li>
+<li><code>$grid-column-sort-icon-color</code></li>
+<li><code>$grid-column-sort-icon-font-size</code></li>
+<li><code>$grid-column-sort-icon-spacing</code></li>
+<li><code>$grid-column-sorted-background-color</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_grid">Ext.grid.Grid<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_grid"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$grid-resize-marker-background-color</code></li>
+<li><code>$grid-resize-marker-width</code></li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$grid-cell-background-color</code></li>
+<li><code>$grid-cell-border-color</code></li>
+<li><code>$grid-cell-color</code></li>
+<li><code>$grid-cell-font-family</code></li>
+<li><code>$grid-cell-font-size</code></li>
+<li><code>$grid-cell-font-size-big</code></li>
+<li><code>$grid-cell-font-weight</code></li>
+<li><code>$grid-cell-line-height</code></li>
+<li><code>$grid-cell-line-height-big</code></li>
+<li><code>$grid-cell-padding</code></li>
+<li><code>$grid-cell-padding-big</code></li>
+<li><code>$grid-cell-pressed-background-color</code></li>
+<li><code>$grid-cell-selected-background-color</code></li>
+<li><code>$grid-column-resize-marker-background-color</code></li>
+<li><code>$grid-group-header-background-color</code></li>
+<li><code>$grid-group-header-border-color</code></li>
+<li><code>$grid-group-header-color</code></li>
+<li><code>$grid-group-header-font-family</code></li>
+<li><code>$grid-group-header-font-size</code></li>
+<li><code>$grid-group-header-font-size-big</code></li>
+<li><code>$grid-group-header-font-weight</code></li>
+<li><code>$grid-group-header-line-height</code></li>
+<li><code>$grid-group-header-line-height-big</code></li>
+<li><code>$grid-group-header-padding</code></li>
+<li><code>$grid-group-header-padding-big</code></li>
+<li><code>$grid-summary-row-cell-background-color</code></li>
+<li><code>$grid-summary-row-cell-border-color</code></li>
+<li><code>$grid-summary-row-cell-color</code></li>
+<li><code>$grid-summary-row-cell-font-family</code></li>
+<li><code>$grid-summary-row-cell-font-size</code></li>
+<li><code>$grid-summary-row-cell-font-size-big</code></li>
+<li><code>$grid-summary-row-cell-font-weight</code></li>
+<li><code>$grid-summary-row-cell-line-height</code></li>
+<li><code>$grid-summary-row-cell-line-height-big</code></li>
+<li><code>$grid-summary-row-cell-padding</code></li>
+<li><code>$grid-summary-row-cell-padding-big</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_headercontainer">Ext.grid.HeaderContainer<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_headercontainer"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>defaultColumnUI</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_editable">Ext.grid.plugin.Editable<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_editable"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>defaultFormConfig</code><ul>
+<li><strong>value</strong> is {
+xtype: &#39;formpanel&#39;,
+scrollable: true,
+items: {
+xtype: &#39;fieldset&#39;
+}
+} (was {
+xtype: &#39;formpanel&#39;,
+modal: true,
+scrollable: true,
+items: {
+xtype: &#39;fieldset&#39;
+}
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_multiselection">Ext.grid.plugin.MultiSelection<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_multiselection"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>selectionColumn</code><ul>
+<li><strong>value</strong> is {
+width: 60,
+xtype: &#39;selectioncolumn&#39;,
+align: &#39;center&#39;,
+cell: {
+xtype: &#39;checkcell&#39;
+},
+ignore: true,
+hidden: true
+} (was {
+width: 60,
+xtype: &#39;column&#39;,
+cls: &#39;x-grid-multiselection-column&#39;,
+cell: {
+cls: &#39;x-grid-multiselection-cell&#39;
+},
+ignore: true,
+hidden: true
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_viewoptions">Ext.grid.plugin.ViewOptions<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_grid_plugin_viewoptions"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>columnList</code><ul>
+<li><strong>value</strong> is {
+xtype: &#39;nestedlist&#39;,
+title: &#39;Columns&#39;,
+listConfig: {
+plugins: [<pre><code class="language-javascript">{
+    type: &#39;sortablelist&#39;,
+    handleSelector: &#39;.x-column-options-sortablehandle&#39;
+}
+</code></pre>],
+mode: &#39;MULTI&#39;,
+infinite: true,
+itemTpl: [<pre><code class="language-javascript">&#39;&lt;div class=&quot;x-column-options-itemwrap&lt;tpl if=&quot;hidden&quot;&gt; {hiddenCls}&lt;/tpl&gt;&#39;,
+&#39;&lt;tpl if=&quot;grouped&quot;&gt; {groupedCls}&lt;/tpl&gt;&quot;&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-sortablehandle x-font-icon&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;tpl if=&quot;header&quot;&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-folder x-font-icon&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;tpl else&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-leaf x-font-icon&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;/tpl&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-text&quot;&gt;{text}&lt;/div&gt;&#39;,
+&#39;&lt;tpl if=&quot;groupable &amp;&amp; dataIndex&quot;&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-groupindicator x-font-icon&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;/tpl&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-visibleindicator x-font-icon&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;/div&gt;&#39;
+</code></pre>],
+triggerEvent: null,
+bufferSize: 1,
+minimumBufferSize: 1
+},
+store: {
+type: &#39;tree&#39;,
+fields: [<pre><code class="language-javascript">&#39;id&#39;,
+&#39;text&#39;,
+&#39;dataIndex&#39;,
+&#39;header&#39;,
+&#39;hidden&#39;,
+&#39;hiddenCls&#39;,
+&#39;grouped&#39;,
+&#39;groupedCls&#39;,
+&#39;groupable&#39;
+</code></pre>],
+root: {<pre><code class="language-javascript">text: &#39;Columns&#39;
+</code></pre>}
+},
+clearSelectionOnListChange: false
+} (was {
+xtype: &#39;nestedlist&#39;,
+title: &#39;Column&#39;,
+listConfig: {
+plugins: [<pre><code class="language-javascript">{
+    type: &#39;sortablelist&#39;,
+    handleSelector: &#39;.x-column-options-sortablehandle&#39;
+}
+</code></pre>],
+mode: &#39;MULTI&#39;,
+infinite: true,
+itemTpl: [<pre><code class="language-javascript">&#39;&lt;div class=&quot;x-column-options-itemwrap&lt;tpl if=&quot;hidden&quot;&gt; {hiddenCls}&lt;/tpl&gt;&#39;,
+&#39;&lt;tpl if=&quot;grouped&quot;&gt; {groupedCls}&lt;/tpl&gt;&quot;&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-sortablehandle&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;tpl if=&quot;header&quot;&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-folder&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;tpl else&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-leaf&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;/tpl&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-text&quot;&gt;{text}&lt;/div&gt;&#39;,
+&#39;&lt;tpl if=&quot;groupable &amp;&amp; dataIndex&quot;&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-groupindicator&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;/tpl&gt;&#39;,
+&#39;&lt;div class=&quot;x-column-options-visibleindicator&quot;&gt;&lt;/div&gt;&#39;,
+&#39;&lt;/div&gt;&#39;
+</code></pre>],
+triggerEvent: null,
+bufferSize: 1,
+minimumBufferSize: 1
+},
+store: {
+type: &#39;tree&#39;,
+fields: [<pre><code class="language-javascript">&#39;id&#39;,
+&#39;text&#39;,
+&#39;dataIndex&#39;,
+&#39;header&#39;,
+&#39;hidden&#39;,
+&#39;hiddenCls&#39;,
+&#39;grouped&#39;,
+&#39;groupedCls&#39;,
+&#39;groupable&#39;
+</code></pre>],
+root: {<pre><code class="language-javascript">text: &#39;Columns&#39;
+</code></pre>}
+},
+clearSelectionOnListChange: false
+})</li>
+</ul>
+</li>
+<li><code>sheet</code><ul>
+<li><strong>value</strong> is {
+baseCls: &#39;x-gridviewoptions&#39;,
+xtype: &#39;sheet&#39;,
+items: [
+{<pre><code class="language-javascript">docked: &#39;top&#39;,
+xtype: &#39;titlebar&#39;,
+title: &#39;Customize&#39;,
+items: {
+    xtype: &#39;button&#39;,
+    text: &#39;Done&#39;,
+    ui: &#39;action&#39;,
+    align: &#39;right&#39;,
+    role: &#39;donebutton&#39;
+}
+</code></pre>}
+],
+hidden: true,
+hideOnMaskTap: true,
+enter: &#39;right&#39;,
+exit: &#39;right&#39;,
+modal: true,
+translatable: {
+translationMethod: &#39;csstransform&#39;
+},
+right: 0,
+layout: &#39;fit&#39;,
+stretchY: true
+} (was {
+baseCls: &#39;x-grid-viewoptions&#39;,
+xtype: &#39;sheet&#39;,
+items: [
+{<pre><code class="language-javascript">docked: &#39;top&#39;,
+xtype: &#39;titlebar&#39;,
+title: &#39;Customize&#39;,
+items: {
+    xtype: &#39;button&#39;,
+    text: &#39;Done&#39;,
+    ui: &#39;action&#39;,
+    align: &#39;right&#39;,
+    role: &#39;donebutton&#39;
+}
+</code></pre>}
+],
+hideOnMaskTap: false,
+enter: &#39;right&#39;,
+exit: &#39;right&#39;,
+modal: false,
+translatable: {
+translationMethod: &#39;csstransform&#39;
+},
+right: 0,
+layout: &#39;fit&#39;,
+stretchY: true
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Properties<ul>
+<li><code>sheetVisible</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_layout_box">Ext.layout.Box<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_layout_box"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>vertical</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_messagebox">Ext.MessageBox<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_messagebox"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>buttonToolbar</code></li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>zIndex</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_mixin_observable">Ext.mixin.Observable<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_mixin_observable"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>addListener</code><ul>
+<li>Modified <em>options</em> param<ul>
+<li>Added <em>capture</em> property</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>on</code><ul>
+<li>Modified <em>options</em> param<ul>
+<li>Added <em>capture</em> property</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_number">Ext.Number<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_number"></a></h3>
+<ul>
+<li>Added Methods<ul>
+<li><code>roundToNearest</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_panel">Ext.Panel<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_panel"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>anchor</code></li>
+<li><code>closable</code></li>
+<li><code>closeAction</code></li>
+<li><code>closeToolText</code></li>
+</ul>
+</li>
+<li>Added Vars<ul>
+<li><code>$panel-anchor-height</code></li>
+<li><code>$panel-anchor-width</code></li>
+<li><code>$panel-body-padding</code></li>
+<li><code>$panel-body-padding-big</code></li>
+<li><code>$panel-header-shadow</code></li>
+<li><code>$panel-header-z-index</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$panel-body-background-color</code><ul>
+<li><strong>value</strong> is $background-color (was #fff)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_panel_tool">Ext.panel.Tool<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_panel_tool"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$panel-tool-menu-icon</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_picker_picker">Ext.picker.Picker<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_picker_picker"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$picker-title-border-color</code></li>
+<li><code>$picker-title-border-style</code></li>
+<li><code>$picker-title-border-width</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_picker_slot">Ext.picker.Slot<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_picker_slot"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>scrollable</code><ul>
+<li><strong>value</strong> is {
+x: false,
+y: true,
+scrollbars: false
+} (was {
+x: false,
+indicators: false,
+momentumEasing: {
+minVelocity: 2
+},
+slotSnapEasing: {
+duration: 100
+}
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_plugin_abstract">Ext.plugin.Abstract<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_plugin_abstract"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>id</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>detachCmp</code></li>
+</ul>
+</li>
+<li>Modified Properties<ul>
+<li><code>isPlugin</code><ul>
+<li><strong>readonly</strong> is true</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_plugin_pullrefresh">Ext.plugin.PullRefresh<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_plugin_pullrefresh"></a></h3>
+<ul>
+<li>Removed Configs<ul>
+<li><code>scrollerAutoRefresh</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_progress">Ext.Progress<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_progress"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$progress-border-style</code></li>
+<li><code>$progress-min-height</code></li>
+<li><code>$progress-min-height-big</code></li>
+<li><code>$progress-text-back-color</code></li>
+<li><code>$progress-text-font-size-big</code></li>
+<li><code>$progress-text-front-color</code></li>
+<li><code>$progress-text-line-height</code></li>
+<li><code>$progress-text-line-height-big</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$progress-background-color</code><ul>
+<li><strong>value</strong> is $neutral-highlight-color (was #eee)</li>
+</ul>
+</li>
+<li><code>$progress-bar-background-gradient</code><ul>
+<li><strong>value</strong> is null (was &#39;none&#39;)</li>
+</ul>
+</li>
+<li><code>$progress-border-color</code><ul>
+<li><strong>value</strong> is null (was $base-color)</li>
+</ul>
+</li>
+<li><code>$progress-border-width</code><ul>
+<li><strong>value</strong> is null (was 1px)</li>
+</ul>
+</li>
+<li><code>$progress-text-font-size</code><ul>
+<li><strong>value</strong> is px-to-rem(13px, 13px) (was $font-size)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$include-progress-default-ui</code></li>
+<li><code>$progress-height</code></li>
+<li><code>$progress-text-color-back</code></li>
+<li><code>$progress-text-color-front</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_segmentedbutton">Ext.SegmentedButton<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_segmentedbutton"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>vertical</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>defaultUI</code><ul>
+<li><strong>value</strong> is &#39;segmented&#39; (was null)</li>
+</ul>
+</li>
+<li><code>layout</code><ul>
+<li><strong>value</strong> is {
+type: &#39;box&#39;,
+vertical: false,
+align: &#39;stretch&#39;
+} (was {
+type: &#39;hbox&#39;,
+align: &#39;stretch&#39;
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_sheet">Ext.Sheet<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_sheet"></a></h3>
+<ul>
+<li>Modified Vars<ul>
+<li><code>$sheet-background-color</code><ul>
+<li><strong>value</strong> is $background-color (was #fff)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_slider_slider">Ext.slider.Slider<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_slider_slider"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>thumbDefaults</code></li>
+<li><code>valueIsArray</code></li>
+</ul>
+</li>
+<li>Modified Methods<ul>
+<li><code>updateValue</code><ul>
+<li>Removed <em>newValue</em> param</li>
+<li>Removed <em>oldValue</em> param</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>thumbConfig</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_slider_thumb">Ext.slider.Thumb<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_slider_thumb"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>fillCls</code></li>
+<li><code>fillTrack</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>draggable</code><ul>
+<li><strong>value</strong> is {
+direction: &#39;horizontal&#39;,
+translatable: {
+// use cssposition instead of csstransform so that themes can use transform
+// scale to style the pressed state of the thumb (material)
+translationMethod: &#39;cssposition&#39;
+}
+} (was {
+direction: &#39;horizontal&#39;
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>pressedCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_supports">Ext.supports<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_supports"></a></h3>
+<ul>
+<li>Added Properties<ul>
+<li><code>Selectors2</code></li>
+<li><code>ViewportUnits</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_tab_bar">Ext.tab.Bar<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_tab_bar"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$tabbar-background-gradient</code></li>
+<li><code>$tabbar-border-color</code></li>
+<li><code>$tabbar-border-style</code></li>
+<li><code>$tabbar-border-width</code></li>
+<li><code>$tabbar-box-shadow</code></li>
+<li><code>$tabbar-color</code></li>
+<li><code>$tabbar-font-family</code></li>
+<li><code>$tabbar-font-size</code></li>
+<li><code>$tabbar-font-size-big</code></li>
+<li><code>$tabbar-font-weight</code></li>
+<li><code>$tabbar-horizontal-spacing</code></li>
+<li><code>$tabbar-horizontal-spacing-big</code></li>
+<li><code>$tabbar-line-height</code></li>
+<li><code>$tabbar-line-height-big</code></li>
+<li><code>$tabbar-min-height</code></li>
+<li><code>$tabbar-min-height-big</code></li>
+<li><code>$tabbar-title-color</code></li>
+<li><code>$tabbar-title-font-family</code></li>
+<li><code>$tabbar-title-font-size</code></li>
+<li><code>$tabbar-title-font-size-big</code></li>
+<li><code>$tabbar-title-font-weight</code></li>
+<li><code>$tabbar-vertical-spacing</code></li>
+<li><code>$tabbar-vertical-spacing-big</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$tabbar-padding</code><ul>
+<li><strong>value</strong> is null (was .46rem .5rem)</li>
+</ul>
+</li>
+<li><code>$tabbar-padding-big</code><ul>
+<li><strong>value</strong> is null (was .4rem .67rem)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$tabbar-tab-spacing</code></li>
+<li><code>$tabbar-tab-spacing-big</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_tab_tab">Ext.tab.Tab<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_tab_tab"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$active-icon-color</code></li>
+<li><code>$tab-active-box-shadow</code></li>
+<li><code>$tab-active-icon-color</code></li>
+<li><code>$tab-badge-font-size-big</code></li>
+<li><code>$tab-badge-line-height-big</code></li>
+<li><code>$tab-badge-padding-big</code></li>
+<li><code>$tab-icon-color</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$tab-icon-font-size</code><ul>
+<li><strong>value</strong> is $tab-icon-size (was $tab-line-height)</li>
+</ul>
+</li>
+<li><code>$tab-icon-font-size-big</code><ul>
+<li><strong>value</strong> is $tab-icon-size-big (was $tab-line-height-big)</li>
+</ul>
+</li>
+<li><code>$tab-icon-size</code><ul>
+<li><strong>value</strong> is $tab-line-height (was 1em)</li>
+</ul>
+</li>
+<li><code>$tab-icon-size-big</code><ul>
+<li><strong>value</strong> is $tab-line-height-big (was 1em)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_titlebar">Ext.TitleBar<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_titlebar"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>defaultButtonUI</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>layout</code><ul>
+<li><strong>value</strong> is {
+type: &#39;hbox&#39;,
+align: &#39;center&#39;
+} (was {
+type: &#39;hbox&#39;
+})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_toast">Ext.Toast<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_toast"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>modal</code><ul>
+<li><strong>access</strong> is public (was private)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_toolbar">Ext.Toolbar<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_toolbar"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$toolbar-box-shadow</code></li>
+<li><code>$toolbar-color</code></li>
+<li><code>$toolbar-font-family</code></li>
+<li><code>$toolbar-font-size</code></li>
+<li><code>$toolbar-font-size-big</code></li>
+<li><code>$toolbar-font-weight</code></li>
+<li><code>$toolbar-line-height</code></li>
+<li><code>$toolbar-line-height-big</code></li>
+<li><code>$toolbar-min-height</code></li>
+<li><code>$toolbar-min-height-big</code></li>
+<li><code>$toolbar-title-padding</code></li>
+<li><code>$toolbar-title-padding-big</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$toolbar-background-color</code><ul>
+<li><strong>value</strong> is $background-color (was #fff)</li>
+</ul>
+</li>
+<li><code>$toolbar-border-color</code><ul>
+<li><strong>type</strong> is color/list (was color)</li>
+</ul>
+</li>
+<li><code>$toolbar-border-style</code><ul>
+<li><strong>type</strong> is String/list (was Number/list)</li>
+</ul>
+</li>
+<li><code>$toolbar-padding</code><ul>
+<li><strong>value</strong> is .4616em .5em (was .46rem .5rem)</li>
+</ul>
+</li>
+<li><code>$toolbar-padding-big</code><ul>
+<li><strong>value</strong> is .4em .67em (was .4rem .67rem)</li>
+</ul>
+</li>
+<li><code>$toolbar-title-font-size</code><ul>
+<li><strong>value</strong> is $toolbar-font-size (was 1rem)</li>
+</ul>
+</li>
+<li><code>$toolbar-title-font-size-big</code><ul>
+<li><strong>value</strong> is $toolbar-font-size-big (was $toolbar-title-font-size)</li>
+</ul>
+</li>
+<li><code>$toolbar-title-font-weight</code><ul>
+<li><strong>value</strong> is $toolbar-font-weight (was $font-weight-bold)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Configs<ul>
+<li><code>baseCls</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_filter">Ext.util.Filter<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_filter"></a></h3>
+<ul>
+<li>Added Static-methods<ul>
+<li><code>isEqual</code></li>
+</ul>
+</li>
+<li>Modified Configs<ul>
+<li><code>serializer</code><ul>
+<li><strong>access</strong> is public (was private)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_format">Ext.util.Format<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_format"></a></h3>
+<ul>
+<li>Added Properties<ul>
+<li><code>currencySpacer</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>lessThanElse</code></li>
+<li><code>nbsp</code></li>
+<li><code>sign</code></li>
+<li><code>uri</code></li>
+<li><code>uriCmp</code></li>
+<li><code>word</code></li>
+</ul>
+</li>
+<li>Modified Methods<ul>
+<li><code>currency</code><ul>
+<li>Added <em>currencySpacer</em> param</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_positionable">Ext.util.Positionable<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_positionable"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>getRegion</code><ul>
+<li>Added <em>contentBox</em> param</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_region">Ext.util.Region<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_region"></a></h3>
+<ul>
+<li>Added Methods<ul>
+<li><code>alignTo</code></li>
+<li><code>exclude</code></li>
+<li><code>getOffsetsTo</code></li>
+<li><code>setPosition</code></li>
+</ul>
+</li>
+<li>Added Static-methods<ul>
+<li><code>getAlignInfo</code></li>
+</ul>
+</li>
+<li>Modified Methods<ul>
+<li><code>contains</code><ul>
+<li>Modified <em>region</em> param<ul>
+<li><strong>type</strong> is Ext.util.Region/Ext.util.Point (was Ext.util.Region)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_taskrunner">Ext.util.TaskRunner<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_util_taskrunner"></a></h3>
+<ul>
+<li>Modified Methods<ul>
+<li><code>start</code><ul>
+<li>Modified <em>task</em> param<ul>
+<li>Added <em>addCountToArgs</em> property</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_ux_ajax_simlet">Ext.ux.ajax.Simlet<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_ux_ajax_simlet"></a></h3>
+<ul>
+<li>Modified Configs<ul>
+<li><code>responseHeaders</code><ul>
+<li><strong>type</strong> is Object/Function (was Object)</li>
+</ul>
+</li>
+<li><code>responseText</code><ul>
+<li><strong>type</strong> is String/Function (was Number)</li>
+</ul>
+</li>
+<li><code>responseXML</code><ul>
+<li><strong>type</strong> is String/Function (was Number)</li>
+</ul>
+</li>
+<li><code>status</code><ul>
+<li><strong>type</strong> is Number/Function (was Number)</li>
+</ul>
+</li>
+<li><code>statusText</code><ul>
+<li><strong>type</strong> is String/Function (was String)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_viewport_default">Ext.viewport.Default<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_viewport_default"></a></h3>
+<ul>
+<li>Removed Configs<ul>
+<li><code>preventPanning</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_ext_widget">Ext.Widget<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_ext_widget"></a></h3>
+<ul>
+<li>Added Configs<ul>
+<li><code>alwaysOnTop</code></li>
+<li><code>baseCls</code></li>
+<li><code>border</code></li>
+<li><code>cls</code></li>
+<li><code>flex</code></li>
+<li><code>floated</code></li>
+<li><code>hidden</code></li>
+<li><code>id</code></li>
+<li><code>itemId</code></li>
+<li><code>relative</code></li>
+<li><code>shadow</code></li>
+<li><code>shim</code></li>
+<li><code>toFrontOnShow</code></li>
+<li><code>touchAction</code></li>
+<li><code>ui</code></li>
+<li><code>x</code></li>
+<li><code>y</code></li>
+</ul>
+</li>
+<li>Added Properties<ul>
+<li><code>classCls</code></li>
+<li><code>classClsRoot</code></li>
+</ul>
+</li>
+<li>Added Methods<ul>
+<li><code>getAlignmentInfo</code></li>
+<li><code>isHidden</code></li>
+<li><code>isVisible</code></li>
+<li><code>lookupTpl</code></li>
+<li><code>toFront</code></li>
+<li><code>up</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="whats_new-_-api_diffs-_-620_modern_diff_-_global_css">Global_CSS<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_global_css"></a></h3>
+<ul>
+<li>Added Vars<ul>
+<li><code>$css-variable-selector</code></li>
+<li><code>$enable-border-radius</code></li>
+<li><code>$enable-default-uis</code></li>
+<li><code>$enable-floated-shadows</code></li>
+<li><code>$enable-missing-images</code></li>
+<li><code>$enable-status-bar-padding</code></li>
+<li><code>$shadow-blur-radius</code></li>
+<li><code>$shadow-color</code></li>
+<li><code>$shadow-width</code></li>
+<li><code>$shadow-x-offset</code></li>
+<li><code>$shadow-y-offset</code></li>
+<li><code>enable-css-variables</code></li>
+</ul>
+</li>
+<li>Modified Vars<ul>
+<li><code>$alert-color</code><ul>
+<li><strong>value</strong> is #c30 (was red)</li>
+</ul>
+</li>
+<li><code>$base-background-gradient</code><ul>
+<li><strong>value</strong> is if($enable-highlights, matte, null) (was if($include-highlights, matte, null))</li>
+</ul>
+</li>
+<li><code>$font-size</code><ul>
+<li><strong>value</strong> is pxToRootPct(13px) (was 81.25%)</li>
+</ul>
+</li>
+<li><code>$font-size-big</code><ul>
+<li><strong>value</strong> is pxToRootPct(15px) (was 93.75%)</li>
+</ul>
+</li>
+<li><code>$include-highlights</code><ul>
+<li><strong>value</strong> is true</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Removed Vars<ul>
+<li><code>$include-border-radius</code></li>
+<li><code>$include-not-found-images</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="whats_new-_-api_diffs-_-620_modern_diff_-_summary">Summary<a class="quick-link" href="#whats_new-_-api_diffs-_-620_modern_diff_-_summary"></a></h2>
+<ul>
+<li>885 Classes</li>
+<li>1,757 Class Configs</li>
+<li>725 Class Properties</li>
+<li>45 Class Static Properties</li>
+<li>3,196 Class Methods</li>
+<li>164 Class Static Methods</li>
+<li>395 Class Events</li>
+<li>557 Class Vars</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            <a href="https://www.facebook.com/senchainc/" target="_blank"><img class="social" src="../../../home-images/fb.png"/></a>
+            <a href="https://www.linkedin.com/company/sencha-inc" target="_blank"><img class="social" src="../../../home-images/in.png"/></a>
+            <a href="https://twitter.com/Sencha" target="_blank"><img class="social" src="../../../home-images/twt.png"/></a>
+            Ext JS 6.2.0  | <a href='https://www.sencha.com/legal/terms-of-use/' target='_blank'>Terms of Use</a>
+        </p>
+    </div>
+</div>
+
+            
+            
+        </div>
+    </div>
+    <h2 class="product-header"><a href="../../../index.html">Ext JS 6.2.0 </a>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+        <div id="peekaboo-input" class="peekaboo-input">
+            <input type="text" id="mobile-input" />
+        </div>
+    </h2>
+
+    <div id="product-tree-ct" class="hide">
+        <div id="product-tree">
+            <div class="product-name-ct">
+                    <div id="product-menu-extjs" class="product-name-item">Ext JS</div>
+                    <div id="product-menu-sencha_test" class="product-name-item">Sencha Test</div>
+                    <div id="product-menu-cmd" class="product-name-item">Cmd</div>
+                    <div id="product-menu-themer" class="product-name-item">Sencha Themer</div>
+                    <div id="product-menu-gxt" class="product-name-item">GXT</div>
+                    <div id="product-menu-ide_plugins" class="product-name-item">IDE Plugins</div>
+                    <div id="product-menu-sencha_inspector" class="product-name-item">Sencha Inspector</div>
+                    <div id="product-menu-architect" class="product-name-item">Architect</div>
+                    <div id="product-menu-fiddle" class="product-name-item">Sencha Fiddle</div>
+                    <div id="product-menu-touch" class="product-name-item">Touch</div>
+            </div>
+                <div class="product-version-ct hide extjs">
+                        <h2>Ext JS</h2>
+                            <h3>6.x</h3>
+                                        <a class="product-item" href="../../../index.html">6.2.0</a>
+                                        <a class="product-item" href="../../../../6.0.2/index.html">6.0.2</a>
+                                        <a class="product-item" href="../../../../6.0.1/index.html">6.0.1</a>
+                                        <a class="product-item" href="../../../../6.0.0/index.html">6.0.0</a>
+                            <h3>5.x</h3>
+                                        <a class="product-item" href="../../../../5.1.3/index.html">5.1.3</a>
+                                        <a class="product-item" href="../../../../5.1.2/index.html">5.1.2</a>
+                                        <a class="product-item" href="../../../../5.1.1/index.html">5.1.1</a>
+                                        <a class="product-item" href="../../../../5.1.0/index.html">5.1.0</a>
+                                        <a class="product-item" href="../../../../5.0.1/index.html">5.0.1</a>
+                                        <a class="product-item" href="../../../../5.0.0/index.html">5.0.0</a>
+                            <h3>4.x</h3>
+                                        <a class="product-item" href="../../../../4.2.6/">4.2.6</a>
+                                        <a class="product-item" href="../../../../4.1.3/">4.1.3</a>
+                                        <a class="product-item" href="../../../../4.0.7/">4.0.7</a>
+                            <h3>3.x</h3>
+                                        <a class="product-item" href="../../../../3.4.0/">3.4.0</a>
+                </div>
+                <div class="product-version-ct hide sencha_test">
+                        <h2>Sencha Test</h2>
+                                <a class="product-item" href="../../../../../sencha_test/2.0.0/">2.0.0 EA</a>
+                                <a class="product-item" href="../../../../../sencha_test/1.0.3/">1.0.3</a>
+                </div>
+                <div class="product-version-ct hide cmd">
+                        <h2>Cmd</h2>
+                        <a  href="../../../../../cmd/index.html">Cmd</a>
+                </div>
+                <div class="product-version-ct hide themer">
+                        <h2>Sencha Themer</h2>
+                                <a class="product-item" href="../../../../../themer/1.1/">1.1.0 EA</a>
+                                <a class="product-item" href="../../../../../themer/1.0/">1.0.1</a>
+                </div>
+                <div class="product-version-ct hide gxt">
+                        <h2>GXT</h2>
+                                <a class="product-item" href="../../../../../gxt/5.x/index.html">5.x EA</a>
+                                <a class="product-item" href="../../../../../gxt/4.x/index.html">4.x</a>
+                                <a class="product-item" href="../../../../../gxt/3.x/index.html">3.x</a>
+                </div>
+                <div class="product-version-ct hide ide_plugins">
+                        <h2>IDE Plugins</h2>
+                        <a  href="../../../../../ide_plugins/index.html">IDE Plugins</a>
+                </div>
+                <div class="product-version-ct hide sencha_inspector">
+                        <h2>Sencha Inspector</h2>
+                        <a  href="../../../../../sencha_inspector/index.html">Sencha Inspector</a>
+                </div>
+                <div class="product-version-ct hide architect">
+                        <h2>Architect</h2>
+                                <a class="product-item" href="../../../../../architect/4.1/index.html">Architect 4.1 EA</a>
+                                <a class="product-item" href="../../../../../architect/4/index.html">Architect 4</a>
+                                <a class="product-item" href="../../../../../architect/3/index.html">Architect 3</a>
+                </div>
+                <div class="product-version-ct hide fiddle">
+                        <h2>Sencha Fiddle</h2>
+                        <a  href="../../../../../fiddle/index.html">Sencha Fiddle</a>
+                </div>
+                <div class="product-version-ct hide touch">
+                        <h2>Touch</h2>
+                            <h3>2.x</h3>
+                                        <a class="product-item" href="../../../../../touch/2.4/index.html">Touch 2.4</a>
+                                        <a class="product-item" href="../../../../../touch/2.3.1/">Touch 2.3</a>
+                                        <a class="product-item" href="../../../../../touch/2.2.1/">Touch 2.2</a>
+                                        <a class="product-item" href="../../../../../touch/2.0.2/">Touch 2.0</a>
+                </div>
+        </div>
+    </div>
+
+    <div id="historyConfigPanel">
+        <div class="history-type-selector">
+            <input id="historyTypeCurrent" type="radio" name="historyType" value="current" checked="true" />
+            <label for="historyTypeCurrent">Current Product / Version</label><br>
+            <input id="historyTypeAll" type="radio" name="historyType" value="all" />
+            <label for="historyTypeAll">All</label><br>
+            <div id="history-label-toggle">
+                <input id="history-all-labels" type="checkbox" checked="true" />
+                <label for="history-all-labels">Show product details in the history bar</label>
+                <div class="mask"></div>
+            </div>
+            <span id="history-clear" class="history-clear tooltip tooltip-tr-br" data-tip="Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="history-full-list"></div>
+    </div>
+
+    <div id="search-history-panel"></div>
+
+    <div id="modal-placeholder" class="modal">
+        <span id="modal-close">&times;</span>
+        <img id="modal-content">
+        <div id="modal-caption"></div>
+    </div>
+
+</body>
+    <script type="text/javascript" src="../../../js/searchIndex.js"></script>
+    <script type="text/javascript" src="../../../js/guideSearch.js"></script>
+<!--[if lt IE 9 ]>
+<script type="text/javascript" src="../../../js/media-query-poly.js"></script>
+<style>
+    span.da-inline-fiddle-nav-fiddle.x-fa.fa-play-circle {
+        display: none;
+    }
+</style>
+<![endif]-->
+<script>
+    if (navigator.userAgent.indexOf("Safari") > -1) {
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload()
+            }
+        };
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+            //
+        }
+    }
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1396058-28', 'auto');
+    ga('send', 'pageview');
+</script>
+</html>

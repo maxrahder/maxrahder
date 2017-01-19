@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ext JS - FAQ | Ext JS 6.2.0 </title>
+    <!--  Generated on November, 11 2016 at 0:39 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta property="og:image" content="../../home-images/sencha-200.png" />
+    <meta property="og:title" content="Ext JS - FAQ | Ext JS 6.2.0 " />
+    <meta property="og:description" content="Ext JS - FAQ Below you&amp;#39;ll find answers to the most commonly asked questions regarding Ext JS.  If youcan&amp;#39;t find an answer to your question, please vi..." />
+    <meta property="og:site_name" content="Sencha Documentation" />
+    <meta property="og:url" content="http://docs.sencha.com/extjs/6.2.0/other_resources/extjs_faq.html" />
+    <meta name="description" content="Ext JS - FAQ Below you&#39;ll find answers to the most commonly asked questions regarding Ext JS.  If youcan&#39;t find an answer to your question, please vi...">
+    <style>
+        /*!
+         *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+         *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+         */
+        /* FONT PATH
+         * -------------------------- */
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../css/fonts/fontawesome-webfont.eot?v=4.5.0');
+            src: url('../../css/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+            url('../../css/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+            url('../../css/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+            url('../../css/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+            url('../../css/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="../../css/prism.css">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+</head>
+<body class=" is-guide  has-guides  has-quick-start  has-api tree-shown">
+    <script type="text/javascript">
+        function getOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            } else if(userAgent.match(/Android/i)) {
+                return 'android';
+            }
+        }
+
+        var hash = document.location.hash,
+                rawhash, newhash, prop, member,
+                isIE8 = false;
+
+        if(hash.indexOf('#!') > -1) {
+            hash    = hash.replace('#!/api/','');
+            rawhash = hash.split('-'),
+            prop    = (rawhash[1] == 'static') ? rawhash[2] : rawhash[1],
+            member  = (rawhash[1] == 'static') ? rawhash[3] : rawhash[2],
+            newhash = rawhash[0] + '.html';
+
+            if (prop && member) {
+                newhash += '#' + prop + '-' + member;
+            }
+
+            document.location.href = newhash;
+        }
+
+        document.body.className += ' ' + getOS();
+    </script>
+    <!--[if IE 8]>
+    <script type='text/javascript'>
+        isIE8 = true;
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        var ExtL = ExtL || {},
+            specificId = 'other_resources_-_extjs_faq',
+            isClassTemplate = false,
+            isHome = false,
+            isLanding = false,
+            isApi = false,
+            isGuide = true,
+            isQuickStart = false,
+            hasApi = true,
+            hasGuides = true,
+            hasQuickStart = true
+            singleton = false,
+            pageName = 'Ext JS - FAQ',
+            pageTitle = 'Ext JS',
+            homePath = '../../',
+            product = 'extjs',
+            pversion = '6.2.0-modern',
+            hasVersions = true,
+            myToolkit = 'modern',
+            myVersion = '6.2.0',
+            appliesToToolkit = 'universal';
+
+            if (!isIE8) {
+                document.write('<script type=\"text/javascript\" src=\"../../js/prism.js\"><\/script>');
+            }
+    </script>
+    <script type="text/javascript" src="../../js/ace.js"></script>
+    <script type="text/javascript" src="../../js/beautify.js"></script>
+    <script type="text/javascript" src="../../js/app.js"></script>
+    <div id="help-wrap">
+        <div class="help-header">
+            Docs Help
+            <div id="help-close"></div>
+        </div>
+        <div class="classText">
+            <div class="toc">
+                <h2>Contents</h2>
+                    <a class="toc-page-h2" href="#terms-icons-and-labels">Terms, Icons, and Labels</a>
+                    <a class="toc-page-h3" href="#access-levels">Access Levels</a>
+                    <a class="toc-page-h3" href="#member-types">Member Types</a>
+                    <a class="toc-page-h3" href="#member-syntax">Member Syntax</a>
+                    <a class="toc-page-h3" href="#member-flags">Member Flags</a>
+                    <a class="toc-page-h3" href="#class-icons">Class Icons</a>
+                    <a class="toc-page-h3" href="#member-icons">Member Icons</a>
+                    <a class="toc-page-h2" href="#navigation-and-features">Navigation and Features</a>
+                    <a class="toc-page-h3" href="#class-member-quick-nav-menu">Class Member Quick-Nav Menu</a>
+                    <a class="toc-page-h3" href="#getter-and-setter-methods">Getter and Setter Methods</a>
+                    <a class="toc-page-h3" href="#history-bar">History Bar</a>
+                    <a class="toc-page-h3" href="#search-and-filters">Search and Filters</a>
+                    <a class="toc-page-h3" href="#api-doc-class-metadata">API Doc Class Metadata</a>
+                    <a class="toc-page-h3" href="#expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</a>
+                    <a class="toc-page-h3" href="#desktop-vs-mobile-view">Desktop -vs- Mobile View</a>
+                    <a class="toc-page-h3" href="#viewing-the-class-source">Viewing the Class Source</a>
+            </div>
+            <h2 id="terms-icons-and-labels">Terms, Icons, and Labels</h2>
+    <p>Many classes have shortcut names used when creating (instantiating) a class with a 
+    configuration object.  The shortcut name is referred to as an <code>alias</code> (or <code>xtype</code> if the 
+    class extends Ext.Component).  The alias/xtype is listed next to the class name of 
+    applicable classes for quick reference.</p>
+    <h3 id="access-levels">Access Levels</h3>
+    <p>Framework classes or their members may be specified as <code>private</code> or <code>protected</code>.  Else, 
+    the class / member is <code>public</code>.  <code>Public</code>, <code>protected</code>, and <code>private</code> are access 
+    descriptors used to convey how and when the class or class member should be used.</p>
+    <ul>
+    <li><p><strong>Public</strong> classes and class members are available for use by any other class or 
+    application code and may be relied upon as a stable and persistent within major product 
+    versions.  Public classes and members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Protected</strong> class members are stable <code>public</code> members intended to be used by the 
+    owning class or its subclasses.  Protected members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Private</strong> classes and class members are used internally by the framework and are not 
+    intended to be used by application developers.  Private classes and members may change or 
+    be omitted from the framework at any time without notice and should not be relied upon in 
+    application logic.</p>
+    </li>
+    </ul>
+    <h3 id="member-types">Member Types</h3>
+    <ul>
+    <li><strong>Config</strong> - The configuration options for a class.</li>
+    <li><strong>Property</strong> - Set once a class is instantiated. *See Read Only below.</li>
+    <li><strong>Method</strong> - Actions that can be performed by a class.  Methods should be read as 
+    instance methods and can only be called from a instance of a given class.  Static methods 
+    that can be called directly from the class itself will have a <code>static</code> label next to the 
+    method name.  *See Static below.</li>
+    <li><strong>Event</strong> - Events are specific to the framework event system allowing for classes to 
+    programmatically raise an event to be handled by one or more event handler methods.  DOM 
+    events, while handled by the framework event system, are not specifically described 
+    within the API documentation.  *For DOM events refer to the 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events">event reference</a> page from MDN.</li>
+    <li><strong>Theme Variable</strong> - Variables used by the visual theme engine employed by the 
+    framework.</li>
+    <li><strong>Theme Mixin</strong> - Functions used by the visual theme engine employed by the framework 
+    and may use values set in various Theme Variables.</li>
+    </ul>
+    <h3 id="member-syntax">Member Syntax</h3>
+    <p>Below is an example class member that we can disect to show the syntax of a class member 
+    (the lookupComponent method as viewed from the Ext.button.Button class in this case).</p>
+    <div style="position: relative;" class="show-inherited show-protected members">
+        <div style="border: 1px solid #E4E4E4;" class="classmembers member-protected isNotStatic isInherited member-temp-expanded" data-member-name="lookupComponent">
+            <div class="collapse-toggle"></div>
+            <div class="source-class"><a href="javascript:void(0);">Ext.container.Container</a><div class="viewSource"><a href="javascript:void(0);"></a><a target="_blank" href="javascript:void(0);">view source</a></div></div>
+            <div class="member-header">
+            <a href="javascript:void(0);" class="member-name-link"><span data-ref="method-lookupComponent" class="member-name"><strong>lookup</strong>Component</span></a>
+            <span class="params-list"> ( item )</span> : <span class="memberType">Ext.Component</span>
+            <div class="member-tags"><span class="protected">protected</span></div>
+        </div>
+            <p>Called when a raw config object is added to this container either during initialization of the <a href="javascript:void(0);">items</a> config,
+        or when new items are <a href="javascript:void(0);">added), or {@link #insert inserted</a>.</p>
+        <p>This method converts the passed object into an instanced child component.</p>
+        <p>This may be overridden in subclasses when special processing needs to be applied to child creation.</p>
+                    <div class="detail-header">Parameters</div>
+                <p><span class="params-list">item</span> :
+                        <span class="memberType">&nbsp;Object</span>
+                </p>
+                <div class="params-desc"><p>The config object being added.</p></div>
+                <div class="detail-header">Returns</div>
+                <span style="margin-left:12px;" class="memberType">Ext.Component</span>
+                <div class="return-desc"><p>The component to be added.</p>
+            </div>
+        </div>
+    </div>
+    
+    <p>Let&#39;s look at each part of the member row:</p>
+    <ul>
+    <li><strong>Expand/Collapse</strong> - On the left-hand size of the member row is a control used to 
+    expand and collapse each member row to show / hide member details.</li>
+    <li><strong>Member Name</strong> - The name of the class member (<code>lookupComponent</code> in this example)</li>
+    <li><strong>Method Param</strong> - Any required or optional params used by a method (or passed to an 
+    event handler method) will be listed next to the method name within parenthesis 
+    (<code>( item )</code> in this example)</li>
+    <li><strong>Return type</strong> - The class instance or javascript object returned by the method or 
+    property (<code>Ext.Component</code> in this case).  This may be omitted for methods that do not 
+    return anything other than <code>undefined</code> or may display as multiple possible values 
+    separated by a forward slash <code>/</code> signifying that what is returned may depend on the 
+    results of the method call (i.e. a method may return a Component if a get method calls is 
+    successful or <code>false</code> if unsuccessful which would be displayed as 
+    <code>Ext.Component/Boolean</code>).</li>
+    <li><strong>Flags</strong> - Any flags applicable to the member will be displayed next (<code>PROTECTED</code> in 
+    this example - see the Flags section below)</li>
+    <li><strong>Member Origin</strong> - On the right-hand side of the member row is the class where the 
+    member was initially described (<code>Ext.container.Container</code> in this example).  The source 
+    class will be displayed as a blue link if the member originates from the current class 
+    and gray if it is inherited from an ancestor or mixed-in class.</li>
+    <li><strong>Member Source</strong> - On the right-hand side below the member origin class is a link to 
+    view the member&#39;s source (<code>view source</code> in the example)</li>
+    <li><strong>Params List</strong> - Each param for a class method will be listed using the same name 
+    found above in parenthesis, the type of class or object expected, and a description of 
+    the param (<code>item : Object</code> in the example).</li>
+    <li><strong>Returns</strong> - If a class returns a value other than <code>undefined</code> a &quot;Returns&quot; section 
+    will note the type of class or object returned and a description (<code>Ext.Component</code> in the 
+    example)</li>
+    <li><strong>Since</strong> (<em>not shown in the example</em>) - Some members will show which version of the 
+    product the member was first introduced (i.e. <code>Available since 3.4.0</code> - <em>not pictured in 
+    the example</em>) just after the member description</li>
+    <li><strong>Default</strong> (<em>not shown in the example</em>) - Configs often show the default config value 
+    to be applied to a class instance if not overridden (i.e. <code>Defaults to: false</code>)</li>
+    </ul>
+    <h3 id="member-flags">Member Flags</h3>
+    <p>The API documentation uses a number of flags to further commnicate the class member&#39;s 
+    function and intent.  The label may be represented by a text label, an abbreviation, or 
+    an icon.</p>
+    <ul>
+    <li><strong>Required</strong> - Required config when instantiating a class</li>
+    <li><strong>Bindable</strong> - The config has a setter which allows this config to be set via ViewModel 
+    binding</li>
+    <li><strong>Read Only</strong> - The property may be read, but cannot be used to configure / 
+    re-configure a class instance at runtime</li>
+    <li><strong>Singleton</strong> - Singleton classes are instantiated immediately once defined and may not 
+    be instantiated manually</li>
+    <li><strong>Static</strong> - A static method or property is a method or property belonging to the class 
+    itself, not an instance of the class</li>
+    <li><strong>Chainable</strong> - Refers to methods that return the class instance back when called.<br>This enables chained method calls like: <code>classInstance.method1().method2().etc();</code></li>
+    <li><strong>Deprecated</strong> - A class or member that is scheduled for removal in a future 
+    framework version and is provided in the current version for backwards compatibility.<br>Deprecated classes and members will have a message directing you to the preferred class / 
+    method going forward.</li>
+    <li><strong>Removed</strong> - A removed class or member that exists in documentation only as a 
+    reference for users upgrading between framework versions</li>
+    <li><strong>Template</strong> - A method defined within a base class designed to be overridden by 
+    subclasses</li>
+    <li><strong>Abstract</strong> - A class or member may be be defined as abstract.  Abstract classes and 
+    members establish a class structure and provide limited, if any, code.  Class-specific 
+    code will be furnished via overrides in subclasses.</li>
+    <li><strong>Preventable</strong> - Events marked preventable will not fire if <code>false</code> is returned from 
+    an event handler</li>
+    </ul>
+    <h3 id="class-icons">Class Icons</h3>
+    <p><span class="icon-demo class-icon"></span> - Indicates a framework class  </p>
+    <p><span class="icon-demo singleton-icon"></span> - A singleton framework class. *See the 
+    singleton flag for more information  </p>
+    <p><span class="icon-demo component-icon"></span> - A component-type framework class (any 
+    class within the Ext JS framework that extends Ext.Component)  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h3 id="member-icons">Member Icons</h3>
+    <p><span class="icon-demo fa fa-cubes"></span> - Indicates a class member of type <code>config</code>  </p>
+    <p><span class="icon-demo fa fa-book"></span> - Indicates a class member of type <code>property</code>  </p>
+    <p><span class="icon-demo fa fa-object-group"></span> - Indicates a class member of type 
+    <code>method</code>  </p>
+    <p><span class="icon-demo fa fa-bolt"></span> - Indicates a class member of type <code>event</code>  </p>
+    <p><span class="icon-demo fa fa-paint-brush"></span> - Indicates a class member of type 
+    <code>theme variable</code>  </p>
+    <p><span class="icon-demo fa fa-tint"></span> - Indicates a class member of type 
+    <code>theme mixin</code>  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h2 id="navigation-and-features">Navigation and Features</h2>
+    <h3 id="class-member-quick-nav-menu">Class Member Quick-Nav Menu</h3>
+    <p>Just below the class name on an API doc page is a row of buttons corresponding to the 
+    types of members owned by the current class.  Each button shows a count of members by 
+    type (this count is updated as filters are applied).  Clicking the button will navigate 
+    you to that member section.  Hovering over the member-type button will reveal a popup 
+    menu of all members of that type for quick navigation.</p>
+    <h3 id="getter-and-setter-methods">Getter and Setter Methods</h3>
+    <p>Getting and setter methods that correlate to a class config option will show up in the 
+    methods section as well as in the configs section of both the API doc and the member-type 
+    menus just beneath the config they work with.  The getter and setter method documentation 
+    will be found in the config row for easy reference.</p>
+    <h3 id="history-bar">History Bar</h3>
+    <p>Your page history is kept in localstorage and displayed (using the available real estate) 
+    just below the top title bar.  By default, the only search results shown are the pages 
+    matching the product / version you&#39;re currently viewing.  You can expand what is 
+    displayed by clicking on the <span class="icon-demo history-config"></span> button on the 
+    right-hand side of the history bar and choosing the &quot;All&quot; radio option.  This will show 
+    all recent pages in the history bar for all products / versions.</p>
+    <p>Within the history config menu you will also see a listing of your recent page visits. 
+    The results are filtered by the &quot;Current Product / Version&quot; and &quot;All&quot; radio options. 
+    Clicking on the <span class="icon-demo history-clear"></span> button will clear the history bar as 
+    well as the history kept in local storage.</p>
+    <p>If &quot;All&quot; is selected in the history config menu the checkbox option for &quot;Show product 
+    details in the history bar&quot; will be enabled.  When checked, the product/version for each 
+    historic page will show alongside the page name in the history bar.  Hovering the cursor 
+    over the page names in the history bar will also show the product/version as a tooltip.</p>
+    <h3 id="search-and-filters">Search and Filters</h3>
+    <p>Both API docs and guides can be searched for using the search field at the top of the 
+    page.</p>
+    <p>On API doc pages there is also a filter input field that filters the member rows 
+    using the filter string.  In addition to filtering by string you can filter the class 
+    members by access level and inheritance.  This is done using the checkboxes at the top of 
+    the page.  <strong>Note</strong> that filtering out <code>private</code> members also filters the API class 
+    navigation tree.</p>
+    <p>Clicking on an empty search field will show your last 10 searches for quick navigation.</p>
+    <h3 id="api-doc-class-metadata">API Doc Class Metadata</h3>
+    <p>Each API doc page (with the exception of Javascript primitives pages) has a menu view of 
+    metadata relating to that class.  This metadata view will have one or more of the 
+    following:</p>
+    <ul>
+    <li><strong>Alternate Name</strong> - One or more additional class name synonymns (in Ext JS 6.0.0 the 
+    <code>Ext.button.Button</code> class has an alternate class name of <code>Ext.Button</code>).  Alternate class 
+    names are commonly maintained for backward compatibility.</li>
+    <li><strong>Hierarchy</strong> - The hierararchy view lists the inheritance chain of the current class 
+    up through its ancestor classes up to the root base class.</li>
+    <li><strong>Mixins</strong> - A list of classes that are mixed into the current class</li>
+    <li><strong>Inherited Mixins</strong> - A list of classes that are mixed into an ancestor of the current 
+    class</li>
+    <li><strong>Requires</strong> - All classes required to be defined for the class to be instantiated</li>
+    <li><strong>Uses</strong> - A list of classes potentially used by the class at some point in its 
+    lifecycle, but not necessarily requried for the class to initially be instantiated</li>
+    <li><strong>Subclasses</strong> - Classes that extend the current class</li>
+    </ul>
+    <h3 id="expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</h3>
+    <p>Runnable examples (Fiddles) are expanded on a page by default.  You can collapse and 
+    expand example code blocks individually using the arrow on the top-left of the code 
+    block.  You can also toggle the collapse state of all examples using the toggle button on 
+    the top-right of the page.  The toggle-all state will be remembered between page loads.</p>
+    <p>Class members are collapsed on a page by default.  You can expand and collapse members 
+    using the arrow icon on the left of the member row or globally using the expand / 
+    collapse all toggle button top-right.</p>
+    <h3 id="desktop-vs-mobile-view">Desktop -vs- Mobile View</h3>
+    <p>Viewing the docs on narrower screens or browsers will result in a view optimized for a 
+    smaller form factor.  The primary differences between the desktop and &quot;mobile&quot; view are:</p>
+    <ul>
+    <li>Global navigation will be located in a menu on the left-hand side accessible via the 
+    hamburger menu icon.  The menu houses the following (on most pages):<ul>
+    <li>The name of the current product (as a link to the product landing page)</li>
+    <li>The Sencha icon used to navigate back to the documentation home page</li>
+    <li>The product menu drop-down button</li>
+    <li>Tabs of navigation trees for the API docs and guides</li>
+    </ul>
+    </li>
+    <li>Current context navigation and tools is located on the right-hand side accessible via 
+    the gear icon.  The context menu houses teh following:<ul>
+    <li>The global search input field</li>
+    <li>(<em>API doc</em>) A &quot;Filters&quot; tab with the member filter, expand / collapse all examples 
+    button, expand / collapse all member rows button, the access level filter checkboxes, 
+    and the counts of each member</li>
+    <li>(<em>API doc</em>) A &quot;Related Classes&quot; tab containing the menu of metadata related to the 
+    current class</li>
+    <li>(<em>Guides</em>) The table of contents for the guide</li>
+    </ul>
+    </li>
+    </ul>
+    <h3 id="viewing-the-class-source">Viewing the Class Source</h3>
+    <p>The class source can be viewed by clicking on the class name at the top of an API doc 
+    page.  The source for class members can be viewed by clicking on the &quot;view source&quot; link 
+    on the right-hand side of the member row.</p>
+    
+        </div>
+    </div>
+    <div id="header">
+        <div class="logo">
+            <a href="http://docs.sencha.com"><img height="32" src="../../home-images/sencha_logo_thumb.png"/></a>
+        </div>
+        <span id="mobile-main-nav-menu-btn" class="fa fa-bars"></span>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl landing-product-menu-btn"><div class="callout callout-b"></div></span>
+            <div class="page-title">Ext JS - FAQ</div>
+        <span id="mobile-context-menu-btn" class="fa fa-cog"></span>
+    </div>
+    <div id="centerContent">
+        <div id="history-nav">
+            <span id="history-config" class="history-config tooltip tooltip-tr-br" data-tip="Configure / Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="class-tree-ct" class="class-tree">
+            <h2 class="product-header">
+                <div class="logo">
+                    <a href="http://docs.sencha.com"><img src="../../home-images/sencha_logo1x.png"/></a>
+                </div>
+                <a href="../../index.html">Ext JS 6.2.0 </a>
+                <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn  tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+            </h2>
+            <div id="tree-header" class="pre-load">
+                    <div id="quickStartTab" class="toolbarHeaderButton">
+                        Quick Start
+                    </div>
+                <div id="guideTab" class="toolbarHeaderButton active-tab">
+                    Guides
+                </div>
+                <div id="apiTab" class="toolbarHeaderButton">
+                    API
+                </div>
+                <div id="hide-class-tree"></div>
+            </div>
+            <div id="tree-scroller">
+                <div id="tree" class="show-private show-protected is-tree hide">
+                        <div id="toolkit-tab-ct">
+        <div id="modernTab" class="active-tab">modern</div>
+        <div id="classicTab">classic</div>
+    </div>
+
+    <div id="toolkit-tree-ct">
+        <div id="modernTree" class="is-tree">
+            
+        </div>
+
+        <div id="classicTree" class="is-tree hide">
+            
+        </div>
+    </div>
+<div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Classes" data-collapse="Collapse All Classes"><div class="callout callout-b"></div></div>
+                </div>
+                <div id="guide-tree" class="hide is-tree">
+                    <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-getting_started" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Getting Started</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../getting_started/getting_started.html" class="tree-leaf-content isLeaf universal-decoration" id="node-getting_started_-_getting_started" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Setup</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">What's New?</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/whats_new.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_whats_new" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">What's New</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/release_notes.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_release_notes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Release Notes</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/extjs_upgrade_guide.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_extjs_upgrade_guide" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS 6.2.0 Upgrade Guide</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new_-_api_diffs" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">API Diffs</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_modern_diff.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/620_modern_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_classic_diff.html" class="tree-leaf-content isLeaf display-new classic-decoration" id="node-whats_new_-_api_diffs/620_classic_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Classic - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/modern_theme_refactor.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/modern_theme_refactor" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern Theming Refactor</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-examples" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Examples</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="http://examples.sencha.com/extjs/6.2.0-ea/examples" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-examples_-_620examples" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">6.2.0 Examples</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Core Concepts</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/classes.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_classes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">The Class System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/layouts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_layouts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Layouts and Containers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/components.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_components" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Components</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/data_package.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_data_package" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Data Package</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/gestures.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_gestures" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Gestures</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/events.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_events" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Events</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/drag_drop.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_drag_drop.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_modern_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Modern Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/theming.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Theming System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_theming.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_modern_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Theming in the Modern Toolkit</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/material_theme.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_material_theme" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Material Theme</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/memory_management.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_memory_management" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Memory Management</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/d3.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-core_concepts_-_d3" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using D3 in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts_-_draw" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Draw Package</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/drawing.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/drawing" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Draw Package</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt1.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt1" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 1</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt2.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt2" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 2</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt3.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt3" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 3</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/accessibility.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_accessibility" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Accessibility</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/localization.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_localization" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Localization</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/rtl.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_rtl" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Right to Left in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/font_ext.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_font_ext" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Sencha Font Packages</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/tablet_support.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_tablet_support" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Tablet Support</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-application_architecture" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Architecture</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/application_architecture.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_application_architecture" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Intro to App Architecture</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/developing_for_multiple_screens_and_environments.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_developing_for_multiple_screens_and_environments" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Multiple Screens</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_controllers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_controllers" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Controllers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_models_data_binding.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_models_data_binding" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Models &amp; Binding</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_model_internals.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_model_internals" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Model Internals</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/router.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_router" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using the Router</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-components" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">UI Components</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../components/carousel.html" class="tree-leaf-content isLeaf modern-decoration" id="node-components_-_carousel" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Carousel</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/calendar.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_calendar" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Calendar</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/forms.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_forms" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Forms</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/introduction_to_charting.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_introduction_to_charting" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Introduction to Charting</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/trees.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_trees" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Trees</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/grids.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_grids" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Grids</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/pivot_grid.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_pivot_grid" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Pivot Grid</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/exporter.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_exporter" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Exporter</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/widgets_widgets_columns.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_widgets_widgets_columns" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Using Components in Grids</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-tutorials" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Tutorials</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../tutorials/login_app.html" class="tree-leaf-content isLeaf classic-decoration" id="node-tutorials_-_login_app" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Sample Login App</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Backend Connectors</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/soap.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_soap" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">SOAP Services</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/amf.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_amf" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">AMF Data Sources</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors_-_direct" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Ext Direct</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/specification.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_direct/specification" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Ext Direct Specification</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/mysql_php.html" class="tree-leaf-content isLeaf classic-decoration" id="node-backend_connectors_-_direct/mysql_php" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Using MySQL and PHP</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-other_resources" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Other Resources</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/extjs_faq.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_extjs_faq" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS - FAQ</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/oop_concepts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_oop_concepts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Basics of OOP</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/ecosystem.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_ecosystem" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS Ecosystem</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/sencha_blog.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_sencha_blog" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">From the Sencha Blog</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <a href="../supported_browsers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-supported_browsers" isLeaf="true">
+        <span class="tree-expando hidden">▸</span>
+                    <span class="universal-guide guide"></span>
+                <span class="tree-leaf-text">Supported Browsers</span>
+    </a>
+</div>
+
+                    <div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Guides" data-collapse="Collapse All Guides"><div class="callout callout-b"></div></div>
+                </div>
+                    <div id="quick-start-tree" class="hide is-tree">
+                        <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_introduction" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/introduction.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">1</span>
+                <div class="quick-start-text">Introduction</div>
+                <div class="quick-start-summary">An introduction to the Ext JS JavaScript framework</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_components" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/components.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">2</span>
+                <div class="quick-start-text">Components</div>
+                <div class="quick-start-summary">Explore Ext JS components and learn how to configure them</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_containers" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/containers.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">3</span>
+                <div class="quick-start-text">Containers</div>
+                <div class="quick-start-summary">Learn to nest components within container components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_presenting_data" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/presenting_data.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">4</span>
+                <div class="quick-start-text">Presenting Data</div>
+                <div class="quick-start-summary">Connect your data to your view components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_handling_events" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/handling_events.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">5</span>
+                <div class="quick-start-text">Handling Events</div>
+                <div class="quick-start-summary">Respond to users interacting with your application with events</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_forms" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_forms.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">6</span>
+                <div class="quick-start-text">Data Forms</div>
+                <div class="quick-start-summary">Present data in form fields so that values can be modified</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_binding" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_binding.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">7</span>
+                <div class="quick-start-text">Data Binding</div>
+                <div class="quick-start-summary">Bind data to component configs for automatic responses to change</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_getting_organized" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/getting_organized.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">8</span>
+                <div class="quick-start-text">Getting Organized</div>
+                <div class="quick-start-summary">Move your code into an organized structure by defining its parts</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_bringing_it_together" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/bringing_it_together.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">9</span>
+                <div class="quick-start-text">Bringing it Together</div>
+                <div class="quick-start-summary">Add extra functionality to make this application more useful</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_going_to_production" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/going_to_production.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">10</span>
+                <div class="quick-start-text">Going to Production</div>
+                <div class="quick-start-summary">Use Sencha Cmd to make your application lightweight and efficient</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_helpful_resources" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/helpful_resources.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">11</span>
+                <div class="quick-start-text">Helpful Resources</div>
+                <div class="quick-start-summary">Continue your Ext JS education with more helpful resources</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+                    </div>
+            </div>
+        </div>
+        <a href="#" id="back-to-top">top </a>
+        <div id="rightMembers" class="">
+            
+            <div class="context-menu-ct">
+    <div class="context-header">
+        <div id="hide-context-menu" class="fa fa-caret-right"></div>
+    </div>
+    <div class="search">
+        <form autocomplete="off">
+                <div class="toolkit-search-filter-ct">
+                    <span id="modern-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Modern Search Results"><div class="callout callout-b"></div></span>
+                    <span id="classic-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Classic Search Results"><div class="callout callout-b"></div></span>
+                </div>
+
+            <input type="text" type="search" placeholder="search" id="searchtext">
+            <i id="filtersubmit" class="fa fa-search"></i>
+            <span id="help-btn" data-tip="Docs Help" class="tooltip tooltip-tr-br"><div class="callout callout-b"></div></span>
+        </form>
+    </div>
+    <div id="toc-context-ct">
+        <!-- context content added at runtime -->
+    </div>
+</div>
+<div class="guide-body-wrap">
+    <div class="body-wrap-inner">
+        <div class="classText">
+                <div class="toolkit-badge-ct universal-badge">
+                    Guide applies to:
+                    <span class="toolkit-badge universal">
+                        
+                        
+                        classic &amp; modern
+                    </span>
+                </div>
+
+            <div id="toggleExamples" class="fa fa-code tooltip tooltip-tr-br" data-expand="Expand All Examples" data-collapse="Collapse All Examples"><div class="callout callout-b"></div></div>
+                <div class="toc">
+                    <h2>Contents</h2>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_what_browsers_does_ext_js_support_">What browsers does Ext JS Support?</a>
+                        <a class="toc-page-h4" href="#other_resources-_-extjs_faq_-_desktop">Desktop</a>
+                        <a class="toc-page-h4" href="#other_resources-_-extjs_faq_-_touch_screen">Touch Screen</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_what_doctype_should_i_use_">What Doctype should I use?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_how_can_i_build_an_application_without_sencha_cmd_">How can I build an application without Sencha Cmd?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_what_s_the_difference_between_the_different_framework_files_">What&#39;s the difference between the different framework files?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_how_can_i_change_my_application_s_theme_without_using_sencha_cmd_">How can I change my application&#39;s theme without using Sencha Cmd?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_can_i_write_a_single_application_for_both_desktop_and_ipad_">Can I write a single application for both Desktop and iPad?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_if_ext_js_5_works_with_tablets_why_shouldn_t_i_use_it_for_smart_phones_as_well_">If Ext JS 5 works with tablets, why shouldn&#39;t I use it for smart-phones as well?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_how_can_we_share_controllers_stores_models_between_extjs_5_and_touch_">How can we share controllers, stores, models between ExtJs 5 and Touch?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_how_can_i_see_what_changed_between_versions_">How can I see what changed between versions?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_does_ext_js_5_render_tables_faster_than_extjs_4_is_the_performance_improved_">Does Ext JS 5 render tables faster than ExtJS 4? Is the performance improved?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_is_it_possible_to_use_two_different_versions_of_ext_js_at_same_time_">Is it possible to use two different versions of Ext JS at same time?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_how_should_we_utilize_localization_in_ext_js_5_">How should we utilize localization in Ext JS 5?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_how_should_i_override_a_method_without_editing_the_source_code_">How should I override a method without editing the source code?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_how_do_i_use_the_draw_classes_in_5_">How do I use the Draw classes in 5?</a>
+                        <a class="toc-page-h2" href="#other_resources-_-extjs_faq_-_using_sencha_charts_and_draw_without_sencha_cmd">Using Sencha Charts and Draw without Sencha Cmd</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_does_the_framework_support_browser_zoom_">Does the framework support browser zoom?</a>
+                        <a class="toc-page-h3" href="#other_resources-_-extjs_faq_-_what_is_callparent_and_why_how_should_i_use_it_">What is callParent and why/how should I use it?</a>
+                </div>
+            <h1 id="other_resources-_-extjs_faq_-_ext_js_faq">Ext JS - FAQ<a class="quick-link" href="#other_resources-_-extjs_faq_-_ext_js_faq"></a></h1>
+<p>Below you&#39;ll find answers to the most commonly asked questions regarding Ext JS.  If you
+can&#39;t find an answer to your question, please visit the Ext JS forums or file a
+Support ticket.</p>
+<p>If you believe that your question warrants addition to this page, please let us know!</p>
+<p><strong>Note:</strong> The following FAQ&#39;s apply to Ext 5 and higher unless otherwise specified.</p>
+<h3 id="other_resources-_-extjs_faq_-_what_browsers_does_ext_js_support_">What browsers does Ext JS Support?<a class="quick-link" href="#other_resources-_-extjs_faq_-_what_browsers_does_ext_js_support_"></a></h3>
+<h4 id="other_resources-_-extjs_faq_-_desktop">Desktop<a class="quick-link" href="#other_resources-_-extjs_faq_-_desktop"></a></h4>
+<ul>
+<li>IE8+ (standards mode only)</li>
+<li>Firefox (PC &amp; Mac)</li>
+<li>Safari 6+</li>
+<li>Chrome (PC &amp; Mac)</li>
+<li>Opera (PC &amp; Mac)</li>
+</ul>
+<h4 id="other_resources-_-extjs_faq_-_touch_screen">Touch Screen<a class="quick-link" href="#other_resources-_-extjs_faq_-_touch_screen"></a></h4>
+<ul>
+<li>Safari</li>
+<li>IE10 and above</li>
+<li>Chrome on Android</li>
+</ul>
+<p><strong>Note:</strong> Ext JS 5 does not currently support mobile phones</p>
+<h3 id="other_resources-_-extjs_faq_-_what_doctype_should_i_use_">What Doctype should I use?<a class="quick-link" href="#other_resources-_-extjs_faq_-_what_doctype_should_i_use_"></a></h3>
+<p>We recommend using the HTML5 doctype. To ensure that Internet Explorer does not activate
+Compatibility Mode (<em>compatibility mode is unsupported</em>), we also recommend using the 
+<code>X-UA-Compatible</code> meta tag. For example:</p>
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;/head&gt;
+</code></pre><h3 id="other_resources-_-extjs_faq_-_how_can_i_build_an_application_without_sencha_cmd_">How can I build an application without Sencha Cmd?<a class="quick-link" href="#other_resources-_-extjs_faq_-_how_can_i_build_an_application_without_sencha_cmd_"></a></h3>
+<p>You can build an application without Sencha Cmd by including the Framework, theme CSS,
+and your chosen theme&#39;s JS override in your <code>index.html</code> file&#39;s head.</p>
+<p>The theme&#39;s CSS and override files are created as packages in Ext JS.  In Ext JS 5 the 
+themes are located within &quot;{ExtJS-5-SDK}/packages/&quot;.  Themes include:</p>
+<ul>
+<li>ext-theme-base (<em>used by the framework and should not be configured directly</em>)</li>
+<li>ext-theme-neutral (<em>used when creating custom themes and should not be configured directly</em>)</li>
+<li>ext-theme-classic</li>
+<li>ext-theme-gray</li>
+<li>ext-theme-neptune</li>
+<li>ext-theme-neptune-touch (<em>optimized for tablets</em>)</li>
+<li>ext-theme-crisp</li>
+<li>ext-theme-crisp-touch (<em>optimized for tablets</em>)</li>
+</ul>
+<p>In Ext JS 6 the themes are split between the classic and modern toolkits.  The classic 
+themes are located within &quot;{ExtJS-6-SDK}/classic/&quot; and include:</p>
+<ul>
+<li>theme-base (<em>used by the framework and should not be configured directly</em>)</li>
+<li>theme-neutral (<em>used when creating custom themes and should not be configured directly</em>)</li>
+<li>theme-classic</li>
+<li>theme-gray</li>
+<li>theme-neptune</li>
+<li>theme-neptune-touch (<em>optimized for tablets</em>)</li>
+<li>theme-crisp</li>
+<li>theme-crisp-touch (<em>optimized for tablets</em>)</li>
+<li>theme-triton</li>
+</ul>
+<p>Ext JS 6 modern themes are located within &quot;{ExtJS-6-SDK}/modern/&quot; and include:</p>
+<ul>
+<li>theme-base (<em>used by the framework and should not be configured directly</em>)</li>
+<li>theme-blackberry</li>
+<li>theme-cupertino</li>
+<li>theme-cupertino-classic</li>
+<li>theme-mountainview</li>
+<li>theme-neptune</li>
+<li>theme-windows</li>
+</ul>
+<p><strong>Note:</strong>  We do recommend using Sencha Cmd, as the above example includes a very large 
+file that includes everything.  When using Sencha Cmd, your application only gets the 
+bits it requires, which keeps it lightweight, responsive, and clean.</p>
+<p>The <a href="../getting_started/getting_started.html">Getting Started guide</a> will walk you through generating 
+your application using Sencha Cmd.</p>
+<h3 id="other_resources-_-extjs_faq_-_what_s_the_difference_between_the_different_framework_files_">What&#39;s the difference between the different framework files?<a class="quick-link" href="#other_resources-_-extjs_faq_-_what_s_the_difference_between_the_different_framework_files_"></a></h3>
+<p><strong>ext.js:</strong> Minified. Base framework that dynamically loads extended classes.</p>
+<p><strong>ext-all.js:</strong> Minified. Includes entire framework.</p>
+<p><strong>ext-all-debug.js:</strong> Not Minified. Includes entire framework</p>
+<p><strong>ext-debug.js:</strong> Not Minified. Base framework that dynamically loads extended classes.</p>
+<p><strong>ext-all-rtl-debug.js:</strong> Not Minified. Includes entire framework
+and <a href="../core_concepts/rtl.html">right-to-left support</a>.</p>
+<p><strong>ext-all-rtl-sandbox-debug.js:</strong> Not Minified. Includes entire framework
+and <a href="../core_concepts/rtl.html">right-to-left support</a>. Sandboxed to allow for
+use alongside other versions of Ext.</p>
+<p><strong>ext-all-rtl-sandbox.js:</strong> Minified. Includes entire framework and
+<a href="../core_concepts/rtl.html">right-to-left support</a>. Sandboxed to allow for use
+with alongside versions of Ext.</p>
+<p><strong>ext-all-rtl.js:</strong> Minified. Includes entire framework
+and <a href="../core_concepts/rtl.html">right-to-left support</a>.</p>
+<p><strong>ext-all-sandbox-debug.js:</strong> Not Minified. Includes entire framework sandboxed to allow
+for use with alongside versions of Ext.</p>
+<p><strong>ext-all-sandbox.js:</strong> Minified. Includes entire framework sandboxed to allow for use
+with alongside versions of Ext.</p>
+<h3 id="other_resources-_-extjs_faq_-_how_can_i_change_my_application_s_theme_without_using_sencha_cmd_">How can I change my application&#39;s theme without using Sencha Cmd?<a class="quick-link" href="#other_resources-_-extjs_faq_-_how_can_i_change_my_application_s_theme_without_using_sencha_cmd_"></a></h3>
+<p>To set an application&#39;s theme, simply include the theme package&#39;s CSS and JS override in
+your <code>index.html&#39;s</code> head.  As an example:</p>
+<pre><code class="language-javascript">&lt;head&gt;
+     &lt;title&gt;Hello World&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;ext/packages/ext-theme-neptune/build/resources/ext-theme-neptune-all.css&quot;&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;ext/build/ext-all-debug.js&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;ext/packages/ext-theme-neptune/build/ext-theme-neptune.js&quot;&gt;&lt;/script&gt;
+ &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;/head&gt;
+</code></pre><h3 id="other_resources-_-extjs_faq_-_can_i_write_a_single_application_for_both_desktop_and_ipad_">Can I write a single application for both Desktop and iPad?<a class="quick-link" href="#other_resources-_-extjs_faq_-_can_i_write_a_single_application_for_both_desktop_and_ipad_"></a></h3>
+<p>Yes, any Ext JS 5 application should properly appear on desktop AND tablets or 
+touch-screen devices with supported browsers.  It should be noted that there are 
+generally no extra steps necessary for tablet support.</p>
+<p>That said, there are two areas that may need some attention in specific situations.  The
+first will not affect developers who only use Ext JS API event listeners.  However, if 
+you are directly attaching listeners, or you are using a 3rd party JavaScript library 
+that directly attaches listeners, issues may occur with the timing of directly attached 
+event handlers.  This has to do with some changes made to the event system in order to 
+support touch gestures.</p>
+<p>You can find more information about changes regarding event delegation in our
+<a href="../core_concepts/events.html">events guide</a> and our
+<a href="../core_concepts/tablet_support.html">tablet support guide</a>.</p>
+<p>The second scenario deals with mouse events that don&#39;t have an obvious analog in the 
+touch world.  For instance, there are no touch equivalents for mouseover, mouseout, 
+mousenter, or mouseleave.</p>
+<p>It may be necessary to provide an alternate implementation for these interactions if 
+that functionality is critical to your application. This often means substituting the 
+mouse event with an appropriate touch gesture.</p>
+<h3 id="other_resources-_-extjs_faq_-_if_ext_js_5_works_with_tablets_why_shouldn_t_i_use_it_for_smart_phones_as_well_">If Ext JS 5 works with tablets, why shouldn&#39;t I use it for smart-phones as well?<a class="quick-link" href="#other_resources-_-extjs_faq_-_if_ext_js_5_works_with_tablets_why_shouldn_t_i_use_it_for_smart_phones_as_well_"></a></h3>
+<p>The Desktop and Tablet controls aren&#39;t currently suited for small screens. Grids, trees,
+panels, border layouts just require more room for proper display.  It may work, but it
+isn&#39;t exactly suitable for smaller screens.</p>
+<p>With Ext JS 6, you can author a single, universal application optimized to run on 
+destktop, tablet, and phone devices.  The application may contain common event handling 
+logic, stores, and models.  The views used will be pulled from the classic toolkit 
+(<em>legacy Ext JS</em>) and the modern toolkit (<em>legacy Sencha Touch</em>) depending on which 
+device  profile you&#39;re targeting.  You can read more about he universal app setup in the 
+<a href="./getting_started.html">Getting Started guide</a>.</p>
+<h3 id="other_resources-_-extjs_faq_-_how_can_we_share_controllers_stores_models_between_extjs_5_and_touch_">How can we share controllers, stores, models between ExtJs 5 and Touch?<a class="quick-link" href="#other_resources-_-extjs_faq_-_how_can_we_share_controllers_stores_models_between_extjs_5_and_touch_"></a></h3>
+<p>Ext JS 5 and Sencha Touch are not optimized to share controllers, stores, and models.<br>However, they are shared between the modern and classic toolkits (<em>Touch and 
+legacy Ext JS views respecively</em>) in Ext JS 6.  Refer to the 
+<a href="./getting_started.html">Getting Started guide</a> for additional information.</p>
+<h3 id="other_resources-_-extjs_faq_-_how_can_i_see_what_changed_between_versions_">How can I see what changed between versions?<a class="quick-link" href="#other_resources-_-extjs_faq_-_how_can_i_see_what_changed_between_versions_"></a></h3>
+<p>To see removals, additions, deprecations, etc, please check out our
+diff guides between versions:</p>
+<ul>
+<li><a href="../../../5.0.0/guides/whats_new/api_diffs/500_diff_changes.html">Ext JS 4.2.3 to Ext JS 5.0.0</a></li>
+<li><a href="../../../5.0.1/guides/whats_new/api_diffs/501_diff_changes.html">Ext JS 5.0.0 to Ext JS 5.0.1</a></li>
+<li><a href="../../../5.1.0/guides/whats_new/api_diffs/510_diff_changes.html">Ext JS 5.0.1 to Ext JS 5.1.0</a></li>
+<li><a href="../../../5.1.1/guides/whats_new/api_diffs/511_diff_changes.html">Ext JS 5.1.0 to Ext JS 5.1.1</a></li>
+<li><a href="../../../5.1.2/guides/whats_new/api_diffs/512_diff_changes.html">Ext JS 5.1.1 to Ext JS 5.1.2</a></li>
+<li><a href="../../../5.1.3/guides/whats_new/api_diffs/513_diff_changes.html">Ext JS 5.1.2 to Ext JS 5.1.3</a></li>
+<li><a href="../../../6.0.0-classic/guides/whats_new/api_diffs/600_modern_diff.html">Touch 2.4.1 to Ext JS 6.0.0 Modern Toolkit</a></li>
+<li><a href="../../../6.0.0-modern/guides/whats_new/api_diffs/600_classic_diff.html">Ext JS 5.1.1 to Ext JS 6.0.0 Classic Toolkit</a></li>
+<li><a href="../../../6.0.1-classic/guides/whats_new/api_diffs/601_modern_diff.html">Ext JS 6.0.0 to Ext JS 6.0.1 Modern Toolkit</a></li>
+<li><a href="../../../6.0.1-modern/guides/whats_new/api_diffs/601_classic_diff.html">Ext JS 6.0.0 to Ext JS 6.0.1 Classic Toolkit</a></li>
+<li><a href="../../../6.0.2-classic/guides/whats_new/api_diffs/602_modern_diff.html">Ext JS 6.0.1 to Ext JS 6.0.2 Modern Toolkit</a></li>
+<li><a href="../../../6.0.2-modern/guides/whats_new/api_diffs/602_classic_diff.html">Ext JS 6.0.1 to Ext JS 6.0.2 Classic Toolkit</a></li>
+</ul>
+<p><strong>Note:</strong> We believe developers can glean a lot of useful information by evaluating 
+these diff guides when upgrading their applications. That said, these reports are automated 
+and may not always accurately depict change. Unwanted change may be 
+indicated due to doc updates, formatting omissions, etc.  If you see anything in these reports 
+that is incorrect or undesirable, please report them on the forums.</p>
+<h3 id="other_resources-_-extjs_faq_-_does_ext_js_5_render_tables_faster_than_extjs_4_is_the_performance_improved_">Does Ext JS 5 render tables faster than ExtJS 4? Is the performance improved?<a class="quick-link" href="#other_resources-_-extjs_faq_-_does_ext_js_5_render_tables_faster_than_extjs_4_is_the_performance_improved_"></a></h3>
+<p>It is faster in some areas.  Grid markup was changed in version 5 to use a 
+table-per-row, which makes grid rendering significantly faster.  </p>
+<p>JS layout for form fields and buttons was eliminated in favor of &quot;liquid&quot; CSS layout.
+Performance improvements have been seen when using the &quot;form layout&quot; when producing 
+large forms.  These types of improvements should help with performance, but there is 
+still work to be done.  You can expect further performance improvements in the next 
+release.</p>
+<h3 id="other_resources-_-extjs_faq_-_is_it_possible_to_use_two_different_versions_of_ext_js_at_same_time_">Is it possible to use two different versions of Ext JS at same time?<a class="quick-link" href="#other_resources-_-extjs_faq_-_is_it_possible_to_use_two_different_versions_of_ext_js_at_same_time_"></a></h3>
+<p>Yes, you can use a &quot;sandboxed&quot; build, which changes the top level JS namespace, and the 
+CSS prefix to avoid conflicts.  It is important to note that it is not recommended to 
+sandbox two different versions in a production environment as this entails loading two 
+full versions of the Ext JS framework.  </p>
+<p>This means that you&#39;d be loading twice as many resources as a typical &quot;non-sandboxed&quot;
+application.  Sandbox builds are generally used for migration or for a temporary need to
+include new features in an old application.</p>
+<h3 id="other_resources-_-extjs_faq_-_how_should_we_utilize_localization_in_ext_js_5_">How should we utilize localization in Ext JS 5?<a class="quick-link" href="#other_resources-_-extjs_faq_-_how_should_we_utilize_localization_in_ext_js_5_"></a></h3>
+<p>Adding localization to your application is possible via locale-specific overrides, which
+can be set in your Sencha Cmd generated <code>app.json</code> file.  Please see the 
+<a href="../core_concepts/localization.html">localization guide</a> for more information.</p>
+<h3 id="other_resources-_-extjs_faq_-_how_should_i_override_a_method_without_editing_the_source_code_">How should I override a method without editing the source code?<a class="quick-link" href="#other_resources-_-extjs_faq_-_how_should_i_override_a_method_without_editing_the_source_code_"></a></h3>
+<p>The preferred way to create an override is as follows:</p>
+<pre><code class="language-javascript">Ext.define(&#39;MyApp.overrides.panel.Panel&#39;, {
+    override: &#39;Ext.panel.Panel&#39;,
+    close: function() {
+        console.log(&#39;My Change to Close&#39;);
+        this.callParent();
+    },
+    helloWorld: function(){
+       console.log(&#39;Hello World&#39;);
+    }
+});
+</code></pre><p>1)  First, define your override with an appropriate namespace for your application&#39;s
+overrides folder</p>
+<p>2)  Add the &quot;override&quot; config and give it a value equivalent to the class you are 
+wanting to override.  In this example, we&#39;re overriding <a href='../../../6.2.0/classic/Ext.panel.Panel.html'>Ext.panel.Panel</a>.</p>
+<p>3)  Add the function you&#39;re looking to override.  You&#39;ll need to make sure you keep all 
+of the relevant pieces.  In this case, I&#39;ve only changed the close function by adding a
+<code>console.log()</code>.  If you were to create a panel and then do <code>panel.close()</code>, you will 
+receive a console message saying, &quot;My Change to Close&quot;.</p>
+<p><strong>Note:</strong> In your overridden method you will need to execute <code>this.callParent()</code> to call 
+the original method provided by the target class. To bypass that method and instead skip 
+up to the superclass implementation (say to avoid a bug in the target class&#39;s method) 
+you can invoke <code>this.callSuper()</code> instead.</p>
+<p>4)  Add a new function all together.  As you may imagine, <a href='../../../6.2.0/classic/Ext.panel.Panel.html'>Ext.panel.Panel</a> does 
+not contain a <code>helloWorld</code> method.  However, I&#39;ve just added it via this override.  Now, 
+creating a panel and issuing <code>panel.helloWorld()</code> will result in logging the message 
+&quot;Hello World&quot;.</p>
+<h3 id="other_resources-_-extjs_faq_-_how_do_i_use_the_draw_classes_in_5_">How do I use the Draw classes in 5?<a class="quick-link" href="#other_resources-_-extjs_faq_-_how_do_i_use_the_draw_classes_in_5_"></a></h3>
+<p>The draw package is now included in the sencha-charts package.  That said, you&#39;ll need 
+to include sencha charts in order to utilize draw classes (or sencha charts).  </p>
+<p>If you&#39;re using Sencha Cmd, this is as simple as adding &quot;sencha-charts&quot; to the requires
+array in your <code>app.json</code> file.  </p>
+<h2 id="other_resources-_-extjs_faq_-_using_sencha_charts_and_draw_without_sencha_cmd">Using Sencha Charts and Draw without Sencha Cmd<a class="quick-link" href="#other_resources-_-extjs_faq_-_using_sencha_charts_and_draw_without_sencha_cmd"></a></h2>
+<p>If you want to use charts, but do not want to use Sencha Cmd, you may simply add the 
+following inclusions to your app&#39;s &quot;index.html&quot; page in Ext JS 5.</p>
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot; src=&quot;{ExtJS-5-SDK}/build/packages/sencha-charts/build/sencha-charts.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{ExtJS-5-SDK}/build/packages/sencha-charts/build/classic/resources/sencha-charts-all.css&quot;&gt;
+</code></pre><p>In Ext JS 6 using the classic toolkit:</p>
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot; src=&quot;{ExtJS-6-SDK}/build/packages/charts/classic/charts.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{ExtJS-6-SDK}/build/packages/charts/classic/classic/resources/charts-all.css&quot;&gt;
+</code></pre><p>In Ext JS 6 using the modern toolkit:</p>
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot; src=&quot;{ExtJS-6-SDK}/build/packages/charts/modern/charts.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;{ExtJS-6-SDK}/build/packages/charts/modern/modern-neptune/resources/charts-all.css&quot;&gt;
+</code></pre><h3 id="other_resources-_-extjs_faq_-_does_the_framework_support_browser_zoom_">Does the framework support browser zoom?<a class="quick-link" href="#other_resources-_-extjs_faq_-_does_the_framework_support_browser_zoom_"></a></h3>
+<p>We do not officially support browser zoom, but most components will work as expected in
+modern browsers.</p>
+<h3 id="other_resources-_-extjs_faq_-_what_is_callparent_and_why_how_should_i_use_it_">What is callParent and why/how should I use it?<a class="quick-link" href="#other_resources-_-extjs_faq_-_what_is_callparent_and_why_how_should_i_use_it_"></a></h3>
+<p><code>callParent</code> is a method provided by the 
+<a href="../core_concepts/classes.html">Sencha Class System</a> that is used to call methods in 
+your parent / ancestor class. This is commonly done when you derive from a framework 
+class and override a method it provides such as <code>onRender</code>. When you invoke <code>callParent</code> 
+from a method that has parameters, you have two ways you can pass along those
+parameters to the ancestor class method.  The best practice method is to utilize only 
+the parameters that you specifically need.  In that case, you can pass these arguments 
+in an array literal:</p>
+<pre><code class="language-javascript">Ext.define(&#39;App.view.MyPanel&#39;, {
+    extend: &#39;Ext.panel.Panel&#39;,
+    onRender: function (parentNode, index) {
+        this.callParent([ parentNode, index ]);
+    }
+});
+</code></pre><p>Or, you could use the shorthand arguments keyword like so:</p>
+<pre><code class="language-javascript">Ext.define(&#39;App.view.MyPanel&#39;, {
+    extend: &#39;Ext.panel.Panel&#39;,
+    onRender: function (parentNode, index) {
+        this.callParent(arguments);
+    }
+});
+</code></pre><p>The differences may seem minor, but when you use the Sencha Cmd 5 new optimizations for
+<code>callParent</code>, performance improvements can be profound. With the optimizer enabled, these
+two methods are optimized as follows:</p>
+<pre><code class="language-javascript">onRender: function (parentNode, index) {
+    Ext.panel.Panel.prototype.onRender.apply(this, arguments);
+}
+</code></pre><p>Or:</p>
+<pre><code class="language-javascript">onRender: function (parentNode, index) {
+    Ext.panel.Panel.prototype.onRender.call(this, parentNode, index);
+}
+</code></pre><p>In the second case, the optimizer is able to use the call method on the JavaScript 
+Function instead of apply. We also avoid using arguments. Both of which are well-known 
+high performance no-no&#39;s. It turns out that we even avoid creating the array literal. 
+Obviously, just enabling the optimization is helpful, but in code where performance is 
+most critical, it is worth replacing arguments with the explicit array.</p>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            <a href="https://www.facebook.com/senchainc/" target="_blank"><img class="social" src="../../home-images/fb.png"/></a>
+            <a href="https://www.linkedin.com/company/sencha-inc" target="_blank"><img class="social" src="../../home-images/in.png"/></a>
+            <a href="https://twitter.com/Sencha" target="_blank"><img class="social" src="../../home-images/twt.png"/></a>
+            Ext JS 6.2.0  | <a href='https://www.sencha.com/legal/terms-of-use/' target='_blank'>Terms of Use</a>
+        </p>
+    </div>
+</div>
+
+            
+            
+        </div>
+    </div>
+    <h2 class="product-header"><a href="../../index.html">Ext JS 6.2.0 </a>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+        <div id="peekaboo-input" class="peekaboo-input">
+            <input type="text" id="mobile-input" />
+        </div>
+    </h2>
+
+    <div id="product-tree-ct" class="hide">
+        <div id="product-tree">
+            <div class="product-name-ct">
+                    <div id="product-menu-extjs" class="product-name-item">Ext JS</div>
+                    <div id="product-menu-sencha_test" class="product-name-item">Sencha Test</div>
+                    <div id="product-menu-cmd" class="product-name-item">Cmd</div>
+                    <div id="product-menu-themer" class="product-name-item">Sencha Themer</div>
+                    <div id="product-menu-gxt" class="product-name-item">GXT</div>
+                    <div id="product-menu-ide_plugins" class="product-name-item">IDE Plugins</div>
+                    <div id="product-menu-sencha_inspector" class="product-name-item">Sencha Inspector</div>
+                    <div id="product-menu-architect" class="product-name-item">Architect</div>
+                    <div id="product-menu-fiddle" class="product-name-item">Sencha Fiddle</div>
+                    <div id="product-menu-touch" class="product-name-item">Touch</div>
+            </div>
+                <div class="product-version-ct hide extjs">
+                        <h2>Ext JS</h2>
+                            <h3>6.x</h3>
+                                        <a class="product-item" href="../../index.html">6.2.0</a>
+                                        <a class="product-item" href="../../../6.0.2/index.html">6.0.2</a>
+                                        <a class="product-item" href="../../../6.0.1/index.html">6.0.1</a>
+                                        <a class="product-item" href="../../../6.0.0/index.html">6.0.0</a>
+                            <h3>5.x</h3>
+                                        <a class="product-item" href="../../../5.1.3/index.html">5.1.3</a>
+                                        <a class="product-item" href="../../../5.1.2/index.html">5.1.2</a>
+                                        <a class="product-item" href="../../../5.1.1/index.html">5.1.1</a>
+                                        <a class="product-item" href="../../../5.1.0/index.html">5.1.0</a>
+                                        <a class="product-item" href="../../../5.0.1/index.html">5.0.1</a>
+                                        <a class="product-item" href="../../../5.0.0/index.html">5.0.0</a>
+                            <h3>4.x</h3>
+                                        <a class="product-item" href="../../../4.2.6/">4.2.6</a>
+                                        <a class="product-item" href="../../../4.1.3/">4.1.3</a>
+                                        <a class="product-item" href="../../../4.0.7/">4.0.7</a>
+                            <h3>3.x</h3>
+                                        <a class="product-item" href="../../../3.4.0/">3.4.0</a>
+                </div>
+                <div class="product-version-ct hide sencha_test">
+                        <h2>Sencha Test</h2>
+                                <a class="product-item" href="../../../../sencha_test/2.0.0/">2.0.0 EA</a>
+                                <a class="product-item" href="../../../../sencha_test/1.0.3/">1.0.3</a>
+                </div>
+                <div class="product-version-ct hide cmd">
+                        <h2>Cmd</h2>
+                        <a  href="../../../../cmd/index.html">Cmd</a>
+                </div>
+                <div class="product-version-ct hide themer">
+                        <h2>Sencha Themer</h2>
+                                <a class="product-item" href="../../../../themer/1.1/">1.1.0 EA</a>
+                                <a class="product-item" href="../../../../themer/1.0/">1.0.1</a>
+                </div>
+                <div class="product-version-ct hide gxt">
+                        <h2>GXT</h2>
+                                <a class="product-item" href="../../../../gxt/5.x/index.html">5.x EA</a>
+                                <a class="product-item" href="../../../../gxt/4.x/index.html">4.x</a>
+                                <a class="product-item" href="../../../../gxt/3.x/index.html">3.x</a>
+                </div>
+                <div class="product-version-ct hide ide_plugins">
+                        <h2>IDE Plugins</h2>
+                        <a  href="../../../../ide_plugins/index.html">IDE Plugins</a>
+                </div>
+                <div class="product-version-ct hide sencha_inspector">
+                        <h2>Sencha Inspector</h2>
+                        <a  href="../../../../sencha_inspector/index.html">Sencha Inspector</a>
+                </div>
+                <div class="product-version-ct hide architect">
+                        <h2>Architect</h2>
+                                <a class="product-item" href="../../../../architect/4.1/index.html">Architect 4.1 EA</a>
+                                <a class="product-item" href="../../../../architect/4/index.html">Architect 4</a>
+                                <a class="product-item" href="../../../../architect/3/index.html">Architect 3</a>
+                </div>
+                <div class="product-version-ct hide fiddle">
+                        <h2>Sencha Fiddle</h2>
+                        <a  href="../../../../fiddle/index.html">Sencha Fiddle</a>
+                </div>
+                <div class="product-version-ct hide touch">
+                        <h2>Touch</h2>
+                            <h3>2.x</h3>
+                                        <a class="product-item" href="../../../../touch/2.4/index.html">Touch 2.4</a>
+                                        <a class="product-item" href="../../../../touch/2.3.1/">Touch 2.3</a>
+                                        <a class="product-item" href="../../../../touch/2.2.1/">Touch 2.2</a>
+                                        <a class="product-item" href="../../../../touch/2.0.2/">Touch 2.0</a>
+                </div>
+        </div>
+    </div>
+
+    <div id="historyConfigPanel">
+        <div class="history-type-selector">
+            <input id="historyTypeCurrent" type="radio" name="historyType" value="current" checked="true" />
+            <label for="historyTypeCurrent">Current Product / Version</label><br>
+            <input id="historyTypeAll" type="radio" name="historyType" value="all" />
+            <label for="historyTypeAll">All</label><br>
+            <div id="history-label-toggle">
+                <input id="history-all-labels" type="checkbox" checked="true" />
+                <label for="history-all-labels">Show product details in the history bar</label>
+                <div class="mask"></div>
+            </div>
+            <span id="history-clear" class="history-clear tooltip tooltip-tr-br" data-tip="Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="history-full-list"></div>
+    </div>
+
+    <div id="search-history-panel"></div>
+
+    <div id="modal-placeholder" class="modal">
+        <span id="modal-close">&times;</span>
+        <img id="modal-content">
+        <div id="modal-caption"></div>
+    </div>
+
+</body>
+    <script type="text/javascript" src="../../js/searchIndex.js"></script>
+    <script type="text/javascript" src="../../js/guideSearch.js"></script>
+<!--[if lt IE 9 ]>
+<script type="text/javascript" src="../../js/media-query-poly.js"></script>
+<style>
+    span.da-inline-fiddle-nav-fiddle.x-fa.fa-play-circle {
+        display: none;
+    }
+</style>
+<![endif]-->
+<script>
+    if (navigator.userAgent.indexOf("Safari") > -1) {
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload()
+            }
+        };
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+            //
+        }
+    }
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1396058-28', 'auto');
+    ga('send', 'pageview');
+</script>
+</html>
