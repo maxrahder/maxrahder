@@ -2,6 +2,7 @@ Ext.define('Deck.view.main.Main', {
     xtype: 'deck-main',
     extend: 'Ext.panel.Panel',
     requires: [
+        'Ext.plugin.Viewport',
         'Deck.view.main.MainViewController',
         'Deck.view.main.MainViewModel',
         'Deck.view.topics.Topics',
@@ -41,25 +42,4 @@ Ext.define('Deck.view.main.Main', {
         },
         region: 'center'
     }]
-});
-
-
-Ext.define('MyApp.view.', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.myalias',
-
-    data: {},
-    formulas: {},
-    stores: {}
-
-
-});
-
-Ext.define('MyApp.view.', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.myalias',
-
-    init: function() {},
-    initViewModel: function(vm) {},
-
 });

@@ -259,14 +259,11 @@
      */
 
     "js": [{
-        "path": "resources/lib/ace/src/ace.js",
-        "bundle": true
+        "path": "resources/lib/ace/src/ace.js"
     }, {
-        "path": "resources/lib/String/string.min.js",
-        "bundle": true
+        "path": "resources/lib/String/string.min.js"
     }, {
-        "path": "resources/lib/jsbeautify/lib/beautify.js",
-        "bundle": true
+        "path": "resources/lib/jsbeautify/lib/beautify.js"
     }],
 
     "requires": ["ux"],
