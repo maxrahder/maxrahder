@@ -28,7 +28,9 @@ Ext.define('Deck.view.main.MainViewController', {
         vm.bind('{topics}', function(topics) {
             // Once the tree is created it's safe to go to the route
             if (me.route) {
+                //<debug>
                 debugger;
+                //</debug>
                 me.lookup('tree').goToPage(me.route);
             }
             vm.bind('{language}', me.updateLanguage, me);
