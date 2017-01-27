@@ -5,6 +5,20 @@ Ext.define('Deck.util.Backend', {
     constructor: function() {
         this.callParent(arguments);
         this.persistNodeBuffered = Ext.Function.createBuffered(this.persistNode, 1000, this);
+        this.saveTreeBuffered = Ext.Function.createBuffered(this.saveTree, 1000, this);
+    },
+
+    // Serialize the tree
+    saveTree: function(treeStore) {
+        var me = this;
+        var hierarchy = treeStore.getHierarchy();
+        var request = {
+            url: 'http://localhost:3000/saveTree',
+            jsonData: {
+                data: Ext.JSON.encode(hierarchy)
+            }
+        };
+        me._send(request, 'Tree hierarchy');
     },
 
     // Save a node. Nodes are the raw .json used for a tree node.
@@ -24,18 +38,15 @@ Ext.define('Deck.util.Backend', {
             });
         }
 
-        // Put the URL and query fields together.
-        var app = Ext.manifest.name;
-        var id = node.data.id;
-        var data = Ext.JSON.encode(o);
-        var url = 'http://localhost:3000/saveNode?';
-        url += 'app=' + app + '&';
-        url += 'data=' + data + '&';
-        url += 'id=' + id;
-        url = encodeURI(url);
+        var request = {
+            url: 'http://localhost:3000/saveNode',
+            jsonData: {
+                id: node.data.id,
+                data: Ext.JSON.encode(o)
+            }
+        };
 
-        me._send(url);
-
+        me._send(request, ('node ' + node.data.id));
     },
 
     // Save content. Content is the .md backing each slide in the deck.
@@ -44,21 +55,27 @@ Ext.define('Deck.util.Backend', {
     },
 
     // The routine that actually sends the data to the Node service.
-    _send: function(url) {
-        Ext.Ajax.request({
-            url: url,
-        }).then(function(xhr) {
+    // text is the human readable description of what is being saved
+    // request must hold a URL, and typically also has a data property with the payload
+    _send: function(request, text) {
+        Ext.apply(request, {
+            method: 'POST'
+        });
+        Ext.apply(request.jsonData, {
+            app: Ext.manifest.name
+        });
+        Ext.Ajax.request(request).then(function(xhr) {
             Ext.toast({
-                html: 'Changes Saved',
-                title: node.data.text,
-                width: 200,
+                title: 'Saved',
+                html: text + ' was saved.',
+                width: 250,
                 align: 'tr'
             });
         }, function(xhr) {
             if (xhr.status === 0) {
                 Ext.toast('Did you start the Node server?', 'Error Saving');
             } else {
-                Ext.toast(xhr.statusText, 'Error Saving ' + node.data.text);
+                Ext.toast(xhr.statusText, 'Error Saving ' + text + ' was not saved.');
             }
         });
     }

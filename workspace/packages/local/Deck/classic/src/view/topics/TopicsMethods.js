@@ -6,6 +6,9 @@ Ext.define('Deck.view.topics.TopicsMethods', {
         if (value) {
             // Pressing enter searches forward, shift-enter searhces backwards.
             var vm = me.getViewModel();
+            if (!vm) {
+                return;
+            }
             var store = vm.get('topics');
             if (!store) {
                 return;

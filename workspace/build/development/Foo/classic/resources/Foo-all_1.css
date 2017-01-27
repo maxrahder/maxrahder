@@ -2010,6 +2010,7 @@ the height of a multi-line element */
     display: block;
     /* preserve margins in IE */
     position: relative;
+    /* preserve margins in IE */
     overflow: hidden;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-base/sass/src/form/FieldSet.scss:7 */
@@ -2216,6 +2217,7 @@ the height of a multi-line element */
     height: auto!important;
     /* The wrap has to accommodate the list, so override the .x-form-text height rule */
     cursor: text;
+    /* The wrap has to accommodate the list, so override the .x-form-text height rule */
     overflow-y: auto;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-base/sass/src/form/field/Tag.scss:11 */
@@ -4081,6 +4083,7 @@ body > .x-mask {
     position: relative;
     /*allow hover in IE on empty items*/
     border-width: 1px;
+    /*allow hover in IE on empty items*/
     border-style: dotted;
     border-color: #fff;
     color: #404040;
@@ -4116,7 +4119,7 @@ body > .x-mask {
     width: 16px;
     height: 16px;
     margin: 0;
-    color: #fff;
+    color: #89bae6;
     text-align: center;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     opacity: 0.8;
@@ -4684,12 +4687,12 @@ body > .x-mask {
     width: 16px;
     height: 16px;
     font-size: 16px;
-    color: #f0f0f0;
+    color: #f2f2f2;
     background-position: center center;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:501 */
 .x-ie8 .x-panel-header-title-default > .x-title-icon-wrap-default > .x-title-icon-default.x-title-glyph {
-    color: #f0f0f0;
+    color: #f2f2f2;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:512 */
 .x-panel-body-default {
@@ -5041,12 +5044,12 @@ body > .x-mask {
     width: 16px;
     height: 16px;
     font-size: 16px;
-    color: #f0f0f0;
+    color: #f2f2f2;
     background-position: center center;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:501 */
 .x-ie8 .x-panel-header-title-default-framed > .x-title-icon-wrap-default-framed > .x-title-icon-default-framed.x-title-glyph {
-    color: #f0f0f0;
+    color: #f2f2f2;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:512 */
 .x-panel-body-default-framed {

@@ -1,14 +1,21 @@
+// >node index.html
+// >nodemon index.html
 // To edit the slide deck, use a terminal window and navigate to the backend/
 // directory, and start the backend app via "node index.js". The server listens
 // on port 3000. To debug, use "nodemon index.js", which will monitor changes to
-// source and restart the server automatically. 
+// source and restart the server automatically.
 
 
 var fs = require("fs");
 var file = require("file");
+var bodyParser = require("body-parser");
 var express = require('express');
 
 var app = express();
+
+app.use(bodyParser.json({
+    limit: '5mb'
+})); // support json encoded bodies
 
 setupCORS(app);
 
@@ -16,39 +23,25 @@ app.get('/', function(req, res) {
     res.send('Hello World!');
 });
 
-// Required query fields: app, language, id
-// saveContent?id=2015-05-27_15-17_30-242_Z.md&language=_default&app=foo
-// Content saved to Foo/resources/pages/content/_default/2015-05-27_15-17_30-242_Z.md
-app.get('/saveContent', function(req, res) {
-    saveFile(req, res);
-});
-
 // Required request query fields: app, id, data
-// saveContent?id=2015-05-27_15-17_30-242_Z&app=foo&data={foo=bar}
 // Node saved to Foo/resources/pages/nodes/2015-05-27_15-17_30-242_Z.json
 var saveNode = require('./saveNode');
-app.get('/saveNode', function(req, res) {
+app.post('/saveNode', function(req, res) {
     saveNode(req, res);
+});
+
+// Required request query fields: app, data
+// Node saved to Foo/resources/pages/tree.json
+var saveTree = require('./saveTree');
+app.post('/saveTree', function(req, res) {
+    saveTree(req, res);
 });
 
 app.listen(3000, function() {
     console.log('Example app listening on port 3000!');
 });
 
-function saveFile(req, res) {
-    console.log(req.query);
-    var file = req.query.file;
-    var s = '{foo=bar}';
-    var path = '../temp/' + file;
-    res.send('Attempting to write to ' + path);
-    // if (file) {
-    //     fs.writeFile(path, s, 'utf8', function() {
-    //         console.log('after fs.writeFile');
-    //         // res.send('after fs.writeFile');
-    //     });
-    // }
-}
-
+// ---------------------
 
 function setupCORS(app) {
     // TODO: We're allowing anyone to use the service. This would be dangerous if

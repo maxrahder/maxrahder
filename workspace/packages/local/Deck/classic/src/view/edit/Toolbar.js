@@ -6,9 +6,9 @@ Ext.define('Deck.view.edit.Toolbar', {
         'Deck.view.edit.ToolbarModel'
     ],
     controller: 'edit-toolbar',
-    viewModel: {
-        type: 'edit-toolbar'
-    },
+    // viewModel: {
+    //     type: 'edit-toolbar'
+    // },
 
     renderConfig: {
         language: '_default'
@@ -51,6 +51,18 @@ Ext.define('Deck.view.edit.Toolbar', {
                 // buffer: 1000
             }
         }
+    }, {
+        xtype: 'tbseparator'
+    }, {
+        xtype: 'button',
+        iconCls: 'x-fa fa-code-o',
+        text: 'Add Page',
+        handler: 'onCreateLeaf'
+    }, {
+        xtype: 'button',
+        iconCls: 'x-fa fa-code-o',
+        text: 'Add Topic',
+        handler: 'onCreateTopic'
     }]
 
 

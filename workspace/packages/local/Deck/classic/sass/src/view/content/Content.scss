@@ -1,9 +1,44 @@
+.normal-paragraph {
+    font-family: "Open Sans", sans-serif;
+    line-height: 130%;
+    font-size  : 18pt;
+    width      : 80%;
+    color      : $text-color;
+}
+
 .deckcontentview {
+    margin        : 0 0 0 1em;
+
+    .x-panel-body {
+        width: 80%;
+    }
+
+    .title {
+        font-size       : $deck-title-font-size;
+        font-weight     : lighter;
+        background-color: white;
+        color           : $deck-title-font-color;
+        padding         : 0.2em 0.4em 0.4em;
+    }
+
+    h1 {
+        font-size  : 2em;
+        font-weight: lighter;
+        color      : $deck-title-font-color;
+        margin     : 1em 0 0.6em 0.4em;
+    }
+
     div.expander {
-        font-family   : "Courier New",Courier,monospace;
-        font-size     : 1.6em;
-        letter-spacing: 0;
-        line-height   : 130%;
+        .expandertitle {
+            color    : lighten(#025B80, 20%);
+            font-size: 125%;
+        }
+        @extend normal-paragraph;
+        margin: 1em 0;
+    }
+
+    div.lab div.expander.expanded .content {
+        width: 60%;
     }
 
     div.expander.expanded .content {
@@ -13,7 +48,7 @@
         opacity : 1;
         overflow: hidden;
         padding : 0;
-        margin  : 0 0 2em 1em;
+        margin  : 0.5em 0 2em 1em;
     }
 
     div.expander.collapsed .content {
@@ -25,18 +60,18 @@
         margin  : 0 0 0 1em;
     }
 
-    div.expanded:before {
+    div.collapsed span.expandertitle:before {
         font-family: "FontAwesome";
-        color      : #aaa;
-        content    : "\f056";
-        margin     : 0 4px 0 0;
+        color      : lighten(#025B80, 20%);
+        content    : "\f055";
+        margin     : 0 8px 0 0;
     }
 
-    div.collapsed:before {
+    div.expanded span.expandertitle:before {
         font-family: "FontAwesome";
-        color      : #aaa;
-        content    : "\f055";
-        margin     : 0 4px 0 0;
+        color      : lighten(#025B80, 20%);
+        content    : "\f056";
+        margin     : 0 8px 0 0;
     }
 
     .path {
@@ -56,17 +91,8 @@
     letter-spacing: 1px;
     font-size     : 1.6em;
 
-    .x-panel-body {
-        width: 80%;
-    }
-
     p {
-        font-family: "Open Sans", sans-serif;
-        line-height: 130%;
-        font-size  : 1.6em;
-        width      : 80%;
-        margin     : 0 0 1em;
-        color      : $text-color;
+        @extend .normal-paragraph;
     }
 
     kbd {
@@ -81,7 +107,7 @@
     i {
         font-family   : 'Palatino', 'Times New Roman', serif;
         color         : lighten($text-color, 10%);
-        font-size     : 1.05em;
+        font-size     : 1.1em;
         letter-spacing: 0.025em;
         font-style    : italic;
     }
@@ -107,12 +133,36 @@
         line-height: 130%;
     }
 
-    .title {
-        font-size       : $deck-title-font-size;
-        font-weight     : $deck-title-font-weight;
-        background-color: white;
-        color           : $deck-title-font-color;
-        height          : 50em;
-        padding         : 0.2em 0.4em 0.4em;
+    div.lab {
+        @extend .normal-paragraph;
+        font-size: 14pt;
+        width    : 60%;
+
+        p {
+            @extend .normal-paragraph;
+            font-size: 14pt;
+        }
+
+        p.small {
+            line-height: 100%;
+            font-size  : 70%;
+        }
+
+        tt {
+            font: {
+                family: monospace;
+                style : normal;
+            }
+        }
+
+        em,
+        i {
+            font-family: 'Palatino', 'Times New Roman', serif;
+            font-style : italic;
+            font-size  : 1.2em;
+        }
+        strong   : {
+            color: #666;
+        }
     }
 }

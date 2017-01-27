@@ -1,6 +1,6 @@
 Ext.define('Deck.model.Node', {
     extend: 'Ext.data.TreeModel',
-    requires: ['Deck.util.Global', 'Deck.util.Backend'],
+    requires: ['Deck.util.Global', 'Deck.util.Backend', 'Deck.model.MarkedOverrides'],
     statics: {
         cache: {},
         getCachedContent: function(fileId) {
@@ -95,7 +95,6 @@ Ext.define('Deck.model.Node', {
         }
         return deferred.promise;
 
-
         function doIt() {
             var language = Deck.util.Global.language;
             var i18n = me.data.i18n;
@@ -139,6 +138,19 @@ Ext.define('Deck.model.Node', {
         if (this.data.id) {
             Deck.model.Node.cache[this.data.id] = text;
         }
+    },
+    isLab: function() {
+        return (this.data.text.substr(0, 4) === 'Lab:');
+    },
+
+    getParentTitles: function() {
+        var result = [];
+        var node = this;
+        while (node) {
+            result.push(node.getText());
+            node = node.parentNode;
+        }
+        return result;
     }
 
 });

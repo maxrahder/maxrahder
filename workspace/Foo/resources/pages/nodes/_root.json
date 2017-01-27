@@ -9,9 +9,7 @@
             "title": "My french word"
         }
     },
-    "children": ["splash",
-        "2016-11-04_22-53_50-366_Z",
-        "whatis", "itunes", "mechanics", "architecture", "views", "controllers", "viewmodels", "data", "dataaware", "advanced",
-        "goingintoproduction", "modern", "appendix"
+    "children": ["splash", "overview", "whatis", "itunes", "2016-11-04_22-53_50-366_Z", "iss", "mechanics", "architecture", "views", "controllers", "viewmodels", "data",
+        "dataaware", "advanced", "goingintoproduction", "modern", "senchatest", "2016-07-13_15-31_23-157_Z", "appendix"
     ]
 }

@@ -1,1 +1,15 @@
-{"id":"splash","i18n":{"_default":{"title":"Ext JS 6 Trainings","fileType":"html","translated":true},"fr-FR":{"persisted":false,"title":"Ext JS 6 Trainingx oui"}},"leaf":true}
+{
+    "id": "splash",
+    "i18n": {
+        "_default": {
+            "title": "Ext JS 6 Trainings",
+            "fileType": "html",
+            "translated": true
+        },
+        "fr-FR": {
+            "persisted": false,
+            "title": "Ext JS 6 Trainingx oui"
+        }
+    },
+    "leaf": true
+}

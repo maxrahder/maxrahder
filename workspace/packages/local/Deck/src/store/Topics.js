@@ -1,10 +1,36 @@
 Ext.define('Deck.store.Topics', {
     extend: 'Ext.data.TreeStore',
     alias: 'store.deck-topics',
+    requires: ['Deck.util.Backend'],
     model: 'Deck.model.Node',
     statics: {
 
         loadNodes: function(skippedPages) {
+            var me = this;
+            var deferred = new Ext.Deferred();
+
+            Ext.Ajax.request({
+                url: 'resources/pages/tree.json',
+                success: function(xhr) {
+                    // The saved tree is there -- use it
+                    var data = Ext.JSON.decode(xhr.responseText);
+                    deferred.resolve(data);
+                },
+                failure: function() {
+                    me._loadNodes(skippedPages).then(function(data, dangling) {
+                        console.log('tree.json does not exist. Building tree.');
+                        deferred.resolve(data, dangling);
+                    }, function() {
+                        console.log('Failure creating tree from _loadNotes');
+                        deferred.reject();
+                    });
+                }
+            });
+
+            return deferred;
+        },
+
+        _loadNodes: function(skippedPages) {
             var me = this;
 
             // skippedPages is an array of page IDs that should be skipped.
@@ -20,6 +46,7 @@ Ext.define('Deck.store.Topics', {
             readFile(loadNodesRoot, '_root', skippedPages);
 
             return deferred;
+
 
             function readFile(node, id, skippedPages) {
                 // This method overlays the passed node (an object) with the contents of id.json
@@ -39,8 +66,6 @@ Ext.define('Deck.store.Topics', {
                         Ext.apply(node, newNode);
 
                         // Assert: node holds what was in id.json
-
-                        node.hidden = Ext.Array.contains(skippedPages, node.fileId);
 
                         // The node's children:[] starts out as an array of strings
                         // (node IDs), but it needs to be an array of child nodes.
@@ -65,13 +90,13 @@ Ext.define('Deck.store.Topics', {
                         decrementReadCount();
                     },
                     failure: function(response, options) {
-                        decrementReadCount();
                         if (response.status === 404) {
                             danglingReferences.push(id);
                         }
                         console.log('Dangling reference. Failed to read ' + id + ' under ' + node.fileId);
                         console.log(node);
                         console.log(response);
+                        decrementReadCount();
                     }
                 });
 
@@ -158,6 +183,40 @@ Ext.define('Deck.store.Topics', {
         var a = this.getNodeArray();
         var result = Deck.util.Global.getNext(a, node, next);
         return result;
+    },
+
+    getHierarchy: function() {
+        var root = this.getRoot();
+        var result = {};
+        hierarchy(root, result);
+        return result;
+
+        function hierarchy(node, object) {
+            // node is a NodeInterface record, object should always be a new empty object
+            // that will be overlaid with serializable version of node:
+            // {
+            //     "id": "123",
+            //     "i18n": {},
+            //     children:[
+            //         {"id": "345", "i18n":{}: children:[{},{}]},
+            //         {"id", "789", "i18n":{}: children:[{},{}]}
+            //     ]
+            // }
+
+            object.id = node.data.id;
+            object.i18n = Ext.clone(node.data.i18n);
+
+            if (!node.isLeaf()) {
+                object.children = [];
+                // In theory, any node not a leaf must have childNodes:[].
+                for (var i = 0; i < node.childNodes.length; i++) {
+                    var childNode = node.childNodes[i];
+                    var childObject = {};
+                    object.children.push(childObject);
+                    hierarchy(childNode, childObject); // Recurse
+                }
+            }
+        }
     }
 
 });

@@ -42,24 +42,3 @@ Ext.define('Deck.view.main.Main', {
         region: 'center'
     }]
 });
-
-
-Ext.define('MyApp.view.', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.myalias',
-
-    data: {},
-    formulas: {},
-    stores: {}
-
-
-});
-
-Ext.define('MyApp.view.', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.myalias',
-
-    init: function() {},
-    initViewModel: function(vm) {},
-
-});

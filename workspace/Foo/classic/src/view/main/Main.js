@@ -14,7 +14,8 @@ Ext.define('Foo.view.main.Main', {
         'Ext.window.MessageBox',
 
         'Foo.view.main.MainController',
-        'Foo.view.main.MainModel'
+        'Foo.view.main.MainModel',
+        'Foo.view.main.List'
     ],
 
     controller: 'main',

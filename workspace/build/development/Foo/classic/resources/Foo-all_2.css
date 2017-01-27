@@ -5557,8 +5557,8 @@
     /* FONT PATH
  * -------------------------- */
     font-family: 'FontAwesome';
-    src: url('../../resources/fonts/fontawesome-webfont.eot?v=4.4.0');
-    src: url('../../resources/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('../../resources/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('../../resources/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('../../resources/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('../../resources/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+    src: url('../../resources/font-awesome/fonts/fontawesome-webfont.eot?v=4.4.0');
+    src: url('../../resources/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('../../resources/font-awesome/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('../../resources/font-awesome/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('../../resources/font-awesome/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('../../resources/font-awesome/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -8206,8 +8206,8 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/packages/font-ext/sass/src/all.scss:3 */
 @font-face {
     font-family: 'ExtJS';
-    src: url('../../classic/resources/fonts/ExtJS.eot?-tqegh9');
-    src: url('../../classic/resources/fonts/ExtJS.eot?#iefix-tqegh9') format('embedded-opentype'), url('../../classic/resources/fonts/ExtJS.ttf?-tqegh9') format('truetype'), url('../../classic/resources/fonts/ExtJS.woff?-tqegh9') format('woff'), url('../../classic/resources/fonts/ExtJS.svg?-tqegh9#ExtJS') format('svg');
+    src: url('../../classic/resources/font-ext/fonts/ExtJS.eot?-tqegh9');
+    src: url('../../classic/resources/font-ext/fonts/ExtJS.eot?#iefix-tqegh9') format('embedded-opentype'), url('../../classic/resources/font-ext/fonts/ExtJS.ttf?-tqegh9') format('truetype'), url('../../classic/resources/font-ext/fonts/ExtJS.woff?-tqegh9') format('woff'), url('../../classic/resources/font-ext/fonts/ExtJS.svg?-tqegh9#ExtJS') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -8864,12 +8864,16 @@
     background: -moz-linear-gradient(top, #fff 0%, #000 100%);
     /* FF3.6+ */
     background: -webkit-linear-gradient(top, #fff 0%, #000 100%);
+    /* FF3.6+ */
     /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top, #fff 0%, #000 100%);
+    /* Chrome10+,Safari5.1+ */
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #fff 0%, #000 100%);
+    /* Opera 11.10+ */
     /* IE10+ */
     background: linear-gradient(to bottom, #fff 0%, #000 100%);
+    /* IE10+ */
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
 }
@@ -8878,12 +8882,16 @@
     background: -moz-linear-gradient(top, red 0%, #000 100%);
     /* FF3.6+ */
     background: -webkit-linear-gradient(top, red 0%, #000 100%);
+    /* FF3.6+ */
     /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top, red 0%, #000 100%);
+    /* Chrome10+,Safari5.1+ */
     /* Opera 11.10+ */
     background: -ms-linear-gradient(top, red 0%, #000 100%);
+    /* Opera 11.10+ */
     /* IE10+ */
     background: linear-gradient(to bottom, red 0%, #000 100%);
+    /* IE10+ */
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#000000',GradientType=0 );
 }
@@ -9050,19 +9058,55 @@ tr.x-grid-subtable-row {
     opacity: 1;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:1 */
+.normal-paragraph,
+.deckcontentview p,
+.deckcontentview div.lab {
+    font-family: "Open Sans", sans-serif;
+    line-height: 130%;
+    font-size: 18pt;
+    width: 80%;
+    color: #444;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:9 */
 .deckcontentview {
+    margin: 0 0 0 1em;
     font-family: "Open Sans", sans-serif;
     letter-spacing: 1px;
     font-size: 1.6em;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:2 */
-.deckcontentview div.expander {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 1.6em;
-    letter-spacing: 0;
-    line-height: 130%;
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:12 */
+.deckcontentview .x-panel-body {
+    width: 80%;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:9 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:16 */
+.deckcontentview .title {
+    font-size: 2em;
+    font-weight: lighter;
+    background-color: white;
+    color: #86bc40;
+    padding: 0.2em 0.4em 0.4em;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:24 */
+.deckcontentview h1 {
+    font-size: 2em;
+    font-weight: lighter;
+    color: #86bc40;
+    margin: 1em 0 0.6em 0.4em;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:31 */
+.deckcontentview div.expander {
+    margin: 1em 0;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:32 */
+.deckcontentview div.expander .expandertitle {
+    color: #04a2e4;
+    font-size: 125%;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:40 */
+.deckcontentview div.lab div.expander.expanded .content {
+    width: 60%;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:44 */
 .deckcontentview div.expander.expanded .content {
     -webkit-transition-property: -webkit-opacity -webkit-padding;
     -moz-transition-property: -moz-opacity -moz-padding;
@@ -9076,9 +9120,9 @@ tr.x-grid-subtable-row {
     opacity: 1;
     overflow: hidden;
     padding: 0;
-    margin: 0 0 2em 1em;
+    margin: 0.5em 0 2em 1em;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:19 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:54 */
 .deckcontentview div.expander.collapsed .content {
     -webkit-transition-property: -webkit-opacity -webkit-padding;
     -moz-transition-property: -moz-opacity -moz-padding;
@@ -9093,21 +9137,21 @@ tr.x-grid-subtable-row {
     opacity: 0;
     margin: 0 0 0 1em;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:28 */
-.deckcontentview div.expanded:before {
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:63 */
+.deckcontentview div.collapsed span.expandertitle:before {
     font-family: "FontAwesome";
-    color: #aaa;
-    content: "\f056";
-    margin: 0 4px 0 0;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:35 */
-.deckcontentview div.collapsed:before {
-    font-family: "FontAwesome";
-    color: #aaa;
+    color: #04a2e4;
     content: "\f055";
-    margin: 0 4px 0 0;
+    margin: 0 8px 0 0;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:42 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:70 */
+.deckcontentview div.expanded span.expandertitle:before {
+    font-family: "FontAwesome";
+    color: #04a2e4;
+    content: "\f056";
+    margin: 0 8px 0 0;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:77 */
 .deckcontentview .path,
 .deckcontentview kbd {
     font-family: "Courier New", Courier, monospace;
@@ -9115,7 +9159,7 @@ tr.x-grid-subtable-row {
     letter-spacing: 0;
     color: blue;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:49 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:84 */
 .deckcontentview .code,
 .deckcontentview code {
     font-family: "Courier New", Courier, monospace;
@@ -9123,29 +9167,16 @@ tr.x-grid-subtable-row {
     letter-spacing: 0;
     color: red;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:59 */
-.deckcontentview .x-panel-body {
-    width: 80%;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:63 */
-.deckcontentview p {
-    font-family: "Open Sans", sans-serif;
-    line-height: 130%;
-    font-size: 1.6em;
-    width: 80%;
-    margin: 0 0 1em;
-    color: #444;
-}
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:80 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:106 */
 .deckcontentview em,
 .deckcontentview i {
     font-family: 'Palatino', 'Times New Roman', serif;
     color: #5e5e5e;
-    font-size: 1.05em;
+    font-size: 1.1em;
     letter-spacing: 0.025em;
     font-style: italic;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:89 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:115 */
 .deckcontentview ul {
     font-family: "Open Sans", sans-serif;
     font-size: 1.6em;
@@ -9153,19 +9184,37 @@ tr.x-grid-subtable-row {
     color: #444;
     padding: 0 0 1em 1em;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:105 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:131 */
 .deckcontentview pre code {
     font-size: 1.6em;
     line-height: 130%;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:110 */
-.deckcontentview .title {
-    font-size: 2em;
-    font-weight: light;
-    background-color: white;
-    color: #86bc40;
-    height: 50em;
-    padding: 0.2em 0.4em 0.4em;
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:136 */
+.deckcontentview div.lab {
+    font-size: 14pt;
+    width: 60%;
+    strong-color: #666;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:141 */
+.deckcontentview div.lab p {
+    font-size: 14pt;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:146 */
+.deckcontentview div.lab p.small {
+    line-height: 100%;
+    font-size: 70%;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:151 */
+.deckcontentview div.lab tt {
+    font-family: monospace;
+    font-style: normal;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/Deck/classic/sass/src/view/content/Content.scss:158 */
+.deckcontentview div.lab em,
+.deckcontentview div.lab i {
+    font-family: 'Palatino', 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.2em;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
 .x-tab-navigation-top {

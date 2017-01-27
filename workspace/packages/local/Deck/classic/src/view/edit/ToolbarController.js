@@ -25,6 +25,7 @@ Ext.define('Deck.view.edit.ToolbarController', {
             console.log('children changed');
         } else if (Ext.Array.contains(modifiedFieldNames, 'i18n')) {
             Deck.util.Backend.persistNodeBuffered(record);
+            Deck.util.Backend.saveTreeBuffered(this.getViewModel().get('topics'));
         }
     },
 
@@ -32,6 +33,18 @@ Ext.define('Deck.view.edit.ToolbarController', {
         var me = this;
         node = me.getViewModel().get('node');
         node.updateText(value);
+    },
+
+    onCreateLeaf: function(button) {
+        var selection = this.getViewModel().get('node');
+        if (selection) {
+
+        }
+    },
+    onCreateTopic: function(button) {
+
     }
+
+
 
 });

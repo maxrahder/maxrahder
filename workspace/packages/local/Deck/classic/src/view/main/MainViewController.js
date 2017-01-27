@@ -21,6 +21,8 @@ Ext.define('Deck.view.main.MainViewController', {
 
     initViewModel: function(vm) {
         var me = this;
+        me.initViewModelEditing(vm);
+
         me.initializeTopics();
         vm.bind('{node}', me.updateRoute, me);
         // Once the topics store actually exists, detect changes
@@ -28,7 +30,6 @@ Ext.define('Deck.view.main.MainViewController', {
         vm.bind('{topics}', function(topics) {
             // Once the tree is created it's safe to go to the route
             if (me.route) {
-                debugger;
                 me.lookup('tree').goToPage(me.route);
             }
             vm.bind('{language}', me.updateLanguage, me);
@@ -64,14 +65,16 @@ Ext.define('Deck.view.main.MainViewController', {
         // update it. But I couldn't get that to work. Instead, the store doesn't
         // exist at all, the this code fetches the data then creates the store.
         var vm = this.getViewModel();
-        var skippedPages = ["viewmodels", "2016-08-29_17-20_04-916_Z"];
-        Deck.store.Topics.loadNodes().then(function(data) {
-            var tree = Ext.create('Deck.store.Topics', {
-                model: 'Deck.model.Node',
-                root: data
+        me.getHiddenArray(function(skippedPages) {
+            Deck.store.Topics.loadNodes(skippedPages).then(function(data) {
+                var tree = Ext.create('Deck.store.Topics', {
+                    model: 'Deck.model.Node',
+                    root: data
+                });
+                vm.set('topics', tree);
             });
-            vm.set('topics', tree);
-        });
+
+        }, me);
     },
 
     // Called when the user uses arrow keys to navigate. The method changes {node}
@@ -106,6 +109,21 @@ Ext.define('Deck.view.main.MainViewController', {
             newNode = vm.get('topics').getRoot().firstChild;
         }
         vm.set('node', newNode);
+    },
+
+    getHiddenArray: function(callback, scope) {
+        scope = scope || this;
+        Ext.Ajax.request({
+            url: 'resources/pages/hidden/hidden.json',
+            success: function(response) {
+                var hidden = Ext.JSON.decode(response.responseText);
+                callback.call(scope, hidden);
+            },
+            failure: function() {
+                callback.call(scope, null);
+            }
+        });
     }
+
 
 });
