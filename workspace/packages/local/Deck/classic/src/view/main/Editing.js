@@ -20,7 +20,7 @@ Ext.define('Deck.view.main.Editing', {
         treePanel.getView().addPlugin({
             ptype: 'treeviewdragdrop'
         });
-        tree.on('itemmove', me.onItemMove, me);
+        treePanel.on('itemmove', me.onItemMove, me);
 
     },
 
