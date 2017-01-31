@@ -8,30 +8,51 @@ Ext.define('Deck.view.main.MainViewController', {
         ':id': 'processRoute'
     },
     processRoute: function(id) {
+        // The route information has changed. There are two awkward cases:
+        // The route changed because the user clicked a node on the tree
+        // The app just launched with a route in the URL
+        // In the first case, only go to the page if the ID != the current node
+        // In the second, there won't be a store yet, so nothing can happen yet (see initViewModel)
         var me = this;
         if (id) {
-            me.route = id;
-            me.lookup('tree').goToPage(id);
+            var node = me.getNode();
+            if (node && (node.data.id !== id)) {
+                me.goToPage(me.getViewModel().get('topics'), id);
+            }
         }
     },
 
+    getNode: function() {
+        // Convenience function that returns the node, or undefined
+        if (this.vm) {
+            if (this.vm.get('node')) {
+                return this.vm.get('node');
+            }
+        }
+    },
+
+
     init: function(view) {
+        // Do editing init, if any
         this.initComponentEditing(view);
     },
 
     initViewModel: function(vm) {
         var me = this;
+        me.vm = vm; // Add a convenience property
+
+        // Do editing init, if any
         me.initViewModelEditing(vm);
 
         me.initializeTopics();
-        vm.bind('{node}', me.updateRoute, me);
+        vm.bind('{node}', me.nodeChange, me);
         // Once the topics store actually exists, detect changes
         // to {language} in order to update node text.
         vm.bind('{topics}', function(topics) {
-            // Once the tree is created it's safe to go to the route
-            if (me.route) {
-                me.lookup('tree').goToPage(me.route);
-            }
+            // This is the first time the tree has been loaded -- set the
+            // selection to whatever is in the route.
+            // For reasons I don't understand, the VM doesn't have topics yet. So pass it in.
+            me.goToPage(topics, Ext.util.History.getHash());
             vm.bind('{language}', me.updateLanguage, me);
         });
     },
@@ -44,9 +65,17 @@ Ext.define('Deck.view.main.MainViewController', {
             node.set('language', language);
         });
     },
+    nodeChange: function(node) {
+        var me = this;
+        me.lookup('treePanel').setSelection(node);
+        me.updateRoute(node);
+    },
 
     updateRoute: function(node) {
-        this.redirectTo(node.data.id);
+        // The node has changed, so update the route in the URL to reflect the new page ID.
+        if (node) {
+            this.redirectTo(node.data.id);
+        }
     },
 
     onTreeItemClick: function(tree, record) {
@@ -65,16 +94,45 @@ Ext.define('Deck.view.main.MainViewController', {
         // update it. But I couldn't get that to work. Instead, the store doesn't
         // exist at all, the this code fetches the data then creates the store.
         var vm = this.getViewModel();
-        me.getHiddenArray(function(skippedPages) {
-            Deck.store.Topics.loadNodes(skippedPages).then(function(data) {
-                var tree = Ext.create('Deck.store.Topics', {
-                    model: 'Deck.model.Node',
-                    root: data
-                });
-                vm.set('topics', tree);
+        if (Deck.util.Global.editing) {
+            Ext.toast({
+                title: 'Edit Mode',
+                html: 'Reading nodes',
+                width: 250,
+                align: 'tr'
             });
+            Ext.Function.defer(loadTopics, 1, me);
+        } else {
+            Ext.Ajax.request({
+                url: 'resources/pages/tree.json',
+                success: function(xhr) {
+                    // The saved tree is there -- use it
+                    console.log('Using tree.json');
+                    var data = Ext.JSON.decode(xhr.responseText);
+                    createStore(data);
+                },
+                failure: function() {
+                    console.log('tree.json does not exist-- loading individual nodes');
+                    loadTopics();
+                }
+            });
+        }
 
-        }, me);
+        function loadTopics() {
+            me.getHiddenArray(function(skippedPages) {
+                Deck.store.Topics.loadNodes(skippedPages).then(function(data) {
+                    createStore(data);
+                });
+            }, me);
+        }
+
+        function createStore(data) {
+            var store = Ext.create('Deck.store.Topics', {
+                model: 'Deck.model.Node',
+                root: data
+            });
+            vm.set('topics', store);
+        }
     },
 
     // Called when the user uses arrow keys to navigate. The method changes {node}
@@ -87,7 +145,7 @@ Ext.define('Deck.view.main.MainViewController', {
         var parent;
         if (node) {
             if (key.keyCode === Ext.event.Event.LEFT) {
-                this.lookup('tree').getSelectionModel().selectPrevious();
+                this.lookup('treepanel').getSelectionModel().selectPrevious();
             } else if (key.keyCode === Ext.event.Event.RIGHT) {
                 if (node.isLeaf()) {
                     newNode = node.nextSibling;
@@ -123,7 +181,24 @@ Ext.define('Deck.view.main.MainViewController', {
                 callback.call(scope, null);
             }
         });
-    }
+    },
 
+    goToPage: function(topics, value) {
+        var me = this;
+        if (topics) {
+            var found = topics.findNode(topics.getRoot(), value);
+            if (found) {
+                var treePanel = me.lookup('treePanel');
+                treePanel.suspendEvents();
+                var parent = found.parentNode;
+                while (parent) {
+                    parent.expand();
+                    parent = parent.parentNode;
+                }
+                me.getViewModel().set('node', found);
+                treePanel.resumeEvents();
+            }
+        }
+    }
 
 });

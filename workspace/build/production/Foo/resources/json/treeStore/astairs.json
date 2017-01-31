@@ -1,0 +1,10 @@
+[ {name : 'Fred',
+    born : '1899/05/10',
+    died : '1987/06/22',
+    leaf: true
+  }, {
+    name : 'Adele',
+    born : '1896/09/10',
+    died : '1981/01/25',
+    leaf: true
+  } ]

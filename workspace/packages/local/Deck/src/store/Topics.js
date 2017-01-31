@@ -9,22 +9,12 @@ Ext.define('Deck.store.Topics', {
             var me = this;
             var deferred = new Ext.Deferred();
 
-            Ext.Ajax.request({
-                url: 'resources/pages/tree.json',
-                success: function(xhr) {
-                    // The saved tree is there -- use it
-                    var data = Ext.JSON.decode(xhr.responseText);
-                    deferred.resolve(data);
-                },
-                failure: function() {
-                    me._loadNodes(skippedPages).then(function(data, dangling) {
-                        console.log('tree.json does not exist. Building tree.');
-                        deferred.resolve(data, dangling);
-                    }, function() {
-                        console.log('Failure creating tree from _loadNotes');
-                        deferred.reject();
-                    });
-                }
+            me._loadNodes(skippedPages).then(function(data, dangling) {
+                console.log('tree.json does not exist. Building tree.');
+                deferred.resolve(data, dangling);
+            }, function() {
+                console.log('Failure creating tree from _loadNotes');
+                deferred.reject();
             });
 
             return deferred;
@@ -46,7 +36,6 @@ Ext.define('Deck.store.Topics', {
             readFile(loadNodesRoot, '_root', skippedPages);
 
             return deferred;
-
 
             function readFile(node, id, skippedPages) {
                 // This method overlays the passed node (an object) with the contents of id.json
@@ -137,44 +126,36 @@ Ext.define('Deck.store.Topics', {
     // Find the previous node matching an id or text, circular.
     // Find the next node
     // Find the previous node
-    findNextOrPrevious: function(node, previous) {
-        previous = !!previous;
+
+    // Find the next or previous node, circular.
+    findNextOrPrevious: function(node, next) {
+        next = Ext.isBoolean(next) ? next : true;
         var i = Ext.Array.indexOf(this.getNodeArray(), node);
         if (i === -1) {
             return null;
         } else {
             var a = this.getNodeArray();
-            if (previous) {
-                // One less, or if we're already at the first, return the last.
-                result = ((i === 0) ? a[a.length - 1] : a[i - 1]);
-            } else {
+            if (next) {
                 // One more, or if we're already at the last, return the first.
                 result = ((i === (a.length - 1)) ? a[0] : a[i + 1]);
+            } else {
+                // One less, or if we're already at the first, return the last.
+                result = ((i === 0) ? a[a.length - 1] : a[i - 1]);
             }
         }
         return result;
     },
-    // Starting with node, look for the node matching the id or text.
-    findNode: function(node, s, forward) {
-        forward = Ext.isDefined(forward) ? forward : true;
-        var re = new RegExp(s.trim(), 'i');
-        var array = this.getNodeArray();
-        if (!forward) {
-            // Clone the array then referce the items. We want a Clone
-            // because referse() changes the array itself.
-            array = array.slice().reverse(); // Clone the array, then reverse the items
-        }
-        for (var i = 0; i < array.length; i++) {
-            if (array[i].data.id.match(re) || array[i].data.text.match(re)) {
-                break;
-            }
-        }
-        if (i >= array.length) {
-            // Not found
-            result = node;
-        } else {
-            result = array[i];
-        }
+
+    // Starting with node following node, look for the node matching the id or text.
+    findNode: function(currentNode, s, forward) {
+        forward = Ext.isDefined(forward) ? forward : true; // forward defaults to true
+        var array = forward ? this.getNodeArray() : this.getNodeArray().slice().reverse(); // backwards? Reverse the array.
+        var index = array.indexOf(currentNode);
+        array = Deck.util.Global.rightShift(array, index + 1); // The next node is now in position 0
+        var re = new RegExp(s.trim(), 'i'); // Case insentitive
+        var result = Ext.Array.findBy(array, function(item) {
+            return (item.data.id.match(re) || item.data.text.match(re));
+        });
         return result;
     },
 

@@ -1,0 +1,14 @@
+[
+{month : 'January'  , precipitation: 0.95, temperature: 16.5},
+{month : 'February' , precipitation: 2.05, temperature: 21.4},
+{month : 'March'    , precipitation: 3.00, temperature: 32.2},
+{month : 'April'    , precipitation: 4.21, temperature: 44.6},
+{month : 'May'      , precipitation: 2.57, temperature: 56.4},
+{month : 'June'     , precipitation: 3.44, temperature: 67.5},
+{month : 'July'     , precipitation: 3.59, temperature: 75.8},
+{month : 'August'   , precipitation: 2.88, temperature: 70.1},
+{month : 'September', precipitation: 3.52, temperature: 59.4},
+{month : 'October'  , precipitation: 1.47, temperature: 51.2},
+{month : 'November' , precipitation: 3.69, temperature: 39.1},
+{month : 'December' , precipitation: 2.17, temperature: 29.6}
+]

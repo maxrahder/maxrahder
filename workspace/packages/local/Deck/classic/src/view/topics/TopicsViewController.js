@@ -6,20 +6,22 @@ Ext.define('Deck.view.topics.TopicsViewController', {
     onArrowClick: function(button) {
         var me = this;
         var value = me.lookup('searchfield').getValue();
-        if (value) {
-            var forward = (button.getItemId() === 'right');
-            me.goToPage(value, forward);
-        }
+        var next = (button.getItemId() === 'right');
+        me._findPage(value, next);
     },
     onSearchFieldKeyUp: function(field, event) {
         var me = this;
         if (event.getKey() === Ext.event.Event.RETURN) {
             var value = field.getValue();
-            if (value) {
-                // Pressing enter searches forward, shift-enter searhces backwards.
-                var forward = event.shiftKey;
-                me.goToPage(value, forward);
-            }
+            var next = !event.shiftKey;
+            me._findPage(value, next);
+        }
+    },
+    _findPage: function(value, next) {
+        var me = this;
+        if (value) {
+            var vm = me.getViewModel();
+            vm.get('topics').findNextOrPrevious(vm.get('node'), next);
         }
     }
 

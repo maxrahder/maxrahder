@@ -7,15 +7,29 @@ Ext.define('Deck.view.main.Editing', {
         var me = this;
 
         view.addDocked({
-            xtype: 'edittoolbar'
+            xtype: 'edittoolbar',
+            listeners: {
+                refresh: 'onRefresh',
+                editpage: 'onEditPage',
+                createleaf: 'onCreateLeaf',
+                createtopic: 'onCreateTopic'
+            }
         });
 
-        var tree = this.lookup('tree');
-        tree.getView().addPlugin({
+        var treePanel = this.lookup('treePanel');
+        treePanel.getView().addPlugin({
             ptype: 'treeviewdragdrop'
         });
         tree.on('itemmove', me.onItemMove, me);
 
+    },
+
+    onRefresh: function() {
+        var node = this.getViewModel().get('node');
+        if (node) {
+            console.log('refresh');
+            this.lookup('content').updateNode(node);
+        }
     },
 
     initViewModelEditing: function(vm) {
@@ -25,6 +39,48 @@ Ext.define('Deck.view.main.Editing', {
         vm.bind('{topics}', function(topics) {
             Deck.util.Backend.saveTreeBuffered(topics);
         });
+    },
+    onEditPage: function() {
+        var vm = this.getViewModel();
+        var node = vm.get('node');
+        var language = vm.get('language') || '_default';
+        if (node) {
+            if (node.isLeaf()) {
+                Deck.util.Backend.openInEditor(node.data.id, language);
+            } else {
+                Ext.toast('Editing pages only applies to leaves.', 'Warning');
+            }
+        }
+
+    },
+    onCreateLeaf: function() {
+        // If we're on a leaf, add a new node as a sibling.
+        // Else if we're on a topic, add a new node as a last child.
+        console.log('onCreateLeaf');
+        var me = this;
+        var vm = this.getViewModel();
+        var node = vm.get('node');
+        if (node) {
+            if (node.isLeaf()) {
+                var newNode = Ext.create('Deck.model.Node', {
+                    "i18n": {
+                        "_default": {
+                            "title": "New Node",
+                            "translated": true
+                        }
+                    }
+                });
+                var index = node.parentNode.indexOf(node);
+                node.parentNode.insertChild((index + 1), newNode);
+                Deck.util.Backend.persistNode(newNode.parentNode);
+                Deck.util.Backend.persistNode(newNode);
+                me.getViewModel().set('node', newNode);
+
+            }
+        }
+    },
+    onCreateTopic: function() {
+        console.log('onCreateTopic');
     },
 
     onItemMove: function(node, oldParent, newParent, index, eOpts) {

@@ -4,6 +4,7 @@ Ext.define('Deck.view.content.ContentMethods', {
 
     updateNode: function(node) {
         var me = this;
+        if (!node) return;
         if (node.isLeaf()) {
             node.getContent().then(function(html) {
                 me.updateContent(html, node);
@@ -17,6 +18,7 @@ Ext.define('Deck.view.content.ContentMethods', {
             ];
             me.update(html.join(''), node);
         }
+        me.lookup('breadcrumb').setSelection(node);
     },
 
     updateContent: function(html, node) {

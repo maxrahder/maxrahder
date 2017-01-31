@@ -36,13 +36,16 @@ Ext.define('Deck.view.edit.ToolbarController', {
     },
 
     onCreateLeaf: function(button) {
-        var selection = this.getViewModel().get('node');
-        if (selection) {
-
-        }
+        this.fireViewEvent('createleaf');
     },
     onCreateTopic: function(button) {
-
+        this.fireViewEvent('createtopic');
+    },
+    onEditPage: function(button) {
+        this.fireViewEvent('editpage');
+    },
+    onRefresh: function(button) {
+        this.fireViewEvent('refresh');
     }
 
 

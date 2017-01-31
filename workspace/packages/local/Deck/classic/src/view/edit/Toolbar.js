@@ -33,36 +33,41 @@ Ext.define('Deck.view.edit.Toolbar', {
         }],
         margin: 1
     }, {
-        xtype: 'tbspacer'
+        xtype: 'tbspacer',
+        width: 16
     }, {
-        xtype: 'tbspacer'
+        xtype: 'button',
+        iconCls: 'x-fa fa-folder-o',
+        text: 'Add Topic',
+        handler: 'onCreateTopic'
     }, {
         xtype: 'textfield',
         width: 300,
-        labelWidth: 30,
-        fieldLabel: 'Title',
+        labelWidth: 60,
+        fieldLabel: 'Topic title',
         reference: 'nodeTitle',
         bind: {
             value: '{node.title}'
         },
         listeners: {
-            change: {
-                fn: 'onTitleChange',
-                // buffer: 1000
-            }
+            change: 'onTitleChange'
         }
     }, {
-        xtype: 'tbseparator'
+        xtype: 'tbspacer',
+        width: 16
     }, {
         xtype: 'button',
-        iconCls: 'x-fa fa-code-o',
+        iconCls: 'x-fa fa-file-o',
         text: 'Add Page',
         handler: 'onCreateLeaf'
     }, {
-        xtype: 'button',
-        iconCls: 'x-fa fa-code-o',
-        text: 'Add Topic',
-        handler: 'onCreateTopic'
+        text: 'Edit Page',
+        iconCls: 'x-fa fa-external-link',
+        handler: 'onEditPage'
+    }, {
+        text: 'Refresh Page',
+        iconCls: 'x-fa fa-refresh',
+        handler: 'onRefresh'
     }]
 
 

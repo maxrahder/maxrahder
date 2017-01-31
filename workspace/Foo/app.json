@@ -103,7 +103,8 @@
         },
         "resources": {
             "path": "${build.id}/resources",
-            "shared": "resources"
+            "shared": "resources",
+            "_resources": "_resources"
         }
     },
     "cache": {
@@ -126,6 +127,9 @@
         "path": "${toolkit.name}/resources"
     }, {
         "path": "${build.id}/resources"
+    }, {
+        "path": "_resources",
+        "output": "_resources"
     }],
     "archivePath": "archive/${build.id}",
     "builds": {
@@ -141,7 +145,7 @@
             "requires": [
                 "locale"
             ],
-            "locale": "fr"
+            "locale": "en"
         },
         "modern": {
             "toolkit": "modern",

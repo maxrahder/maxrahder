@@ -45,14 +45,9 @@
         ]
     },
     "js": [{
-        "path": "resources/lib/underscore/underscore-min.js",
-        "bundle": true
+        "path": "resources/lib/underscore/underscore-min.js"
     }, {
-        "path": "resources/lib/Marked/marked.js",
-        "bundle": true
-    }, {
-        "path": "resources/lib/String/string.min.js",
-        "bundle": true
+        "path": "resources/lib/Marked/marked.js"
     }],
     "requires": ["EditView", "ux"],
     "framework": "ext",

@@ -5,8 +5,8 @@ Ext.define('Deck.view.content.Content', {
         'Deck.view.content.ContentController'
     ],
     mixins: [
-        'Deck.view.content.ContentMethods',
-        // 'Ext.toolbar.Breadcrumb'
+        'Deck.view.content.ContentMethods'
+        // 'Ext.toolbar.Breadcrumb' // Leaving this in breaks things.
     ],
     controller: 'deck-content',
     renderConfig: {
@@ -23,7 +23,7 @@ Ext.define('Deck.view.content.Content', {
                 reference: 'breadcrumb',
                 bind: {
                     store: '{topics}',
-                    selection: '{node}'
+                    // selection: '{node}' // This is setting node to the root accidentally, so set its selection procedurally
                 }
             },
             '->', {

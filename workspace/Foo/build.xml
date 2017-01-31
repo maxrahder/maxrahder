@@ -9,19 +9,6 @@
     -->
     <import file="${basedir}/.sencha/app/build-impl.xml"/>
 
-    <target name="-after-build">
-
-        <echo message="/n--- Start -after-build ---/n"/>
-
-        <echo message="Copying _resources folder"/>
-        <copy todir="${build.dir}/_resources" overwrite="true">
-          <fileset dir="${app.dir}/_resources">
-            <include name="**/*" />
-          </fileset>
-        </copy>
-
-    </target>
-
     <!--
     The following targets can be provided to inject logic before and/or after key steps
     of the build process:

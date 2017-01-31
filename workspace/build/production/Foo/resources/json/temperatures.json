@@ -1,0 +1,53 @@
+[ {
+    city : 'Beijing',
+    high : 17,
+    low : 7
+}, {
+    city : 'Cairo',
+    high : 27,
+    low : 16
+}, {
+    city : 'Capetown',
+    high : 21,
+    low : 13
+}, {
+    city : 'London',
+    high : 14,
+    low : 7
+}, {
+    city : 'Los Angeles',
+    high : 21,
+    low : 13
+}, {
+    city : 'Mexico City',
+    high : 23,
+    low : 11
+}, {
+    city : 'Moscow',
+    high : 8,
+    low : 1
+}, {
+    city : 'New Delhi',
+    high : 31,
+    low : 20
+}, {
+    city : 'Paris',
+    high : 14,
+    low : 7
+}, {
+    city : 'Rio de Janeiro',
+    high : 30,
+    low : 20
+}, {
+    city : 'Rome',
+    high : 20,
+    low : 11
+}, {
+    city : 'Sydney',
+    high : 22,
+    low : 14
+}, {
+    city : 'Tokyo',
+    high : 19,
+    low : 12
+}]

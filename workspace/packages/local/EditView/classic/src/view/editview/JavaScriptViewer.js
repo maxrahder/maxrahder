@@ -79,7 +79,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
                 '<meta name="apple-touch-fullscreen" content="yes" id="ext-element-9">',
 
                 '<link rel="stylesheet" href="_resources/ext-6.2-build/modern/theme-triton/resources/theme-triton-all.css">',
-                '<link rel="stylesheet" href="_resources/ext-6.2-build/packages/charts/modern/modern-triton/resources/charts-all.css">',
+                '<link rel="stylesheet" href="_resources/ext-6.2-build/packages/charts/modern/modern-triton/resources/charts-all.css">'
 
                 // '<link rel="stylesheet" href="resources/stylesheets/frame.css">'
 
@@ -126,7 +126,7 @@ Ext.define('EditView.view.editview.JavaScriptViewer', {
         // we're just cleaning up.
         if (this.iframeEl && this.iframeEl.contentWindow) {
             this.iframeEl.contentWindow.onerror = null;
-        };
+        }
         this.callParent();
     },
 

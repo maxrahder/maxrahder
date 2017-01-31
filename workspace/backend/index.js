@@ -6,8 +6,6 @@
 // source and restart the server automatically.
 
 
-var fs = require("fs");
-var file = require("file");
 var bodyParser = require("body-parser");
 var express = require('express');
 
@@ -23,6 +21,15 @@ app.get('/', function(req, res) {
     res.send('Hello World!');
 });
 
+
+// OPEN IN ATOM
+// Required request query fields: app, id, language
+var openInEditor = require('./openInEditor');
+app.post('/openInEditor', function(req, res) {
+    openInEditor(req, res);
+});
+
+// SAVE NODE
 // Required request query fields: app, id, data
 // Node saved to Foo/resources/pages/nodes/2015-05-27_15-17_30-242_Z.json
 var saveNode = require('./saveNode');
@@ -30,6 +37,15 @@ app.post('/saveNode', function(req, res) {
     saveNode(req, res);
 });
 
+// SAVE CONTENT
+// Required request query fields: app, id, data
+// Node saved to something like Foo/resources/pages/content/_default/2015-05-27_15-17_30-242_Z.md
+var saveNode = require('./saveContent');
+app.post('/saveContent', function(req, res) {
+    saveContent(req, res);
+});
+
+// SAVE TREE
 // Required request query fields: app, data
 // Node saved to Foo/resources/pages/tree.json
 var saveTree = require('./saveTree');

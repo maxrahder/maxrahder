@@ -2,6 +2,7 @@ Ext.define('Deck.view.main.Main', {
     xtype: 'deck-main',
     extend: 'Ext.panel.Panel',
     requires: [
+        'Ext.plugin.Viewport',
         'Deck.view.main.MainViewController',
         'Deck.view.main.MainViewModel',
         'Deck.view.topics.Topics',
@@ -20,15 +21,16 @@ Ext.define('Deck.view.main.Main', {
         collapsible: true,
         collapseMode: 'mini',
         titleCollapse: true,
-        reference: 'tree',
+        reference: 'treePanel',
         split: true,
         width: 200,
         listeners: {
-            itemclick: 'onTreeItemClick'
+            itemclick: 'onTreeItemClick',
+            // selec: 'onNodeSelect'
         },
         bind: {
-            selection: '{node}',
-            store: '{topics}'
+            store: '{topics}',
+            selection: '{node}'
         }
     }, {
         xtype: 'deck-content',

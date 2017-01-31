@@ -1,11 +1,18 @@
 Ext.define('Deck.model.Node', {
     extend: 'Ext.data.TreeModel',
-    requires: ['Deck.util.Global', 'Deck.util.Backend', 'Deck.model.MarkedOverrides'],
+    requires: [
+        'Deck.model.IdGenerator',
+        'Deck.util.Global',
+        'Deck.util.Backend'
+    ],
     statics: {
         cache: {},
         getCachedContent: function(fileId) {
             return Deck.model.Node.cache[fileId];
-        },
+        }
+    },
+    identifier: {
+        type: 'fileid'
     },
     fields: ['i18n', {
         name: 'text',

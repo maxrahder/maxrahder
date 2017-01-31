@@ -21,6 +21,35 @@ Ext.define('Deck.util.Backend', {
         me._send(request, 'Tree hierarchy');
     },
 
+    // Save content. Nodes are the raw .json used for a tree node.
+    openInEditor: function(id, language) {
+        var me = this;
+        var request = {
+            url: 'http://localhost:3000/openInEditor',
+            jsonData: {
+                id: id,
+                language: language
+            }
+        };
+        me._send(request, 'Open ' + id);
+    },
+
+    // Save content. Nodes are the raw .json used for a tree node.
+    persistContent: function(id, language, content) {
+        language = (language || '_default');
+        content = (content || '');
+        var request = {
+            url: 'http://localhost:3000/saveContent',
+            jsonData: {
+                id: id,
+                data: content,
+                language: language
+            }
+        };
+        me._send(request, 'Content ' + id);
+
+    },
+
     // Save a node. Nodes are the raw .json used for a tree node.
     persistNode: function(node) {
         var me = this;
@@ -46,12 +75,7 @@ Ext.define('Deck.util.Backend', {
             }
         };
 
-        me._send(request, ('node ' + node.data.id));
-    },
-
-    // Save content. Content is the .md backing each slide in the deck.
-    persistContent: function(node, language) {
-
+        me._send(request, ('Node ' + node.data.id));
     },
 
     // The routine that actually sends the data to the Node service.

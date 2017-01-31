@@ -4,7 +4,7 @@ Ext.define('Deck.view.topics.Topics', {
     mixins: ['Deck.view.topics.TopicsMethods'],
     requires: ['Deck.view.topics.TopicsViewController', 'Deck.util.Global'],
     controller: 'topicsviewcontroller',
-    viewModel: {},
+    // viewModel: {},
     rootVisible: false,
     useArrows: true,
     initComponent: function() {
@@ -28,12 +28,7 @@ Ext.define('Deck.view.topics.Topics', {
         xtype: 'segmentedbutton',
         allowToggle: false,
         defaults: {
-            handler: 'onArrowClick',
-            // TODO: This binding isn't working!
-            // disabled: true,
-            // bind: {
-            //     disabled: '{searchfield.value}'
-            // }
+            handler: 'onArrowClick'
         },
         items: [{
             iconCls: 'x-fa fa-arrow-left',
