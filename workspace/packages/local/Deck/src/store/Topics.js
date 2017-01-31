@@ -152,7 +152,7 @@ Ext.define('Deck.store.Topics', {
         var array = forward ? this.getNodeArray() : this.getNodeArray().slice().reverse(); // backwards? Reverse the array.
         var index = array.indexOf(currentNode);
         array = Deck.util.Global.rightShift(array, index + 1); // The next node is now in position 0
-        var re = new RegExp(s.trim(), 'i'); // Case insentitive
+        var re = new RegExp(s.trim(), 'i'); // i means case insentitive
         var result = Ext.Array.findBy(array, function(item) {
             return (item.data.id.match(re) || item.data.text.match(re));
         });

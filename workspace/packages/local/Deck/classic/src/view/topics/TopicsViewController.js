@@ -21,7 +21,7 @@ Ext.define('Deck.view.topics.TopicsViewController', {
         var me = this;
         if (value) {
             var vm = me.getViewModel();
-            vm.get('topics').findNextOrPrevious(vm.get('node'), next);
+            vm.get('topics').findNode(vm.get('node'), value, next);
         }
     }
 
