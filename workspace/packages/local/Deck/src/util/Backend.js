@@ -35,7 +35,8 @@ Ext.define('Deck.util.Backend', {
     },
 
     // Save content. Nodes are the raw .json used for a tree node.
-    persistContent: function(id, language, content) {
+    persistContent: function(id, content, language) {
+        var me = this;
         language = (language || '_default');
         content = (content || '');
         var request = {

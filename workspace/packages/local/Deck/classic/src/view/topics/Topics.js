@@ -2,7 +2,7 @@ Ext.define('Deck.view.topics.Topics', {
     xtype: 'deck-topics',
     extend: 'Ext.tree.Panel',
     mixins: ['Deck.view.topics.TopicsMethods'],
-    requires: ['Deck.view.topics.TopicsViewController', 'Deck.util.Global'],
+    requires: ['Deck.view.topics.TopicsViewController', 'Deck.util.Global', 'Ext.tree.Column'],
     controller: 'topicsviewcontroller',
     // viewModel: {},
     rootVisible: false,
@@ -14,6 +14,17 @@ Ext.define('Deck.view.topics.Topics', {
         type: 'minus'
     }, {
         type: 'plus'
+    }],
+    columns: [{
+        xtype: 'treecolumn',
+        dataIndex: 'text',
+        flex: 1,
+        renderer: function(value, cell, record) {
+            // TODO: This isn't doing anything special -- we don't need the columns:[] at all, but
+            // I was trying out trying to figure out the text from the title, rather than using a
+            // text property on the record. We can remove it once things look ok.
+            return record.data.text;
+        }
     }],
     bbar: [{
         xtype: 'textfield',

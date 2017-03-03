@@ -6,9 +6,9 @@ Ext.define('Deck.view.edit.Toolbar', {
         'Deck.view.edit.ToolbarModel'
     ],
     controller: 'edit-toolbar',
-    // viewModel: {
-    //     type: 'edit-toolbar'
-    // },
+    viewModel: {
+        type: 'edit-toolbar'
+    },
 
     renderConfig: {
         language: '_default'

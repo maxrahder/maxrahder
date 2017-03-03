@@ -64,11 +64,17 @@ Ext.define('Deck.view.main.MainViewController', {
         root.cascadeBy(function(node) {
             node.set('language', language);
         });
+        Deck.util.Global.language = language;
     },
     nodeChange: function(node) {
         var me = this;
         me.lookup('treePanel').setSelection(node);
         me.updateRoute(node);
+        var parent = node.parentNode;
+        while (parent) {
+            parent.expand();
+            parent = parent.parentNode;
+        }
     },
 
     updateRoute: function(node) {
@@ -97,9 +103,9 @@ Ext.define('Deck.view.main.MainViewController', {
         if (Deck.util.Global.editing) {
             Ext.toast({
                 title: 'Edit Mode',
-                html: 'Reading nodes',
-                width: 250,
-                align: 'tr'
+                iconCls: 'x-fa fa-clock-o',
+                html: 'In edit mode, all nodes are read individually<br>to create the tree. Please be patient. :-)',
+                width: 300
             });
             Ext.Function.defer(loadTopics, 1, me);
         } else {
@@ -190,11 +196,6 @@ Ext.define('Deck.view.main.MainViewController', {
             if (found) {
                 var treePanel = me.lookup('treePanel');
                 treePanel.suspendEvents();
-                var parent = found.parentNode;
-                while (parent) {
-                    parent.expand();
-                    parent = parent.parentNode;
-                }
                 me.getViewModel().set('node', found);
                 treePanel.resumeEvents();
             }

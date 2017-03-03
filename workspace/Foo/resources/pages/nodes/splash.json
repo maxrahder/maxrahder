@@ -8,7 +8,11 @@
         },
         "fr-FR": {
             "persisted": false,
-            "title": "Ext JS 6 Trainingx oui"
+            "title": "Ext JS 6 Trainingx oui x"
+        },
+        "jp-JP": {
+            "persisted": false,
+            "title": "Ext JS 6 Trainings in Japanese"
         }
     },
     "leaf": true

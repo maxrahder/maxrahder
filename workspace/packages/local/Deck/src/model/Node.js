@@ -5,12 +5,6 @@ Ext.define('Deck.model.Node', {
         'Deck.util.Global',
         'Deck.util.Backend'
     ],
-    statics: {
-        cache: {},
-        getCachedContent: function(fileId) {
-            return Deck.model.Node.cache[fileId];
-        }
-    },
     identifier: {
         type: 'fileid'
     },
@@ -24,7 +18,7 @@ Ext.define('Deck.model.Node', {
             // Use the entry for the language, if there is one.
             if (i18n[language]) {
                 result = i18n[language].title;
-            };
+            }
             // If there is a value, use it. Else, use the default.
             result = (result || record.data.i18n._default.title);
             return result;
@@ -41,13 +35,13 @@ Ext.define('Deck.model.Node', {
     }],
 
     // Updates the i18n node language entry with the specified text.
-    updateText: function(text) {
+    setText: function(text) {
         var me = this;
         var language = me.data.language;
 
         // Bail out if the text isn't any different.
-        if (me.data.language) {
-            // There is a language property. If the text is unchangd, bail out.
+        if (me.data.i18n[language]) {
+            // There is a language entry and the text is unchangd, bail out.
             if (me.data.i18n[language].title === text) {
                 return;
             }
@@ -112,16 +106,28 @@ Ext.define('Deck.model.Node', {
                 deferred.resolve(text);
             } else {
                 if (fileId) {
+                    var url = ('resources/pages/content/' + language + '/' + fileId + '.md');
+                    var defaultUrl = ('resources/pages/content/_default/' + fileId + '.md');
                     Ext.Ajax.request({
-                        url: ('resources/pages/content/_default/' + fileId + '.md')
-                    }).then(function(xhr) {
+                        url: url
+                    }).then(function(xhr, options) {
                         text = xhr.responseText;
                         text = marked(text);
-                        me.cacheContent(text);
+                        // me.cacheContent(text);
 
                         deferred.resolve(text);
-                    }, function(xhr) {
-                        deferred.reject(xhr);
+                    }, function(xhr, options) {
+                        console.log('The ' + language + ' content for ' + fileId + ' was not found.');
+                        Ext.Ajax.request({
+                            url: defaultUrl
+                        }).then(function(xhr, options) {
+                            text = xhr.responseText;
+                            text = marked(text);
+                            deferred.resolve(text);
+                        }, function(xhr, options) {
+                            console.log('The _default content for ' + fileId + ' was not found.');
+                            deferred.resolve('');
+                        });
                     });
 
                 } else {
@@ -143,6 +149,7 @@ Ext.define('Deck.model.Node', {
 
     cacheContent: function(text) {
         if (this.data.id) {
+            Deck.model.Node.cache = (Deck.model.Node.cache || '');
             Deck.model.Node.cache[this.data.id] = text;
         }
     },

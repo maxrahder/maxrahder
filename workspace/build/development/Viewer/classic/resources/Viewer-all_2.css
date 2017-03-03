@@ -1,3 +1,13 @@
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-tab-default-left-bc {
+    background-position: 0 0;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-tab-default-left-tr,
+.x-tab-default-left-br,
+.x-tab-default-left-mr {
+    padding-right: 0;
+}
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
 .x-tab-default-left-tl,
 .x-tab-default-left-bl,
@@ -965,7 +975,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Tab.scss:2991 */
 .x-tab-default .x-tab-close-btn {
     top: 0;
-    right: 0;
+    right: -1px;
     width: 16px;
     height: 16px;
     font: 12px/1 FontAwesome;
@@ -1033,7 +1043,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3136 */
 .x-rtl.x-tab-default .x-tab-close-btn {
     right: auto;
-    left: 0;
+    left: -1px;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Tab.scss:3142 */
 .x-tab-closable.x-tab-default .x-tab-button {
@@ -1190,7 +1200,7 @@
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Bar.scss:168 */
 .x-tab-bar-default {
-    background-color: #5fa2dd;
+    background-color: #ffebee;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Bar.scss:207 */
 .x-tab-bar-default-top > .x-tab-bar-body-default {
@@ -1273,22 +1283,22 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Bar.scss:411 */
 .x-tab-bar-default-top {
     background-image: none;
-    background-color: #5fa2dd;
+    background-color: #ffebee;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Bar.scss:421 */
 .x-tab-bar-default-bottom {
     background-image: none;
-    background-color: #5fa2dd;
+    background-color: #ffebee;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Bar.scss:431 */
 .x-tab-bar-default-left {
     background-image: none;
-    background-color: #5fa2dd;
+    background-color: #ffebee;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/tab/Bar.scss:441 */
 .x-tab-bar-default-right {
     background-image: none;
-    background-color: #5fa2dd;
+    background-color: #ffebee;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/layout/container/Box.scss:170 */
 .x-tab-bar-default-scroller .x-box-scroller-body-horizontal {
@@ -2107,7 +2117,12 @@
 .x-btn.x-btn-pressed.x-btn-plain-toolbar-small {
     border-color: #d2d2d2;
     background-image: none;
-    background-color: #e2e2e2;
+    background-color: red;
+}
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:852 */
+.x-btn.x-btn-menu-active.x-btn-plain-toolbar-small .x-btn-inner,
+.x-btn.x-btn-pressed.x-btn-plain-toolbar-small .x-btn-inner {
+    font-size: 44px;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-plain-toolbar-small,
@@ -2203,7 +2218,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1015 */
 .x-btn.x-btn-menu-active .x-btn-plain-toolbar-small-mc,
 .x-btn.x-btn-pressed .x-btn-plain-toolbar-small-mc {
-    background-color: #e2e2e2;
+    background-color: red;
     background-image: url(images/btn/btn-plain-toolbar-small-pressed-fbg.gif);
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1028 */
@@ -2231,7 +2246,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1040 */
 .x-btn-focus.x-btn-menu-active .x-btn-plain-toolbar-small-mc,
 .x-btn-focus.x-btn-pressed .x-btn-plain-toolbar-small-mc {
-    background-color: #e2e2e2;
+    background-color: red;
     background-image: url(images/btn/btn-plain-toolbar-small-focus-pressed-fbg.gif);
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1053 */
@@ -2695,7 +2710,7 @@
 .x-btn.x-btn-pressed.x-btn-plain-toolbar-medium {
     border-color: #d2d2d2;
     background-image: none;
-    background-color: #e2e2e2;
+    background-color: red;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-plain-toolbar-medium,
@@ -2791,7 +2806,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1015 */
 .x-btn.x-btn-menu-active .x-btn-plain-toolbar-medium-mc,
 .x-btn.x-btn-pressed .x-btn-plain-toolbar-medium-mc {
-    background-color: #e2e2e2;
+    background-color: red;
     background-image: url(images/btn/btn-plain-toolbar-medium-pressed-fbg.gif);
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1028 */
@@ -2819,7 +2834,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1040 */
 .x-btn-focus.x-btn-menu-active .x-btn-plain-toolbar-medium-mc,
 .x-btn-focus.x-btn-pressed .x-btn-plain-toolbar-medium-mc {
-    background-color: #e2e2e2;
+    background-color: red;
     background-image: url(images/btn/btn-plain-toolbar-medium-focus-pressed-fbg.gif);
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1053 */
@@ -3283,7 +3298,7 @@
 .x-btn.x-btn-pressed.x-btn-plain-toolbar-large {
     border-color: #d2d2d2;
     background-image: none;
-    background-color: #e2e2e2;
+    background-color: red;
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:868 */
 .x-btn-focus.x-btn-menu-active.x-btn-plain-toolbar-large,
@@ -3379,7 +3394,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1015 */
 .x-btn.x-btn-menu-active .x-btn-plain-toolbar-large-mc,
 .x-btn.x-btn-pressed .x-btn-plain-toolbar-large-mc {
-    background-color: #e2e2e2;
+    background-color: red;
     background-image: url(images/btn/btn-plain-toolbar-large-pressed-fbg.gif);
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1028 */
@@ -3407,7 +3422,7 @@
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1040 */
 .x-btn-focus.x-btn-menu-active .x-btn-plain-toolbar-large-mc,
 .x-btn-focus.x-btn-pressed .x-btn-plain-toolbar-large-mc {
-    background-color: #e2e2e2;
+    background-color: red;
     background-image: url(images/btn/btn-plain-toolbar-large-focus-pressed-fbg.gif);
 }
 /* /Users/maxrahder/GitRepo/maxrahder/workspace/ext/classic/theme-neutral/sass/src/button/Button.scss:1053 */
@@ -8507,7 +8522,7 @@
     -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
     box-shadow: rgba(0, 0, 0, 0.5) 0 2px 2px;
 }
-/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/DeckTheme/.sencha/temp/Themer/classic/sass/src/Component.scss:1 */
+/* /Users/maxrahder/GitRepo/maxrahder/workspace/packages/local/MyTheme/.sencha/temp/Themer/classic/sass/src/Component.scss:1 */
 .x-grid-cell-inner {
     text-align: initial !important;
 }

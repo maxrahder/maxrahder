@@ -53,35 +53,54 @@ Ext.define('Deck.view.main.Editing', {
         }
 
     },
-    onCreateLeaf: function() {
-        // If we're on a leaf, add a new node as a sibling.
-        // Else if we're on a topic, add a new node as a last child.
-        console.log('onCreateLeaf');
+
+
+
+    _createNode: function(config) {
+        // This is used by onCreateLeaf and onCreateTopic
+        console.log('createNode');
         var me = this;
         var vm = this.getViewModel();
         var node = vm.get('node');
         if (node) {
+            var newNode = Ext.create('Deck.model.Node', config);
+            var index = node.parentNode.indexOf(node);
             if (node.isLeaf()) {
-                var newNode = Ext.create('Deck.model.Node', {
-                    "i18n": {
-                        "_default": {
-                            "title": "New Node",
-                            "translated": true
-                        }
-                    }
-                });
-                var index = node.parentNode.indexOf(node);
+                // If we're on a leaf, add the new node as a sibling.
                 node.parentNode.insertChild((index + 1), newNode);
-                Deck.util.Backend.persistNode(newNode.parentNode);
-                Deck.util.Backend.persistNode(newNode);
-                me.getViewModel().set('node', newNode);
-
+            } else {
+                // If we're on a topic, add the new node as a last child.
+                node.appendChild(newNode);
             }
+            Deck.util.Backend.persistNode(newNode.parentNode);
+            Deck.util.Backend.persistNode(newNode);
+            // me.getViewModel().set('node', newNode); // I haven't decided if it's best to take the user on the new node -- probably not.
+            return newNode;
         }
     },
-    onCreateTopic: function() {
-        console.log('onCreateTopic');
+    onCreateLeaf: function() {
+        var newNode = this._createNode({
+            "i18n": {
+                "_default": {
+                    "title": "New Node",
+                    "translated": true
+                }
+            }
+        });
+        Deck.util.Backend.persistContent(newNode.data.id);
     },
+    onCreateTopic: function() {
+        this._createNode({
+            "i18n": {
+                "_default": {
+                    "title": "New Topic"
+                }
+            },
+            children: []
+        });
+    },
+
+
 
     onItemMove: function(node, oldParent, newParent, index, eOpts) {
         // Moving node means changing some parent node's children:[]

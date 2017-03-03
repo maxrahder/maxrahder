@@ -32,7 +32,7 @@ Ext.define('Deck.view.edit.ToolbarController', {
     onTitleChange: function(field, value) {
         var me = this;
         node = me.getViewModel().get('node');
-        node.updateText(value);
+        node.setText(value);
     },
 
     onCreateLeaf: function(button) {

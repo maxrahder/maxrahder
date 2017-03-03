@@ -1,5 +1,6 @@
 Ext.define('Deck.util.Global', {
     singleton: true,
+    language: '_default', // This is updated by the main controller.
     editing: location.search.match(/\edit\b/),
     constructor: function() {
         this.language = '_default';

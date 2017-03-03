@@ -1,1 +1,14 @@
-{"id":"2015-09-27_00-33_25-755_Z","i18n":{"_default":{"title":"Introduction","translated":true}}}
+{
+    "id": "2015-09-27_00-33_25-755_Z",
+    "i18n": {
+        "_default": {
+            "title": "Introduction",
+            "translated": true
+        },
+        "jp-JP": {
+            "persisted": false,
+            "title": "Introduction in Japanese"
+        }
+    },
+    "leaf": true
+}

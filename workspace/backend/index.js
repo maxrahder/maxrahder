@@ -1,5 +1,5 @@
-// >node index.html
-// >nodemon index.html
+// >node index.js
+// >nodemon index.js
 // To edit the slide deck, use a terminal window and navigate to the backend/
 // directory, and start the backend app via "node index.js". The server listens
 // on port 3000. To debug, use "nodemon index.js", which will monitor changes to
@@ -40,7 +40,7 @@ app.post('/saveNode', function(req, res) {
 // SAVE CONTENT
 // Required request query fields: app, id, data
 // Node saved to something like Foo/resources/pages/content/_default/2015-05-27_15-17_30-242_Z.md
-var saveNode = require('./saveContent');
+var saveContent = require('./saveContent');
 app.post('/saveContent', function(req, res) {
     saveContent(req, res);
 });
