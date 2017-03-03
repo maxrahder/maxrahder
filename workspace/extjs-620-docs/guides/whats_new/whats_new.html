@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What's New | Ext JS 6.2.0 </title>
+    <!--  Generated on November, 11 2016 at 0:39 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta property="og:image" content="../../home-images/sencha-200.png" />
+    <meta property="og:title" content="What's New | Ext JS 6.2.0 " />
+    <meta property="og:description" content="What&amp;#39;s New In Ext JS 6.2 IntroductionExt JS 6.2 introduces several new components and provides numerous enhancements across the framework from MVC improv..." />
+    <meta property="og:site_name" content="Sencha Documentation" />
+    <meta property="og:url" content="http://docs.sencha.com/extjs/6.2.0/whats_new/whats_new.html" />
+    <meta name="description" content="What&#39;s New In Ext JS 6.2 IntroductionExt JS 6.2 introduces several new components and provides numerous enhancements across the framework from MVC improv...">
+    <style>
+        /*!
+         *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+         *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+         */
+        /* FONT PATH
+         * -------------------------- */
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../css/fonts/fontawesome-webfont.eot?v=4.5.0');
+            src: url('../../css/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+            url('../../css/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+            url('../../css/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+            url('../../css/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+            url('../../css/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="../../css/prism.css">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+</head>
+<body class=" is-guide  has-guides  has-quick-start  has-api tree-shown">
+    <script type="text/javascript">
+        function getOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            } else if(userAgent.match(/Android/i)) {
+                return 'android';
+            }
+        }
+
+        var hash = document.location.hash,
+                rawhash, newhash, prop, member,
+                isIE8 = false;
+
+        if(hash.indexOf('#!') > -1) {
+            hash    = hash.replace('#!/api/','');
+            rawhash = hash.split('-'),
+            prop    = (rawhash[1] == 'static') ? rawhash[2] : rawhash[1],
+            member  = (rawhash[1] == 'static') ? rawhash[3] : rawhash[2],
+            newhash = rawhash[0] + '.html';
+
+            if (prop && member) {
+                newhash += '#' + prop + '-' + member;
+            }
+
+            document.location.href = newhash;
+        }
+
+        document.body.className += ' ' + getOS();
+    </script>
+    <!--[if IE 8]>
+    <script type='text/javascript'>
+        isIE8 = true;
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        var ExtL = ExtL || {},
+            specificId = 'whats_new_-_whats_new',
+            isClassTemplate = false,
+            isHome = false,
+            isLanding = false,
+            isApi = false,
+            isGuide = true,
+            isQuickStart = false,
+            hasApi = true,
+            hasGuides = true,
+            hasQuickStart = true
+            singleton = false,
+            pageName = 'What&#x27;s New',
+            pageTitle = 'Ext JS',
+            homePath = '../../',
+            product = 'extjs',
+            pversion = '6.2.0-modern',
+            hasVersions = true,
+            myToolkit = 'modern',
+            myVersion = '6.2.0',
+            appliesToToolkit = 'universal';
+
+            if (!isIE8) {
+                document.write('<script type=\"text/javascript\" src=\"../../js/prism.js\"><\/script>');
+            }
+    </script>
+    <script type="text/javascript" src="../../js/ace.js"></script>
+    <script type="text/javascript" src="../../js/beautify.js"></script>
+    <script type="text/javascript" src="../../js/app.js"></script>
+    <div id="help-wrap">
+        <div class="help-header">
+            Docs Help
+            <div id="help-close"></div>
+        </div>
+        <div class="classText">
+            <div class="toc">
+                <h2>Contents</h2>
+                    <a class="toc-page-h2" href="#terms-icons-and-labels">Terms, Icons, and Labels</a>
+                    <a class="toc-page-h3" href="#access-levels">Access Levels</a>
+                    <a class="toc-page-h3" href="#member-types">Member Types</a>
+                    <a class="toc-page-h3" href="#member-syntax">Member Syntax</a>
+                    <a class="toc-page-h3" href="#member-flags">Member Flags</a>
+                    <a class="toc-page-h3" href="#class-icons">Class Icons</a>
+                    <a class="toc-page-h3" href="#member-icons">Member Icons</a>
+                    <a class="toc-page-h2" href="#navigation-and-features">Navigation and Features</a>
+                    <a class="toc-page-h3" href="#class-member-quick-nav-menu">Class Member Quick-Nav Menu</a>
+                    <a class="toc-page-h3" href="#getter-and-setter-methods">Getter and Setter Methods</a>
+                    <a class="toc-page-h3" href="#history-bar">History Bar</a>
+                    <a class="toc-page-h3" href="#search-and-filters">Search and Filters</a>
+                    <a class="toc-page-h3" href="#api-doc-class-metadata">API Doc Class Metadata</a>
+                    <a class="toc-page-h3" href="#expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</a>
+                    <a class="toc-page-h3" href="#desktop-vs-mobile-view">Desktop -vs- Mobile View</a>
+                    <a class="toc-page-h3" href="#viewing-the-class-source">Viewing the Class Source</a>
+            </div>
+            <h2 id="terms-icons-and-labels">Terms, Icons, and Labels</h2>
+    <p>Many classes have shortcut names used when creating (instantiating) a class with a 
+    configuration object.  The shortcut name is referred to as an <code>alias</code> (or <code>xtype</code> if the 
+    class extends Ext.Component).  The alias/xtype is listed next to the class name of 
+    applicable classes for quick reference.</p>
+    <h3 id="access-levels">Access Levels</h3>
+    <p>Framework classes or their members may be specified as <code>private</code> or <code>protected</code>.  Else, 
+    the class / member is <code>public</code>.  <code>Public</code>, <code>protected</code>, and <code>private</code> are access 
+    descriptors used to convey how and when the class or class member should be used.</p>
+    <ul>
+    <li><p><strong>Public</strong> classes and class members are available for use by any other class or 
+    application code and may be relied upon as a stable and persistent within major product 
+    versions.  Public classes and members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Protected</strong> class members are stable <code>public</code> members intended to be used by the 
+    owning class or its subclasses.  Protected members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Private</strong> classes and class members are used internally by the framework and are not 
+    intended to be used by application developers.  Private classes and members may change or 
+    be omitted from the framework at any time without notice and should not be relied upon in 
+    application logic.</p>
+    </li>
+    </ul>
+    <h3 id="member-types">Member Types</h3>
+    <ul>
+    <li><strong>Config</strong> - The configuration options for a class.</li>
+    <li><strong>Property</strong> - Set once a class is instantiated. *See Read Only below.</li>
+    <li><strong>Method</strong> - Actions that can be performed by a class.  Methods should be read as 
+    instance methods and can only be called from a instance of a given class.  Static methods 
+    that can be called directly from the class itself will have a <code>static</code> label next to the 
+    method name.  *See Static below.</li>
+    <li><strong>Event</strong> - Events are specific to the framework event system allowing for classes to 
+    programmatically raise an event to be handled by one or more event handler methods.  DOM 
+    events, while handled by the framework event system, are not specifically described 
+    within the API documentation.  *For DOM events refer to the 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events">event reference</a> page from MDN.</li>
+    <li><strong>Theme Variable</strong> - Variables used by the visual theme engine employed by the 
+    framework.</li>
+    <li><strong>Theme Mixin</strong> - Functions used by the visual theme engine employed by the framework 
+    and may use values set in various Theme Variables.</li>
+    </ul>
+    <h3 id="member-syntax">Member Syntax</h3>
+    <p>Below is an example class member that we can disect to show the syntax of a class member 
+    (the lookupComponent method as viewed from the Ext.button.Button class in this case).</p>
+    <div style="position: relative;" class="show-inherited show-protected members">
+        <div style="border: 1px solid #E4E4E4;" class="classmembers member-protected isNotStatic isInherited member-temp-expanded" data-member-name="lookupComponent">
+            <div class="collapse-toggle"></div>
+            <div class="source-class"><a href="javascript:void(0);">Ext.container.Container</a><div class="viewSource"><a href="javascript:void(0);"></a><a target="_blank" href="javascript:void(0);">view source</a></div></div>
+            <div class="member-header">
+            <a href="javascript:void(0);" class="member-name-link"><span data-ref="method-lookupComponent" class="member-name"><strong>lookup</strong>Component</span></a>
+            <span class="params-list"> ( item )</span> : <span class="memberType">Ext.Component</span>
+            <div class="member-tags"><span class="protected">protected</span></div>
+        </div>
+            <p>Called when a raw config object is added to this container either during initialization of the <a href="javascript:void(0);">items</a> config,
+        or when new items are <a href="javascript:void(0);">added), or {@link #insert inserted</a>.</p>
+        <p>This method converts the passed object into an instanced child component.</p>
+        <p>This may be overridden in subclasses when special processing needs to be applied to child creation.</p>
+                    <div class="detail-header">Parameters</div>
+                <p><span class="params-list">item</span> :
+                        <span class="memberType">&nbsp;Object</span>
+                </p>
+                <div class="params-desc"><p>The config object being added.</p></div>
+                <div class="detail-header">Returns</div>
+                <span style="margin-left:12px;" class="memberType">Ext.Component</span>
+                <div class="return-desc"><p>The component to be added.</p>
+            </div>
+        </div>
+    </div>
+    
+    <p>Let&#39;s look at each part of the member row:</p>
+    <ul>
+    <li><strong>Expand/Collapse</strong> - On the left-hand size of the member row is a control used to 
+    expand and collapse each member row to show / hide member details.</li>
+    <li><strong>Member Name</strong> - The name of the class member (<code>lookupComponent</code> in this example)</li>
+    <li><strong>Method Param</strong> - Any required or optional params used by a method (or passed to an 
+    event handler method) will be listed next to the method name within parenthesis 
+    (<code>( item )</code> in this example)</li>
+    <li><strong>Return type</strong> - The class instance or javascript object returned by the method or 
+    property (<code>Ext.Component</code> in this case).  This may be omitted for methods that do not 
+    return anything other than <code>undefined</code> or may display as multiple possible values 
+    separated by a forward slash <code>/</code> signifying that what is returned may depend on the 
+    results of the method call (i.e. a method may return a Component if a get method calls is 
+    successful or <code>false</code> if unsuccessful which would be displayed as 
+    <code>Ext.Component/Boolean</code>).</li>
+    <li><strong>Flags</strong> - Any flags applicable to the member will be displayed next (<code>PROTECTED</code> in 
+    this example - see the Flags section below)</li>
+    <li><strong>Member Origin</strong> - On the right-hand side of the member row is the class where the 
+    member was initially described (<code>Ext.container.Container</code> in this example).  The source 
+    class will be displayed as a blue link if the member originates from the current class 
+    and gray if it is inherited from an ancestor or mixed-in class.</li>
+    <li><strong>Member Source</strong> - On the right-hand side below the member origin class is a link to 
+    view the member&#39;s source (<code>view source</code> in the example)</li>
+    <li><strong>Params List</strong> - Each param for a class method will be listed using the same name 
+    found above in parenthesis, the type of class or object expected, and a description of 
+    the param (<code>item : Object</code> in the example).</li>
+    <li><strong>Returns</strong> - If a class returns a value other than <code>undefined</code> a &quot;Returns&quot; section 
+    will note the type of class or object returned and a description (<code>Ext.Component</code> in the 
+    example)</li>
+    <li><strong>Since</strong> (<em>not shown in the example</em>) - Some members will show which version of the 
+    product the member was first introduced (i.e. <code>Available since 3.4.0</code> - <em>not pictured in 
+    the example</em>) just after the member description</li>
+    <li><strong>Default</strong> (<em>not shown in the example</em>) - Configs often show the default config value 
+    to be applied to a class instance if not overridden (i.e. <code>Defaults to: false</code>)</li>
+    </ul>
+    <h3 id="member-flags">Member Flags</h3>
+    <p>The API documentation uses a number of flags to further commnicate the class member&#39;s 
+    function and intent.  The label may be represented by a text label, an abbreviation, or 
+    an icon.</p>
+    <ul>
+    <li><strong>Required</strong> - Required config when instantiating a class</li>
+    <li><strong>Bindable</strong> - The config has a setter which allows this config to be set via ViewModel 
+    binding</li>
+    <li><strong>Read Only</strong> - The property may be read, but cannot be used to configure / 
+    re-configure a class instance at runtime</li>
+    <li><strong>Singleton</strong> - Singleton classes are instantiated immediately once defined and may not 
+    be instantiated manually</li>
+    <li><strong>Static</strong> - A static method or property is a method or property belonging to the class 
+    itself, not an instance of the class</li>
+    <li><strong>Chainable</strong> - Refers to methods that return the class instance back when called.<br>This enables chained method calls like: <code>classInstance.method1().method2().etc();</code></li>
+    <li><strong>Deprecated</strong> - A class or member that is scheduled for removal in a future 
+    framework version and is provided in the current version for backwards compatibility.<br>Deprecated classes and members will have a message directing you to the preferred class / 
+    method going forward.</li>
+    <li><strong>Removed</strong> - A removed class or member that exists in documentation only as a 
+    reference for users upgrading between framework versions</li>
+    <li><strong>Template</strong> - A method defined within a base class designed to be overridden by 
+    subclasses</li>
+    <li><strong>Abstract</strong> - A class or member may be be defined as abstract.  Abstract classes and 
+    members establish a class structure and provide limited, if any, code.  Class-specific 
+    code will be furnished via overrides in subclasses.</li>
+    <li><strong>Preventable</strong> - Events marked preventable will not fire if <code>false</code> is returned from 
+    an event handler</li>
+    </ul>
+    <h3 id="class-icons">Class Icons</h3>
+    <p><span class="icon-demo class-icon"></span> - Indicates a framework class  </p>
+    <p><span class="icon-demo singleton-icon"></span> - A singleton framework class. *See the 
+    singleton flag for more information  </p>
+    <p><span class="icon-demo component-icon"></span> - A component-type framework class (any 
+    class within the Ext JS framework that extends Ext.Component)  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h3 id="member-icons">Member Icons</h3>
+    <p><span class="icon-demo fa fa-cubes"></span> - Indicates a class member of type <code>config</code>  </p>
+    <p><span class="icon-demo fa fa-book"></span> - Indicates a class member of type <code>property</code>  </p>
+    <p><span class="icon-demo fa fa-object-group"></span> - Indicates a class member of type 
+    <code>method</code>  </p>
+    <p><span class="icon-demo fa fa-bolt"></span> - Indicates a class member of type <code>event</code>  </p>
+    <p><span class="icon-demo fa fa-paint-brush"></span> - Indicates a class member of type 
+    <code>theme variable</code>  </p>
+    <p><span class="icon-demo fa fa-tint"></span> - Indicates a class member of type 
+    <code>theme mixin</code>  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h2 id="navigation-and-features">Navigation and Features</h2>
+    <h3 id="class-member-quick-nav-menu">Class Member Quick-Nav Menu</h3>
+    <p>Just below the class name on an API doc page is a row of buttons corresponding to the 
+    types of members owned by the current class.  Each button shows a count of members by 
+    type (this count is updated as filters are applied).  Clicking the button will navigate 
+    you to that member section.  Hovering over the member-type button will reveal a popup 
+    menu of all members of that type for quick navigation.</p>
+    <h3 id="getter-and-setter-methods">Getter and Setter Methods</h3>
+    <p>Getting and setter methods that correlate to a class config option will show up in the 
+    methods section as well as in the configs section of both the API doc and the member-type 
+    menus just beneath the config they work with.  The getter and setter method documentation 
+    will be found in the config row for easy reference.</p>
+    <h3 id="history-bar">History Bar</h3>
+    <p>Your page history is kept in localstorage and displayed (using the available real estate) 
+    just below the top title bar.  By default, the only search results shown are the pages 
+    matching the product / version you&#39;re currently viewing.  You can expand what is 
+    displayed by clicking on the <span class="icon-demo history-config"></span> button on the 
+    right-hand side of the history bar and choosing the &quot;All&quot; radio option.  This will show 
+    all recent pages in the history bar for all products / versions.</p>
+    <p>Within the history config menu you will also see a listing of your recent page visits. 
+    The results are filtered by the &quot;Current Product / Version&quot; and &quot;All&quot; radio options. 
+    Clicking on the <span class="icon-demo history-clear"></span> button will clear the history bar as 
+    well as the history kept in local storage.</p>
+    <p>If &quot;All&quot; is selected in the history config menu the checkbox option for &quot;Show product 
+    details in the history bar&quot; will be enabled.  When checked, the product/version for each 
+    historic page will show alongside the page name in the history bar.  Hovering the cursor 
+    over the page names in the history bar will also show the product/version as a tooltip.</p>
+    <h3 id="search-and-filters">Search and Filters</h3>
+    <p>Both API docs and guides can be searched for using the search field at the top of the 
+    page.</p>
+    <p>On API doc pages there is also a filter input field that filters the member rows 
+    using the filter string.  In addition to filtering by string you can filter the class 
+    members by access level and inheritance.  This is done using the checkboxes at the top of 
+    the page.  <strong>Note</strong> that filtering out <code>private</code> members also filters the API class 
+    navigation tree.</p>
+    <p>Clicking on an empty search field will show your last 10 searches for quick navigation.</p>
+    <h3 id="api-doc-class-metadata">API Doc Class Metadata</h3>
+    <p>Each API doc page (with the exception of Javascript primitives pages) has a menu view of 
+    metadata relating to that class.  This metadata view will have one or more of the 
+    following:</p>
+    <ul>
+    <li><strong>Alternate Name</strong> - One or more additional class name synonymns (in Ext JS 6.0.0 the 
+    <code>Ext.button.Button</code> class has an alternate class name of <code>Ext.Button</code>).  Alternate class 
+    names are commonly maintained for backward compatibility.</li>
+    <li><strong>Hierarchy</strong> - The hierararchy view lists the inheritance chain of the current class 
+    up through its ancestor classes up to the root base class.</li>
+    <li><strong>Mixins</strong> - A list of classes that are mixed into the current class</li>
+    <li><strong>Inherited Mixins</strong> - A list of classes that are mixed into an ancestor of the current 
+    class</li>
+    <li><strong>Requires</strong> - All classes required to be defined for the class to be instantiated</li>
+    <li><strong>Uses</strong> - A list of classes potentially used by the class at some point in its 
+    lifecycle, but not necessarily requried for the class to initially be instantiated</li>
+    <li><strong>Subclasses</strong> - Classes that extend the current class</li>
+    </ul>
+    <h3 id="expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</h3>
+    <p>Runnable examples (Fiddles) are expanded on a page by default.  You can collapse and 
+    expand example code blocks individually using the arrow on the top-left of the code 
+    block.  You can also toggle the collapse state of all examples using the toggle button on 
+    the top-right of the page.  The toggle-all state will be remembered between page loads.</p>
+    <p>Class members are collapsed on a page by default.  You can expand and collapse members 
+    using the arrow icon on the left of the member row or globally using the expand / 
+    collapse all toggle button top-right.</p>
+    <h3 id="desktop-vs-mobile-view">Desktop -vs- Mobile View</h3>
+    <p>Viewing the docs on narrower screens or browsers will result in a view optimized for a 
+    smaller form factor.  The primary differences between the desktop and &quot;mobile&quot; view are:</p>
+    <ul>
+    <li>Global navigation will be located in a menu on the left-hand side accessible via the 
+    hamburger menu icon.  The menu houses the following (on most pages):<ul>
+    <li>The name of the current product (as a link to the product landing page)</li>
+    <li>The Sencha icon used to navigate back to the documentation home page</li>
+    <li>The product menu drop-down button</li>
+    <li>Tabs of navigation trees for the API docs and guides</li>
+    </ul>
+    </li>
+    <li>Current context navigation and tools is located on the right-hand side accessible via 
+    the gear icon.  The context menu houses teh following:<ul>
+    <li>The global search input field</li>
+    <li>(<em>API doc</em>) A &quot;Filters&quot; tab with the member filter, expand / collapse all examples 
+    button, expand / collapse all member rows button, the access level filter checkboxes, 
+    and the counts of each member</li>
+    <li>(<em>API doc</em>) A &quot;Related Classes&quot; tab containing the menu of metadata related to the 
+    current class</li>
+    <li>(<em>Guides</em>) The table of contents for the guide</li>
+    </ul>
+    </li>
+    </ul>
+    <h3 id="viewing-the-class-source">Viewing the Class Source</h3>
+    <p>The class source can be viewed by clicking on the class name at the top of an API doc 
+    page.  The source for class members can be viewed by clicking on the &quot;view source&quot; link 
+    on the right-hand side of the member row.</p>
+    
+        </div>
+    </div>
+    <div id="header">
+        <div class="logo">
+            <a href="http://docs.sencha.com"><img height="32" src="../../home-images/sencha_logo_thumb.png"/></a>
+        </div>
+        <span id="mobile-main-nav-menu-btn" class="fa fa-bars"></span>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl landing-product-menu-btn"><div class="callout callout-b"></div></span>
+            <div class="page-title">What's New</div>
+        <span id="mobile-context-menu-btn" class="fa fa-cog"></span>
+    </div>
+    <div id="centerContent">
+        <div id="history-nav">
+            <span id="history-config" class="history-config tooltip tooltip-tr-br" data-tip="Configure / Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="class-tree-ct" class="class-tree">
+            <h2 class="product-header">
+                <div class="logo">
+                    <a href="http://docs.sencha.com"><img src="../../home-images/sencha_logo1x.png"/></a>
+                </div>
+                <a href="../../index.html">Ext JS 6.2.0 </a>
+                <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn  tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+            </h2>
+            <div id="tree-header" class="pre-load">
+                    <div id="quickStartTab" class="toolbarHeaderButton">
+                        Quick Start
+                    </div>
+                <div id="guideTab" class="toolbarHeaderButton active-tab">
+                    Guides
+                </div>
+                <div id="apiTab" class="toolbarHeaderButton">
+                    API
+                </div>
+                <div id="hide-class-tree"></div>
+            </div>
+            <div id="tree-scroller">
+                <div id="tree" class="show-private show-protected is-tree hide">
+                        <div id="toolkit-tab-ct">
+        <div id="modernTab" class="active-tab">modern</div>
+        <div id="classicTab">classic</div>
+    </div>
+
+    <div id="toolkit-tree-ct">
+        <div id="modernTree" class="is-tree">
+            
+        </div>
+
+        <div id="classicTree" class="is-tree hide">
+            
+        </div>
+    </div>
+<div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Classes" data-collapse="Collapse All Classes"><div class="callout callout-b"></div></div>
+                </div>
+                <div id="guide-tree" class="hide is-tree">
+                    <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-getting_started" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Getting Started</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../getting_started/getting_started.html" class="tree-leaf-content isLeaf universal-decoration" id="node-getting_started_-_getting_started" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Setup</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">What's New?</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/whats_new.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_whats_new" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">What's New</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/release_notes.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_release_notes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Release Notes</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/extjs_upgrade_guide.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_extjs_upgrade_guide" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS 6.2.0 Upgrade Guide</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new_-_api_diffs" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">API Diffs</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_modern_diff.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/620_modern_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_classic_diff.html" class="tree-leaf-content isLeaf display-new classic-decoration" id="node-whats_new_-_api_diffs/620_classic_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Classic - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/modern_theme_refactor.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/modern_theme_refactor" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern Theming Refactor</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-examples" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Examples</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="http://examples.sencha.com/extjs/6.2.0-ea/examples" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-examples_-_620examples" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">6.2.0 Examples</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Core Concepts</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/classes.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_classes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">The Class System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/layouts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_layouts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Layouts and Containers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/components.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_components" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Components</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/data_package.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_data_package" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Data Package</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/gestures.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_gestures" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Gestures</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/events.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_events" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Events</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/drag_drop.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_drag_drop.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_modern_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Modern Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/theming.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Theming System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_theming.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_modern_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Theming in the Modern Toolkit</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/material_theme.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_material_theme" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Material Theme</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/memory_management.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_memory_management" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Memory Management</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/d3.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-core_concepts_-_d3" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using D3 in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts_-_draw" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Draw Package</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/drawing.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/drawing" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Draw Package</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt1.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt1" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 1</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt2.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt2" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 2</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt3.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt3" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 3</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/accessibility.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_accessibility" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Accessibility</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/localization.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_localization" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Localization</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/rtl.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_rtl" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Right to Left in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/font_ext.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_font_ext" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Sencha Font Packages</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/tablet_support.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_tablet_support" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Tablet Support</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-application_architecture" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Architecture</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/application_architecture.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_application_architecture" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Intro to App Architecture</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/developing_for_multiple_screens_and_environments.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_developing_for_multiple_screens_and_environments" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Multiple Screens</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_controllers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_controllers" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Controllers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_models_data_binding.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_models_data_binding" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Models &amp; Binding</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_model_internals.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_model_internals" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Model Internals</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/router.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_router" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using the Router</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-components" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">UI Components</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../components/carousel.html" class="tree-leaf-content isLeaf modern-decoration" id="node-components_-_carousel" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Carousel</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/calendar.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_calendar" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Calendar</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/forms.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_forms" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Forms</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/introduction_to_charting.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_introduction_to_charting" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Introduction to Charting</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/trees.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_trees" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Trees</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/grids.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_grids" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Grids</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/pivot_grid.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_pivot_grid" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Pivot Grid</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/exporter.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_exporter" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Exporter</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/widgets_widgets_columns.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_widgets_widgets_columns" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Using Components in Grids</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-tutorials" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Tutorials</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../tutorials/login_app.html" class="tree-leaf-content isLeaf classic-decoration" id="node-tutorials_-_login_app" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Sample Login App</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Backend Connectors</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/soap.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_soap" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">SOAP Services</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/amf.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_amf" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">AMF Data Sources</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors_-_direct" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Ext Direct</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/specification.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_direct/specification" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Ext Direct Specification</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/mysql_php.html" class="tree-leaf-content isLeaf classic-decoration" id="node-backend_connectors_-_direct/mysql_php" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Using MySQL and PHP</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-other_resources" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Other Resources</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/extjs_faq.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_extjs_faq" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS - FAQ</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/oop_concepts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_oop_concepts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Basics of OOP</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/ecosystem.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_ecosystem" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS Ecosystem</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/sencha_blog.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_sencha_blog" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">From the Sencha Blog</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <a href="../supported_browsers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-supported_browsers" isLeaf="true">
+        <span class="tree-expando hidden">▸</span>
+                    <span class="universal-guide guide"></span>
+                <span class="tree-leaf-text">Supported Browsers</span>
+    </a>
+</div>
+
+                    <div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Guides" data-collapse="Collapse All Guides"><div class="callout callout-b"></div></div>
+                </div>
+                    <div id="quick-start-tree" class="hide is-tree">
+                        <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_introduction" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/introduction.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">1</span>
+                <div class="quick-start-text">Introduction</div>
+                <div class="quick-start-summary">An introduction to the Ext JS JavaScript framework</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_components" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/components.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">2</span>
+                <div class="quick-start-text">Components</div>
+                <div class="quick-start-summary">Explore Ext JS components and learn how to configure them</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_containers" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/containers.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">3</span>
+                <div class="quick-start-text">Containers</div>
+                <div class="quick-start-summary">Learn to nest components within container components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_presenting_data" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/presenting_data.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">4</span>
+                <div class="quick-start-text">Presenting Data</div>
+                <div class="quick-start-summary">Connect your data to your view components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_handling_events" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/handling_events.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">5</span>
+                <div class="quick-start-text">Handling Events</div>
+                <div class="quick-start-summary">Respond to users interacting with your application with events</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_forms" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_forms.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">6</span>
+                <div class="quick-start-text">Data Forms</div>
+                <div class="quick-start-summary">Present data in form fields so that values can be modified</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_binding" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_binding.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">7</span>
+                <div class="quick-start-text">Data Binding</div>
+                <div class="quick-start-summary">Bind data to component configs for automatic responses to change</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_getting_organized" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/getting_organized.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">8</span>
+                <div class="quick-start-text">Getting Organized</div>
+                <div class="quick-start-summary">Move your code into an organized structure by defining its parts</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_bringing_it_together" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/bringing_it_together.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">9</span>
+                <div class="quick-start-text">Bringing it Together</div>
+                <div class="quick-start-summary">Add extra functionality to make this application more useful</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_going_to_production" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/going_to_production.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">10</span>
+                <div class="quick-start-text">Going to Production</div>
+                <div class="quick-start-summary">Use Sencha Cmd to make your application lightweight and efficient</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_helpful_resources" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/helpful_resources.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">11</span>
+                <div class="quick-start-text">Helpful Resources</div>
+                <div class="quick-start-summary">Continue your Ext JS education with more helpful resources</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+                    </div>
+            </div>
+        </div>
+        <a href="#" id="back-to-top">top </a>
+        <div id="rightMembers" class="">
+            
+            <div class="context-menu-ct">
+    <div class="context-header">
+        <div id="hide-context-menu" class="fa fa-caret-right"></div>
+    </div>
+    <div class="search">
+        <form autocomplete="off">
+                <div class="toolkit-search-filter-ct">
+                    <span id="modern-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Modern Search Results"><div class="callout callout-b"></div></span>
+                    <span id="classic-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Classic Search Results"><div class="callout callout-b"></div></span>
+                </div>
+
+            <input type="text" type="search" placeholder="search" id="searchtext">
+            <i id="filtersubmit" class="fa fa-search"></i>
+            <span id="help-btn" data-tip="Docs Help" class="tooltip tooltip-tr-br"><div class="callout callout-b"></div></span>
+        </form>
+    </div>
+    <div id="toc-context-ct">
+        <!-- context content added at runtime -->
+    </div>
+</div>
+<div class="guide-body-wrap">
+    <div class="body-wrap-inner">
+        <div class="classText">
+                <div class="toolkit-badge-ct universal-badge">
+                    Guide applies to:
+                    <span class="toolkit-badge universal">
+                        
+                        
+                        classic &amp; modern
+                    </span>
+                </div>
+
+            <div id="toggleExamples" class="fa fa-code tooltip tooltip-tr-br" data-expand="Expand All Examples" data-collapse="Collapse All Examples"><div class="callout callout-b"></div></div>
+                <div class="toc">
+                    <h2>Contents</h2>
+                        <a class="toc-page-h2" href="#whats_new-_-whats_new_-_introduction">Introduction</a>
+                        <a class="toc-page-h2" href="#whats_new-_-whats_new_-_general">General</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_calendars_ext_js_premium_">Calendars (Ext JS Premium)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_d3_adapter_ext_js_premium_">D3 Adapter (Ext JS Premium)</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_hierarchy_components">Hierarchy Components</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_heatmap">HeatMap</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_interactive_manipulation">Interactive Manipulation</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_pivoting_with_d3">Pivoting with D3</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_ext_pivot_d3_heatmap">Ext.pivot.d3.HeatMap</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_ext_pivot_d3_treemap">Ext.pivot.d3.TreeMap</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_ext_pivot_d3_container">Ext.pivot.d3.Container</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_grid">Grid</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_row_body_widgets">Row Body Widgets</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_check_columns">Check Columns</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_tree_node_visibility">Tree Node Visibility</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_core">Core</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_viewport_zoom">Viewport Zoom</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_native_scrolling">Native Scrolling</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_gestures">Gestures</a>
+                        <a class="toc-page-h5" href="#whats_new-_-whats_new_-_touchaction">touchAction</a>
+                        <a class="toc-page-h5" href="#whats_new-_-whats_new_-_nesting_and_claiming">Nesting and Claiming</a>
+                        <a class="toc-page-h5" href="#whats_new-_-whats_new_-_longpress_to_drag">longpress-to-drag</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_data_binding_expressions">Data Binding Expressions</a>
+                        <a class="toc-page-h5" href="#whats_new-_-whats_new_-_formatters">Formatters</a>
+                        <a class="toc-page-h5" href="#whats_new-_-whats_new_-_debugging">Debugging</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_declarative_key_binding">Declarative Key Binding</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_miscellaneous_improvements">Miscellaneous Improvements</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_drag_and_drop">Drag-and-Drop</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_sources">Sources</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_targets">Targets</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_ext_drag_info">Ext.drag.Info</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_charts">Charts</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_exporter_ext_js_premium_">Exporter (Ext JS Premium)</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_column_styling">Column Styling</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_circular_gauge">Circular Gauge</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_google_api">Google API</a>
+                        <a class="toc-page-h2" href="#whats_new-_-whats_new_-_modern_toolkit">Modern Toolkit</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_material_theme">Material Theme</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_new_ios_theme">New iOS Theme</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_other_theme_updates">Other Theme Updates</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_pivot_grid_ext_js_premium_">Pivot Grid (Ext JS Premium)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_grids_and_trees">Grids and Trees</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_sparklines">Sparklines</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_floated_components">Floated Components</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_tooltips">Tooltips</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_ext_tip_manager">Ext.tip.Manager</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_text_field_triggers">Text Field Triggers</a>
+                        <a class="toc-page-h2" href="#whats_new-_-whats_new_-_classic_toolkit">Classic Toolkit</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_grids">Grids</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_collapsible_locking">Collapsible Locking</a>
+                        <a class="toc-page-h4" href="#whats_new-_-whats_new_-_column_sorters">Column Sorters</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_pivot_grid_ext_js_premium_">Pivot Grid (Ext JS Premium)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_data_binding">Data Binding</a>
+                        <a class="toc-page-h3" href="#whats_new-_-whats_new_-_accessibility">Accessibility</a>
+                        <a class="toc-page-h2" href="#whats_new-_-whats_new_-_sencha_cmd">Sencha Cmd</a>
+                        <a class="toc-page-h2" href="#whats_new-_-whats_new_-_css_variables">CSS Variables</a>
+                        <a class="toc-page-h2" href="#whats_new-_-whats_new_-_conclusion">Conclusion</a>
+                </div>
+            <h1 id="whats_new-_-whats_new_-_what_s_new_in_ext_js_6_2">What&#39;s New In Ext JS 6.2<a class="quick-link" href="#whats_new-_-whats_new_-_what_s_new_in_ext_js_6_2"></a></h1>
+<h2 id="whats_new-_-whats_new_-_introduction">Introduction<a class="quick-link" href="#whats_new-_-whats_new_-_introduction"></a></h2>
+<p>Ext JS 6.2 introduces several new components and provides numerous enhancements across the framework from MVC 
+improvements to new mobile device themes, in addition to new tooling features that leverage cutting edge browser 
+capabilities. This article will introduce all of these exciting features and show you how to start taking
+advantage of them right away!</p>
+<h2 id="whats_new-_-whats_new_-_general">General<a class="quick-link" href="#whats_new-_-whats_new_-_general"></a></h2>
+<p>The architecture of Ext JS 6 allows code to be written once and then used on any device. This multi-device architecture 
+enables the new Calendar components and D3 Adapter to be used in either the Classic or Modern Toolkit and therefore 
+on any screen.</p>
+<h3 id="whats_new-_-whats_new_-_calendars_ext_js_premium_">Calendars (Ext JS Premium)<a class="quick-link" href="#whats_new-_-whats_new_-_calendars_ext_js_premium_"></a></h3>
+<p>The <strong>calendar</strong> package provides all the building blocks you need to include advanced calendaring in your 
+application. The presentation layer of the calendar package consists of several, low-level calendar view components 
+and a high-level, integrated container to manage them.</p>
+<p>There are two fundamental types of low-level views provided in the calendar package: <a href='../../../6.2.0/classic/Ext.calendar.view.Days.html'>days</a> 
+and <a href='../../../6.2.0/classic/Ext.calendar.view.Weeks.html'>weeks</a>. The days view displays one or more days side-by-side and positions each 
+day&#39;s events vertically by their start times. The weeks view displays one or more weeks arranged vertically. The 
+events are simply rendered in a list sorted by their start times positioned at the top of each day. Both views also 
+deal with whole day events in their respective layouts.</p>
+<p>These base views are then configured and specialized to produce <a href='../../../6.2.0/classic/Ext.calendar.view.Day.html'>day</a>, 
+<a href='../../../6.2.0/classic/Ext.calendar.view.Week.html'>week</a> and <a href='../../../6.2.0/classic/Ext.calendar.view.Month.html'>month</a> views. Finally, 
+the <a href='../../../6.2.0/classic/Ext.calendar.panel.Panel.html'>calendar panel</a> integrates these views with a shared 
+<a href='../../../6.2.0/classic/Ext.calendar.store.Events.html'>events store</a> and adds navigation and view switching capabilities.</p>
+<p>The abstractions used by the calendar data model allow the application to decide what fields are needed to define 
+events and calendars. In other words, there are no required fields on an event record. Instead there are a small number 
+of required methods. Of course, there is a default implementation that chooses a particular set of fields to represent 
+an event. To bring all the pieces together, the new Calendar example application shows how to connect the calendar 
+component to Google&#39;s Calendar API.</p>
+<p><img src="images/62_image_0.png" alt="image alt text"></p>
+<h3 id="whats_new-_-whats_new_-_d3_adapter_ext_js_premium_">D3 Adapter (Ext JS Premium)<a class="quick-link" href="#whats_new-_-whats_new_-_d3_adapter_ext_js_premium_"></a></h3>
+<p>Presenting data in a clear and compelling way is an important job for any application. When it comes to the realm of 
+data visualization, D3 is an extremely popular choice and now with the new <strong>d3</strong> package, it is simpler than 
+ever to integrate D3 into your Ext JS application.</p>
+<p>Integrating D3 begins with the choice of rendering technology: <a href='../../../6.2.0/classic/Ext.d3.svg.Svg.html'>SVG</a> or 
+<a href='../../../6.2.0/classic/Ext.d3.canvas.Canvas.html'>Canvas</a>. This is because D3 is not a drawing abstraction library (like Ext.draw.*) and so 
+the nature of the drawing surface is an important starting point. These base classes provide a structure to assist 
+with rendering to the correct container element and updating when the container resizes.</p>
+<p>These base classes streamline the process of copying simple, whole page examples (such as those in the 
+<a href="https://github.com/d3/d3/wiki/Gallery" class="external-link" target="_blank">D3 Gallery</a>) and housing them in a component. That component can then be 
+easily managed like any other in an Ext JS application.</p>
+<p>The D3 Adapter then builds on these primitive base classes and provides some of the most commonly used D3 
+visualizations as ready to use components. These higher-level components understand your Ext JS data stores and 
+connect them to D3 drawings and then ensure these stay up to date when your data changes.</p>
+<h4 id="whats_new-_-whats_new_-_hierarchy_components">Hierarchy Components<a class="quick-link" href="#whats_new-_-whats_new_-_hierarchy_components"></a></h4>
+<p>The need to display hierarchical information is quite common and D3 provides a wide range of visualizations for this 
+type of data. These components connect an <a href='../../../6.2.0/classic/Ext.data.TreeStore.html'>Ext.data.TreeStore</a> to several of the popular D3 layouts to 
+display hierarchical data.</p>
+<p>Perhaps the most popular choice for displaying simple hierarchies is the tree layout. Similar to a standard Ext JS 
+<a href='../../../6.2.0/classic/Ext.tree.Panel.html'>Tree</a> this visualization renders parent and child nodes and allows the user to expand and 
+collapse them.</p>
+<p><img src="images/62_image_1.png" alt="image alt text"></p>
+<p>There are three other pre-packaged components that can display a hierarchy of data. These are the 
+<a href='../../../6.2.0/classic/Ext.d3.hierarchy.TreeMap.html'>TreeMap</a>, <a href='../../../6.2.0/modern/Ext.d3.hierarchy.Pack.html'>Pack</a> 
+and <a href='../../../6.2.0/modern/Ext.d3.hierarchy.partition.Sunburst.html'>Sunburst</a>.</p>
+<p><img src="images/62_image_2.png" alt="image alt text"></p>
+<p>All of these components operate on a TreeStore and provide a mapping between Ext JS conventions and the underlying 
+D3 rendering engine.</p>
+<h4 id="whats_new-_-whats_new_-_heatmap">HeatMap<a class="quick-link" href="#whats_new-_-whats_new_-_heatmap"></a></h4>
+<p>A great way to present three-dimensional data in a two-dimensional drawing is a heat map. The 
+<a href='../../../6.2.0/classic/Ext.d3.HeatMap.html'>HeatMap</a> component maps X and Y values to axes as you might expect and then maps Z values to a 
+&quot;color axis&quot;.</p>
+<p><img src="images/62_image_3.png" alt="image alt text"></p>
+<p>This component uses a standard <a href='../../../6.2.0/classic/Ext.data.Store.html'>Ext.data.Store</a> and maps fields of your choice as X, Y and color axis values.</p>
+<h4 id="whats_new-_-whats_new_-_interactive_manipulation">Interactive Manipulation<a class="quick-link" href="#whats_new-_-whats_new_-_interactive_manipulation"></a></h4>
+<p>The Ext JS D3 Adapter provides a flexible <a href='../../../6.2.0/modern/Ext.d3.interaction.PanZoom.html'>PanZoom</a> interaction class that enables 
+mouse and touch manipulation of D3 components. The PanZoom class gives your users an intuitive experience for zooming 
+into drawings to see details on any type of device. It also gives developers the ability to constrain and tune these 
+interactions by gesture and device type.</p>
+<h3 id="whats_new-_-whats_new_-_pivoting_with_d3">Pivoting with D3<a class="quick-link" href="#whats_new-_-whats_new_-_pivoting_with_d3"></a></h3>
+<p>We can also aggregate local data using a Pivot Matrix. The new &quot;pivot-d3&quot; package contains several useful components 
+that connect these pieces for you.</p>
+<h4 id="whats_new-_-whats_new_-_ext_pivot_d3_heatmap">Ext.pivot.d3.HeatMap<a class="quick-link" href="#whats_new-_-whats_new_-_ext_pivot_d3_heatmap"></a></h4>
+<p>This component produces a D3 HeatMap after the data is aggregated by the pivot matrix.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotheatmap&#39;,
+
+    // pivot matrix configurations
+
+    matrix: {
+        store: {
+            type: &#39;salesperemployee&#39;
+        },
+
+        leftAxis: {
+            dataIndex: &#39;employee&#39;,
+            header: &#39;Employee&#39;,
+            sortable: false
+        },
+
+        topAxis: {
+            dataIndex: &#39;day&#39;,
+            sortIndex: &#39;dayNumber&#39;,
+            header: &#39;Day&#39;
+        },
+
+        aggregate: {
+            dataIndex: &#39;sales&#39;,
+            aggregator: &#39;sum&#39;
+        }
+    }
+}
+</code></pre><p>When the pivot matrix is configured there should be only one dimension per axis defined.</p>
+<h4 id="whats_new-_-whats_new_-_ext_pivot_d3_treemap">Ext.pivot.d3.TreeMap<a class="quick-link" href="#whats_new-_-whats_new_-_ext_pivot_d3_treemap"></a></h4>
+<p>This component produces a D3 TreeMap after the data is aggregated by the pivot matrix.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivottreemap&#39;,
+
+    // pivot matrix configurations
+    matrix: {
+        store: {
+            type: &#39;salesperemployee&#39;
+        },
+
+        leftAxis: {
+            dataIndex: &#39;employee&#39;,
+            header: &#39;Employee&#39;,
+            sortable: false
+        },
+
+        aggregate: {
+            dataIndex: &#39;sales&#39;,
+            aggregator: &#39;sum&#39;
+        }
+    }
+}
+</code></pre><p>The <code>topAxis</code> configuration of the pivot matrix is ignored, <code>leftAxis</code> supports multiple dimensions and <code>aggregate</code> 
+should have only one dimension.</p>
+<h4 id="whats_new-_-whats_new_-_ext_pivot_d3_container">Ext.pivot.d3.Container<a class="quick-link" href="#whats_new-_-whats_new_-_ext_pivot_d3_container"></a></h4>
+<p>This new component connects the pivot Configurator plugin with any of the the above components to allow the end-user 
+to configure the pivot matrix:</p>
+<p><img src="images/62_image_4.png" alt="image alt text"></p>
+<p>The Configurator can be configured using the &quot;configurator&quot; config:</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;pivotd3container&#39;,
+
+    drawing: {
+        xtype:  &#39;something&#39; // one of the above pivot D3 components
+        // more configs specific to that component
+    },
+
+    configurator: {
+        // pivotconfigurator plugin configs
+
+        fields: [{
+            dataIndex: &#39;person&#39;,
+            header: &#39;Person&#39;,
+            settings: {
+                // field settings
+            }
+        },{
+            // more fields
+        }]
+    },
+
+    // following configs are similar to the pivot grid
+
+    matrix: {
+        leftAxis: [],
+        topAxis: [],
+        aggregate: []
+    }
+}
+</code></pre><h3 id="whats_new-_-whats_new_-_grid">Grid<a class="quick-link" href="#whats_new-_-whats_new_-_grid"></a></h3>
+<p>In Ext JS 6.2, as in most releases, the grid component in both modern and Classic Toolkits have gained some exciting 
+new functionality.</p>
+<h4 id="whats_new-_-whats_new_-_row_body_widgets">Row Body Widgets<a class="quick-link" href="#whats_new-_-whats_new_-_row_body_widgets"></a></h4>
+<p>The classic grid has long had the ability to expand and collapse individual rows to reveal a 
+<a href='../../../6.2.0/classic/Ext.grid.feature.RowBody.html'>row body</a> area. A separate <a href='../../../6.2.0/classic/Ext.grid.plugin.RowExpander.html'>row expander</a> plugin 
+managed a column of &quot;expanders&quot; (a &quot;+&quot; or &quot;-&quot; glyph) that toggled the visibility of a row&#39;s body. These features are 
+now available in the Modern Toolkit grid as well.</p>
+<p>Both toolkits now also have the ability to define components in the row body, though the API&#39;s are slightly different 
+due to the difference in architecture. With row body widgets it is a simple exercise to define the configuration of 
+these components and link them to the parent record using data binding to achieve powerful results. For example:</p>
+<p><img src="images/62_image_5.png" alt="image alt text"></p>
+<p>The store of the inner grid is bound to an association store of child records and the title to the name field. Of 
+course, grids aren&#39;t the only things that can be put in the row body. You can put a container with form fields, 
+charts, D3 visualizations or all of these.</p>
+<h4 id="whats_new-_-whats_new_-_check_columns">Check Columns<a class="quick-link" href="#whats_new-_-whats_new_-_check_columns"></a></h4>
+<p>Whether displaying boolean values or selecting rows, it is fairly common to display checkboxes in grid headers 
+and cells. In Classic Toolkit, this was done in two selection models (<a href='../../../6.2.0/classic/Ext.selection.CheckboxModel.html'>checkbox model</a> 
+and <a href='../../../6.2.0/classic/Ext.grid.selection.SpreadsheetModel.html'>spreadsheet</a>) and the <a href='../../../6.2.0/classic/Ext.grid.column.Check.html'>checkcolumn</a>. These 
+have now been consolidated to share a common implementation found in the checkcolumn. This means that all check 
+columns can now easily (and optionally) include a checkbox in the column header.</p>
+<p>The <a href='../../../6.2.0/modern/Ext.grid.column.Check.html'>check column</a> is now also available in the Modern Toolkit grid!</p>
+<h4 id="whats_new-_-whats_new_-_tree_node_visibility">Tree Node Visibility<a class="quick-link" href="#whats_new-_-whats_new_-_tree_node_visibility"></a></h4>
+<p>The ability to <a href='../../../6.2.0/modern/Ext.data.TreeStore.html#cfg-filterer'>filter</a> a <a href='../../../6.2.0/modern/Ext.data.TreeStore.html'>TreeStore</a> 
+has been enhanced to enable bottom-up or top-down filtering of the tree. These settings will ensure the tree presents 
+only the appropriate node as changes are made.</p>
+<p>In some cases it may be more efficient for application code to directly maintain the &quot;visible&quot; field of its tree 
+nodes. The act of setting this field now has the necessary side-effects on the rendered tree.</p>
+<h3 id="whats_new-_-whats_new_-_core">Core<a class="quick-link" href="#whats_new-_-whats_new_-_core"></a></h3>
+<p>The <strong>core</strong> package contains improved support for touch devices and several other enhancements. Since both toolkits 
+use the exact same core, all applications benefit directly from these new features.</p>
+<p>When the gesture and event systems of Ext JS and Sencha Touch were merged in Ext JS 5, one important limitation was 
+inherited from Sencha Touch&#39;s simplified worldview: gesture nesting. With Ext JS 6.2, this is now resolved. This 
+process began with the viewport.</p>
+<h4 id="whats_new-_-whats_new_-_viewport_zoom">Viewport Zoom<a class="quick-link" href="#whats_new-_-whats_new_-_viewport_zoom"></a></h4>
+<p>Using pinch or double-tap is a common gesture on mobile devices to zoom in or out when things are just a bit too 
+small. Ext JS 5 and 6 did not support this browser feature and it was highly recommended that apps disable it using a 
+meta tag in their HTML file:</p>
+<pre><code class="language-javascript">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;
+</code></pre><p>With Ext JS 6.2, this is no longer the case. The recommended meta tag is now:</p>
+<pre><code class="language-javascript">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes&quot;&gt;
+</code></pre><p>Supporting the browser&#39;s native ability to pan and zoom the viewport required us to revisit several other core areas 
+such as momentum scrolling, gesture processing and the role of the touch-action CSS style as defined in 
+the <a href="https://www.w3.org/TR/pointerevents/" class="external-link" target="_blank">Pointer Events spec</a>.</p>
+<h4 id="whats_new-_-whats_new_-_native_scrolling">Native Scrolling<a class="quick-link" href="#whats_new-_-whats_new_-_native_scrolling"></a></h4>
+<p>Sencha Touch was one of the first JavaScript frameworks to address the lack of momentum scrolling on mobile browsers 
+by using a virtual scroller, and this feature landed in the <strong>core</strong> package with Ext JS 5. Now that the current 
+crop of mobile browsers supports momentum scrolling, this functionality is no longer needed, but virtual scrolling 
+did allow the framework to support gestures inside scrolling regions in a cross-browser way. Enabling viewport 
+pan and zoom, however, had profound implications to scrollers.</p>
+<p>The relationship between viewport zoom and scrollers emerges due to the interaction between scrolling of internal 
+elements and panning a zoomed viewport. In other words, these gestures are nested and the browser is responsible 
+for managing part of this relationship. So instead of refactoring the virtual scroller, the better path was to 
+remove it and address gesture nesting in a different way.</p>
+<h4 id="whats_new-_-whats_new_-_gestures">Gestures<a class="quick-link" href="#whats_new-_-whats_new_-_gestures"></a></h4>
+<p>Now that viewports and scrollers (and their respective, nested, gestures) are handled by the browser, the Ext JS 
+gesture system needed to modify its approach to gesture recognition and dispatch. The challenge was to 
+reconcile the two event models: Pointer Events (IE and Edge) and Touch Events (Chrome and Safari).</p>
+<h5 id="whats_new-_-whats_new_-_touchaction">touchAction<a class="quick-link" href="#whats_new-_-whats_new_-_touchaction"></a></h5>
+<p>In the world of Pointer Events, the browser starts processing touch gestures immediately but allows the application to 
+control the outcome using the touch-action element style. Even though Pointer Events is a standard from Microsoft, 
+there are IE11/Edge specific <a href="https://msdn.microsoft.com/en-us/library/windows/apps/hh767313.aspx" class="external-link" target="_blank">enhancements</a> to 
+consider as well. The key difference here is that, unlike the Touch Events world, the decision of whether a touch will 
+scroll or zoom cannot be made when the event is received. It must be predetermined and the touch-action style set on 
+the appropriate elements.</p>
+<p>To bridge these two different approaches, there is the new <a href='../../../6.2.0/modern/Ext.Component.html#cfg-touchAction'>touchAction</a> 
+<a href='../../../6.2.0/classic/Ext.Component.html#cfg-touchAction'>config</a>. On Pointer Events browsers, this config maintains the touch-action 
+style in the DOM. On Touch Events browsers, the framework implements the same algorithm, thereby giving your 
+applications a consistent behavior.</p>
+<h5 id="whats_new-_-whats_new_-_nesting_and_claiming">Nesting and Claiming<a class="quick-link" href="#whats_new-_-whats_new_-_nesting_and_claiming"></a></h5>
+<p>The final form of gesture nesting is how framework gestures are delivered to components and their containers. For 
+example, consider a component that listens for a swipe gesture event residing inside a container that listens for a 
+drag gesture. In previous versions, both gesture events would independently fire and bubble up. The inner component 
+could not prevent the drag from being processed by its container in response to the swipe events it received. The 
+normal means of controlling a bubbled event (return false or <a href='../../../6.2.0/classic/Ext.event.Event.html#method-stopPropagation'>stopPropagation</a>) 
+do not apply because these are two independently fired events.</p>
+<p>In Ext JS 6.2, gesture events are now &quot;co-fired&quot; with their triggering DOM event and they all bubble together. Instead 
+of a touchmove event being recognized and firing dragstart from bottom-to-top and then swipestart from bottom-to-top, 
+all three events (touchmove, dragstart and swipestart) are dispatched to the bottom-most target element and then to 
+the next element up, etc..</p>
+<p>Should an event handler return false or <a href='../../../6.2.0/classic/Ext.event.Event.html#method-stopPropagation'>stopPropagation</a>, as before, 
+only that event will cease bubbling. There is, however, a new method that can be called on the event object that 
+will impact the entire collection of co-fired gestures: <a href='../../../6.2.0/classic/Ext.event.Event.html#method-claimGesture'>claimGesture</a>.</p>
+<p>Returning to the example, if the swipestart event handler on the child component calls 
+<a href='../../../6.2.0/classic/Ext.event.Event.html#method-claimGesture'>claimGesture</a> on the event object, that will cause the co-fired dragstart 
+to be canceled and never delivered to the container. Further, the drag gesture recognizer is reset meaning that the 
+entire sequence of touch events will be interpreted as a swipe and no longer as a drag.</p>
+<p>Going one step further, if an event handler on an even deeper element were to listen for the touchmove event that 
+triggered these gestures and if it were to call claimGesture on that event, the co-fired swipestart and dragstart 
+would both be canceled and never be delivered to the higher-level element listeners.</p>
+<h5 id="whats_new-_-whats_new_-_longpress_to_drag">longpress-to-drag<a class="quick-link" href="#whats_new-_-whats_new_-_longpress_to_drag"></a></h5>
+<p>On touch devices, it can sometimes be difficult to determine if a touch should scroll or drag an object. A common way 
+to determine the intent is a time threshold. Press on the element for long enough and the gesture transforms into a 
+drag instead of a scroll. This can now be accomplished using the new <a href='../../../6.2.0/classic/Ext.event.Event.html#method-startDrag'>startDrag</a> 
+method available on longpress events.</p>
+<p>While this method will attempt to transform the longpress into a drag gesture, because of the limitations of 
+Pointer Events, this method will only work on Touch Events browsers. Since these represent the majority of 
+mobile devices (Android and iOS), this ability can be worth exploiting even though it would not work on a 
+touch-screen laptop or phone using IE or Edge browsers.</p>
+<h4 id="whats_new-_-whats_new_-_data_binding_expressions">Data Binding Expressions<a class="quick-link" href="#whats_new-_-whats_new_-_data_binding_expressions"></a></h4>
+<p>ViewModels have always provided a powerful formulas mechanism that allows arbitrary logic to determine the 
+value of properties. This simplifies bind statements by moving this logic out of the View and into the ViewModel.</p>
+<p>While formulas have been and continue to be a great solution to more complex problems, some tasks can better be 
+represented inline in the bind statement. Basic support for this is already available in the form of formatters and 
+logical negation:</p>
+<pre><code class="language-javascript">bind: &#39;Hello {name:capitalize}&#39;
+
+...
+
+bind: &#39;Total: {total:round(2)}&#39;
+
+...
+
+bind: {
+    disabled: &#39;{!picker.selection}&#39;
+}
+</code></pre><p>The bind parser has been greatly improved in Ext JS 6.2 and now include full operator support (unary, binary and 
+ternary). For example:</p>
+<pre><code class="language-javascript">bind: &#39;Total: {value1 + value2}&#39;
+
+...
+
+bind: &#39;Sign {userName ? &quot;Out&quot; : &quot;In&quot;}&#39;
+</code></pre><p>You can also use global variables in bind expressions with the new &quot;@&quot; operator:</p>
+<pre><code class="language-javascript">bind: &#39;Current Browser: {@Ext.browser.name}&#39;
+</code></pre><p>Be aware, however, that changes to global variables will not trigger an update to these bindings so this is best 
+used for constant values.</p>
+<h5 id="whats_new-_-whats_new_-_formatters">Formatters<a class="quick-link" href="#whats_new-_-whats_new_-_formatters"></a></h5>
+<p>The new bind expression parser supports formatters as first-class expressions. In other words, colon is considered a 
+binary operator! This means you can format any expression:</p>
+<pre><code class="language-javascript">bind: &#39;Total: {(x + y):round(2)}&#39;
+</code></pre><p>You can also chain formatter expressions:</p>
+<pre><code class="language-javascript">bind: &#39;Hello {fullName:word(0):lowercase:capitalize}&#39;
+</code></pre><p>You can even nest formatters:</p>
+<pre><code class="language-javascript">bind: &#39;{text:word(num:round):lowercase:capitalize}&#39;
+</code></pre><h5 id="whats_new-_-whats_new_-_debugging">Debugging<a class="quick-link" href="#whats_new-_-whats_new_-_debugging"></a></h5>
+<p>If your expressions aren&#39;t working out, you can add a breakpoint to them:</p>
+<pre><code class="language-javascript">bind: &#39;Total: {@debugger (sub1 + sub2):round(2)}&#39;
+</code></pre><p>The @debugger token injects a &quot;debugger&quot; call in the generated code for the expression. This statement is only 
+supported at the start of the expression.</p>
+<h4 id="whats_new-_-whats_new_-_declarative_key_binding">Declarative Key Binding<a class="quick-link" href="#whats_new-_-whats_new_-_declarative_key_binding"></a></h4>
+<p>Processing hotkeys is now greatly simplified using the new <a href='../../../6.2.0/classic/Ext.Component.html#cfg-keyMap'>keyMap</a> config. The keyMap 
+config allows you to simply map keystrokes to their handlers:</p>
+<pre><code class="language-javascript">Ext.define(&#39;App.view.MyView&#39;, {
+    extend: &#39;Ext.Panel&#39;,
+    controller: &#39;myview&#39;,
+
+    keyMap: {
+        ESC: &#39;onEscape&#39;,        // handled by ViewController
+        &#39;Ctrl+F4&#39;: &#39;onDoThings&#39; // ctrlKey modifier
+    }
+});
+</code></pre><p>As with listeners declared on a class, keyMap values are inherited and merged as you would expect. The keyMap of a 
+base class is inherited by derived classes and each key entry is individually overridable.</p>
+<p>To handle Mac OS X conventions, there is the pseudo-modifier &quot;CmdOrCtrl&quot;:</p>
+<pre><code class="language-javascript">keyMap: {
+    &#39;CmdOrCtrl+F4&#39;: &#39;onDoThings&#39;
+}
+</code></pre><p>In the above example, the Command key is used on Mac OS X and the Control key on other platforms. The keyMap config 
+is available for both Classic and Modern Toolkits.</p>
+<h4 id="whats_new-_-whats_new_-_miscellaneous_improvements">Miscellaneous Improvements<a class="quick-link" href="#whats_new-_-whats_new_-_miscellaneous_improvements"></a></h4>
+<p>Paging toolbars will now automatically attach to the store of their owning component (typically a grid) and will track 
+changes to that store using the new storechange event. This is an event that any component managing a store will 
+fire should its store be swapped out.</p>
+<p>Several utility classes also have improved support for ViewControllers. A grid <a href='../../../6.2.0/classic/Ext.grid.column.Action.html'>action column</a> 
+can now delegate its various callbacks to the associated controller. The <a href='../../../6.2.0/classic/Ext.Action.html'>Ext.Action</a> class likewise can call 
+handlers on a controller (using the new <a href='../../../6.2.0/classic/Ext.container.Container.html#cfg-actions'>actions</a> config) while 
+the <a href='../../../6.2.0/classic/Ext.slider.Multi.html#cfg-tipText'>tipText</a> for sliders can be determined in a controller method.</p>
+<h3 id="whats_new-_-whats_new_-_drag_and_drop">Drag-and-Drop<a class="quick-link" href="#whats_new-_-whats_new_-_drag_and_drop"></a></h3>
+<p>We are delighted to introduce an all new, HTML5-aware, drag/drop system in this release. The classes are in the 
+<code>Ext.drag</code> namespace and can be used in Modern or Classic Toolkit. While the older <code>Ext.dd</code> family of classes is not being 
+replaced at this time, we recommend using only <code>Ext.drag.*</code> for new applications.</p>
+<h4 id="whats_new-_-whats_new_-_sources">Sources<a class="quick-link" href="#whats_new-_-whats_new_-_sources"></a></h4>
+<p>To enable draggability of an element, you create an <a href='../../../6.2.0/classic/Ext.drag.Source.html'>Ext.drag.Source</a> instance. When the user drags the 
+specified element, the drag source will fire a series of events 
+(<a href='../../../6.2.0/classic/Ext.drag.Source.html#event-beforedragstart'>beforedragstart</a>, <a href='../../../6.2.0/classic/Ext.drag.Source.html#event-dragstart'>dragstart</a>, 
+<a href='../../../6.2.0/classic/Ext.drag.Source.html#event-dragmove'>dragmove</a>, <a href='../../../6.2.0/classic/Ext.drag.Source.html#event-dragend'>dragend</a> and 
+<a href='../../../6.2.0/classic/Ext.drag.Source.html#event-dragcancel'>dragcancel</a>) to inform you of the the activity. While the element is being 
+dragged, you can provide feedback in the form of a <a href='../../../6.2.0/classic/Ext.drag.Source.html#cfg-proxy'>proxy</a> that follows the mouse pointer.</p>
+<h4 id="whats_new-_-whats_new_-_targets">Targets<a class="quick-link" href="#whats_new-_-whats_new_-_targets"></a></h4>
+<p>To designate elements as able to accept drops, you create an <a href='../../../6.2.0/modern/Ext.drag.Target.html'>Ext.drag.Target</a> instance. Targets receive a 
+slightly different set of events (<a href='../../../6.2.0/modern/Ext.drag.Target.html#event-dragenter'>dragenter</a>, 
+<a href='../../../6.2.0/modern/Ext.drag.Target.html#event-dragmove'>dragmove</a>, <a href='../../../6.2.0/modern/Ext.drag.Target.html#event-dragleave'>dragleave</a>, 
+<a href='../../../6.2.0/modern/Ext.drag.Target.html#event-beforedrop'>beforedrop</a> and <a href='../../../6.2.0/modern/Ext.drag.Target.html#event-drop'>drop</a> than sources. 
+Sources and targets can be configured using the <a href='../../../6.2.0/modern/Ext.drag.Target.html#cfg-groups'>groups</a> config to limit their 
+communications with each other.</p>
+<p>In addition to <code>Ext.drag.Source</code> instances, targets can interact with HTML5 drops (such as files).</p>
+<h4 id="whats_new-_-whats_new_-_ext_drag_info">Ext.drag.Info<a class="quick-link" href="#whats_new-_-whats_new_-_ext_drag_info"></a></h4>
+<p>All drag/drop events receive an <a href='../../../6.2.0/modern/Ext.drag.Info.html'>info</a> object as their primary argument. This object describes 
+the data involved in the drag as well as a reference to the source (if one is involved). The drag info object is 
+created by the framework but is initialized by the <a href='../../../6.2.0/classic/Ext.drag.Source.html#method-describe'>describe</a> method of the 
+drag source.</p>
+<p>When a drop occurs, the drag info is used to retrieve the final state of the operation. This can be as simple as a 
+property on the info object or an asynchronous delivery of data from the source to the target. If the drop is an 
+HTML5 drop, the dataTransfer object (and files if present) can be found as properties on the info object.</p>
+<h3 id="whats_new-_-whats_new_-_charts">Charts<a class="quick-link" href="#whats_new-_-whats_new_-_charts"></a></h3>
+<p>The charts package gained a new and very handy, <a href='../../../6.2.0/classic/Ext.chart.legend.SpriteLegend.html'>sprite-based</a> 
+<a href='../../../6.2.0/classic/Ext.chart.CartesianChart.html#cfg-legend'>legend</a>. In previous releases, legends were essentially 
+<a href='../../../6.2.0/classic/Ext.view.View.html'>dataviews</a>. While this provides some advantages, its principal limitation is that the legend is 
+not rendered in the same way as the chart and so is not present when saving the chart as an image.</p>
+<p>Using a sprite legend only requires you add a type config to the legend:</p>
+<pre><code class="language-javascript">legend: {
+    type: &#39;sprite&#39;,
+    docked: &#39;bottom&#39;,
+    ...
+}
+</code></pre><p><img src="images/62_image_6.png" alt="image alt text"></p>
+<p>The above can be found in the Ext JS 6.2 Kitchen Sink 
+<a href="http://examples.sencha.com/extjs/6.2.0-ea/examples/kitchensink/?charts=true#column-stacked-100" class="external-link" target="_blank">example</a>. If you compare 
+it to the same <a href="http://examples.sencha.com/extjs/6.0.2/examples/kitchensink/?charts=true#column-stacked-100" class="external-link" target="_blank">example</a> 
+from the previous release, you will see the legend is now rendered in the Preview image.</p>
+<h3 id="whats_new-_-whats_new_-_exporter_ext_js_premium_">Exporter (Ext JS Premium)<a class="quick-link" href="#whats_new-_-whats_new_-_exporter_ext_js_premium_"></a></h3>
+<p>Your data can now go to exciting new places thanks to a much expanded list of supported data formats. The exporter 
+package now supports native XSLX as well as HTML and CSV/TSV (comma/tab separated value) formats. You can even 
+provide style information for the exporter in the grid column definition.</p>
+<p>The exporter package now also provides a plugin for the Modern Toolkit grid.</p>
+<h4 id="whats_new-_-whats_new_-_column_styling">Column Styling<a class="quick-link" href="#whats_new-_-whats_new_-_column_styling"></a></h4>
+<p>The new exporter plugins support an &quot;exportStyle&quot; column config that controls the format for exported data. This config 
+can be defined as a single object that will be used by all available exporters:</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;datecolumn&#39;,
+    dataIndex: &#39;date&#39;,
+    text: &#39;Date&#39;,
+    width: 120,
+
+    exportStyle: {
+        alignment: {
+            horizontal: &#39;Right&#39;
+        },
+
+        font: {
+            bold: true
+        },
+        format: &#39;Short Date&#39;
+    }
+}
+</code></pre><p>It could also be defined as an array of objects, each object having a &quot;type&quot; property that specifies the 
+exporter to which it applies:</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;numbercolumn&#39;,
+    dataIndex: &#39;price&#39;,
+    text: &#39;Price&#39;,
+
+    exportStyle: [{
+        type: &#39;html&#39;, // used by the html exporter
+        format: &#39;Currency&#39;,
+
+        alignment: {
+            horizontal: &#39;Right&#39;
+        },
+
+        font: {
+            italic: true
+        }
+
+    },{
+        type: &#39;csv&#39;, // used by the csv exporter
+        format: &#39;General&#39;
+    }]
+}
+</code></pre><p>When the array form is used, if the first entry does not have a &quot;type&quot; property it will be used for exporters that 
+don&#39;t have a matching entry for its type.</p>
+<pre><code class="language-javascript">{
+    xtype: &#39;numbercolumn&#39;,
+    dataIndex: &#39;price&#39;,
+    text: &#39;Price&#39;,
+
+    exportStyle: [{
+        // no &quot;type&quot; defined means this is the default
+
+        format: &#39;Currency&#39;,
+
+        alignment: {
+            horizontal: &#39;Right&#39;
+        },
+
+        font: {
+            italic: true
+        }
+    },{
+        type: &#39;csv&#39;, // only the CSV exporter has a special style
+        format: &#39;General&#39;
+    }]
+}
+</code></pre><h3 id="whats_new-_-whats_new_-_circular_gauge">Circular Gauge<a class="quick-link" href="#whats_new-_-whats_new_-_circular_gauge"></a></h3>
+<p>The new &quot;gauge&quot; component is a cross-toolkit way to easily display progress where you might otherwise have used a 
+progress bar or a specially configured donut chart.</p>
+<p><img src="images/62_image_7.png" alt="image alt text"></p>
+<p>There are many styling options that control the gauge appearance, including a &quot;ui&quot; mixin to set various styles on the 
+SVG elements. In this example, we changed the &quot;value&quot; fill color and the tracks&#39; start angle and length (270° vs 360°):</p>
+<pre><code class="language-javascript">items: [{
+    xtype: &#39;gauge&#39;,
+    bind: &#39;{value}&#39;
+}, {
+    xtype: &#39;gauge&#39;,
+    ui: &#39;green&#39;,
+    trackStart: 180,
+    trackLength: 360,
+    bind: &#39;{value}&#39;
+}]
+</code></pre><p>Note that IE8 does not support SVG.</p>
+<h3 id="whats_new-_-whats_new_-_google_api">Google API<a class="quick-link" href="#whats_new-_-whats_new_-_google_api"></a></h3>
+<p>Several new helper classes that streamline use of Google API&#39;s are now available in the new &quot;google&quot; package. This 
+package is also the new home for all previously released Google API helper classes (for example 
+<a href='../../../6.2.0/classic/Ext.ux.google.Feeds.html'>Ext.ux.google.Feeds</a> now lives in this new package).</p>
+<p>In previous releases, some Google API classes were provided in the &quot;ux&quot; package. Moving these to the &quot;google&quot; package 
+will help applications that don&#39;t use Google API&#39;s avoid the need to download them during application load.</p>
+<h2 id="whats_new-_-whats_new_-_modern_toolkit">Modern Toolkit<a class="quick-link" href="#whats_new-_-whats_new_-_modern_toolkit"></a></h2>
+<p>There is a lot to get excited about in this release of the Modern Toolkit! The themes for Android and iOS are 
+completely new and refreshed. The grid has gained a number of new features while a number of other components, formerly 
+available only on the Classic Toolkit, are now available.</p>
+<h3 id="whats_new-_-whats_new_-_material_theme">Material Theme<a class="quick-link" href="#whats_new-_-whats_new_-_material_theme"></a></h3>
+<p>Since Google announced their Material Design specification, many applications have adopted its guidelines. The new 
+material theme closely follows the Material Design spec to ensure that not only do your mobile apps fit right in on 
+Android, all your apps look fresh and clean on any device.</p>
+<p><img src="images/material-colors.gif" alt="image alt text">        </p>
+<p><img src="images/dark-mode.gif" alt="image alt text"></p>
+<p>Material Design is much more than just color and icons, so the new material theme handles everything from spacing and 
+fonts to shadows and ripples effects.</p>
+<p><img src="images/ripples.gif" alt="image alt text"></p>
+<h3 id="whats_new-_-whats_new_-_new_ios_theme">New iOS Theme<a class="quick-link" href="#whats_new-_-whats_new_-_new_ios_theme"></a></h3>
+<p>To go along with the Material theme, we&#39;ve created an all new and refreshed theme for iOS devices called &quot;theme-ios&quot;.</p>
+<p><img src="images/62_image_11.png" alt="image alt text"></p>
+<p><img src="images/62_image_12.png" alt="image alt text"></p>
+<p>Future releases of &quot;theme-ios&quot; will evolve along with the style of future releases of Apple&#39;s iOS.</p>
+<h3 id="whats_new-_-whats_new_-_other_theme_updates">Other Theme Updates<a class="quick-link" href="#whats_new-_-whats_new_-_other_theme_updates"></a></h3>
+<p>The addition of theme-material and theme-ios represent a significant convergence on the Theme API for the modern 
+toolkit. Because they are not based on the Theme API, the previous device themes (theme-cupertino, theme-mountainview), 
+while still included in the release, are deprecated and will be removed in the next major release.</p>
+<p>The Theme API has been expanded to include ui mixins for many additional components such as the form field family 
+and grid rows and cells.</p>
+<h3 id="whats_new-_-whats_new_-_pivot_grid_ext_js_premium_">Pivot Grid (Ext JS Premium)<a class="quick-link" href="#whats_new-_-whats_new_-_pivot_grid_ext_js_premium_"></a></h3>
+<p>All of the powerful data analysis capabilities of the Pivot Grid introduced in Classic Toolkit of Ext JS 6.0 are also 
+now available in the Modern Toolkit grid. The user experience of the Modern Toolkit Pivot Grid has been optimized for 
+mobile as well as desktop.</p>
+<h3 id="whats_new-_-whats_new_-_grids_and_trees">Grids and Trees<a class="quick-link" href="#whats_new-_-whats_new_-_grids_and_trees"></a></h3>
+<p>In addition to the all new features of the Ext JS grid, the Modern Toolkit grid has several enhancements that were 
+previously only available in the Classic Toolkit.</p>
+<p>First among the new arrivals is the <a href='../../../6.2.0/modern/Ext.grid.column.Tree.html'>tree column</a> component. With treecolumn you can 
+now display buffered rendered trees or tree-grids (tree&#39;s with multiple columns). The <a href='../../../6.2.0/modern/Ext.grid.column.RowNumberer.html'>rownumberer</a> component is also now available for the Modern Toolkit grid.</p>
+<h3 id="whats_new-_-whats_new_-_sparklines">Sparklines<a class="quick-link" href="#whats_new-_-whats_new_-_sparklines"></a></h3>
+<p>The collection of sparklines (micro-charts) are now also available for the Modern Toolkit. That is to say, the 
+following types of sparklines are supported:</p>
+<ul>
+<li><p>Line <img src="images/62_image_13.png" alt="image alt text"></p>
+</li>
+<li><p>Bar <img src="images/62_image_14.png" alt="image alt text"></p>
+</li>
+<li><p>Discrete <img src="images/62_image_15.png" alt="image alt text"></p>
+</li>
+<li><p>Bullet <img src="images/62_image_16.png" alt="image alt text"></p>
+</li>
+<li><p>Pie <img src="images/62_image_17.png" alt="image alt text"></p>
+</li>
+<li><p>Box <img src="images/62_image_18.png" alt="image alt text"></p>
+</li>
+<li><p>Tri-state <img src="images/62_image_19.png" alt="image alt text"></p>
+</li>
+</ul>
+<h3 id="whats_new-_-whats_new_-_floated_components">Floated Components<a class="quick-link" href="#whats_new-_-whats_new_-_floated_components"></a></h3>
+<p>In Ext JS 6.0, the Modern Toolkit used a basic z-index mechanism to control stacking order. While this worked well 
+enough for simpler, mobile interfaces, its limitations could be felt most significantly when targeting the desktop.</p>
+<p>The new floated config on <a href='../../../6.2.0/modern/Ext.Widget.html'>Ext.Widget</a> provides a simple 
+and flexible way to organize items that are not constrained to their owning container. When a component is floated, 
+its element is not rendered into its parent&#39;s element hierarchy. Instead it is placed in a special &quot;float root&quot; 
+element. This allows the floated component to stay above other, non-floated components as well as not be clipped 
+at its container&#39;s bounding box.</p>
+<p>Floated containers can also contain other floated components. These floated children are placed in a separate
+&quot;float wrapper&quot; that allows these child components to escape their parent floated container&#39;s bounding box but also 
+stay on top of it at all times.</p>
+<p>These arrangements are essential for the more involved situations that arise from modal masks and tooltips that are 
+associated with floated components.</p>
+<h3 id="whats_new-_-whats_new_-_tooltips">Tooltips<a class="quick-link" href="#whats_new-_-whats_new_-_tooltips"></a></h3>
+<p>An essential component to most desktop experiences, tooltips are now available on the Modern Toolkit. Tooltips are 
+typically used in their default form which are <code>floated</code> components that appear in response to a mouse hover. Tooltips 
+can also be configured to appear on tap events as well.</p>
+<p>When a tooltip is displayed it can be aligned to its target in flexible way using the 
+<a href='../../../6.2.0/modern/Ext.tip.ToolTip.html#cfg-align'>align</a> config. Previously, the alignment options were limited to some corners and 
+some center points. For example, a tooltip could be aligned to the top-left using the &quot;tl&quot; specification. In the 
+presence of constraints, however, this did not indicate whether the top or left edge was more important.</p>
+<p>The new syntax consists of an edge name (&quot;t&quot;, &quot;l&quot;, &quot;r&quot; and &quot;b&quot;) and a percentage number. So there are then two 
+almost equivalent ways to describe &quot;tl&quot; using this form: &quot;t0&quot; and &quot;l0&quot;. The first indicates &quot;0% from left-to-right 
+on the top-edge&quot; while the second indicates &quot;0% from top-to-bottom on the left edge&quot;. The difference between the new 
+form and the &quot;tl&quot; form is that the new alignment specification indicates an edge preference as well as a coordinate. Of 
+course, the number not only contains the edge preference but also provides arbitrary control over the 
+desired coordinates.</p>
+<p>For example:</p>
+<p><img src="images/62_image_20.png" alt="image alt text"></p>
+<pre><code class="language-javascript">align: &#39;t25-b80&#39;,
+anchor: true`
+</code></pre><p>The new &quot;align&quot; syntax is also supported on the Classic Toolkit.</p>
+<h3 id="whats_new-_-whats_new_-_ext_tip_manager">Ext.tip.Manager<a class="quick-link" href="#whats_new-_-whats_new_-_ext_tip_manager"></a></h3>
+<p>In most use cases for tooltips, only a single tip is presented at one time. The Classic Toolkit provides this 
+functionality in the <a href='../../../6.2.0/classic/Ext.tip.QuickTipManager.html'>Ext.tip.QuickTipManager</a> singleton. Instead of a singleton, the Modern Toolkit provides 
+more flexibility by allowing the application to create and configure these features via <a href='../../../6.2.0/modern/Ext.tip.Manager.html'>Ext.tip.Manager</a>. An 
+instance of this class can be configured using the <code>quickTips</code> application config property:</p>
+<pre><code class="language-javascript">Ext.application({
+    quickTips: true
+});
+</code></pre><p>Or a config object can be provided to configure the tooltip manager and its single 
+<a href='../../../6.2.0/modern/Ext.tip.ToolTip.html'>Ext.tip.ToolTip</a> instance:</p>
+<pre><code class="language-javascript">Ext.application({
+
+    quickTips: {
+        interceptTitles: true,
+
+        tooltip: {
+            // Ext.tip.ToolTip configs
+        }
+    }
+});
+</code></pre><p>Alternatively, if you are not using the Ext JS application architecture, you can create
+an <code>Ext.tip.Manager</code> directly:</p>
+<pre><code class="language-javascript">quickTips = new Ext.tip.Manager({
+    interceptTitles: true,
+
+    tooltip: {
+        // Ext.tip.ToolTip configs
+    }
+});
+</code></pre><h3 id="whats_new-_-whats_new_-_text_field_triggers">Text Field Triggers<a class="quick-link" href="#whats_new-_-whats_new_-_text_field_triggers"></a></h3>
+<p>The <code>textfield</code> component can now be decorated on the left and/or right sides using the &quot;triggers&quot; config. For example:</p>
+<p><img src="images/62_image_21.png" alt="image alt text"></p>
+<p>This feature was previously only available in the Classic Toolkit. The API for adding triggers is largely the same as 
+for Classic:</p>
+<pre><code class="language-javascript">xtype: &#39;textfield&#39;,
+label: &#39;Username&#39;,
+
+triggers: {
+
+    at: {
+        ui: &#39;at&#39;,
+        side: &#39;left&#39;
+    },
+
+    twitter: {
+        ui: &#39;twitter&#39;,
+        handler: &#39;onTwitter&#39;
+    },
+
+    facebook: {
+        ui: &#39;facebook&#39;,
+        handler: &#39;onFacebook&#39;
+    }
+}
+</code></pre><p>As in Classic, the triggers config is an object of named triggers. Each of these is an object with a &quot;handler&quot; property 
+describing the method to call when the trigger is activated. The &quot;side&quot; config is used to place the trigger before the 
+input element or after it (the default).</p>
+<p>We could use the &quot;cls&quot; config as on Classic, however, the &quot;ui&quot; config is prefered on the Modern Toolkit. This is 
+because there is a convenient UI mixin that adjusts all the styles of the trigger and hides the implementation details:</p>
+<pre><code class="language-javascript">@include trigger-ui(
+    $ui: at,
+    $background-color: $neutral-light-color,
+    $icon: $fa-var-at
+);
+
+@include trigger-ui(
+    $ui: twitter,
+    $icon: $fa-var-twitter
+);
+
+@include trigger-ui(
+    $ui: facebook,
+    $icon: $fa-var-facebook
+);
+</code></pre><p>As with other UI mixins on the Modern Toolkit, the trigger-ui() mixin generates only the minimal CSS needed to 
+achieve the desired outcome:</p>
+<pre><code class="language-javascript">.x-trigger-at {
+    background-color: #f6f6f6;
+}
+
+.x-trigger-at .x-icon-el:before {
+    content: &quot;\f1fa&quot;;
+}
+
+.x-trigger-twitter .x-icon-el:before {
+    content: &quot;\f099&quot;;
+}
+
+.x-trigger-facebook .x-icon-el:before {
+    content: &quot;\f09a&quot;;
+}
+</code></pre><p>All other trigger styling comes from the standard CSS classes applied to the trigger component (such as &quot;x-trigger&quot;).</p>
+<h2 id="whats_new-_-whats_new_-_classic_toolkit">Classic Toolkit<a class="quick-link" href="#whats_new-_-whats_new_-_classic_toolkit"></a></h2>
+<p>While there is a significant focus on the Modern Toolkit and achieving parity between the toolkits, the Classic 
+Toolkit has gained a handful of useful items.</p>
+<h3 id="whats_new-_-whats_new_-_grids">Grids<a class="quick-link" href="#whats_new-_-whats_new_-_grids"></a></h3>
+<p>In Ext JS 6.0, the Modern Toolkit grid was introduced and it had the ability to provide a ViewModel for each 
+rendered row. This ViewModel would be populated with a &quot;record&quot; property that could be used by cell widgets 
+(and now row-body widgets) to bind record values to any desired config (e.g., &quot;hidden&quot; or &quot;disabled&quot;).</p>
+<p>This is now available for the Classic Toolkit grid. For details see this <a href="../components/widgets_widgets_columns.html">guide</a>.</p>
+<h4 id="whats_new-_-whats_new_-_collapsible_locking">Collapsible Locking<a class="quick-link" href="#whats_new-_-whats_new_-_collapsible_locking"></a></h4>
+<p>The ability to resize and collapse the locked side of a locking grid is now possible and is demonstrated in the 
+Big Data Grid example:</p>
+<p><img src="images/62_image_22.png" alt="image alt text"></p>
+<p>The locked side can be temporarily &quot;floated&quot; into view by tapping on the title or restored into place by tapping the 
+expander icon. These feature probably sound familiar as they have been available for a long time in the popular 
+<a href='../../../6.2.0/classic/Ext.layout.container.Border.html'>border</a> layout. In fact, this is how we configure a locking grid to achieve this:</p>
+<pre><code class="language-javascript">Ext.define(&#39;KitchenSink.view.grid.BigData&#39;, {
+    extend: &#39;Ext.grid.Panel&#39;,
+
+    //...
+
+    layout: &#39;border&#39;,
+    split: true,
+}
+</code></pre><p>This works because of the flexibility of the Ext JS locking grid: it is a managed container of two child grids! In 
+previous releases, only the <a href='../../../6.2.0/classic/Ext.layout.container.HBox.html'>hbox</a> layout was supported for this container so while 
+a splitter resizer was possible, collapsing was not.</p>
+<h4 id="whats_new-_-whats_new_-_column_sorters">Column Sorters<a class="quick-link" href="#whats_new-_-whats_new_-_column_sorters"></a></h4>
+<p>Typically the data displayed in a grid is sorted and filtered as described by the underlying 
+<a href='../../../6.2.0/modern/Ext.data.Store.html'>store</a>. Because these attributes of the data are primarily visual, at times it is more 
+convenient for the grid to take responsibility for these things. This can now be accomplished with regard to sorting 
+columns using the new <a href='../../../6.2.0/classic/Ext.grid.column.Column.html#cfg-sorter'>sorter</a> config on <a href='../../../6.2.0/classic/Ext.grid.column.Column.html'>Ext.grid.column.Column</a>. For example:</p>
+<pre><code class="language-javascript">columns: [{
+    text: &#39;Name&#39;,
+    sorter: &#39;fullName&#39;
+}, {
+    text: &#39;Address&#39;,
+    sorter: {
+        sorterFn: &#39;sortAddress&#39;   // see ViewController
+    }
+}]
+</code></pre><p>One key difference between column sorters and store sorters (beyond aesthetic) is that column sorters are owned by 
+the grid column. Removing the column, removes the sorter. Changing stores will remove the sorter from the outgoing 
+store and add it to the incoming store.</p>
+<h3 id="whats_new-_-whats_new_-_pivot_grid_ext_js_premium_">Pivot Grid (Ext JS Premium)<a class="quick-link" href="#whats_new-_-whats_new_-_pivot_grid_ext_js_premium_"></a></h3>
+<p>In Ext JS 6, users can edit values presented in a Pivot Grid via the <a href='../../../6.2.0/modern/Ext.pivot.plugin.RangeEditor.html'>rangeeditor</a> 
+plugin on both Modern and Classic Toolkits. A streamlined form of editing is now available on the Classic Toolkit 
+only using the <a href='../../../6.2.0/classic/Ext.pivot.plugin.CellEditing.html'>pivotcellediting</a> plugin. This type of edit looks like the normal 
+inline cell editing of the Classic Toolkit grid but the entered value is applied to the members of the 
+aggregate collection.</p>
+<h3 id="whats_new-_-whats_new_-_data_binding">Data Binding<a class="quick-link" href="#whats_new-_-whats_new_-_data_binding"></a></h3>
+<p>Binding to <a href='../../../6.2.0/classic/Ext.form.RadioGroup.html'>radio group</a> components is now possible using the 
+<a href='../../../6.2.0/classic/Ext.form.RadioGroup.html'>simpleValue</a> config. When enabled, this changes the value config of the RadioGroup to be 
+the value of the checked radio button. Using simpleValue, applications can now directly bind to the value of a 
+radiogroup and no longer worry about the individual radio buttons.</p>
+<h3 id="whats_new-_-whats_new_-_accessibility">Accessibility<a class="quick-link" href="#whats_new-_-whats_new_-_accessibility"></a></h3>
+<p>Ext JS 6.0 laid the foundation for building accessible widgets, and Ext JS 6.2 takes advantage of that to bring state 
+of the art accessibility support to the majority of Classic Toolkit components. So if accessibility is a goal for your 
+application, Ext JS 6.2 is the place to be!</p>
+<p>We are pleased to announce that WAI-ARIA attributes and behaviors are now supported for the following components:</p>
+<ul>
+<li><p>Ext.LoadMask</p>
+</li>
+<li><p>Ext.ProgressBar</p>
+</li>
+<li><p>Ext.grid.property.Grid</p>
+</li>
+<li><p>Ext.menu.Bar</p>
+</li>
+<li><p>Ext.form.field.Display</p>
+</li>
+<li><p>Ext.form.field.Tag</p>
+</li>
+<li><p>Ext.tree.Panel</p>
+</li>
+<li><p>Ext.window.MessageBox</p>
+</li>
+</ul>
+<p>In addition, in Ext JS 6.2 several components now utilize native HTML elements where possible to improve WAI-ARIA 
+support as well as keyboard navigation. Notably, Checkboxes and Radio buttons now use <code>&lt;input type=&quot;checkbox&quot;&gt;</code> and 
+<code>&lt;input type=&quot;radio&quot;&gt;</code> instead of <code>&lt;input type=&quot;button&quot;&gt;</code>, and make use of native keyboard navigation.</p>
+<p>The following changes were made to Panel and Window behavior:</p>
+<ul>
+<li><p>Panel and Window headers will no longer make Close tool focusable. If there is only Close tool in the header, it will 
+not be included in the tab order anymore. </p>
+</li>
+<li><p>Bottom Toolbars created via buttons config option will have FocusableContainer behavior disabled by default, and 
+all buttons will be included in tab order. This does not apply to Toolbars created via tbar, bbar, rbar, and lbar 
+config options.</p>
+</li>
+<li><p>When used in Accordion layout, Panel headers can now be focused by pressing Ctrl-Up key within the panel body.</p>
+</li>
+</ul>
+<p>Keyboard navigation and Assistive Technology support was improved in the following components:</p>
+<ul>
+<li><p>Ext.form.field.Checkbox</p>
+</li>
+<li><p>Ext.form.field.Radio</p>
+</li>
+<li><p>Ext.form.field.ComboBox</p>
+</li>
+<li><p>Ext.form.CheckboxGroup</p>
+</li>
+<li><p>Ext.form.RadioGroup</p>
+</li>
+<li><p>Ext.form.FieldSet</p>
+</li>
+</ul>
+<p>A variety of helpful warnings are generated by the framework to help you spot compliance issues. If now is not the time 
+to address these issues in your application, they can be disabled by adding the following line before creating 
+your components:</p>
+<pre><code class="language-javascript">Ext.ariaWarn = Ext.emptyFn;
+</code></pre><h2 id="whats_new-_-whats_new_-_sencha_cmd">Sencha Cmd<a class="quick-link" href="#whats_new-_-whats_new_-_sencha_cmd"></a></h2>
+<p>Since the Ext JS 6.0 release, Sencha Cmd has had two minor feature releases (6.1 and now 6.2) so for all the details, 
+see the What&#39;s New in Sencha Cmd 6.2 article. The most useful new feature of Sencha Cmd 6.2, however, is its ability 
+to export theme variables (like $base-color) as CSS variables!</p>
+<h2 id="whats_new-_-whats_new_-_css_variables">CSS Variables<a class="quick-link" href="#whats_new-_-whats_new_-_css_variables"></a></h2>
+<p>If you have always wanted to adjust your application&#39;s theme on-the-fly, then we&#39;ve saved the best news for last!</p>
+<p>Fashion, Sencha&#39;s theme compiler, was introduced with Ext JS 6.0 and is a pure JavaScript implementation that closely 
+follows the Sass language. Beyond being JavaScript-based, Fashion added a key language feature called dynamic 
+variables. Dynamic variables are a tool-friendly language feature designed to enable introspection and manipulation 
+of arbitrary bodies of theme code.</p>
+<p>On a parallel track, since Ext JS 6.0 was released, many browsers now <a href="http://caniuse.com/#feat=css-variables" class="external-link" target="_blank">support</a> 
+the CSS Variables spec:</p>
+<p><img src="images/62_image_23.png" alt="image alt text"></p>
+<p>CSS Variables enable Fashion to export much of the indirection found in a theme&#39;s source code and preserve it in
+CSS form. While CSS Variables are powerful and exciting, however, they cannot contain complex expressions beyond
+the basic <code>calc()</code> .</p>
+<p>This is where Fashion&#39;s JavaScript nature comes into play. At its core, Fashion compiles theme source code into
+a JavaScript function and then executes that function to produce the CSS. This function accepts an optional
+collection of overriding values for any of the dynamic variables. These values, and those that remain unchanged
+from the source, are used to calculate a complete set of values that are then used to generate a different CSS outcome.</p>
+<p>To supply what is lacking with CSS Variables, this computation can stop with just the variable values. Simply put the 
+new variables values into the DOM and the browser does the rest in a few milliseconds! To automate this process, 
+Fashion can now generate a JavaScript file that contains only that piece of theme logic.</p>
+<p>To see how this works, let&#39;s start with some variables:</p>
+<pre><code class="language-javascript">$base-color: dynamic(blue);
+$panel-header-background-color: dynamic(mix(#fff, $base-color, 10%));
+</code></pre><p>These two dynamic variables hold important values that we want to manipulate at run-time, so we need to map them to 
+CSS Variables. This is done like so:</p>
+<pre><code class="language-javascript">html {
+    --base-color: export;
+    --panel-header-background-color: export;
+}
+</code></pre><p>There are two key parts in the above: the CSS Variable names match (except for the &quot;$&quot; or &quot;--&quot; prefix); the value is 
+the special token &quot;export&quot;. To complete the example, we need only consider a style rule where one of these variables 
+is used:</p>
+<pre><code class="language-javascript">.x-panel-header {
+    background-color: $panel-header-background-color;
+}
+</code></pre><p>When Fashion compiles the above into CSS, it will put the final values of the dynamic variables in for the CSS Variables:</p>
+<pre><code class="language-javascript">html {
+    --base-color: blue;
+    --panel-header-background-color: lightened-blue; // sort of
+}
+</code></pre><p>Where these dynamic variables were used, Fashion will duplicate the style rules to support old browsers as well as 
+new ones:</p>
+<pre><code class="language-javascript">.x-panel-header {
+    background-color: lightened-blue;  // for IE, Edge, old devices
+    background-color: var(--panel-header-background-color);
+}
+</code></pre><p>Lastly, the build produces &quot;css-vars.js&quot; for you to include and update variables at run-time:</p>
+<pre><code class="language-javascript">Fashion.css.setVariables({
+    &#39;base-color&#39;: &#39;green&#39;
+});
+</code></pre><p>The code in &quot;css-vars.js&quot; is generated from the theme source and will include the mix() call to produce the proper 
+value for $panel-header-background-color and update the CSS Variable --panel-header-background-color accordingly.</p>
+<h2 id="whats_new-_-whats_new_-_conclusion">Conclusion<a class="quick-link" href="#whats_new-_-whats_new_-_conclusion"></a></h2>
+<p>As you can see, there is something exciting for everyone! So whether you are developing mobile apps, desktop apps or a 
+mixture of both, we look forward to seeing what amazing experiences you create using the building blocks in Ext JS 6.2!</p>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            <a href="https://www.facebook.com/senchainc/" target="_blank"><img class="social" src="../../home-images/fb.png"/></a>
+            <a href="https://www.linkedin.com/company/sencha-inc" target="_blank"><img class="social" src="../../home-images/in.png"/></a>
+            <a href="https://twitter.com/Sencha" target="_blank"><img class="social" src="../../home-images/twt.png"/></a>
+            Ext JS 6.2.0  | <a href='https://www.sencha.com/legal/terms-of-use/' target='_blank'>Terms of Use</a>
+        </p>
+    </div>
+</div>
+
+            
+            
+        </div>
+    </div>
+    <h2 class="product-header"><a href="../../index.html">Ext JS 6.2.0 </a>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+        <div id="peekaboo-input" class="peekaboo-input">
+            <input type="text" id="mobile-input" />
+        </div>
+    </h2>
+
+    <div id="product-tree-ct" class="hide">
+        <div id="product-tree">
+            <div class="product-name-ct">
+                    <div id="product-menu-extjs" class="product-name-item">Ext JS</div>
+                    <div id="product-menu-sencha_test" class="product-name-item">Sencha Test</div>
+                    <div id="product-menu-cmd" class="product-name-item">Cmd</div>
+                    <div id="product-menu-themer" class="product-name-item">Sencha Themer</div>
+                    <div id="product-menu-gxt" class="product-name-item">GXT</div>
+                    <div id="product-menu-ide_plugins" class="product-name-item">IDE Plugins</div>
+                    <div id="product-menu-sencha_inspector" class="product-name-item">Sencha Inspector</div>
+                    <div id="product-menu-architect" class="product-name-item">Architect</div>
+                    <div id="product-menu-fiddle" class="product-name-item">Sencha Fiddle</div>
+                    <div id="product-menu-touch" class="product-name-item">Touch</div>
+            </div>
+                <div class="product-version-ct hide extjs">
+                        <h2>Ext JS</h2>
+                            <h3>6.x</h3>
+                                        <a class="product-item" href="../../index.html">6.2.0</a>
+                                        <a class="product-item" href="../../../6.0.2/index.html">6.0.2</a>
+                                        <a class="product-item" href="../../../6.0.1/index.html">6.0.1</a>
+                                        <a class="product-item" href="../../../6.0.0/index.html">6.0.0</a>
+                            <h3>5.x</h3>
+                                        <a class="product-item" href="../../../5.1.3/index.html">5.1.3</a>
+                                        <a class="product-item" href="../../../5.1.2/index.html">5.1.2</a>
+                                        <a class="product-item" href="../../../5.1.1/index.html">5.1.1</a>
+                                        <a class="product-item" href="../../../5.1.0/index.html">5.1.0</a>
+                                        <a class="product-item" href="../../../5.0.1/index.html">5.0.1</a>
+                                        <a class="product-item" href="../../../5.0.0/index.html">5.0.0</a>
+                            <h3>4.x</h3>
+                                        <a class="product-item" href="../../../4.2.6/">4.2.6</a>
+                                        <a class="product-item" href="../../../4.1.3/">4.1.3</a>
+                                        <a class="product-item" href="../../../4.0.7/">4.0.7</a>
+                            <h3>3.x</h3>
+                                        <a class="product-item" href="../../../3.4.0/">3.4.0</a>
+                </div>
+                <div class="product-version-ct hide sencha_test">
+                        <h2>Sencha Test</h2>
+                                <a class="product-item" href="../../../../sencha_test/2.0.0/">2.0.0 EA</a>
+                                <a class="product-item" href="../../../../sencha_test/1.0.3/">1.0.3</a>
+                </div>
+                <div class="product-version-ct hide cmd">
+                        <h2>Cmd</h2>
+                        <a  href="../../../../cmd/index.html">Cmd</a>
+                </div>
+                <div class="product-version-ct hide themer">
+                        <h2>Sencha Themer</h2>
+                                <a class="product-item" href="../../../../themer/1.1/">1.1.0 EA</a>
+                                <a class="product-item" href="../../../../themer/1.0/">1.0.1</a>
+                </div>
+                <div class="product-version-ct hide gxt">
+                        <h2>GXT</h2>
+                                <a class="product-item" href="../../../../gxt/5.x/index.html">5.x EA</a>
+                                <a class="product-item" href="../../../../gxt/4.x/index.html">4.x</a>
+                                <a class="product-item" href="../../../../gxt/3.x/index.html">3.x</a>
+                </div>
+                <div class="product-version-ct hide ide_plugins">
+                        <h2>IDE Plugins</h2>
+                        <a  href="../../../../ide_plugins/index.html">IDE Plugins</a>
+                </div>
+                <div class="product-version-ct hide sencha_inspector">
+                        <h2>Sencha Inspector</h2>
+                        <a  href="../../../../sencha_inspector/index.html">Sencha Inspector</a>
+                </div>
+                <div class="product-version-ct hide architect">
+                        <h2>Architect</h2>
+                                <a class="product-item" href="../../../../architect/4.1/index.html">Architect 4.1 EA</a>
+                                <a class="product-item" href="../../../../architect/4/index.html">Architect 4</a>
+                                <a class="product-item" href="../../../../architect/3/index.html">Architect 3</a>
+                </div>
+                <div class="product-version-ct hide fiddle">
+                        <h2>Sencha Fiddle</h2>
+                        <a  href="../../../../fiddle/index.html">Sencha Fiddle</a>
+                </div>
+                <div class="product-version-ct hide touch">
+                        <h2>Touch</h2>
+                            <h3>2.x</h3>
+                                        <a class="product-item" href="../../../../touch/2.4/index.html">Touch 2.4</a>
+                                        <a class="product-item" href="../../../../touch/2.3.1/">Touch 2.3</a>
+                                        <a class="product-item" href="../../../../touch/2.2.1/">Touch 2.2</a>
+                                        <a class="product-item" href="../../../../touch/2.0.2/">Touch 2.0</a>
+                </div>
+        </div>
+    </div>
+
+    <div id="historyConfigPanel">
+        <div class="history-type-selector">
+            <input id="historyTypeCurrent" type="radio" name="historyType" value="current" checked="true" />
+            <label for="historyTypeCurrent">Current Product / Version</label><br>
+            <input id="historyTypeAll" type="radio" name="historyType" value="all" />
+            <label for="historyTypeAll">All</label><br>
+            <div id="history-label-toggle">
+                <input id="history-all-labels" type="checkbox" checked="true" />
+                <label for="history-all-labels">Show product details in the history bar</label>
+                <div class="mask"></div>
+            </div>
+            <span id="history-clear" class="history-clear tooltip tooltip-tr-br" data-tip="Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="history-full-list"></div>
+    </div>
+
+    <div id="search-history-panel"></div>
+
+    <div id="modal-placeholder" class="modal">
+        <span id="modal-close">&times;</span>
+        <img id="modal-content">
+        <div id="modal-caption"></div>
+    </div>
+
+</body>
+    <script type="text/javascript" src="../../js/searchIndex.js"></script>
+    <script type="text/javascript" src="../../js/guideSearch.js"></script>
+<!--[if lt IE 9 ]>
+<script type="text/javascript" src="../../js/media-query-poly.js"></script>
+<style>
+    span.da-inline-fiddle-nav-fiddle.x-fa.fa-play-circle {
+        display: none;
+    }
+</style>
+<![endif]-->
+<script>
+    if (navigator.userAgent.indexOf("Safari") > -1) {
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload()
+            }
+        };
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+            //
+        }
+    }
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1396058-28', 'auto');
+    ga('send', 'pageview');
+</script>
+</html>

@@ -1,0 +1,19 @@
+{  children: [{
+        text: 'Child 1',
+        expanded: true,
+        children: [{
+            text: 'Child 1.1',
+            leaf: true
+        }, {
+            text: 'Child 1.2',
+            leaf: true
+        }]
+    }, {
+        text: 'Child 2',
+        expanded: true,
+        children: [{
+            text: 'Child 2.1',
+            leaf: true
+        }]
+    }]
+}

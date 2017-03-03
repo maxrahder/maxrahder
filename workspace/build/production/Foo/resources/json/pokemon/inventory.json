@@ -1,0 +1,285 @@
+[{
+  "name": "Bulbasaur",
+  "resource_uri": "api/v1/pokemon/1/",
+  "pokedex": 1,
+  "hp": 45,
+  "defense": 49,
+  "attack": 49,
+  "speed": 45
+}, {
+  "name": "Ivysaur",
+  "resource_uri": "api/v1/pokemon/2/",
+  "pokedex": 2,
+  "hp": 60,
+  "defense": 63,
+  "attack": 62,
+  "speed": 60
+}, {
+  "name": "Venusaur",
+  "resource_uri": "api/v1/pokemon/3/",
+  "pokedex": 3,
+  "hp": 80,
+  "defense": 83,
+  "attack": 82,
+  "speed": 80
+}, {
+  "name": "Charmander",
+  "resource_uri": "api/v1/pokemon/4/",
+  "pokedex": 4,
+  "hp": 39,
+  "defense": 43,
+  "attack": 52,
+  "speed": 65
+}, {
+  "name": "Charmeleon",
+  "resource_uri": "api/v1/pokemon/5/",
+  "pokedex": 5,
+  "hp": 58,
+  "defense": 58,
+  "attack": 64,
+  "speed": 80
+}, {
+  "name": "Charizard",
+  "resource_uri": "api/v1/pokemon/6/",
+  "pokedex": 6,
+  "hp": 78,
+  "defense": 78,
+  "attack": 84,
+  "speed": 100
+}, {
+  "name": "Squirtle",
+  "resource_uri": "api/v1/pokemon/7/",
+  "pokedex": 7,
+  "hp": 44,
+  "defense": 65,
+  "attack": 48,
+  "speed": 43
+}, {
+  "name": "Wartortle",
+  "resource_uri": "api/v1/pokemon/8/",
+  "pokedex": 8,
+  "hp": 59,
+  "defense": 80,
+  "attack": 63,
+  "speed": 58
+}, {
+  "name": "Blastoise",
+  "resource_uri": "api/v1/pokemon/9/",
+  "pokedex": 9,
+  "hp": 79,
+  "defense": 100,
+  "attack": 83,
+  "speed": 78
+}, {
+  "name": "Caterpie",
+  "resource_uri": "api/v1/pokemon/10/",
+  "pokedex": 10,
+  "hp": 45,
+  "defense": 35,
+  "attack": 30,
+  "speed": 45
+}, {
+  "name": "Metapod",
+  "resource_uri": "api/v1/pokemon/11/",
+  "pokedex": 11,
+  "hp": 50,
+  "defense": 55,
+  "attack": 20,
+  "speed": 30
+}, {
+  "name": "Butterfree",
+  "resource_uri": "api/v1/pokemon/12/",
+  "pokedex": 12,
+  "hp": 60,
+  "defense": 50,
+  "attack": 45,
+  "speed": 70
+}, {
+  "name": "Weedle",
+  "resource_uri": "api/v1/pokemon/13/",
+  "pokedex": 13,
+  "hp": 40,
+  "defense": 30,
+  "attack": 35,
+  "speed": 50
+}, {
+  "name": "Kakuna",
+  "resource_uri": "api/v1/pokemon/14/",
+  "pokedex": 14,
+  "hp": 45,
+  "defense": 50,
+  "attack": 25,
+  "speed": 35
+}, {
+  "name": "Beedrill",
+  "resource_uri": "api/v1/pokemon/15/",
+  "pokedex": 15,
+  "hp": 65,
+  "defense": 40,
+  "attack": 90,
+  "speed": 75
+}, {
+  "name": "Pidgey",
+  "resource_uri": "api/v1/pokemon/16/",
+  "pokedex": 16,
+  "hp": 40,
+  "defense": 40,
+  "attack": 45,
+  "speed": 56
+}, {
+  "name": "Pidgeotto",
+  "resource_uri": "api/v1/pokemon/17/",
+  "pokedex": 17,
+  "hp": 63,
+  "defense": 55,
+  "attack": 60,
+  "speed": 71
+}, {
+  "name": "Pidgeot",
+  "resource_uri": "api/v1/pokemon/18/",
+  "pokedex": 18,
+  "hp": 83,
+  "defense": 75,
+  "attack": 80,
+  "speed": 101
+}, {
+  "name": "Rattata",
+  "resource_uri": "api/v1/pokemon/19/",
+  "pokedex": 19,
+  "hp": 30,
+  "defense": 35,
+  "attack": 56,
+  "speed": 72
+}, {
+  "name": "Raticate",
+  "resource_uri": "api/v1/pokemon/20/",
+  "pokedex": 20,
+  "hp": 30,
+  "defense": 35,
+  "attack": 56,
+  "speed": 72
+}, {
+  "name": "Spearow",
+  "resource_uri": "api/v1/pokemon/21/",
+  "pokedex": 21,
+  "hp": 40,
+  "defense": 30,
+  "attack": 60,
+  "speed": 70
+}, {
+  "name": "Fearow",
+  "resource_uri": "api/v1/pokemon/22/",
+  "pokedex": 22,
+  "hp": 65,
+  "defense": 65,
+  "attack": 90,
+  "speed": 100
+}, {
+  "name": "Ekans",
+  "resource_uri": "api/v1/pokemon/23/",
+  "pokedex": 23,
+  "hp": 35,
+  "defense": 44,
+  "attack": 60,
+  "speed": 55
+}, {
+  "name": "Arbok",
+  "resource_uri": "api/v1/pokemon/24/",
+  "pokedex": 24,
+  "hp": 60,
+  "defense": 69,
+  "attack": 85,
+  "speed": 80
+}, {
+  "name": "Pikachu",
+  "resource_uri": "api/v1/pokemon/25/",
+  "pokedex": 25,
+  "hp": 35,
+  "defense": 40,
+  "attack": 55,
+  "speed": 90
+}, {
+  "name": "Raichu",
+  "resource_uri": "api/v1/pokemon/26/",
+  "pokedex": 26
+}, {
+  "name": "Sandshrew",
+  "resource_uri": "api/v1/pokemon/27/",
+  "pokedex": 27,
+  "hp": 50,
+  "defense": 85,
+  "attack": 75,
+  "speed": 40
+}, {
+  "name": "Sandslash",
+  "resource_uri": "api/v1/pokemon/28/",
+  "pokedex": 28,
+  "hp": 75,
+  "defense": 110,
+  "attack": 100,
+  "speed": 65
+}, {
+  "name": "Nidoran",
+  "resource_uri": "api/v1/pokemon/29/",
+  "pokedex": 29,
+  "hp": 55,
+  "defense": 52,
+  "attack": 47,
+  "speed": 41
+}, {
+  "name": "Nidorina",
+  "resource_uri": "api/v1/pokemon/30/",
+  "pokedex": 30,
+  "hp": 70,
+  "defense": 67,
+  "attack": 62,
+  "speed": 56
+}, {
+  "name": "Nidoqueen",
+  "resource_uri": "api/v1/pokemon/31/",
+  "pokedex": 31,
+  "hp": 90,
+  "defense": 87,
+  "attack": 92,
+  "speed": 76
+}, {
+  "name": "Nidoran",
+  "resource_uri": "api/v1/pokemon/32/",
+  "pokedex": 32,
+  "hp": 46,
+  "defense": 40,
+  "attack": 57,
+  "speed": 50
+}, {
+  "name": "Nidorino",
+  "resource_uri": "api/v1/pokemon/33/",
+  "pokedex": 33,
+  "hp": 61,
+  "defense": 57,
+  "attack": 72,
+  "speed": 65
+}, {
+  "name": "Nidoking",
+  "resource_uri": "api/v1/pokemon/34/",
+  "pokedex": 34,
+  "hp": 81,
+  "defense": 77,
+  "attack": 102,
+  "speed": 85
+}, {
+  "name": "Clefairy",
+  "resource_uri": "api/v1/pokemon/35/",
+  "pokedex": 35,
+  "hp": 70,
+  "defense": 48,
+  "attack": 45,
+  "speed": 35
+}, {
+  "name": "Clefable",
+  "resource_uri": "api/v1/pokemon/36/",
+  "pokedex": 36,
+  "hp": 95,
+  "defense": 73,
+  "attack": 70,
+  "speed": 60
+}]

@@ -1,0 +1,3113 @@
+[{
+  "name": "Bulbasaur",
+  "resource_uri": "api/v1/pokemon/1/",
+  "pokedex": 1
+}, {
+  "name": "Ivysaur",
+  "resource_uri": "api/v1/pokemon/2/",
+  "pokedex": 2
+}, {
+  "name": "Venusaur",
+  "resource_uri": "api/v1/pokemon/3/",
+  "pokedex": 3
+}, {
+  "name": "Charmander",
+  "resource_uri": "api/v1/pokemon/4/",
+  "pokedex": 4
+}, {
+  "name": "Charmeleon",
+  "resource_uri": "api/v1/pokemon/5/",
+  "pokedex": 5
+}, {
+  "name": "Charizard",
+  "resource_uri": "api/v1/pokemon/6/",
+  "pokedex": 6
+}, {
+  "name": "Squirtle",
+  "resource_uri": "api/v1/pokemon/7/",
+  "pokedex": 7
+}, {
+  "name": "Wartortle",
+  "resource_uri": "api/v1/pokemon/8/",
+  "pokedex": 8
+}, {
+  "name": "Blastoise",
+  "resource_uri": "api/v1/pokemon/9/",
+  "pokedex": 9
+}, {
+  "name": "Caterpie",
+  "resource_uri": "api/v1/pokemon/10/",
+  "pokedex": 10
+}, {
+  "name": "Metapod",
+  "resource_uri": "api/v1/pokemon/11/",
+  "pokedex": 11
+}, {
+  "name": "Butterfree",
+  "resource_uri": "api/v1/pokemon/12/",
+  "pokedex": 12
+}, {
+  "name": "Weedle",
+  "resource_uri": "api/v1/pokemon/13/",
+  "pokedex": 13
+}, {
+  "name": "Kakuna",
+  "resource_uri": "api/v1/pokemon/14/",
+  "pokedex": 14
+}, {
+  "name": "Beedrill",
+  "resource_uri": "api/v1/pokemon/15/",
+  "pokedex": 15
+}, {
+  "name": "Pidgey",
+  "resource_uri": "api/v1/pokemon/16/",
+  "pokedex": 16
+}, {
+  "name": "Pidgeotto",
+  "resource_uri": "api/v1/pokemon/17/",
+  "pokedex": 17
+}, {
+  "name": "Pidgeot",
+  "resource_uri": "api/v1/pokemon/18/",
+  "pokedex": 18
+}, {
+  "name": "Rattata",
+  "resource_uri": "api/v1/pokemon/19/",
+  "pokedex": 19
+}, {
+  "name": "Raticate",
+  "resource_uri": "api/v1/pokemon/20/",
+  "pokedex": 20
+}, {
+  "name": "Spearow",
+  "resource_uri": "api/v1/pokemon/21/",
+  "pokedex": 21
+}, {
+  "name": "Fearow",
+  "resource_uri": "api/v1/pokemon/22/",
+  "pokedex": 22
+}, {
+  "name": "Ekans",
+  "resource_uri": "api/v1/pokemon/23/",
+  "pokedex": 23
+}, {
+  "name": "Arbok",
+  "resource_uri": "api/v1/pokemon/24/",
+  "pokedex": 24
+}, {
+  "name": "Pikachu",
+  "resource_uri": "api/v1/pokemon/25/",
+  "pokedex": 25
+}, {
+  "name": "Raichu",
+  "resource_uri": "api/v1/pokemon/26/",
+  "pokedex": 26
+}, {
+  "name": "Sandshrew",
+  "resource_uri": "api/v1/pokemon/27/",
+  "pokedex": 27
+}, {
+  "name": "Sandslash",
+  "resource_uri": "api/v1/pokemon/28/",
+  "pokedex": 28
+}, {
+  "name": "Nidoran",
+  "resource_uri": "api/v1/pokemon/29/",
+  "pokedex": 29
+}, {
+  "name": "Nidorina",
+  "resource_uri": "api/v1/pokemon/30/",
+  "pokedex": 30
+}, {
+  "name": "Nidoqueen",
+  "resource_uri": "api/v1/pokemon/31/",
+  "pokedex": 31
+}, {
+  "name": "Nidoran",
+  "resource_uri": "api/v1/pokemon/32/",
+  "pokedex": 32
+}, {
+  "name": "Nidorino",
+  "resource_uri": "api/v1/pokemon/33/",
+  "pokedex": 33
+}, {
+  "name": "Nidoking",
+  "resource_uri": "api/v1/pokemon/34/",
+  "pokedex": 34
+}, {
+  "name": "Clefairy",
+  "resource_uri": "api/v1/pokemon/35/",
+  "pokedex": 35
+}, {
+  "name": "Clefable",
+  "resource_uri": "api/v1/pokemon/36/",
+  "pokedex": 36
+}, {
+  "name": "Vulpix",
+  "resource_uri": "api/v1/pokemon/37/",
+  "pokedex": 37
+}, {
+  "name": "Ninetales",
+  "resource_uri": "api/v1/pokemon/38/",
+  "pokedex": 38
+}, {
+  "name": "Jigglypuff",
+  "resource_uri": "api/v1/pokemon/39/",
+  "pokedex": 39
+}, {
+  "name": "Wigglytuff",
+  "resource_uri": "api/v1/pokemon/40/",
+  "pokedex": 40
+}, {
+  "name": "Zubat",
+  "resource_uri": "api/v1/pokemon/41/",
+  "pokedex": 41
+}, {
+  "name": "Golbat",
+  "resource_uri": "api/v1/pokemon/42/",
+  "pokedex": 42
+}, {
+  "name": "Oddish",
+  "resource_uri": "api/v1/pokemon/43/",
+  "pokedex": 43
+}, {
+  "name": "Gloom",
+  "resource_uri": "api/v1/pokemon/44/",
+  "pokedex": 44
+}, {
+  "name": "Vileplume",
+  "resource_uri": "api/v1/pokemon/45/",
+  "pokedex": 45
+}, {
+  "name": "Paras",
+  "resource_uri": "api/v1/pokemon/46/",
+  "pokedex": 46
+}, {
+  "name": "Parasect",
+  "resource_uri": "api/v1/pokemon/47/",
+  "pokedex": 47
+}, {
+  "name": "Venonat",
+  "resource_uri": "api/v1/pokemon/48/",
+  "pokedex": 48
+}, {
+  "name": "Venomoth",
+  "resource_uri": "api/v1/pokemon/49/",
+  "pokedex": 49
+}, {
+  "name": "Diglett",
+  "resource_uri": "api/v1/pokemon/50/",
+  "pokedex": 50
+}, {
+  "name": "Dugtrio",
+  "resource_uri": "api/v1/pokemon/51/",
+  "pokedex": 51
+}, {
+  "name": "Meowth",
+  "resource_uri": "api/v1/pokemon/52/",
+  "pokedex": 52
+}, {
+  "name": "Persian",
+  "resource_uri": "api/v1/pokemon/53/",
+  "pokedex": 53
+}, {
+  "name": "Psyduck",
+  "resource_uri": "api/v1/pokemon/54/",
+  "pokedex": 54
+}, {
+  "name": "Golduck",
+  "resource_uri": "api/v1/pokemon/55/",
+  "pokedex": 55
+}, {
+  "name": "Mankey",
+  "resource_uri": "api/v1/pokemon/56/",
+  "pokedex": 56
+}, {
+  "name": "Primeape",
+  "resource_uri": "api/v1/pokemon/57/",
+  "pokedex": 57
+}, {
+  "name": "Growlithe",
+  "resource_uri": "api/v1/pokemon/58/",
+  "pokedex": 58
+}, {
+  "name": "Arcanine",
+  "resource_uri": "api/v1/pokemon/59/",
+  "pokedex": 59
+}, {
+  "name": "Poliwag",
+  "resource_uri": "api/v1/pokemon/60/",
+  "pokedex": 60
+}, {
+  "name": "Poliwhirl",
+  "resource_uri": "api/v1/pokemon/61/",
+  "pokedex": 61
+}, {
+  "name": "Poliwrath",
+  "resource_uri": "api/v1/pokemon/62/",
+  "pokedex": 62
+}, {
+  "name": "Abra",
+  "resource_uri": "api/v1/pokemon/63/",
+  "pokedex": 63
+}, {
+  "name": "Kadabra",
+  "resource_uri": "api/v1/pokemon/64/",
+  "pokedex": 64
+}, {
+  "name": "Alakazam",
+  "resource_uri": "api/v1/pokemon/65/",
+  "pokedex": 65
+}, {
+  "name": "Machop",
+  "resource_uri": "api/v1/pokemon/66/",
+  "pokedex": 66
+}, {
+  "name": "Machoke",
+  "resource_uri": "api/v1/pokemon/67/",
+  "pokedex": 67
+}, {
+  "name": "Machamp",
+  "resource_uri": "api/v1/pokemon/68/",
+  "pokedex": 68
+}, {
+  "name": "Bellsprout",
+  "resource_uri": "api/v1/pokemon/69/",
+  "pokedex": 69
+}, {
+  "name": "Weepinbell",
+  "resource_uri": "api/v1/pokemon/70/",
+  "pokedex": 70
+}, {
+  "name": "Victreebel",
+  "resource_uri": "api/v1/pokemon/71/",
+  "pokedex": 71
+}, {
+  "name": "Tentacool",
+  "resource_uri": "api/v1/pokemon/72/",
+  "pokedex": 72
+}, {
+  "name": "Tentacruel",
+  "resource_uri": "api/v1/pokemon/73/",
+  "pokedex": 73
+}, {
+  "name": "Geodude",
+  "resource_uri": "api/v1/pokemon/74/",
+  "pokedex": 74
+}, {
+  "name": "Graveler",
+  "resource_uri": "api/v1/pokemon/75/",
+  "pokedex": 75
+}, {
+  "name": "Golem",
+  "resource_uri": "api/v1/pokemon/76/",
+  "pokedex": 76
+}, {
+  "name": "Ponyta",
+  "resource_uri": "api/v1/pokemon/77/",
+  "pokedex": 77
+}, {
+  "name": "Rapidash",
+  "resource_uri": "api/v1/pokemon/78/",
+  "pokedex": 78
+}, {
+  "name": "Slowpoke",
+  "resource_uri": "api/v1/pokemon/79/",
+  "pokedex": 79
+}, {
+  "name": "Slowbro",
+  "resource_uri": "api/v1/pokemon/80/",
+  "pokedex": 80
+}, {
+  "name": "Magnemite",
+  "resource_uri": "api/v1/pokemon/81/",
+  "pokedex": 81
+}, {
+  "name": "Magneton",
+  "resource_uri": "api/v1/pokemon/82/",
+  "pokedex": 82
+}, {
+  "name": "Farfetchd",
+  "resource_uri": "api/v1/pokemon/83/",
+  "pokedex": 83
+}, {
+  "name": "Doduo",
+  "resource_uri": "api/v1/pokemon/84/",
+  "pokedex": 84
+}, {
+  "name": "Dodrio",
+  "resource_uri": "api/v1/pokemon/85/",
+  "pokedex": 85
+}, {
+  "name": "Seel",
+  "resource_uri": "api/v1/pokemon/86/",
+  "pokedex": 86
+}, {
+  "name": "Dewgong",
+  "resource_uri": "api/v1/pokemon/87/",
+  "pokedex": 87
+}, {
+  "name": "Grimer",
+  "resource_uri": "api/v1/pokemon/88/",
+  "pokedex": 88
+}, {
+  "name": "Muk",
+  "resource_uri": "api/v1/pokemon/89/",
+  "pokedex": 89
+}, {
+  "name": "Shellder",
+  "resource_uri": "api/v1/pokemon/90/",
+  "pokedex": 90
+}, {
+  "name": "Cloyster",
+  "resource_uri": "api/v1/pokemon/91/",
+  "pokedex": 91
+}, {
+  "name": "Gastly",
+  "resource_uri": "api/v1/pokemon/92/",
+  "pokedex": 92
+}, {
+  "name": "Haunter",
+  "resource_uri": "api/v1/pokemon/93/",
+  "pokedex": 93
+}, {
+  "name": "Gengar",
+  "resource_uri": "api/v1/pokemon/94/",
+  "pokedex": 94
+}, {
+  "name": "Onix",
+  "resource_uri": "api/v1/pokemon/95/",
+  "pokedex": 95
+}, {
+  "name": "Drowzee",
+  "resource_uri": "api/v1/pokemon/96/",
+  "pokedex": 96
+}, {
+  "name": "Hypno",
+  "resource_uri": "api/v1/pokemon/97/",
+  "pokedex": 97
+}, {
+  "name": "Krabby",
+  "resource_uri": "api/v1/pokemon/98/",
+  "pokedex": 98
+}, {
+  "name": "Kingler",
+  "resource_uri": "api/v1/pokemon/99/",
+  "pokedex": 99
+}, {
+  "name": "Voltorb",
+  "resource_uri": "api/v1/pokemon/100/",
+  "pokedex": 100
+}, {
+  "name": "Electrode",
+  "resource_uri": "api/v1/pokemon/101/",
+  "pokedex": 101
+}, {
+  "name": "Exeggcute",
+  "resource_uri": "api/v1/pokemon/102/",
+  "pokedex": 102
+}, {
+  "name": "Exeggutor",
+  "resource_uri": "api/v1/pokemon/103/",
+  "pokedex": 103
+}, {
+  "name": "Cubone",
+  "resource_uri": "api/v1/pokemon/104/",
+  "pokedex": 104
+}, {
+  "name": "Marowak",
+  "resource_uri": "api/v1/pokemon/105/",
+  "pokedex": 105
+}, {
+  "name": "Hitmonlee",
+  "resource_uri": "api/v1/pokemon/106/",
+  "pokedex": 106
+}, {
+  "name": "Hitmonchan",
+  "resource_uri": "api/v1/pokemon/107/",
+  "pokedex": 107
+}, {
+  "name": "Lickitung",
+  "resource_uri": "api/v1/pokemon/108/",
+  "pokedex": 108
+}, {
+  "name": "Koffing",
+  "resource_uri": "api/v1/pokemon/109/",
+  "pokedex": 109
+}, {
+  "name": "Weezing",
+  "resource_uri": "api/v1/pokemon/110/",
+  "pokedex": 110
+}, {
+  "name": "Rhyhorn",
+  "resource_uri": "api/v1/pokemon/111/",
+  "pokedex": 111
+}, {
+  "name": "Rhydon",
+  "resource_uri": "api/v1/pokemon/112/",
+  "pokedex": 112
+}, {
+  "name": "Chansey",
+  "resource_uri": "api/v1/pokemon/113/",
+  "pokedex": 113
+}, {
+  "name": "Tangela",
+  "resource_uri": "api/v1/pokemon/114/",
+  "pokedex": 114
+}, {
+  "name": "Kangaskhan",
+  "resource_uri": "api/v1/pokemon/115/",
+  "pokedex": 115
+}, {
+  "name": "Horsea",
+  "resource_uri": "api/v1/pokemon/116/",
+  "pokedex": 116
+}, {
+  "name": "Seadra",
+  "resource_uri": "api/v1/pokemon/117/",
+  "pokedex": 117
+}, {
+  "name": "Goldeen",
+  "resource_uri": "api/v1/pokemon/118/",
+  "pokedex": 118
+}, {
+  "name": "Seaking",
+  "resource_uri": "api/v1/pokemon/119/",
+  "pokedex": 119
+}, {
+  "name": "Staryu",
+  "resource_uri": "api/v1/pokemon/120/",
+  "pokedex": 120
+}, {
+  "name": "Starmie",
+  "resource_uri": "api/v1/pokemon/121/",
+  "pokedex": 121
+}, {
+  "name": "Mr",
+  "resource_uri": "api/v1/pokemon/122/",
+  "pokedex": 122
+}, {
+  "name": "Scyther",
+  "resource_uri": "api/v1/pokemon/123/",
+  "pokedex": 123
+}, {
+  "name": "Jynx",
+  "resource_uri": "api/v1/pokemon/124/",
+  "pokedex": 124
+}, {
+  "name": "Electabuzz",
+  "resource_uri": "api/v1/pokemon/125/",
+  "pokedex": 125
+}, {
+  "name": "Magmar",
+  "resource_uri": "api/v1/pokemon/126/",
+  "pokedex": 126
+}, {
+  "name": "Pinsir",
+  "resource_uri": "api/v1/pokemon/127/",
+  "pokedex": 127
+}, {
+  "name": "Tauros",
+  "resource_uri": "api/v1/pokemon/128/",
+  "pokedex": 128
+}, {
+  "name": "Magikarp",
+  "resource_uri": "api/v1/pokemon/129/",
+  "pokedex": 129
+}, {
+  "name": "Gyarados",
+  "resource_uri": "api/v1/pokemon/130/",
+  "pokedex": 130
+}, {
+  "name": "Lapras",
+  "resource_uri": "api/v1/pokemon/131/",
+  "pokedex": 131
+}, {
+  "name": "Ditto",
+  "resource_uri": "api/v1/pokemon/132/",
+  "pokedex": 132
+}, {
+  "name": "Eevee",
+  "resource_uri": "api/v1/pokemon/133/",
+  "pokedex": 133
+}, {
+  "name": "Vaporeon",
+  "resource_uri": "api/v1/pokemon/134/",
+  "pokedex": 134
+}, {
+  "name": "Jolteon",
+  "resource_uri": "api/v1/pokemon/135/",
+  "pokedex": 135
+}, {
+  "name": "Flareon",
+  "resource_uri": "api/v1/pokemon/136/",
+  "pokedex": 136
+}, {
+  "name": "Porygon",
+  "resource_uri": "api/v1/pokemon/137/",
+  "pokedex": 137
+}, {
+  "name": "Omanyte",
+  "resource_uri": "api/v1/pokemon/138/",
+  "pokedex": 138
+}, {
+  "name": "Omastar",
+  "resource_uri": "api/v1/pokemon/139/",
+  "pokedex": 139
+}, {
+  "name": "Kabuto",
+  "resource_uri": "api/v1/pokemon/140/",
+  "pokedex": 140
+}, {
+  "name": "Kabutops",
+  "resource_uri": "api/v1/pokemon/141/",
+  "pokedex": 141
+}, {
+  "name": "Aerodactyl",
+  "resource_uri": "api/v1/pokemon/142/",
+  "pokedex": 142
+}, {
+  "name": "Snorlax",
+  "resource_uri": "api/v1/pokemon/143/",
+  "pokedex": 143
+}, {
+  "name": "Articuno",
+  "resource_uri": "api/v1/pokemon/144/",
+  "pokedex": 144
+}, {
+  "name": "Zapdos",
+  "resource_uri": "api/v1/pokemon/145/",
+  "pokedex": 145
+}, {
+  "name": "Moltres",
+  "resource_uri": "api/v1/pokemon/146/",
+  "pokedex": 146
+}, {
+  "name": "Dratini",
+  "resource_uri": "api/v1/pokemon/147/",
+  "pokedex": 147
+}, {
+  "name": "Dragonair",
+  "resource_uri": "api/v1/pokemon/148/",
+  "pokedex": 148
+}, {
+  "name": "Dragonite",
+  "resource_uri": "api/v1/pokemon/149/",
+  "pokedex": 149
+}, {
+  "name": "Mewtwo",
+  "resource_uri": "api/v1/pokemon/150/",
+  "pokedex": 150
+}, {
+  "name": "Mew",
+  "resource_uri": "api/v1/pokemon/151/",
+  "pokedex": 151
+}, {
+  "name": "Chikorita",
+  "resource_uri": "api/v1/pokemon/152/",
+  "pokedex": 152
+}, {
+  "name": "Bayleef",
+  "resource_uri": "api/v1/pokemon/153/",
+  "pokedex": 153
+}, {
+  "name": "Meganium",
+  "resource_uri": "api/v1/pokemon/154/",
+  "pokedex": 154
+}, {
+  "name": "Cyndaquil",
+  "resource_uri": "api/v1/pokemon/155/",
+  "pokedex": 155
+}, {
+  "name": "Quilava",
+  "resource_uri": "api/v1/pokemon/156/",
+  "pokedex": 156
+}, {
+  "name": "Typhlosion",
+  "resource_uri": "api/v1/pokemon/157/",
+  "pokedex": 157
+}, {
+  "name": "Totodile",
+  "resource_uri": "api/v1/pokemon/158/",
+  "pokedex": 158
+}, {
+  "name": "Croconaw",
+  "resource_uri": "api/v1/pokemon/159/",
+  "pokedex": 159
+}, {
+  "name": "Feraligatr",
+  "resource_uri": "api/v1/pokemon/160/",
+  "pokedex": 160
+}, {
+  "name": "Sentret",
+  "resource_uri": "api/v1/pokemon/161/",
+  "pokedex": 161
+}, {
+  "name": "Furret",
+  "resource_uri": "api/v1/pokemon/162/",
+  "pokedex": 162
+}, {
+  "name": "Hoothoot",
+  "resource_uri": "api/v1/pokemon/163/",
+  "pokedex": 163
+}, {
+  "name": "Noctowl",
+  "resource_uri": "api/v1/pokemon/164/",
+  "pokedex": 164
+}, {
+  "name": "Ledyba",
+  "resource_uri": "api/v1/pokemon/165/",
+  "pokedex": 165
+}, {
+  "name": "Ledian",
+  "resource_uri": "api/v1/pokemon/166/",
+  "pokedex": 166
+}, {
+  "name": "Spinarak",
+  "resource_uri": "api/v1/pokemon/167/",
+  "pokedex": 167
+}, {
+  "name": "Ariados",
+  "resource_uri": "api/v1/pokemon/168/",
+  "pokedex": 168
+}, {
+  "name": "Crobat",
+  "resource_uri": "api/v1/pokemon/169/",
+  "pokedex": 169
+}, {
+  "name": "Chinchou",
+  "resource_uri": "api/v1/pokemon/170/",
+  "pokedex": 170
+}, {
+  "name": "Lanturn",
+  "resource_uri": "api/v1/pokemon/171/",
+  "pokedex": 171
+}, {
+  "name": "Pichu",
+  "resource_uri": "api/v1/pokemon/172/",
+  "pokedex": 172
+}, {
+  "name": "Cleffa",
+  "resource_uri": "api/v1/pokemon/173/",
+  "pokedex": 173
+}, {
+  "name": "Igglybuff",
+  "resource_uri": "api/v1/pokemon/174/",
+  "pokedex": 174
+}, {
+  "name": "Togepi",
+  "resource_uri": "api/v1/pokemon/175/",
+  "pokedex": 175
+}, {
+  "name": "Togetic",
+  "resource_uri": "api/v1/pokemon/176/",
+  "pokedex": 176
+}, {
+  "name": "Natu",
+  "resource_uri": "api/v1/pokemon/177/",
+  "pokedex": 177
+}, {
+  "name": "Xatu",
+  "resource_uri": "api/v1/pokemon/178/",
+  "pokedex": 178
+}, {
+  "name": "Mareep",
+  "resource_uri": "api/v1/pokemon/179/",
+  "pokedex": 179
+}, {
+  "name": "Flaaffy",
+  "resource_uri": "api/v1/pokemon/180/",
+  "pokedex": 180
+}, {
+  "name": "Ampharos",
+  "resource_uri": "api/v1/pokemon/181/",
+  "pokedex": 181
+}, {
+  "name": "Bellossom",
+  "resource_uri": "api/v1/pokemon/182/",
+  "pokedex": 182
+}, {
+  "name": "Marill",
+  "resource_uri": "api/v1/pokemon/183/",
+  "pokedex": 183
+}, {
+  "name": "Azumarill",
+  "resource_uri": "api/v1/pokemon/184/",
+  "pokedex": 184
+}, {
+  "name": "Sudowoodo",
+  "resource_uri": "api/v1/pokemon/185/",
+  "pokedex": 185
+}, {
+  "name": "Politoed",
+  "resource_uri": "api/v1/pokemon/186/",
+  "pokedex": 186
+}, {
+  "name": "Hoppip",
+  "resource_uri": "api/v1/pokemon/187/",
+  "pokedex": 187
+}, {
+  "name": "Skiploom",
+  "resource_uri": "api/v1/pokemon/188/",
+  "pokedex": 188
+}, {
+  "name": "Jumpluff",
+  "resource_uri": "api/v1/pokemon/189/",
+  "pokedex": 189
+}, {
+  "name": "Aipom",
+  "resource_uri": "api/v1/pokemon/190/",
+  "pokedex": 190
+}, {
+  "name": "Sunkern",
+  "resource_uri": "api/v1/pokemon/191/",
+  "pokedex": 191
+}, {
+  "name": "Sunflora",
+  "resource_uri": "api/v1/pokemon/192/",
+  "pokedex": 192
+}, {
+  "name": "Yanma",
+  "resource_uri": "api/v1/pokemon/193/",
+  "pokedex": 193
+}, {
+  "name": "Wooper",
+  "resource_uri": "api/v1/pokemon/194/",
+  "pokedex": 194
+}, {
+  "name": "Quagsire",
+  "resource_uri": "api/v1/pokemon/195/",
+  "pokedex": 195
+}, {
+  "name": "Espeon",
+  "resource_uri": "api/v1/pokemon/196/",
+  "pokedex": 196
+}, {
+  "name": "Umbreon",
+  "resource_uri": "api/v1/pokemon/197/",
+  "pokedex": 197
+}, {
+  "name": "Murkrow",
+  "resource_uri": "api/v1/pokemon/198/",
+  "pokedex": 198
+}, {
+  "name": "Slowking",
+  "resource_uri": "api/v1/pokemon/199/",
+  "pokedex": 199
+}, {
+  "name": "Misdreavus",
+  "resource_uri": "api/v1/pokemon/200/",
+  "pokedex": 200
+}, {
+  "name": "Unown",
+  "resource_uri": "api/v1/pokemon/201/",
+  "pokedex": 201
+}, {
+  "name": "Wobbuffet",
+  "resource_uri": "api/v1/pokemon/202/",
+  "pokedex": 202
+}, {
+  "name": "Girafarig",
+  "resource_uri": "api/v1/pokemon/203/",
+  "pokedex": 203
+}, {
+  "name": "Pineco",
+  "resource_uri": "api/v1/pokemon/204/",
+  "pokedex": 204
+}, {
+  "name": "Forretress",
+  "resource_uri": "api/v1/pokemon/205/",
+  "pokedex": 205
+}, {
+  "name": "Dunsparce",
+  "resource_uri": "api/v1/pokemon/206/",
+  "pokedex": 206
+}, {
+  "name": "Gligar",
+  "resource_uri": "api/v1/pokemon/207/",
+  "pokedex": 207
+}, {
+  "name": "Steelix",
+  "resource_uri": "api/v1/pokemon/208/",
+  "pokedex": 208
+}, {
+  "name": "Snubbull",
+  "resource_uri": "api/v1/pokemon/209/",
+  "pokedex": 209
+}, {
+  "name": "Granbull",
+  "resource_uri": "api/v1/pokemon/210/",
+  "pokedex": 210
+}, {
+  "name": "Qwilfish",
+  "resource_uri": "api/v1/pokemon/211/",
+  "pokedex": 211
+}, {
+  "name": "Scizor",
+  "resource_uri": "api/v1/pokemon/212/",
+  "pokedex": 212
+}, {
+  "name": "Shuckle",
+  "resource_uri": "api/v1/pokemon/213/",
+  "pokedex": 213
+}, {
+  "name": "Heracross",
+  "resource_uri": "api/v1/pokemon/214/",
+  "pokedex": 214
+}, {
+  "name": "Sneasel",
+  "resource_uri": "api/v1/pokemon/215/",
+  "pokedex": 215
+}, {
+  "name": "Teddiursa",
+  "resource_uri": "api/v1/pokemon/216/",
+  "pokedex": 216
+}, {
+  "name": "Ursaring",
+  "resource_uri": "api/v1/pokemon/217/",
+  "pokedex": 217
+}, {
+  "name": "Slugma",
+  "resource_uri": "api/v1/pokemon/218/",
+  "pokedex": 218
+}, {
+  "name": "Magcargo",
+  "resource_uri": "api/v1/pokemon/219/",
+  "pokedex": 219
+}, {
+  "name": "Swinub",
+  "resource_uri": "api/v1/pokemon/220/",
+  "pokedex": 220
+}, {
+  "name": "Piloswine",
+  "resource_uri": "api/v1/pokemon/221/",
+  "pokedex": 221
+}, {
+  "name": "Corsola",
+  "resource_uri": "api/v1/pokemon/222/",
+  "pokedex": 222
+}, {
+  "name": "Remoraid",
+  "resource_uri": "api/v1/pokemon/223/",
+  "pokedex": 223
+}, {
+  "name": "Octillery",
+  "resource_uri": "api/v1/pokemon/224/",
+  "pokedex": 224
+}, {
+  "name": "Delibird",
+  "resource_uri": "api/v1/pokemon/225/",
+  "pokedex": 225
+}, {
+  "name": "Mantine",
+  "resource_uri": "api/v1/pokemon/226/",
+  "pokedex": 226
+}, {
+  "name": "Skarmory",
+  "resource_uri": "api/v1/pokemon/227/",
+  "pokedex": 227
+}, {
+  "name": "Houndour",
+  "resource_uri": "api/v1/pokemon/228/",
+  "pokedex": 228
+}, {
+  "name": "Houndoom",
+  "resource_uri": "api/v1/pokemon/229/",
+  "pokedex": 229
+}, {
+  "name": "Kingdra",
+  "resource_uri": "api/v1/pokemon/230/",
+  "pokedex": 230
+}, {
+  "name": "Phanpy",
+  "resource_uri": "api/v1/pokemon/231/",
+  "pokedex": 231
+}, {
+  "name": "Donphan",
+  "resource_uri": "api/v1/pokemon/232/",
+  "pokedex": 232
+}, {
+  "name": "Porygon2",
+  "resource_uri": "api/v1/pokemon/233/",
+  "pokedex": 233
+}, {
+  "name": "Stantler",
+  "resource_uri": "api/v1/pokemon/234/",
+  "pokedex": 234
+}, {
+  "name": "Smeargle",
+  "resource_uri": "api/v1/pokemon/235/",
+  "pokedex": 235
+}, {
+  "name": "Tyrogue",
+  "resource_uri": "api/v1/pokemon/236/",
+  "pokedex": 236
+}, {
+  "name": "Hitmontop",
+  "resource_uri": "api/v1/pokemon/237/",
+  "pokedex": 237
+}, {
+  "name": "Smoochum",
+  "resource_uri": "api/v1/pokemon/238/",
+  "pokedex": 238
+}, {
+  "name": "Elekid",
+  "resource_uri": "api/v1/pokemon/239/",
+  "pokedex": 239
+}, {
+  "name": "Magby",
+  "resource_uri": "api/v1/pokemon/240/",
+  "pokedex": 240
+}, {
+  "name": "Miltank",
+  "resource_uri": "api/v1/pokemon/241/",
+  "pokedex": 241
+}, {
+  "name": "Blissey",
+  "resource_uri": "api/v1/pokemon/242/",
+  "pokedex": 242
+}, {
+  "name": "Raikou",
+  "resource_uri": "api/v1/pokemon/243/",
+  "pokedex": 243
+}, {
+  "name": "Entei",
+  "resource_uri": "api/v1/pokemon/244/",
+  "pokedex": 244
+}, {
+  "name": "Suicune",
+  "resource_uri": "api/v1/pokemon/245/",
+  "pokedex": 245
+}, {
+  "name": "Larvitar",
+  "resource_uri": "api/v1/pokemon/246/",
+  "pokedex": 246
+}, {
+  "name": "Pupitar",
+  "resource_uri": "api/v1/pokemon/247/",
+  "pokedex": 247
+}, {
+  "name": "Tyranitar",
+  "resource_uri": "api/v1/pokemon/248/",
+  "pokedex": 248
+}, {
+  "name": "Lugia",
+  "resource_uri": "api/v1/pokemon/249/",
+  "pokedex": 249
+}, {
+  "name": "Ho",
+  "resource_uri": "api/v1/pokemon/250/",
+  "pokedex": 250
+}, {
+  "name": "Celebi",
+  "resource_uri": "api/v1/pokemon/251/",
+  "pokedex": 251
+}, {
+  "name": "Treecko",
+  "resource_uri": "api/v1/pokemon/252/",
+  "pokedex": 252
+}, {
+  "name": "Grovyle",
+  "resource_uri": "api/v1/pokemon/253/",
+  "pokedex": 253
+}, {
+  "name": "Sceptile",
+  "resource_uri": "api/v1/pokemon/254/",
+  "pokedex": 254
+}, {
+  "name": "Torchic",
+  "resource_uri": "api/v1/pokemon/255/",
+  "pokedex": 255
+}, {
+  "name": "Combusken",
+  "resource_uri": "api/v1/pokemon/256/",
+  "pokedex": 256
+}, {
+  "name": "Blaziken",
+  "resource_uri": "api/v1/pokemon/257/",
+  "pokedex": 257
+}, {
+  "name": "Mudkip",
+  "resource_uri": "api/v1/pokemon/258/",
+  "pokedex": 258
+}, {
+  "name": "Marshtomp",
+  "resource_uri": "api/v1/pokemon/259/",
+  "pokedex": 259
+}, {
+  "name": "Swampert",
+  "resource_uri": "api/v1/pokemon/260/",
+  "pokedex": 260
+}, {
+  "name": "Poochyena",
+  "resource_uri": "api/v1/pokemon/261/",
+  "pokedex": 261
+}, {
+  "name": "Mightyena",
+  "resource_uri": "api/v1/pokemon/262/",
+  "pokedex": 262
+}, {
+  "name": "Zigzagoon",
+  "resource_uri": "api/v1/pokemon/263/",
+  "pokedex": 263
+}, {
+  "name": "Linoone",
+  "resource_uri": "api/v1/pokemon/264/",
+  "pokedex": 264
+}, {
+  "name": "Wurmple",
+  "resource_uri": "api/v1/pokemon/265/",
+  "pokedex": 265
+}, {
+  "name": "Silcoon",
+  "resource_uri": "api/v1/pokemon/266/",
+  "pokedex": 266
+}, {
+  "name": "Beautifly",
+  "resource_uri": "api/v1/pokemon/267/",
+  "pokedex": 267
+}, {
+  "name": "Cascoon",
+  "resource_uri": "api/v1/pokemon/268/",
+  "pokedex": 268
+}, {
+  "name": "Dustox",
+  "resource_uri": "api/v1/pokemon/269/",
+  "pokedex": 269
+}, {
+  "name": "Lotad",
+  "resource_uri": "api/v1/pokemon/270/",
+  "pokedex": 270
+}, {
+  "name": "Lombre",
+  "resource_uri": "api/v1/pokemon/271/",
+  "pokedex": 271
+}, {
+  "name": "Ludicolo",
+  "resource_uri": "api/v1/pokemon/272/",
+  "pokedex": 272
+}, {
+  "name": "Seedot",
+  "resource_uri": "api/v1/pokemon/273/",
+  "pokedex": 273
+}, {
+  "name": "Nuzleaf",
+  "resource_uri": "api/v1/pokemon/274/",
+  "pokedex": 274
+}, {
+  "name": "Shiftry",
+  "resource_uri": "api/v1/pokemon/275/",
+  "pokedex": 275
+}, {
+  "name": "Taillow",
+  "resource_uri": "api/v1/pokemon/276/",
+  "pokedex": 276
+}, {
+  "name": "Swellow",
+  "resource_uri": "api/v1/pokemon/277/",
+  "pokedex": 277
+}, {
+  "name": "Wingull",
+  "resource_uri": "api/v1/pokemon/278/",
+  "pokedex": 278
+}, {
+  "name": "Pelipper",
+  "resource_uri": "api/v1/pokemon/279/",
+  "pokedex": 279
+}, {
+  "name": "Ralts",
+  "resource_uri": "api/v1/pokemon/280/",
+  "pokedex": 280
+}, {
+  "name": "Kirlia",
+  "resource_uri": "api/v1/pokemon/281/",
+  "pokedex": 281
+}, {
+  "name": "Gardevoir",
+  "resource_uri": "api/v1/pokemon/282/",
+  "pokedex": 282
+}, {
+  "name": "Surskit",
+  "resource_uri": "api/v1/pokemon/283/",
+  "pokedex": 283
+}, {
+  "name": "Masquerain",
+  "resource_uri": "api/v1/pokemon/284/",
+  "pokedex": 284
+}, {
+  "name": "Shroomish",
+  "resource_uri": "api/v1/pokemon/285/",
+  "pokedex": 285
+}, {
+  "name": "Breloom",
+  "resource_uri": "api/v1/pokemon/286/",
+  "pokedex": 286
+}, {
+  "name": "Slakoth",
+  "resource_uri": "api/v1/pokemon/287/",
+  "pokedex": 287
+}, {
+  "name": "Vigoroth",
+  "resource_uri": "api/v1/pokemon/288/",
+  "pokedex": 288
+}, {
+  "name": "Slaking",
+  "resource_uri": "api/v1/pokemon/289/",
+  "pokedex": 289
+}, {
+  "name": "Nincada",
+  "resource_uri": "api/v1/pokemon/290/",
+  "pokedex": 290
+}, {
+  "name": "Ninjask",
+  "resource_uri": "api/v1/pokemon/291/",
+  "pokedex": 291
+}, {
+  "name": "Shedinja",
+  "resource_uri": "api/v1/pokemon/292/",
+  "pokedex": 292
+}, {
+  "name": "Whismur",
+  "resource_uri": "api/v1/pokemon/293/",
+  "pokedex": 293
+}, {
+  "name": "Loudred",
+  "resource_uri": "api/v1/pokemon/294/",
+  "pokedex": 294
+}, {
+  "name": "Exploud",
+  "resource_uri": "api/v1/pokemon/295/",
+  "pokedex": 295
+}, {
+  "name": "Makuhita",
+  "resource_uri": "api/v1/pokemon/296/",
+  "pokedex": 296
+}, {
+  "name": "Hariyama",
+  "resource_uri": "api/v1/pokemon/297/",
+  "pokedex": 297
+}, {
+  "name": "Azurill",
+  "resource_uri": "api/v1/pokemon/298/",
+  "pokedex": 298
+}, {
+  "name": "Nosepass",
+  "resource_uri": "api/v1/pokemon/299/",
+  "pokedex": 299
+}, {
+  "name": "Skitty",
+  "resource_uri": "api/v1/pokemon/300/",
+  "pokedex": 300
+}, {
+  "name": "Delcatty",
+  "resource_uri": "api/v1/pokemon/301/",
+  "pokedex": 301
+}, {
+  "name": "Sableye",
+  "resource_uri": "api/v1/pokemon/302/",
+  "pokedex": 302
+}, {
+  "name": "Mawile",
+  "resource_uri": "api/v1/pokemon/303/",
+  "pokedex": 303
+}, {
+  "name": "Aron",
+  "resource_uri": "api/v1/pokemon/304/",
+  "pokedex": 304
+}, {
+  "name": "Lairon",
+  "resource_uri": "api/v1/pokemon/305/",
+  "pokedex": 305
+}, {
+  "name": "Aggron",
+  "resource_uri": "api/v1/pokemon/306/",
+  "pokedex": 306
+}, {
+  "name": "Meditite",
+  "resource_uri": "api/v1/pokemon/307/",
+  "pokedex": 307
+}, {
+  "name": "Medicham",
+  "resource_uri": "api/v1/pokemon/308/",
+  "pokedex": 308
+}, {
+  "name": "Electrike",
+  "resource_uri": "api/v1/pokemon/309/",
+  "pokedex": 309
+}, {
+  "name": "Manectric",
+  "resource_uri": "api/v1/pokemon/310/",
+  "pokedex": 310
+}, {
+  "name": "Plusle",
+  "resource_uri": "api/v1/pokemon/311/",
+  "pokedex": 311
+}, {
+  "name": "Minun",
+  "resource_uri": "api/v1/pokemon/312/",
+  "pokedex": 312
+}, {
+  "name": "Volbeat",
+  "resource_uri": "api/v1/pokemon/313/",
+  "pokedex": 313
+}, {
+  "name": "Illumise",
+  "resource_uri": "api/v1/pokemon/314/",
+  "pokedex": 314
+}, {
+  "name": "Roselia",
+  "resource_uri": "api/v1/pokemon/315/",
+  "pokedex": 315
+}, {
+  "name": "Gulpin",
+  "resource_uri": "api/v1/pokemon/316/",
+  "pokedex": 316
+}, {
+  "name": "Swalot",
+  "resource_uri": "api/v1/pokemon/317/",
+  "pokedex": 317
+}, {
+  "name": "Carvanha",
+  "resource_uri": "api/v1/pokemon/318/",
+  "pokedex": 318
+}, {
+  "name": "Sharpedo",
+  "resource_uri": "api/v1/pokemon/319/",
+  "pokedex": 319
+}, {
+  "name": "Wailmer",
+  "resource_uri": "api/v1/pokemon/320/",
+  "pokedex": 320
+}, {
+  "name": "Wailord",
+  "resource_uri": "api/v1/pokemon/321/",
+  "pokedex": 321
+}, {
+  "name": "Numel",
+  "resource_uri": "api/v1/pokemon/322/",
+  "pokedex": 322
+}, {
+  "name": "Camerupt",
+  "resource_uri": "api/v1/pokemon/323/",
+  "pokedex": 323
+}, {
+  "name": "Torkoal",
+  "resource_uri": "api/v1/pokemon/324/",
+  "pokedex": 324
+}, {
+  "name": "Spoink",
+  "resource_uri": "api/v1/pokemon/325/",
+  "pokedex": 325
+}, {
+  "name": "Grumpig",
+  "resource_uri": "api/v1/pokemon/326/",
+  "pokedex": 326
+}, {
+  "name": "Spinda",
+  "resource_uri": "api/v1/pokemon/327/",
+  "pokedex": 327
+}, {
+  "name": "Trapinch",
+  "resource_uri": "api/v1/pokemon/328/",
+  "pokedex": 328
+}, {
+  "name": "Vibrava",
+  "resource_uri": "api/v1/pokemon/329/",
+  "pokedex": 329
+}, {
+  "name": "Flygon",
+  "resource_uri": "api/v1/pokemon/330/",
+  "pokedex": 330
+}, {
+  "name": "Cacnea",
+  "resource_uri": "api/v1/pokemon/331/",
+  "pokedex": 331
+}, {
+  "name": "Cacturne",
+  "resource_uri": "api/v1/pokemon/332/",
+  "pokedex": 332
+}, {
+  "name": "Swablu",
+  "resource_uri": "api/v1/pokemon/333/",
+  "pokedex": 333
+}, {
+  "name": "Altaria",
+  "resource_uri": "api/v1/pokemon/334/",
+  "pokedex": 334
+}, {
+  "name": "Zangoose",
+  "resource_uri": "api/v1/pokemon/335/",
+  "pokedex": 335
+}, {
+  "name": "Seviper",
+  "resource_uri": "api/v1/pokemon/336/",
+  "pokedex": 336
+}, {
+  "name": "Lunatone",
+  "resource_uri": "api/v1/pokemon/337/",
+  "pokedex": 337
+}, {
+  "name": "Solrock",
+  "resource_uri": "api/v1/pokemon/338/",
+  "pokedex": 338
+}, {
+  "name": "Barboach",
+  "resource_uri": "api/v1/pokemon/339/",
+  "pokedex": 339
+}, {
+  "name": "Whiscash",
+  "resource_uri": "api/v1/pokemon/340/",
+  "pokedex": 340
+}, {
+  "name": "Corphish",
+  "resource_uri": "api/v1/pokemon/341/",
+  "pokedex": 341
+}, {
+  "name": "Crawdaunt",
+  "resource_uri": "api/v1/pokemon/342/",
+  "pokedex": 342
+}, {
+  "name": "Baltoy",
+  "resource_uri": "api/v1/pokemon/343/",
+  "pokedex": 343
+}, {
+  "name": "Claydol",
+  "resource_uri": "api/v1/pokemon/344/",
+  "pokedex": 344
+}, {
+  "name": "Lileep",
+  "resource_uri": "api/v1/pokemon/345/",
+  "pokedex": 345
+}, {
+  "name": "Cradily",
+  "resource_uri": "api/v1/pokemon/346/",
+  "pokedex": 346
+}, {
+  "name": "Anorith",
+  "resource_uri": "api/v1/pokemon/347/",
+  "pokedex": 347
+}, {
+  "name": "Armaldo",
+  "resource_uri": "api/v1/pokemon/348/",
+  "pokedex": 348
+}, {
+  "name": "Feebas",
+  "resource_uri": "api/v1/pokemon/349/",
+  "pokedex": 349
+}, {
+  "name": "Milotic",
+  "resource_uri": "api/v1/pokemon/350/",
+  "pokedex": 350
+}, {
+  "name": "Castform",
+  "resource_uri": "api/v1/pokemon/351/",
+  "pokedex": 351
+}, {
+  "name": "Kecleon",
+  "resource_uri": "api/v1/pokemon/352/",
+  "pokedex": 352
+}, {
+  "name": "Shuppet",
+  "resource_uri": "api/v1/pokemon/353/",
+  "pokedex": 353
+}, {
+  "name": "Banette",
+  "resource_uri": "api/v1/pokemon/354/",
+  "pokedex": 354
+}, {
+  "name": "Duskull",
+  "resource_uri": "api/v1/pokemon/355/",
+  "pokedex": 355
+}, {
+  "name": "Dusclops",
+  "resource_uri": "api/v1/pokemon/356/",
+  "pokedex": 356
+}, {
+  "name": "Tropius",
+  "resource_uri": "api/v1/pokemon/357/",
+  "pokedex": 357
+}, {
+  "name": "Chimecho",
+  "resource_uri": "api/v1/pokemon/358/",
+  "pokedex": 358
+}, {
+  "name": "Absol",
+  "resource_uri": "api/v1/pokemon/359/",
+  "pokedex": 359
+}, {
+  "name": "Wynaut",
+  "resource_uri": "api/v1/pokemon/360/",
+  "pokedex": 360
+}, {
+  "name": "Snorunt",
+  "resource_uri": "api/v1/pokemon/361/",
+  "pokedex": 361
+}, {
+  "name": "Glalie",
+  "resource_uri": "api/v1/pokemon/362/",
+  "pokedex": 362
+}, {
+  "name": "Spheal",
+  "resource_uri": "api/v1/pokemon/363/",
+  "pokedex": 363
+}, {
+  "name": "Sealeo",
+  "resource_uri": "api/v1/pokemon/364/",
+  "pokedex": 364
+}, {
+  "name": "Walrein",
+  "resource_uri": "api/v1/pokemon/365/",
+  "pokedex": 365
+}, {
+  "name": "Clamperl",
+  "resource_uri": "api/v1/pokemon/366/",
+  "pokedex": 366
+}, {
+  "name": "Huntail",
+  "resource_uri": "api/v1/pokemon/367/",
+  "pokedex": 367
+}, {
+  "name": "Gorebyss",
+  "resource_uri": "api/v1/pokemon/368/",
+  "pokedex": 368
+}, {
+  "name": "Relicanth",
+  "resource_uri": "api/v1/pokemon/369/",
+  "pokedex": 369
+}, {
+  "name": "Luvdisc",
+  "resource_uri": "api/v1/pokemon/370/",
+  "pokedex": 370
+}, {
+  "name": "Bagon",
+  "resource_uri": "api/v1/pokemon/371/",
+  "pokedex": 371
+}, {
+  "name": "Shelgon",
+  "resource_uri": "api/v1/pokemon/372/",
+  "pokedex": 372
+}, {
+  "name": "Salamence",
+  "resource_uri": "api/v1/pokemon/373/",
+  "pokedex": 373
+}, {
+  "name": "Beldum",
+  "resource_uri": "api/v1/pokemon/374/",
+  "pokedex": 374
+}, {
+  "name": "Metang",
+  "resource_uri": "api/v1/pokemon/375/",
+  "pokedex": 375
+}, {
+  "name": "Metagross",
+  "resource_uri": "api/v1/pokemon/376/",
+  "pokedex": 376
+}, {
+  "name": "Regirock",
+  "resource_uri": "api/v1/pokemon/377/",
+  "pokedex": 377
+}, {
+  "name": "Regice",
+  "resource_uri": "api/v1/pokemon/378/",
+  "pokedex": 378
+}, {
+  "name": "Registeel",
+  "resource_uri": "api/v1/pokemon/379/",
+  "pokedex": 379
+}, {
+  "name": "Latias",
+  "resource_uri": "api/v1/pokemon/380/",
+  "pokedex": 380
+}, {
+  "name": "Latios",
+  "resource_uri": "api/v1/pokemon/381/",
+  "pokedex": 381
+}, {
+  "name": "Kyogre",
+  "resource_uri": "api/v1/pokemon/382/",
+  "pokedex": 382
+}, {
+  "name": "Groudon",
+  "resource_uri": "api/v1/pokemon/383/",
+  "pokedex": 383
+}, {
+  "name": "Rayquaza",
+  "resource_uri": "api/v1/pokemon/384/",
+  "pokedex": 384
+}, {
+  "name": "Jirachi",
+  "resource_uri": "api/v1/pokemon/385/",
+  "pokedex": 385
+}, {
+  "name": "Deoxys",
+  "resource_uri": "api/v1/pokemon/386/",
+  "pokedex": 386
+}, {
+  "name": "Turtwig",
+  "resource_uri": "api/v1/pokemon/387/",
+  "pokedex": 387
+}, {
+  "name": "Grotle",
+  "resource_uri": "api/v1/pokemon/388/",
+  "pokedex": 388
+}, {
+  "name": "Torterra",
+  "resource_uri": "api/v1/pokemon/389/",
+  "pokedex": 389
+}, {
+  "name": "Chimchar",
+  "resource_uri": "api/v1/pokemon/390/",
+  "pokedex": 390
+}, {
+  "name": "Monferno",
+  "resource_uri": "api/v1/pokemon/391/",
+  "pokedex": 391
+}, {
+  "name": "Infernape",
+  "resource_uri": "api/v1/pokemon/392/",
+  "pokedex": 392
+}, {
+  "name": "Piplup",
+  "resource_uri": "api/v1/pokemon/393/",
+  "pokedex": 393
+}, {
+  "name": "Prinplup",
+  "resource_uri": "api/v1/pokemon/394/",
+  "pokedex": 394
+}, {
+  "name": "Empoleon",
+  "resource_uri": "api/v1/pokemon/395/",
+  "pokedex": 395
+}, {
+  "name": "Starly",
+  "resource_uri": "api/v1/pokemon/396/",
+  "pokedex": 396
+}, {
+  "name": "Staravia",
+  "resource_uri": "api/v1/pokemon/397/",
+  "pokedex": 397
+}, {
+  "name": "Staraptor",
+  "resource_uri": "api/v1/pokemon/398/",
+  "pokedex": 398
+}, {
+  "name": "Bidoof",
+  "resource_uri": "api/v1/pokemon/399/",
+  "pokedex": 399
+}, {
+  "name": "Bibarel",
+  "resource_uri": "api/v1/pokemon/400/",
+  "pokedex": 400
+}, {
+  "name": "Kricketot",
+  "resource_uri": "api/v1/pokemon/401/",
+  "pokedex": 401
+}, {
+  "name": "Kricketune",
+  "resource_uri": "api/v1/pokemon/402/",
+  "pokedex": 402
+}, {
+  "name": "Shinx",
+  "resource_uri": "api/v1/pokemon/403/",
+  "pokedex": 403
+}, {
+  "name": "Luxio",
+  "resource_uri": "api/v1/pokemon/404/",
+  "pokedex": 404
+}, {
+  "name": "Luxray",
+  "resource_uri": "api/v1/pokemon/405/",
+  "pokedex": 405
+}, {
+  "name": "Budew",
+  "resource_uri": "api/v1/pokemon/406/",
+  "pokedex": 406
+}, {
+  "name": "Roserade",
+  "resource_uri": "api/v1/pokemon/407/",
+  "pokedex": 407
+}, {
+  "name": "Cranidos",
+  "resource_uri": "api/v1/pokemon/408/",
+  "pokedex": 408
+}, {
+  "name": "Rampardos",
+  "resource_uri": "api/v1/pokemon/409/",
+  "pokedex": 409
+}, {
+  "name": "Shieldon",
+  "resource_uri": "api/v1/pokemon/410/",
+  "pokedex": 410
+}, {
+  "name": "Bastiodon",
+  "resource_uri": "api/v1/pokemon/411/",
+  "pokedex": 411
+}, {
+  "name": "Burmy",
+  "resource_uri": "api/v1/pokemon/412/",
+  "pokedex": 412
+}, {
+  "name": "Wormadam",
+  "resource_uri": "api/v1/pokemon/413/",
+  "pokedex": 413
+}, {
+  "name": "Mothim",
+  "resource_uri": "api/v1/pokemon/414/",
+  "pokedex": 414
+}, {
+  "name": "Combee",
+  "resource_uri": "api/v1/pokemon/415/",
+  "pokedex": 415
+}, {
+  "name": "Vespiquen",
+  "resource_uri": "api/v1/pokemon/416/",
+  "pokedex": 416
+}, {
+  "name": "Pachirisu",
+  "resource_uri": "api/v1/pokemon/417/",
+  "pokedex": 417
+}, {
+  "name": "Buizel",
+  "resource_uri": "api/v1/pokemon/418/",
+  "pokedex": 418
+}, {
+  "name": "Floatzel",
+  "resource_uri": "api/v1/pokemon/419/",
+  "pokedex": 419
+}, {
+  "name": "Cherubi",
+  "resource_uri": "api/v1/pokemon/420/",
+  "pokedex": 420
+}, {
+  "name": "Cherrim",
+  "resource_uri": "api/v1/pokemon/421/",
+  "pokedex": 421
+}, {
+  "name": "Shellos",
+  "resource_uri": "api/v1/pokemon/422/",
+  "pokedex": 422
+}, {
+  "name": "Gastrodon",
+  "resource_uri": "api/v1/pokemon/423/",
+  "pokedex": 423
+}, {
+  "name": "Ambipom",
+  "resource_uri": "api/v1/pokemon/424/",
+  "pokedex": 424
+}, {
+  "name": "Drifloon",
+  "resource_uri": "api/v1/pokemon/425/",
+  "pokedex": 425
+}, {
+  "name": "Drifblim",
+  "resource_uri": "api/v1/pokemon/426/",
+  "pokedex": 426
+}, {
+  "name": "Buneary",
+  "resource_uri": "api/v1/pokemon/427/",
+  "pokedex": 427
+}, {
+  "name": "Lopunny",
+  "resource_uri": "api/v1/pokemon/428/",
+  "pokedex": 428
+}, {
+  "name": "Mismagius",
+  "resource_uri": "api/v1/pokemon/429/",
+  "pokedex": 429
+}, {
+  "name": "Honchkrow",
+  "resource_uri": "api/v1/pokemon/430/",
+  "pokedex": 430
+}, {
+  "name": "Glameow",
+  "resource_uri": "api/v1/pokemon/431/",
+  "pokedex": 431
+}, {
+  "name": "Purugly",
+  "resource_uri": "api/v1/pokemon/432/",
+  "pokedex": 432
+}, {
+  "name": "Chingling",
+  "resource_uri": "api/v1/pokemon/433/",
+  "pokedex": 433
+}, {
+  "name": "Stunky",
+  "resource_uri": "api/v1/pokemon/434/",
+  "pokedex": 434
+}, {
+  "name": "Skuntank",
+  "resource_uri": "api/v1/pokemon/435/",
+  "pokedex": 435
+}, {
+  "name": "Bronzor",
+  "resource_uri": "api/v1/pokemon/436/",
+  "pokedex": 436
+}, {
+  "name": "Bronzong",
+  "resource_uri": "api/v1/pokemon/437/",
+  "pokedex": 437
+}, {
+  "name": "Bonsly",
+  "resource_uri": "api/v1/pokemon/438/",
+  "pokedex": 438
+}, {
+  "name": "Mime",
+  "resource_uri": "api/v1/pokemon/439/",
+  "pokedex": 439
+}, {
+  "name": "Happiny",
+  "resource_uri": "api/v1/pokemon/440/",
+  "pokedex": 440
+}, {
+  "name": "Chatot",
+  "resource_uri": "api/v1/pokemon/441/",
+  "pokedex": 441
+}, {
+  "name": "Spiritomb",
+  "resource_uri": "api/v1/pokemon/442/",
+  "pokedex": 442
+}, {
+  "name": "Gible",
+  "resource_uri": "api/v1/pokemon/443/",
+  "pokedex": 443
+}, {
+  "name": "Gabite",
+  "resource_uri": "api/v1/pokemon/444/",
+  "pokedex": 444
+}, {
+  "name": "Garchomp",
+  "resource_uri": "api/v1/pokemon/445/",
+  "pokedex": 445
+}, {
+  "name": "Munchlax",
+  "resource_uri": "api/v1/pokemon/446/",
+  "pokedex": 446
+}, {
+  "name": "Riolu",
+  "resource_uri": "api/v1/pokemon/447/",
+  "pokedex": 447
+}, {
+  "name": "Lucario",
+  "resource_uri": "api/v1/pokemon/448/",
+  "pokedex": 448
+}, {
+  "name": "Hippopotas",
+  "resource_uri": "api/v1/pokemon/449/",
+  "pokedex": 449
+}, {
+  "name": "Hippowdon",
+  "resource_uri": "api/v1/pokemon/450/",
+  "pokedex": 450
+}, {
+  "name": "Skorupi",
+  "resource_uri": "api/v1/pokemon/451/",
+  "pokedex": 451
+}, {
+  "name": "Drapion",
+  "resource_uri": "api/v1/pokemon/452/",
+  "pokedex": 452
+}, {
+  "name": "Croagunk",
+  "resource_uri": "api/v1/pokemon/453/",
+  "pokedex": 453
+}, {
+  "name": "Toxicroak",
+  "resource_uri": "api/v1/pokemon/454/",
+  "pokedex": 454
+}, {
+  "name": "Carnivine",
+  "resource_uri": "api/v1/pokemon/455/",
+  "pokedex": 455
+}, {
+  "name": "Finneon",
+  "resource_uri": "api/v1/pokemon/456/",
+  "pokedex": 456
+}, {
+  "name": "Lumineon",
+  "resource_uri": "api/v1/pokemon/457/",
+  "pokedex": 457
+}, {
+  "name": "Mantyke",
+  "resource_uri": "api/v1/pokemon/458/",
+  "pokedex": 458
+}, {
+  "name": "Snover",
+  "resource_uri": "api/v1/pokemon/459/",
+  "pokedex": 459
+}, {
+  "name": "Abomasnow",
+  "resource_uri": "api/v1/pokemon/460/",
+  "pokedex": 460
+}, {
+  "name": "Weavile",
+  "resource_uri": "api/v1/pokemon/461/",
+  "pokedex": 461
+}, {
+  "name": "Magnezone",
+  "resource_uri": "api/v1/pokemon/462/",
+  "pokedex": 462
+}, {
+  "name": "Lickilicky",
+  "resource_uri": "api/v1/pokemon/463/",
+  "pokedex": 463
+}, {
+  "name": "Rhyperior",
+  "resource_uri": "api/v1/pokemon/464/",
+  "pokedex": 464
+}, {
+  "name": "Tangrowth",
+  "resource_uri": "api/v1/pokemon/465/",
+  "pokedex": 465
+}, {
+  "name": "Electivire",
+  "resource_uri": "api/v1/pokemon/466/",
+  "pokedex": 466
+}, {
+  "name": "Magmortar",
+  "resource_uri": "api/v1/pokemon/467/",
+  "pokedex": 467
+}, {
+  "name": "Togekiss",
+  "resource_uri": "api/v1/pokemon/468/",
+  "pokedex": 468
+}, {
+  "name": "Yanmega",
+  "resource_uri": "api/v1/pokemon/469/",
+  "pokedex": 469
+}, {
+  "name": "Leafeon",
+  "resource_uri": "api/v1/pokemon/470/",
+  "pokedex": 470
+}, {
+  "name": "Glaceon",
+  "resource_uri": "api/v1/pokemon/471/",
+  "pokedex": 471
+}, {
+  "name": "Gliscor",
+  "resource_uri": "api/v1/pokemon/472/",
+  "pokedex": 472
+}, {
+  "name": "Mamoswine",
+  "resource_uri": "api/v1/pokemon/473/",
+  "pokedex": 473
+}, {
+  "name": "Porygon",
+  "resource_uri": "api/v1/pokemon/474/",
+  "pokedex": 474
+}, {
+  "name": "Gallade",
+  "resource_uri": "api/v1/pokemon/475/",
+  "pokedex": 475
+}, {
+  "name": "Probopass",
+  "resource_uri": "api/v1/pokemon/476/",
+  "pokedex": 476
+}, {
+  "name": "Dusknoir",
+  "resource_uri": "api/v1/pokemon/477/",
+  "pokedex": 477
+}, {
+  "name": "Froslass",
+  "resource_uri": "api/v1/pokemon/478/",
+  "pokedex": 478
+}, {
+  "name": "Rotom",
+  "resource_uri": "api/v1/pokemon/479/",
+  "pokedex": 479
+}, {
+  "name": "Uxie",
+  "resource_uri": "api/v1/pokemon/480/",
+  "pokedex": 480
+}, {
+  "name": "Mesprit",
+  "resource_uri": "api/v1/pokemon/481/",
+  "pokedex": 481
+}, {
+  "name": "Azelf",
+  "resource_uri": "api/v1/pokemon/482/",
+  "pokedex": 482
+}, {
+  "name": "Dialga",
+  "resource_uri": "api/v1/pokemon/483/",
+  "pokedex": 483
+}, {
+  "name": "Palkia",
+  "resource_uri": "api/v1/pokemon/484/",
+  "pokedex": 484
+}, {
+  "name": "Heatran",
+  "resource_uri": "api/v1/pokemon/485/",
+  "pokedex": 485
+}, {
+  "name": "Regigigas",
+  "resource_uri": "api/v1/pokemon/486/",
+  "pokedex": 486
+}, {
+  "name": "Giratina",
+  "resource_uri": "api/v1/pokemon/487/",
+  "pokedex": 487
+}, {
+  "name": "Cresselia",
+  "resource_uri": "api/v1/pokemon/488/",
+  "pokedex": 488
+}, {
+  "name": "Phione",
+  "resource_uri": "api/v1/pokemon/489/",
+  "pokedex": 489
+}, {
+  "name": "Manaphy",
+  "resource_uri": "api/v1/pokemon/490/",
+  "pokedex": 490
+}, {
+  "name": "Darkrai",
+  "resource_uri": "api/v1/pokemon/491/",
+  "pokedex": 491
+}, {
+  "name": "Shaymin",
+  "resource_uri": "api/v1/pokemon/492/",
+  "pokedex": 492
+}, {
+  "name": "Arceus",
+  "resource_uri": "api/v1/pokemon/493/",
+  "pokedex": 493
+}, {
+  "name": "Victini",
+  "resource_uri": "api/v1/pokemon/494/",
+  "pokedex": 494
+}, {
+  "name": "Snivy",
+  "resource_uri": "api/v1/pokemon/495/",
+  "pokedex": 495
+}, {
+  "name": "Servine",
+  "resource_uri": "api/v1/pokemon/496/",
+  "pokedex": 496
+}, {
+  "name": "Serperior",
+  "resource_uri": "api/v1/pokemon/497/",
+  "pokedex": 497
+}, {
+  "name": "Tepig",
+  "resource_uri": "api/v1/pokemon/498/",
+  "pokedex": 498
+}, {
+  "name": "Pignite",
+  "resource_uri": "api/v1/pokemon/499/",
+  "pokedex": 499
+}, {
+  "name": "Emboar",
+  "resource_uri": "api/v1/pokemon/500/",
+  "pokedex": 500
+}, {
+  "name": "Oshawott",
+  "resource_uri": "api/v1/pokemon/501/",
+  "pokedex": 501
+}, {
+  "name": "Dewott",
+  "resource_uri": "api/v1/pokemon/502/",
+  "pokedex": 502
+}, {
+  "name": "Samurott",
+  "resource_uri": "api/v1/pokemon/503/",
+  "pokedex": 503
+}, {
+  "name": "Patrat",
+  "resource_uri": "api/v1/pokemon/504/",
+  "pokedex": 504
+}, {
+  "name": "Watchog",
+  "resource_uri": "api/v1/pokemon/505/",
+  "pokedex": 505
+}, {
+  "name": "Lillipup",
+  "resource_uri": "api/v1/pokemon/506/",
+  "pokedex": 506
+}, {
+  "name": "Herdier",
+  "resource_uri": "api/v1/pokemon/507/",
+  "pokedex": 507
+}, {
+  "name": "Stoutland",
+  "resource_uri": "api/v1/pokemon/508/",
+  "pokedex": 508
+}, {
+  "name": "Purrloin",
+  "resource_uri": "api/v1/pokemon/509/",
+  "pokedex": 509
+}, {
+  "name": "Liepard",
+  "resource_uri": "api/v1/pokemon/510/",
+  "pokedex": 510
+}, {
+  "name": "Pansage",
+  "resource_uri": "api/v1/pokemon/511/",
+  "pokedex": 511
+}, {
+  "name": "Simisage",
+  "resource_uri": "api/v1/pokemon/512/",
+  "pokedex": 512
+}, {
+  "name": "Pansear",
+  "resource_uri": "api/v1/pokemon/513/",
+  "pokedex": 513
+}, {
+  "name": "Simisear",
+  "resource_uri": "api/v1/pokemon/514/",
+  "pokedex": 514
+}, {
+  "name": "Panpour",
+  "resource_uri": "api/v1/pokemon/515/",
+  "pokedex": 515
+}, {
+  "name": "Simipour",
+  "resource_uri": "api/v1/pokemon/516/",
+  "pokedex": 516
+}, {
+  "name": "Munna",
+  "resource_uri": "api/v1/pokemon/517/",
+  "pokedex": 517
+}, {
+  "name": "Musharna",
+  "resource_uri": "api/v1/pokemon/518/",
+  "pokedex": 518
+}, {
+  "name": "Pidove",
+  "resource_uri": "api/v1/pokemon/519/",
+  "pokedex": 519
+}, {
+  "name": "Tranquill",
+  "resource_uri": "api/v1/pokemon/520/",
+  "pokedex": 520
+}, {
+  "name": "Unfezant",
+  "resource_uri": "api/v1/pokemon/521/",
+  "pokedex": 521
+}, {
+  "name": "Blitzle",
+  "resource_uri": "api/v1/pokemon/522/",
+  "pokedex": 522
+}, {
+  "name": "Zebstrika",
+  "resource_uri": "api/v1/pokemon/523/",
+  "pokedex": 523
+}, {
+  "name": "Roggenrola",
+  "resource_uri": "api/v1/pokemon/524/",
+  "pokedex": 524
+}, {
+  "name": "Boldore",
+  "resource_uri": "api/v1/pokemon/525/",
+  "pokedex": 525
+}, {
+  "name": "Gigalith",
+  "resource_uri": "api/v1/pokemon/526/",
+  "pokedex": 526
+}, {
+  "name": "Woobat",
+  "resource_uri": "api/v1/pokemon/527/",
+  "pokedex": 527
+}, {
+  "name": "Swoobat",
+  "resource_uri": "api/v1/pokemon/528/",
+  "pokedex": 528
+}, {
+  "name": "Drilbur",
+  "resource_uri": "api/v1/pokemon/529/",
+  "pokedex": 529
+}, {
+  "name": "Excadrill",
+  "resource_uri": "api/v1/pokemon/530/",
+  "pokedex": 530
+}, {
+  "name": "Audino",
+  "resource_uri": "api/v1/pokemon/531/",
+  "pokedex": 531
+}, {
+  "name": "Timburr",
+  "resource_uri": "api/v1/pokemon/532/",
+  "pokedex": 532
+}, {
+  "name": "Gurdurr",
+  "resource_uri": "api/v1/pokemon/533/",
+  "pokedex": 533
+}, {
+  "name": "Conkeldurr",
+  "resource_uri": "api/v1/pokemon/534/",
+  "pokedex": 534
+}, {
+  "name": "Tympole",
+  "resource_uri": "api/v1/pokemon/535/",
+  "pokedex": 535
+}, {
+  "name": "Palpitoad",
+  "resource_uri": "api/v1/pokemon/536/",
+  "pokedex": 536
+}, {
+  "name": "Seismitoad",
+  "resource_uri": "api/v1/pokemon/537/",
+  "pokedex": 537
+}, {
+  "name": "Throh",
+  "resource_uri": "api/v1/pokemon/538/",
+  "pokedex": 538
+}, {
+  "name": "Sawk",
+  "resource_uri": "api/v1/pokemon/539/",
+  "pokedex": 539
+}, {
+  "name": "Sewaddle",
+  "resource_uri": "api/v1/pokemon/540/",
+  "pokedex": 540
+}, {
+  "name": "Swadloon",
+  "resource_uri": "api/v1/pokemon/541/",
+  "pokedex": 541
+}, {
+  "name": "Leavanny",
+  "resource_uri": "api/v1/pokemon/542/",
+  "pokedex": 542
+}, {
+  "name": "Venipede",
+  "resource_uri": "api/v1/pokemon/543/",
+  "pokedex": 543
+}, {
+  "name": "Whirlipede",
+  "resource_uri": "api/v1/pokemon/544/",
+  "pokedex": 544
+}, {
+  "name": "Scolipede",
+  "resource_uri": "api/v1/pokemon/545/",
+  "pokedex": 545
+}, {
+  "name": "Cottonee",
+  "resource_uri": "api/v1/pokemon/546/",
+  "pokedex": 546
+}, {
+  "name": "Whimsicott",
+  "resource_uri": "api/v1/pokemon/547/",
+  "pokedex": 547
+}, {
+  "name": "Petilil",
+  "resource_uri": "api/v1/pokemon/548/",
+  "pokedex": 548
+}, {
+  "name": "Lilligant",
+  "resource_uri": "api/v1/pokemon/549/",
+  "pokedex": 549
+}, {
+  "name": "Basculin",
+  "resource_uri": "api/v1/pokemon/550/",
+  "pokedex": 550
+}, {
+  "name": "Sandile",
+  "resource_uri": "api/v1/pokemon/551/",
+  "pokedex": 551
+}, {
+  "name": "Krokorok",
+  "resource_uri": "api/v1/pokemon/552/",
+  "pokedex": 552
+}, {
+  "name": "Krookodile",
+  "resource_uri": "api/v1/pokemon/553/",
+  "pokedex": 553
+}, {
+  "name": "Darumaka",
+  "resource_uri": "api/v1/pokemon/554/",
+  "pokedex": 554
+}, {
+  "name": "Darmanitan",
+  "resource_uri": "api/v1/pokemon/555/",
+  "pokedex": 555
+}, {
+  "name": "Maractus",
+  "resource_uri": "api/v1/pokemon/556/",
+  "pokedex": 556
+}, {
+  "name": "Dwebble",
+  "resource_uri": "api/v1/pokemon/557/",
+  "pokedex": 557
+}, {
+  "name": "Crustle",
+  "resource_uri": "api/v1/pokemon/558/",
+  "pokedex": 558
+}, {
+  "name": "Scraggy",
+  "resource_uri": "api/v1/pokemon/559/",
+  "pokedex": 559
+}, {
+  "name": "Scrafty",
+  "resource_uri": "api/v1/pokemon/560/",
+  "pokedex": 560
+}, {
+  "name": "Sigilyph",
+  "resource_uri": "api/v1/pokemon/561/",
+  "pokedex": 561
+}, {
+  "name": "Yamask",
+  "resource_uri": "api/v1/pokemon/562/",
+  "pokedex": 562
+}, {
+  "name": "Cofagrigus",
+  "resource_uri": "api/v1/pokemon/563/",
+  "pokedex": 563
+}, {
+  "name": "Tirtouga",
+  "resource_uri": "api/v1/pokemon/564/",
+  "pokedex": 564
+}, {
+  "name": "Carracosta",
+  "resource_uri": "api/v1/pokemon/565/",
+  "pokedex": 565
+}, {
+  "name": "Archen",
+  "resource_uri": "api/v1/pokemon/566/",
+  "pokedex": 566
+}, {
+  "name": "Archeops",
+  "resource_uri": "api/v1/pokemon/567/",
+  "pokedex": 567
+}, {
+  "name": "Trubbish",
+  "resource_uri": "api/v1/pokemon/568/",
+  "pokedex": 568
+}, {
+  "name": "Garbodor",
+  "resource_uri": "api/v1/pokemon/569/",
+  "pokedex": 569
+}, {
+  "name": "Zorua",
+  "resource_uri": "api/v1/pokemon/570/",
+  "pokedex": 570
+}, {
+  "name": "Zoroark",
+  "resource_uri": "api/v1/pokemon/571/",
+  "pokedex": 571
+}, {
+  "name": "Minccino",
+  "resource_uri": "api/v1/pokemon/572/",
+  "pokedex": 572
+}, {
+  "name": "Cinccino",
+  "resource_uri": "api/v1/pokemon/573/",
+  "pokedex": 573
+}, {
+  "name": "Gothita",
+  "resource_uri": "api/v1/pokemon/574/",
+  "pokedex": 574
+}, {
+  "name": "Gothorita",
+  "resource_uri": "api/v1/pokemon/575/",
+  "pokedex": 575
+}, {
+  "name": "Gothitelle",
+  "resource_uri": "api/v1/pokemon/576/",
+  "pokedex": 576
+}, {
+  "name": "Solosis",
+  "resource_uri": "api/v1/pokemon/577/",
+  "pokedex": 577
+}, {
+  "name": "Duosion",
+  "resource_uri": "api/v1/pokemon/578/",
+  "pokedex": 578
+}, {
+  "name": "Reuniclus",
+  "resource_uri": "api/v1/pokemon/579/",
+  "pokedex": 579
+}, {
+  "name": "Ducklett",
+  "resource_uri": "api/v1/pokemon/580/",
+  "pokedex": 580
+}, {
+  "name": "Swanna",
+  "resource_uri": "api/v1/pokemon/581/",
+  "pokedex": 581
+}, {
+  "name": "Vanillite",
+  "resource_uri": "api/v1/pokemon/582/",
+  "pokedex": 582
+}, {
+  "name": "Vanillish",
+  "resource_uri": "api/v1/pokemon/583/",
+  "pokedex": 583
+}, {
+  "name": "Vanilluxe",
+  "resource_uri": "api/v1/pokemon/584/",
+  "pokedex": 584
+}, {
+  "name": "Deerling",
+  "resource_uri": "api/v1/pokemon/585/",
+  "pokedex": 585
+}, {
+  "name": "Sawsbuck",
+  "resource_uri": "api/v1/pokemon/586/",
+  "pokedex": 586
+}, {
+  "name": "Emolga",
+  "resource_uri": "api/v1/pokemon/587/",
+  "pokedex": 587
+}, {
+  "name": "Karrablast",
+  "resource_uri": "api/v1/pokemon/588/",
+  "pokedex": 588
+}, {
+  "name": "Escavalier",
+  "resource_uri": "api/v1/pokemon/589/",
+  "pokedex": 589
+}, {
+  "name": "Foongus",
+  "resource_uri": "api/v1/pokemon/590/",
+  "pokedex": 590
+}, {
+  "name": "Amoonguss",
+  "resource_uri": "api/v1/pokemon/591/",
+  "pokedex": 591
+}, {
+  "name": "Frillish",
+  "resource_uri": "api/v1/pokemon/592/",
+  "pokedex": 592
+}, {
+  "name": "Jellicent",
+  "resource_uri": "api/v1/pokemon/593/",
+  "pokedex": 593
+}, {
+  "name": "Alomomola",
+  "resource_uri": "api/v1/pokemon/594/",
+  "pokedex": 594
+}, {
+  "name": "Joltik",
+  "resource_uri": "api/v1/pokemon/595/",
+  "pokedex": 595
+}, {
+  "name": "Galvantula",
+  "resource_uri": "api/v1/pokemon/596/",
+  "pokedex": 596
+}, {
+  "name": "Ferroseed",
+  "resource_uri": "api/v1/pokemon/597/",
+  "pokedex": 597
+}, {
+  "name": "Ferrothorn",
+  "resource_uri": "api/v1/pokemon/598/",
+  "pokedex": 598
+}, {
+  "name": "Klink",
+  "resource_uri": "api/v1/pokemon/599/",
+  "pokedex": 599
+}, {
+  "name": "Klang",
+  "resource_uri": "api/v1/pokemon/600/",
+  "pokedex": 600
+}, {
+  "name": "Klinklang",
+  "resource_uri": "api/v1/pokemon/601/",
+  "pokedex": 601
+}, {
+  "name": "Tynamo",
+  "resource_uri": "api/v1/pokemon/602/",
+  "pokedex": 602
+}, {
+  "name": "Eelektrik",
+  "resource_uri": "api/v1/pokemon/603/",
+  "pokedex": 603
+}, {
+  "name": "Eelektross",
+  "resource_uri": "api/v1/pokemon/604/",
+  "pokedex": 604
+}, {
+  "name": "Elgyem",
+  "resource_uri": "api/v1/pokemon/605/",
+  "pokedex": 605
+}, {
+  "name": "Beheeyem",
+  "resource_uri": "api/v1/pokemon/606/",
+  "pokedex": 606
+}, {
+  "name": "Litwick",
+  "resource_uri": "api/v1/pokemon/607/",
+  "pokedex": 607
+}, {
+  "name": "Lampent",
+  "resource_uri": "api/v1/pokemon/608/",
+  "pokedex": 608
+}, {
+  "name": "Chandelure",
+  "resource_uri": "api/v1/pokemon/609/",
+  "pokedex": 609
+}, {
+  "name": "Axew",
+  "resource_uri": "api/v1/pokemon/610/",
+  "pokedex": 610
+}, {
+  "name": "Fraxure",
+  "resource_uri": "api/v1/pokemon/611/",
+  "pokedex": 611
+}, {
+  "name": "Haxorus",
+  "resource_uri": "api/v1/pokemon/612/",
+  "pokedex": 612
+}, {
+  "name": "Cubchoo",
+  "resource_uri": "api/v1/pokemon/613/",
+  "pokedex": 613
+}, {
+  "name": "Beartic",
+  "resource_uri": "api/v1/pokemon/614/",
+  "pokedex": 614
+}, {
+  "name": "Cryogonal",
+  "resource_uri": "api/v1/pokemon/615/",
+  "pokedex": 615
+}, {
+  "name": "Shelmet",
+  "resource_uri": "api/v1/pokemon/616/",
+  "pokedex": 616
+}, {
+  "name": "Accelgor",
+  "resource_uri": "api/v1/pokemon/617/",
+  "pokedex": 617
+}, {
+  "name": "Stunfisk",
+  "resource_uri": "api/v1/pokemon/618/",
+  "pokedex": 618
+}, {
+  "name": "Mienfoo",
+  "resource_uri": "api/v1/pokemon/619/",
+  "pokedex": 619
+}, {
+  "name": "Mienshao",
+  "resource_uri": "api/v1/pokemon/620/",
+  "pokedex": 620
+}, {
+  "name": "Druddigon",
+  "resource_uri": "api/v1/pokemon/621/",
+  "pokedex": 621
+}, {
+  "name": "Golett",
+  "resource_uri": "api/v1/pokemon/622/",
+  "pokedex": 622
+}, {
+  "name": "Golurk",
+  "resource_uri": "api/v1/pokemon/623/",
+  "pokedex": 623
+}, {
+  "name": "Pawniard",
+  "resource_uri": "api/v1/pokemon/624/",
+  "pokedex": 624
+}, {
+  "name": "Bisharp",
+  "resource_uri": "api/v1/pokemon/625/",
+  "pokedex": 625
+}, {
+  "name": "Bouffalant",
+  "resource_uri": "api/v1/pokemon/626/",
+  "pokedex": 626
+}, {
+  "name": "Rufflet",
+  "resource_uri": "api/v1/pokemon/627/",
+  "pokedex": 627
+}, {
+  "name": "Braviary",
+  "resource_uri": "api/v1/pokemon/628/",
+  "pokedex": 628
+}, {
+  "name": "Vullaby",
+  "resource_uri": "api/v1/pokemon/629/",
+  "pokedex": 629
+}, {
+  "name": "Mandibuzz",
+  "resource_uri": "api/v1/pokemon/630/",
+  "pokedex": 630
+}, {
+  "name": "Heatmor",
+  "resource_uri": "api/v1/pokemon/631/",
+  "pokedex": 631
+}, {
+  "name": "Durant",
+  "resource_uri": "api/v1/pokemon/632/",
+  "pokedex": 632
+}, {
+  "name": "Deino",
+  "resource_uri": "api/v1/pokemon/633/",
+  "pokedex": 633
+}, {
+  "name": "Zweilous",
+  "resource_uri": "api/v1/pokemon/634/",
+  "pokedex": 634
+}, {
+  "name": "Hydreigon",
+  "resource_uri": "api/v1/pokemon/635/",
+  "pokedex": 635
+}, {
+  "name": "Larvesta",
+  "resource_uri": "api/v1/pokemon/636/",
+  "pokedex": 636
+}, {
+  "name": "Volcarona",
+  "resource_uri": "api/v1/pokemon/637/",
+  "pokedex": 637
+}, {
+  "name": "Cobalion",
+  "resource_uri": "api/v1/pokemon/638/",
+  "pokedex": 638
+}, {
+  "name": "Terrakion",
+  "resource_uri": "api/v1/pokemon/639/",
+  "pokedex": 639
+}, {
+  "name": "Virizion",
+  "resource_uri": "api/v1/pokemon/640/",
+  "pokedex": 640
+}, {
+  "name": "Tornadus",
+  "resource_uri": "api/v1/pokemon/641/",
+  "pokedex": 641
+}, {
+  "name": "Thundurus",
+  "resource_uri": "api/v1/pokemon/642/",
+  "pokedex": 642
+}, {
+  "name": "Reshiram",
+  "resource_uri": "api/v1/pokemon/643/",
+  "pokedex": 643
+}, {
+  "name": "Zekrom",
+  "resource_uri": "api/v1/pokemon/644/",
+  "pokedex": 644
+}, {
+  "name": "Landorus",
+  "resource_uri": "api/v1/pokemon/645/",
+  "pokedex": 645
+}, {
+  "name": "Kyurem",
+  "resource_uri": "api/v1/pokemon/646/",
+  "pokedex": 646
+}, {
+  "name": "Keldeo",
+  "resource_uri": "api/v1/pokemon/647/",
+  "pokedex": 647
+}, {
+  "name": "Meloetta",
+  "resource_uri": "api/v1/pokemon/648/",
+  "pokedex": 648
+}, {
+  "name": "Genesect",
+  "resource_uri": "api/v1/pokemon/649/",
+  "pokedex": 649
+}, {
+  "name": "Chespin",
+  "resource_uri": "api/v1/pokemon/650/",
+  "pokedex": 650
+}, {
+  "name": "Quilladin",
+  "resource_uri": "api/v1/pokemon/651/",
+  "pokedex": 651
+}, {
+  "name": "Chesnaught",
+  "resource_uri": "api/v1/pokemon/652/",
+  "pokedex": 652
+}, {
+  "name": "Fennekin",
+  "resource_uri": "api/v1/pokemon/653/",
+  "pokedex": 653
+}, {
+  "name": "Braixen",
+  "resource_uri": "api/v1/pokemon/654/",
+  "pokedex": 654
+}, {
+  "name": "Delphox",
+  "resource_uri": "api/v1/pokemon/655/",
+  "pokedex": 655
+}, {
+  "name": "Froakie",
+  "resource_uri": "api/v1/pokemon/656/",
+  "pokedex": 656
+}, {
+  "name": "Frogadier",
+  "resource_uri": "api/v1/pokemon/657/",
+  "pokedex": 657
+}, {
+  "name": "Greninja",
+  "resource_uri": "api/v1/pokemon/658/",
+  "pokedex": 658
+}, {
+  "name": "Bunnelby",
+  "resource_uri": "api/v1/pokemon/659/",
+  "pokedex": 659
+}, {
+  "name": "Diggersby",
+  "resource_uri": "api/v1/pokemon/660/",
+  "pokedex": 660
+}, {
+  "name": "Fletchling",
+  "resource_uri": "api/v1/pokemon/661/",
+  "pokedex": 661
+}, {
+  "name": "Fletchinder",
+  "resource_uri": "api/v1/pokemon/662/",
+  "pokedex": 662
+}, {
+  "name": "Talonflame",
+  "resource_uri": "api/v1/pokemon/663/",
+  "pokedex": 663
+}, {
+  "name": "Scatterbug",
+  "resource_uri": "api/v1/pokemon/664/",
+  "pokedex": 664
+}, {
+  "name": "Spewpa",
+  "resource_uri": "api/v1/pokemon/665/",
+  "pokedex": 665
+}, {
+  "name": "Vivillon",
+  "resource_uri": "api/v1/pokemon/666/",
+  "pokedex": 666
+}, {
+  "name": "Litleo",
+  "resource_uri": "api/v1/pokemon/667/",
+  "pokedex": 667
+}, {
+  "name": "Pyroar",
+  "resource_uri": "api/v1/pokemon/668/",
+  "pokedex": 668
+}, {
+  "name": "Flabebe",
+  "resource_uri": "api/v1/pokemon/669/",
+  "pokedex": 669
+}, {
+  "name": "Floette",
+  "resource_uri": "api/v1/pokemon/670/",
+  "pokedex": 670
+}, {
+  "name": "Florges",
+  "resource_uri": "api/v1/pokemon/671/",
+  "pokedex": 671
+}, {
+  "name": "Skiddo",
+  "resource_uri": "api/v1/pokemon/672/",
+  "pokedex": 672
+}, {
+  "name": "Gogoat",
+  "resource_uri": "api/v1/pokemon/673/",
+  "pokedex": 673
+}, {
+  "name": "Pancham",
+  "resource_uri": "api/v1/pokemon/674/",
+  "pokedex": 674
+}, {
+  "name": "Pangoro",
+  "resource_uri": "api/v1/pokemon/675/",
+  "pokedex": 675
+}, {
+  "name": "Furfrou",
+  "resource_uri": "api/v1/pokemon/676/",
+  "pokedex": 676
+}, {
+  "name": "Espurr",
+  "resource_uri": "api/v1/pokemon/677/",
+  "pokedex": 677
+}, {
+  "name": "Meowstic",
+  "resource_uri": "api/v1/pokemon/678/",
+  "pokedex": 678
+}, {
+  "name": "Honedge",
+  "resource_uri": "api/v1/pokemon/679/",
+  "pokedex": 679
+}, {
+  "name": "Doublade",
+  "resource_uri": "api/v1/pokemon/680/",
+  "pokedex": 680
+}, {
+  "name": "Aegislash",
+  "resource_uri": "api/v1/pokemon/681/",
+  "pokedex": 681
+}, {
+  "name": "Spritzee",
+  "resource_uri": "api/v1/pokemon/682/",
+  "pokedex": 682
+}, {
+  "name": "Aromatisse",
+  "resource_uri": "api/v1/pokemon/683/",
+  "pokedex": 683
+}, {
+  "name": "Swirlix",
+  "resource_uri": "api/v1/pokemon/684/",
+  "pokedex": 684
+}, {
+  "name": "Slurpuff",
+  "resource_uri": "api/v1/pokemon/685/",
+  "pokedex": 685
+}, {
+  "name": "Inkay",
+  "resource_uri": "api/v1/pokemon/686/",
+  "pokedex": 686
+}, {
+  "name": "Malamar",
+  "resource_uri": "api/v1/pokemon/687/",
+  "pokedex": 687
+}, {
+  "name": "Binacle",
+  "resource_uri": "api/v1/pokemon/688/",
+  "pokedex": 688
+}, {
+  "name": "Barbaracle",
+  "resource_uri": "api/v1/pokemon/689/",
+  "pokedex": 689
+}, {
+  "name": "Skrelp",
+  "resource_uri": "api/v1/pokemon/690/",
+  "pokedex": 690
+}, {
+  "name": "Dragalge",
+  "resource_uri": "api/v1/pokemon/691/",
+  "pokedex": 691
+}, {
+  "name": "Clauncher",
+  "resource_uri": "api/v1/pokemon/692/",
+  "pokedex": 692
+}, {
+  "name": "Clawitzer",
+  "resource_uri": "api/v1/pokemon/693/",
+  "pokedex": 693
+}, {
+  "name": "Helioptile",
+  "resource_uri": "api/v1/pokemon/694/",
+  "pokedex": 694
+}, {
+  "name": "Heliolisk",
+  "resource_uri": "api/v1/pokemon/695/",
+  "pokedex": 695
+}, {
+  "name": "Tyrunt",
+  "resource_uri": "api/v1/pokemon/696/",
+  "pokedex": 696
+}, {
+  "name": "Tyrantrum",
+  "resource_uri": "api/v1/pokemon/697/",
+  "pokedex": 697
+}, {
+  "name": "Amaura",
+  "resource_uri": "api/v1/pokemon/698/",
+  "pokedex": 698
+}, {
+  "name": "Aurorus",
+  "resource_uri": "api/v1/pokemon/699/",
+  "pokedex": 699
+}, {
+  "name": "Sylveon",
+  "resource_uri": "api/v1/pokemon/700/",
+  "pokedex": 700
+}, {
+  "name": "Hawlucha",
+  "resource_uri": "api/v1/pokemon/701/",
+  "pokedex": 701
+}, {
+  "name": "Dedenne",
+  "resource_uri": "api/v1/pokemon/702/",
+  "pokedex": 702
+}, {
+  "name": "Carbink",
+  "resource_uri": "api/v1/pokemon/703/",
+  "pokedex": 703
+}, {
+  "name": "Goomy",
+  "resource_uri": "api/v1/pokemon/704/",
+  "pokedex": 704
+}, {
+  "name": "Sliggoo",
+  "resource_uri": "api/v1/pokemon/705/",
+  "pokedex": 705
+}, {
+  "name": "Goodra",
+  "resource_uri": "api/v1/pokemon/706/",
+  "pokedex": 706
+}, {
+  "name": "Klefki",
+  "resource_uri": "api/v1/pokemon/707/",
+  "pokedex": 707
+}, {
+  "name": "Phantump",
+  "resource_uri": "api/v1/pokemon/708/",
+  "pokedex": 708
+}, {
+  "name": "Trevenant",
+  "resource_uri": "api/v1/pokemon/709/",
+  "pokedex": 709
+}, {
+  "name": "Pumpkaboo",
+  "resource_uri": "api/v1/pokemon/710/",
+  "pokedex": 710
+}, {
+  "name": "Gourgeist",
+  "resource_uri": "api/v1/pokemon/711/",
+  "pokedex": 711
+}, {
+  "name": "Bergmite",
+  "resource_uri": "api/v1/pokemon/712/",
+  "pokedex": 712
+}, {
+  "name": "Avalugg",
+  "resource_uri": "api/v1/pokemon/713/",
+  "pokedex": 713
+}, {
+  "name": "Noibat",
+  "resource_uri": "api/v1/pokemon/714/",
+  "pokedex": 714
+}, {
+  "name": "Noivern",
+  "resource_uri": "api/v1/pokemon/715/",
+  "pokedex": 715
+}, {
+  "name": "Xerneas",
+  "resource_uri": "api/v1/pokemon/716/",
+  "pokedex": 716
+}, {
+  "name": "Yveltal",
+  "resource_uri": "api/v1/pokemon/717/",
+  "pokedex": 717
+}, {
+  "name": "Zygarde",
+  "resource_uri": "api/v1/pokemon/718/",
+  "pokedex": 718
+}, {
+  "name": "Deoxys",
+  "resource_uri": "api/v1/pokemon/10001/",
+  "pokedex": 10001
+}, {
+  "name": "Deoxys",
+  "resource_uri": "api/v1/pokemon/10002/",
+  "pokedex": 10002
+}, {
+  "name": "Deoxys",
+  "resource_uri": "api/v1/pokemon/10003/",
+  "pokedex": 10003
+}, {
+  "name": "Wormadam",
+  "resource_uri": "api/v1/pokemon/10004/",
+  "pokedex": 10004
+}, {
+  "name": "Wormadam",
+  "resource_uri": "api/v1/pokemon/10005/",
+  "pokedex": 10005
+}, {
+  "name": "Shaymin",
+  "resource_uri": "api/v1/pokemon/10006/",
+  "pokedex": 10006
+}, {
+  "name": "Giratina",
+  "resource_uri": "api/v1/pokemon/10007/",
+  "pokedex": 10007
+}, {
+  "name": "Rotom",
+  "resource_uri": "api/v1/pokemon/10008/",
+  "pokedex": 10008
+}, {
+  "name": "Rotom",
+  "resource_uri": "api/v1/pokemon/10009/",
+  "pokedex": 10009
+}, {
+  "name": "Rotom",
+  "resource_uri": "api/v1/pokemon/10010/",
+  "pokedex": 10010
+}, {
+  "name": "Rotom",
+  "resource_uri": "api/v1/pokemon/10011/",
+  "pokedex": 10011
+}, {
+  "name": "Rotom",
+  "resource_uri": "api/v1/pokemon/10012/",
+  "pokedex": 10012
+}, {
+  "name": "Castform",
+  "resource_uri": "api/v1/pokemon/10013/",
+  "pokedex": 10013
+}, {
+  "name": "Castform",
+  "resource_uri": "api/v1/pokemon/10014/",
+  "pokedex": 10014
+}, {
+  "name": "Castform",
+  "resource_uri": "api/v1/pokemon/10015/",
+  "pokedex": 10015
+}, {
+  "name": "Basculin",
+  "resource_uri": "api/v1/pokemon/10016/",
+  "pokedex": 10016
+}, {
+  "name": "Darmanitan",
+  "resource_uri": "api/v1/pokemon/10017/",
+  "pokedex": 10017
+}, {
+  "name": "Meloetta",
+  "resource_uri": "api/v1/pokemon/10018/",
+  "pokedex": 10018
+}, {
+  "name": "Tornadus",
+  "resource_uri": "api/v1/pokemon/10019/",
+  "pokedex": 10019
+}, {
+  "name": "Thundurus",
+  "resource_uri": "api/v1/pokemon/10020/",
+  "pokedex": 10020
+}, {
+  "name": "Landorus",
+  "resource_uri": "api/v1/pokemon/10021/",
+  "pokedex": 10021
+}, {
+  "name": "Kyurem",
+  "resource_uri": "api/v1/pokemon/10022/",
+  "pokedex": 10022
+}, {
+  "name": "Kyurem",
+  "resource_uri": "api/v1/pokemon/10023/",
+  "pokedex": 10023
+}, {
+  "name": "Keldeo",
+  "resource_uri": "api/v1/pokemon/10024/",
+  "pokedex": 10024
+}, {
+  "name": "Meowstic",
+  "resource_uri": "api/v1/pokemon/10025/",
+  "pokedex": 10025
+}, {
+  "name": "Aegislash",
+  "resource_uri": "api/v1/pokemon/10026/",
+  "pokedex": 10026
+}, {
+  "name": "Pumpkaboo",
+  "resource_uri": "api/v1/pokemon/10027/",
+  "pokedex": 10027
+}, {
+  "name": "Pumpkaboo",
+  "resource_uri": "api/v1/pokemon/10028/",
+  "pokedex": 10028
+}, {
+  "name": "Pumpkaboo",
+  "resource_uri": "api/v1/pokemon/10029/",
+  "pokedex": 10029
+}, {
+  "name": "Gourgeist",
+  "resource_uri": "api/v1/pokemon/10030/",
+  "pokedex": 10030
+}, {
+  "name": "Gourgeist",
+  "resource_uri": "api/v1/pokemon/10031/",
+  "pokedex": 10031
+}, {
+  "name": "Gourgeist",
+  "resource_uri": "api/v1/pokemon/10032/",
+  "pokedex": 10032
+}, {
+  "name": "Venusaur",
+  "resource_uri": "api/v1/pokemon/10033/",
+  "pokedex": 10033
+}, {
+  "name": "Charizard",
+  "resource_uri": "api/v1/pokemon/10034/",
+  "pokedex": 10034
+}, {
+  "name": "Charizard",
+  "resource_uri": "api/v1/pokemon/10035/",
+  "pokedex": 10035
+}, {
+  "name": "Blastoise",
+  "resource_uri": "api/v1/pokemon/10036/",
+  "pokedex": 10036
+}, {
+  "name": "Alakazam",
+  "resource_uri": "api/v1/pokemon/10037/",
+  "pokedex": 10037
+}, {
+  "name": "Gengar",
+  "resource_uri": "api/v1/pokemon/10038/",
+  "pokedex": 10038
+}, {
+  "name": "Kangaskhan",
+  "resource_uri": "api/v1/pokemon/10039/",
+  "pokedex": 10039
+}, {
+  "name": "Pinsir",
+  "resource_uri": "api/v1/pokemon/10040/",
+  "pokedex": 10040
+}, {
+  "name": "Gyarados",
+  "resource_uri": "api/v1/pokemon/10041/",
+  "pokedex": 10041
+}, {
+  "name": "Aerodactyl",
+  "resource_uri": "api/v1/pokemon/10042/",
+  "pokedex": 10042
+}, {
+  "name": "Mewtwo",
+  "resource_uri": "api/v1/pokemon/10043/",
+  "pokedex": 10043
+}, {
+  "name": "Mewtwo",
+  "resource_uri": "api/v1/pokemon/10044/",
+  "pokedex": 10044
+}, {
+  "name": "Ampharos",
+  "resource_uri": "api/v1/pokemon/10045/",
+  "pokedex": 10045
+}, {
+  "name": "Scizor",
+  "resource_uri": "api/v1/pokemon/10046/",
+  "pokedex": 10046
+}, {
+  "name": "Heracross",
+  "resource_uri": "api/v1/pokemon/10047/",
+  "pokedex": 10047
+}, {
+  "name": "Houndoom",
+  "resource_uri": "api/v1/pokemon/10048/",
+  "pokedex": 10048
+}, {
+  "name": "Tyranitar",
+  "resource_uri": "api/v1/pokemon/10049/",
+  "pokedex": 10049
+}, {
+  "name": "Blaziken",
+  "resource_uri": "api/v1/pokemon/10050/",
+  "pokedex": 10050
+}, {
+  "name": "Gardevoir",
+  "resource_uri": "api/v1/pokemon/10051/",
+  "pokedex": 10051
+}, {
+  "name": "Mawile",
+  "resource_uri": "api/v1/pokemon/10052/",
+  "pokedex": 10052
+}, {
+  "name": "Aggron",
+  "resource_uri": "api/v1/pokemon/10053/",
+  "pokedex": 10053
+}, {
+  "name": "Medicham",
+  "resource_uri": "api/v1/pokemon/10054/",
+  "pokedex": 10054
+}, {
+  "name": "Manectric",
+  "resource_uri": "api/v1/pokemon/10055/",
+  "pokedex": 10055
+}, {
+  "name": "Banette",
+  "resource_uri": "api/v1/pokemon/10056/",
+  "pokedex": 10056
+}, {
+  "name": "Absol",
+  "resource_uri": "api/v1/pokemon/10057/",
+  "pokedex": 10057
+}, {
+  "name": "Garchomp",
+  "resource_uri": "api/v1/pokemon/10058/",
+  "pokedex": 10058
+}, {
+  "name": "Lucario",
+  "resource_uri": "api/v1/pokemon/10059/",
+  "pokedex": 10059
+}, {
+  "name": "Abomasnow",
+  "resource_uri": "api/v1/pokemon/10060/",
+  "pokedex": 10060
+}]

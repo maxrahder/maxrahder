@@ -1,0 +1,14 @@
+{
+    "framework": "jasmine",
+    "libs": [],
+    "coverageFilters": [],
+    "scenarios": [
+        {
+            "libs": [],
+            "coverageFilters": [],
+            "sandbox": false,
+            "directory": "unit",
+            "name": "Unit Tests"
+        }
+    ]
+}

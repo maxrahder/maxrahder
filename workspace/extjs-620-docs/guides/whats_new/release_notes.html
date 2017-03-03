@@ -1,0 +1,2852 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Release Notes | Ext JS 6.2.0 </title>
+    <!--  Generated on November, 11 2016 at 0:39 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta property="og:image" content="../../home-images/sencha-200.png" />
+    <meta property="og:title" content="Release Notes | Ext JS 6.2.0 " />
+    <meta property="og:description" content="Release Notes for Ext JS 6.2.0 Release Date: September 8, 2016Version Number: 6.2.0.981New FeaturesAccessibility (3)EXTJS-22031 - RowEditor should support sc..." />
+    <meta property="og:site_name" content="Sencha Documentation" />
+    <meta property="og:url" content="http://docs.sencha.com/extjs/6.2.0/whats_new/release_notes.html" />
+    <meta name="description" content="Release Notes for Ext JS 6.2.0 Release Date: September 8, 2016Version Number: 6.2.0.981New FeaturesAccessibility (3)EXTJS-22031 - RowEditor should support sc...">
+    <style>
+        /*!
+         *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+         *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+         */
+        /* FONT PATH
+         * -------------------------- */
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('../../css/fonts/fontawesome-webfont.eot?v=4.5.0');
+            src: url('../../css/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+            url('../../css/fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+            url('../../css/fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+            url('../../css/fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+            url('../../css/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="../../css/prism.css">
+    <link rel="stylesheet" type="text/css" href="../../css/app.css">
+</head>
+<body class=" is-guide  has-guides  has-quick-start  has-api tree-shown">
+    <script type="text/javascript">
+        function getOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if(/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            } else if(userAgent.match(/Android/i)) {
+                return 'android';
+            }
+        }
+
+        var hash = document.location.hash,
+                rawhash, newhash, prop, member,
+                isIE8 = false;
+
+        if(hash.indexOf('#!') > -1) {
+            hash    = hash.replace('#!/api/','');
+            rawhash = hash.split('-'),
+            prop    = (rawhash[1] == 'static') ? rawhash[2] : rawhash[1],
+            member  = (rawhash[1] == 'static') ? rawhash[3] : rawhash[2],
+            newhash = rawhash[0] + '.html';
+
+            if (prop && member) {
+                newhash += '#' + prop + '-' + member;
+            }
+
+            document.location.href = newhash;
+        }
+
+        document.body.className += ' ' + getOS();
+    </script>
+    <!--[if IE 8]>
+    <script type='text/javascript'>
+        isIE8 = true;
+    </script>
+    <![endif]-->
+    <script type="text/javascript">
+        var ExtL = ExtL || {},
+            specificId = 'whats_new_-_release_notes',
+            isClassTemplate = false,
+            isHome = false,
+            isLanding = false,
+            isApi = false,
+            isGuide = true,
+            isQuickStart = false,
+            hasApi = true,
+            hasGuides = true,
+            hasQuickStart = true
+            singleton = false,
+            pageName = 'Release Notes',
+            pageTitle = 'Ext JS',
+            homePath = '../../',
+            product = 'extjs',
+            pversion = '6.2.0-modern',
+            hasVersions = true,
+            myToolkit = 'modern',
+            myVersion = '6.2.0',
+            appliesToToolkit = 'universal';
+
+            if (!isIE8) {
+                document.write('<script type=\"text/javascript\" src=\"../../js/prism.js\"><\/script>');
+            }
+    </script>
+    <script type="text/javascript" src="../../js/ace.js"></script>
+    <script type="text/javascript" src="../../js/beautify.js"></script>
+    <script type="text/javascript" src="../../js/app.js"></script>
+    <div id="help-wrap">
+        <div class="help-header">
+            Docs Help
+            <div id="help-close"></div>
+        </div>
+        <div class="classText">
+            <div class="toc">
+                <h2>Contents</h2>
+                    <a class="toc-page-h2" href="#terms-icons-and-labels">Terms, Icons, and Labels</a>
+                    <a class="toc-page-h3" href="#access-levels">Access Levels</a>
+                    <a class="toc-page-h3" href="#member-types">Member Types</a>
+                    <a class="toc-page-h3" href="#member-syntax">Member Syntax</a>
+                    <a class="toc-page-h3" href="#member-flags">Member Flags</a>
+                    <a class="toc-page-h3" href="#class-icons">Class Icons</a>
+                    <a class="toc-page-h3" href="#member-icons">Member Icons</a>
+                    <a class="toc-page-h2" href="#navigation-and-features">Navigation and Features</a>
+                    <a class="toc-page-h3" href="#class-member-quick-nav-menu">Class Member Quick-Nav Menu</a>
+                    <a class="toc-page-h3" href="#getter-and-setter-methods">Getter and Setter Methods</a>
+                    <a class="toc-page-h3" href="#history-bar">History Bar</a>
+                    <a class="toc-page-h3" href="#search-and-filters">Search and Filters</a>
+                    <a class="toc-page-h3" href="#api-doc-class-metadata">API Doc Class Metadata</a>
+                    <a class="toc-page-h3" href="#expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</a>
+                    <a class="toc-page-h3" href="#desktop-vs-mobile-view">Desktop -vs- Mobile View</a>
+                    <a class="toc-page-h3" href="#viewing-the-class-source">Viewing the Class Source</a>
+            </div>
+            <h2 id="terms-icons-and-labels">Terms, Icons, and Labels</h2>
+    <p>Many classes have shortcut names used when creating (instantiating) a class with a 
+    configuration object.  The shortcut name is referred to as an <code>alias</code> (or <code>xtype</code> if the 
+    class extends Ext.Component).  The alias/xtype is listed next to the class name of 
+    applicable classes for quick reference.</p>
+    <h3 id="access-levels">Access Levels</h3>
+    <p>Framework classes or their members may be specified as <code>private</code> or <code>protected</code>.  Else, 
+    the class / member is <code>public</code>.  <code>Public</code>, <code>protected</code>, and <code>private</code> are access 
+    descriptors used to convey how and when the class or class member should be used.</p>
+    <ul>
+    <li><p><strong>Public</strong> classes and class members are available for use by any other class or 
+    application code and may be relied upon as a stable and persistent within major product 
+    versions.  Public classes and members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Protected</strong> class members are stable <code>public</code> members intended to be used by the 
+    owning class or its subclasses.  Protected members may safely be extended via a subclass.</p>
+    </li>
+    <li><p><strong>Private</strong> classes and class members are used internally by the framework and are not 
+    intended to be used by application developers.  Private classes and members may change or 
+    be omitted from the framework at any time without notice and should not be relied upon in 
+    application logic.</p>
+    </li>
+    </ul>
+    <h3 id="member-types">Member Types</h3>
+    <ul>
+    <li><strong>Config</strong> - The configuration options for a class.</li>
+    <li><strong>Property</strong> - Set once a class is instantiated. *See Read Only below.</li>
+    <li><strong>Method</strong> - Actions that can be performed by a class.  Methods should be read as 
+    instance methods and can only be called from a instance of a given class.  Static methods 
+    that can be called directly from the class itself will have a <code>static</code> label next to the 
+    method name.  *See Static below.</li>
+    <li><strong>Event</strong> - Events are specific to the framework event system allowing for classes to 
+    programmatically raise an event to be handled by one or more event handler methods.  DOM 
+    events, while handled by the framework event system, are not specifically described 
+    within the API documentation.  *For DOM events refer to the 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Events">event reference</a> page from MDN.</li>
+    <li><strong>Theme Variable</strong> - Variables used by the visual theme engine employed by the 
+    framework.</li>
+    <li><strong>Theme Mixin</strong> - Functions used by the visual theme engine employed by the framework 
+    and may use values set in various Theme Variables.</li>
+    </ul>
+    <h3 id="member-syntax">Member Syntax</h3>
+    <p>Below is an example class member that we can disect to show the syntax of a class member 
+    (the lookupComponent method as viewed from the Ext.button.Button class in this case).</p>
+    <div style="position: relative;" class="show-inherited show-protected members">
+        <div style="border: 1px solid #E4E4E4;" class="classmembers member-protected isNotStatic isInherited member-temp-expanded" data-member-name="lookupComponent">
+            <div class="collapse-toggle"></div>
+            <div class="source-class"><a href="javascript:void(0);">Ext.container.Container</a><div class="viewSource"><a href="javascript:void(0);"></a><a target="_blank" href="javascript:void(0);">view source</a></div></div>
+            <div class="member-header">
+            <a href="javascript:void(0);" class="member-name-link"><span data-ref="method-lookupComponent" class="member-name"><strong>lookup</strong>Component</span></a>
+            <span class="params-list"> ( item )</span> : <span class="memberType">Ext.Component</span>
+            <div class="member-tags"><span class="protected">protected</span></div>
+        </div>
+            <p>Called when a raw config object is added to this container either during initialization of the <a href="javascript:void(0);">items</a> config,
+        or when new items are <a href="javascript:void(0);">added), or {@link #insert inserted</a>.</p>
+        <p>This method converts the passed object into an instanced child component.</p>
+        <p>This may be overridden in subclasses when special processing needs to be applied to child creation.</p>
+                    <div class="detail-header">Parameters</div>
+                <p><span class="params-list">item</span> :
+                        <span class="memberType">&nbsp;Object</span>
+                </p>
+                <div class="params-desc"><p>The config object being added.</p></div>
+                <div class="detail-header">Returns</div>
+                <span style="margin-left:12px;" class="memberType">Ext.Component</span>
+                <div class="return-desc"><p>The component to be added.</p>
+            </div>
+        </div>
+    </div>
+    
+    <p>Let&#39;s look at each part of the member row:</p>
+    <ul>
+    <li><strong>Expand/Collapse</strong> - On the left-hand size of the member row is a control used to 
+    expand and collapse each member row to show / hide member details.</li>
+    <li><strong>Member Name</strong> - The name of the class member (<code>lookupComponent</code> in this example)</li>
+    <li><strong>Method Param</strong> - Any required or optional params used by a method (or passed to an 
+    event handler method) will be listed next to the method name within parenthesis 
+    (<code>( item )</code> in this example)</li>
+    <li><strong>Return type</strong> - The class instance or javascript object returned by the method or 
+    property (<code>Ext.Component</code> in this case).  This may be omitted for methods that do not 
+    return anything other than <code>undefined</code> or may display as multiple possible values 
+    separated by a forward slash <code>/</code> signifying that what is returned may depend on the 
+    results of the method call (i.e. a method may return a Component if a get method calls is 
+    successful or <code>false</code> if unsuccessful which would be displayed as 
+    <code>Ext.Component/Boolean</code>).</li>
+    <li><strong>Flags</strong> - Any flags applicable to the member will be displayed next (<code>PROTECTED</code> in 
+    this example - see the Flags section below)</li>
+    <li><strong>Member Origin</strong> - On the right-hand side of the member row is the class where the 
+    member was initially described (<code>Ext.container.Container</code> in this example).  The source 
+    class will be displayed as a blue link if the member originates from the current class 
+    and gray if it is inherited from an ancestor or mixed-in class.</li>
+    <li><strong>Member Source</strong> - On the right-hand side below the member origin class is a link to 
+    view the member&#39;s source (<code>view source</code> in the example)</li>
+    <li><strong>Params List</strong> - Each param for a class method will be listed using the same name 
+    found above in parenthesis, the type of class or object expected, and a description of 
+    the param (<code>item : Object</code> in the example).</li>
+    <li><strong>Returns</strong> - If a class returns a value other than <code>undefined</code> a &quot;Returns&quot; section 
+    will note the type of class or object returned and a description (<code>Ext.Component</code> in the 
+    example)</li>
+    <li><strong>Since</strong> (<em>not shown in the example</em>) - Some members will show which version of the 
+    product the member was first introduced (i.e. <code>Available since 3.4.0</code> - <em>not pictured in 
+    the example</em>) just after the member description</li>
+    <li><strong>Default</strong> (<em>not shown in the example</em>) - Configs often show the default config value 
+    to be applied to a class instance if not overridden (i.e. <code>Defaults to: false</code>)</li>
+    </ul>
+    <h3 id="member-flags">Member Flags</h3>
+    <p>The API documentation uses a number of flags to further commnicate the class member&#39;s 
+    function and intent.  The label may be represented by a text label, an abbreviation, or 
+    an icon.</p>
+    <ul>
+    <li><strong>Required</strong> - Required config when instantiating a class</li>
+    <li><strong>Bindable</strong> - The config has a setter which allows this config to be set via ViewModel 
+    binding</li>
+    <li><strong>Read Only</strong> - The property may be read, but cannot be used to configure / 
+    re-configure a class instance at runtime</li>
+    <li><strong>Singleton</strong> - Singleton classes are instantiated immediately once defined and may not 
+    be instantiated manually</li>
+    <li><strong>Static</strong> - A static method or property is a method or property belonging to the class 
+    itself, not an instance of the class</li>
+    <li><strong>Chainable</strong> - Refers to methods that return the class instance back when called.<br>This enables chained method calls like: <code>classInstance.method1().method2().etc();</code></li>
+    <li><strong>Deprecated</strong> - A class or member that is scheduled for removal in a future 
+    framework version and is provided in the current version for backwards compatibility.<br>Deprecated classes and members will have a message directing you to the preferred class / 
+    method going forward.</li>
+    <li><strong>Removed</strong> - A removed class or member that exists in documentation only as a 
+    reference for users upgrading between framework versions</li>
+    <li><strong>Template</strong> - A method defined within a base class designed to be overridden by 
+    subclasses</li>
+    <li><strong>Abstract</strong> - A class or member may be be defined as abstract.  Abstract classes and 
+    members establish a class structure and provide limited, if any, code.  Class-specific 
+    code will be furnished via overrides in subclasses.</li>
+    <li><strong>Preventable</strong> - Events marked preventable will not fire if <code>false</code> is returned from 
+    an event handler</li>
+    </ul>
+    <h3 id="class-icons">Class Icons</h3>
+    <p><span class="icon-demo class-icon"></span> - Indicates a framework class  </p>
+    <p><span class="icon-demo singleton-icon"></span> - A singleton framework class. *See the 
+    singleton flag for more information  </p>
+    <p><span class="icon-demo component-icon"></span> - A component-type framework class (any 
+    class within the Ext JS framework that extends Ext.Component)  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h3 id="member-icons">Member Icons</h3>
+    <p><span class="icon-demo fa fa-cubes"></span> - Indicates a class member of type <code>config</code>  </p>
+    <p><span class="icon-demo fa fa-book"></span> - Indicates a class member of type <code>property</code>  </p>
+    <p><span class="icon-demo fa fa-object-group"></span> - Indicates a class member of type 
+    <code>method</code>  </p>
+    <p><span class="icon-demo fa fa-bolt"></span> - Indicates a class member of type <code>event</code>  </p>
+    <p><span class="icon-demo fa fa-paint-brush"></span> - Indicates a class member of type 
+    <code>theme variable</code>  </p>
+    <p><span class="icon-demo fa fa-tint"></span> - Indicates a class member of type 
+    <code>theme mixin</code>  </p>
+    <p><span class="icon-demo display-new"></span> - Indicates that the class, member, or guide 
+    is new in the currently viewed version</p>
+    <h2 id="navigation-and-features">Navigation and Features</h2>
+    <h3 id="class-member-quick-nav-menu">Class Member Quick-Nav Menu</h3>
+    <p>Just below the class name on an API doc page is a row of buttons corresponding to the 
+    types of members owned by the current class.  Each button shows a count of members by 
+    type (this count is updated as filters are applied).  Clicking the button will navigate 
+    you to that member section.  Hovering over the member-type button will reveal a popup 
+    menu of all members of that type for quick navigation.</p>
+    <h3 id="getter-and-setter-methods">Getter and Setter Methods</h3>
+    <p>Getting and setter methods that correlate to a class config option will show up in the 
+    methods section as well as in the configs section of both the API doc and the member-type 
+    menus just beneath the config they work with.  The getter and setter method documentation 
+    will be found in the config row for easy reference.</p>
+    <h3 id="history-bar">History Bar</h3>
+    <p>Your page history is kept in localstorage and displayed (using the available real estate) 
+    just below the top title bar.  By default, the only search results shown are the pages 
+    matching the product / version you&#39;re currently viewing.  You can expand what is 
+    displayed by clicking on the <span class="icon-demo history-config"></span> button on the 
+    right-hand side of the history bar and choosing the &quot;All&quot; radio option.  This will show 
+    all recent pages in the history bar for all products / versions.</p>
+    <p>Within the history config menu you will also see a listing of your recent page visits. 
+    The results are filtered by the &quot;Current Product / Version&quot; and &quot;All&quot; radio options. 
+    Clicking on the <span class="icon-demo history-clear"></span> button will clear the history bar as 
+    well as the history kept in local storage.</p>
+    <p>If &quot;All&quot; is selected in the history config menu the checkbox option for &quot;Show product 
+    details in the history bar&quot; will be enabled.  When checked, the product/version for each 
+    historic page will show alongside the page name in the history bar.  Hovering the cursor 
+    over the page names in the history bar will also show the product/version as a tooltip.</p>
+    <h3 id="search-and-filters">Search and Filters</h3>
+    <p>Both API docs and guides can be searched for using the search field at the top of the 
+    page.</p>
+    <p>On API doc pages there is also a filter input field that filters the member rows 
+    using the filter string.  In addition to filtering by string you can filter the class 
+    members by access level and inheritance.  This is done using the checkboxes at the top of 
+    the page.  <strong>Note</strong> that filtering out <code>private</code> members also filters the API class 
+    navigation tree.</p>
+    <p>Clicking on an empty search field will show your last 10 searches for quick navigation.</p>
+    <h3 id="api-doc-class-metadata">API Doc Class Metadata</h3>
+    <p>Each API doc page (with the exception of Javascript primitives pages) has a menu view of 
+    metadata relating to that class.  This metadata view will have one or more of the 
+    following:</p>
+    <ul>
+    <li><strong>Alternate Name</strong> - One or more additional class name synonymns (in Ext JS 6.0.0 the 
+    <code>Ext.button.Button</code> class has an alternate class name of <code>Ext.Button</code>).  Alternate class 
+    names are commonly maintained for backward compatibility.</li>
+    <li><strong>Hierarchy</strong> - The hierararchy view lists the inheritance chain of the current class 
+    up through its ancestor classes up to the root base class.</li>
+    <li><strong>Mixins</strong> - A list of classes that are mixed into the current class</li>
+    <li><strong>Inherited Mixins</strong> - A list of classes that are mixed into an ancestor of the current 
+    class</li>
+    <li><strong>Requires</strong> - All classes required to be defined for the class to be instantiated</li>
+    <li><strong>Uses</strong> - A list of classes potentially used by the class at some point in its 
+    lifecycle, but not necessarily requried for the class to initially be instantiated</li>
+    <li><strong>Subclasses</strong> - Classes that extend the current class</li>
+    </ul>
+    <h3 id="expanding-and-collapsing-examples-and-class-members">Expanding and Collapsing Examples and Class Members</h3>
+    <p>Runnable examples (Fiddles) are expanded on a page by default.  You can collapse and 
+    expand example code blocks individually using the arrow on the top-left of the code 
+    block.  You can also toggle the collapse state of all examples using the toggle button on 
+    the top-right of the page.  The toggle-all state will be remembered between page loads.</p>
+    <p>Class members are collapsed on a page by default.  You can expand and collapse members 
+    using the arrow icon on the left of the member row or globally using the expand / 
+    collapse all toggle button top-right.</p>
+    <h3 id="desktop-vs-mobile-view">Desktop -vs- Mobile View</h3>
+    <p>Viewing the docs on narrower screens or browsers will result in a view optimized for a 
+    smaller form factor.  The primary differences between the desktop and &quot;mobile&quot; view are:</p>
+    <ul>
+    <li>Global navigation will be located in a menu on the left-hand side accessible via the 
+    hamburger menu icon.  The menu houses the following (on most pages):<ul>
+    <li>The name of the current product (as a link to the product landing page)</li>
+    <li>The Sencha icon used to navigate back to the documentation home page</li>
+    <li>The product menu drop-down button</li>
+    <li>Tabs of navigation trees for the API docs and guides</li>
+    </ul>
+    </li>
+    <li>Current context navigation and tools is located on the right-hand side accessible via 
+    the gear icon.  The context menu houses teh following:<ul>
+    <li>The global search input field</li>
+    <li>(<em>API doc</em>) A &quot;Filters&quot; tab with the member filter, expand / collapse all examples 
+    button, expand / collapse all member rows button, the access level filter checkboxes, 
+    and the counts of each member</li>
+    <li>(<em>API doc</em>) A &quot;Related Classes&quot; tab containing the menu of metadata related to the 
+    current class</li>
+    <li>(<em>Guides</em>) The table of contents for the guide</li>
+    </ul>
+    </li>
+    </ul>
+    <h3 id="viewing-the-class-source">Viewing the Class Source</h3>
+    <p>The class source can be viewed by clicking on the class name at the top of an API doc 
+    page.  The source for class members can be viewed by clicking on the &quot;view source&quot; link 
+    on the right-hand side of the member row.</p>
+    
+        </div>
+    </div>
+    <div id="header">
+        <div class="logo">
+            <a href="http://docs.sencha.com"><img height="32" src="../../home-images/sencha_logo_thumb.png"/></a>
+        </div>
+        <span id="mobile-main-nav-menu-btn" class="fa fa-bars"></span>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl landing-product-menu-btn"><div class="callout callout-b"></div></span>
+            <div class="page-title">Release Notes</div>
+        <span id="mobile-context-menu-btn" class="fa fa-cog"></span>
+    </div>
+    <div id="centerContent">
+        <div id="history-nav">
+            <span id="history-config" class="history-config tooltip tooltip-tr-br" data-tip="Configure / Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="class-tree-ct" class="class-tree">
+            <h2 class="product-header">
+                <div class="logo">
+                    <a href="http://docs.sencha.com"><img src="../../home-images/sencha_logo1x.png"/></a>
+                </div>
+                <a href="../../index.html">Ext JS 6.2.0 </a>
+                <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn  tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+            </h2>
+            <div id="tree-header" class="pre-load">
+                    <div id="quickStartTab" class="toolbarHeaderButton">
+                        Quick Start
+                    </div>
+                <div id="guideTab" class="toolbarHeaderButton active-tab">
+                    Guides
+                </div>
+                <div id="apiTab" class="toolbarHeaderButton">
+                    API
+                </div>
+                <div id="hide-class-tree"></div>
+            </div>
+            <div id="tree-scroller">
+                <div id="tree" class="show-private show-protected is-tree hide">
+                        <div id="toolkit-tab-ct">
+        <div id="modernTab" class="active-tab">modern</div>
+        <div id="classicTab">classic</div>
+    </div>
+
+    <div id="toolkit-tree-ct">
+        <div id="modernTree" class="is-tree">
+            
+        </div>
+
+        <div id="classicTree" class="is-tree hide">
+            
+        </div>
+    </div>
+<div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Classes" data-collapse="Collapse All Classes"><div class="callout callout-b"></div></div>
+                </div>
+                <div id="guide-tree" class="hide is-tree">
+                    <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-getting_started" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Getting Started</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../getting_started/getting_started.html" class="tree-leaf-content isLeaf universal-decoration" id="node-getting_started_-_getting_started" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Setup</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">What's New?</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/whats_new.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_whats_new" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">What's New</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/release_notes.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_release_notes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Release Notes</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../whats_new/extjs_upgrade_guide.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-whats_new_-_extjs_upgrade_guide" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS 6.2.0 Upgrade Guide</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-whats_new_-_api_diffs" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">API Diffs</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_modern_diff.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/620_modern_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/620_classic_diff.html" class="tree-leaf-content isLeaf display-new classic-decoration" id="node-whats_new_-_api_diffs/620_classic_diff" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Classic - 6.0.2 and 6.2.0</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../whats_new/api_diffs/modern_theme_refactor.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-whats_new_-_api_diffs/modern_theme_refactor" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="modern-guide guide"></span>
+                                                <span class="tree-leaf-text">Modern Theming Refactor</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-examples" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Examples</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="http://examples.sencha.com/extjs/6.2.0-ea/examples" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-examples_-_620examples" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">6.2.0 Examples</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Core Concepts</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/classes.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_classes" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">The Class System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/layouts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_layouts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Layouts and Containers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/components.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_components" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Components</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/data_package.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_data_package" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Data Package</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/gestures.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_gestures" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Gestures</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/events.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_events" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Events</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/drag_drop.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_drag_drop.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_modern_drag_drop" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Modern Drag and Drop</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/theming.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Theming System</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/modern_theming.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_modern_theming" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Theming in the Modern Toolkit</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/material_theme.html" class="tree-leaf-content isLeaf display-new modern-decoration" id="node-core_concepts_-_material_theme" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Material Theme</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/memory_management.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_memory_management" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Memory Management</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/d3.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-core_concepts_-_d3" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using D3 in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-core_concepts_-_draw" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Draw Package</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/drawing.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/drawing" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Draw Package</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt1.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt1" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 1</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt2.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt2" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 2</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../core_concepts/draw/creating_images_with_draw_pt3.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_draw/creating_images_with_draw_pt3" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Creating Images - Pt 3</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/accessibility.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_accessibility" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Accessibility</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/localization.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_localization" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Localization</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/rtl.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_rtl" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Right to Left in Ext JS</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/font_ext.html" class="tree-leaf-content isLeaf universal-decoration" id="node-core_concepts_-_font_ext" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Sencha Font Packages</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../core_concepts/tablet_support.html" class="tree-leaf-content isLeaf classic-decoration" id="node-core_concepts_-_tablet_support" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Tablet Support</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-application_architecture" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Architecture</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/application_architecture.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_application_architecture" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Intro to App Architecture</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/developing_for_multiple_screens_and_environments.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_developing_for_multiple_screens_and_environments" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Multiple Screens</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_controllers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_controllers" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Controllers</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_models_data_binding.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_models_data_binding" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Models &amp; Binding</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/view_model_internals.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_view_model_internals" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">View Model Internals</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../application_architecture/router.html" class="tree-leaf-content isLeaf universal-decoration" id="node-application_architecture_-_router" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Using the Router</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-components" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">UI Components</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../components/carousel.html" class="tree-leaf-content isLeaf modern-decoration" id="node-components_-_carousel" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="modern-guide guide"></span>
+                                <span class="tree-leaf-text">Carousel</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/calendar.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_calendar" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Calendar</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/forms.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_forms" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Forms</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/introduction_to_charting.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_introduction_to_charting" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Introduction to Charting</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/trees.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_trees" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Trees</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/grids.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_grids" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Grids</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/pivot_grid.html" class="tree-leaf-content isLeaf universal-decoration" id="node-components_-_pivot_grid" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Pivot Grid</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/exporter.html" class="tree-leaf-content isLeaf display-new universal-decoration" id="node-components_-_exporter" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Exporter</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../components/widgets_widgets_columns.html" class="tree-leaf-content isLeaf classic-decoration" id="node-components_-_widgets_widgets_columns" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Using Components in Grids</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-tutorials" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Tutorials</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../tutorials/login_app.html" class="tree-leaf-content isLeaf classic-decoration" id="node-tutorials_-_login_app" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="classic-guide guide"></span>
+                                <span class="tree-leaf-text">Sample Login App</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Backend Connectors</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/soap.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_soap" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">SOAP Services</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../backend_connectors/amf.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_amf" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">AMF Data Sources</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-backend_connectors_-_direct" isLeaf="false">
+                        <span class="tree-expando">▸</span>
+                                <span class="folder-type"></span>
+                                    <span class="tree-leaf-text">Ext Direct</span>
+                    </div>
+                        <div class="tree-child-leaves hidden">
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/specification.html" class="tree-leaf-content isLeaf universal-decoration" id="node-backend_connectors_-_direct/specification" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="universal-guide guide"></span>
+                                                <span class="tree-leaf-text">Ext Direct Specification</span>
+                                    </a>
+                                </div>
+                                <div class="tree-leaf tree-member">
+                                    <a href="../backend_connectors/direct/mysql_php.html" class="tree-leaf-content isLeaf classic-decoration" id="node-backend_connectors_-_direct/mysql_php" isLeaf="true">
+                                        <span class="tree-expando hidden">▸</span>
+                                                    <span class="classic-guide guide"></span>
+                                                <span class="tree-leaf-text">Using MySQL and PHP</span>
+                                    </a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content isNotLeaf universal-decoration" id="branch-other_resources" isLeaf="false">
+        <span class="tree-expando">▸</span>
+                <span class="folder-type"></span>
+                    <span class="tree-leaf-text">Other Resources</span>
+    </div>
+        <div class="tree-child-leaves hidden">
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/extjs_faq.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_extjs_faq" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS - FAQ</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/oop_concepts.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_oop_concepts" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Basics of OOP</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/ecosystem.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_ecosystem" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">Ext JS Ecosystem</span>
+                    </a>
+                </div>
+                <div class="tree-leaf tree-member">
+                    <a href="../other_resources/sencha_blog.html" class="tree-leaf-content isLeaf universal-decoration" id="node-other_resources_-_sencha_blog" isLeaf="true">
+                        <span class="tree-expando hidden">▸</span>
+                                    <span class="universal-guide guide"></span>
+                                <span class="tree-leaf-text">From the Sencha Blog</span>
+                    </a>
+                </div>
+        </div>
+</div>
+<div class="tree-leaf tree-member">
+    <a href="../supported_browsers.html" class="tree-leaf-content isLeaf universal-decoration" id="node-supported_browsers" isLeaf="true">
+        <span class="tree-expando hidden">▸</span>
+                    <span class="universal-guide guide"></span>
+                <span class="tree-leaf-text">Supported Browsers</span>
+    </a>
+</div>
+
+                    <div class="fa fa-plus toggle-tree hide tooltip tooltip-tr-br" data-expand="Expand All Guides" data-collapse="Collapse All Guides"><div class="callout callout-b"></div></div>
+                </div>
+                    <div id="quick-start-tree" class="hide is-tree">
+                        <div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_introduction" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/introduction.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">1</span>
+                <div class="quick-start-text">Introduction</div>
+                <div class="quick-start-summary">An introduction to the Ext JS JavaScript framework</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_components" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/components.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">2</span>
+                <div class="quick-start-text">Components</div>
+                <div class="quick-start-summary">Explore Ext JS components and learn how to configure them</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_containers" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/containers.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">3</span>
+                <div class="quick-start-text">Containers</div>
+                <div class="quick-start-summary">Learn to nest components within container components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_presenting_data" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/presenting_data.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">4</span>
+                <div class="quick-start-text">Presenting Data</div>
+                <div class="quick-start-summary">Connect your data to your view components</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_handling_events" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/handling_events.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">5</span>
+                <div class="quick-start-text">Handling Events</div>
+                <div class="quick-start-summary">Respond to users interacting with your application with events</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_forms" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_forms.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">6</span>
+                <div class="quick-start-text">Data Forms</div>
+                <div class="quick-start-summary">Present data in form fields so that values can be modified</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_data_binding" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/data_binding.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">7</span>
+                <div class="quick-start-text">Data Binding</div>
+                <div class="quick-start-summary">Bind data to component configs for automatic responses to change</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_getting_organized" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/getting_organized.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">8</span>
+                <div class="quick-start-text">Getting Organized</div>
+                <div class="quick-start-summary">Move your code into an organized structure by defining its parts</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_bringing_it_together" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/bringing_it_together.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">9</span>
+                <div class="quick-start-text">Bringing it Together</div>
+                <div class="quick-start-summary">Add extra functionality to make this application more useful</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_going_to_production" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/going_to_production.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">10</span>
+                <div class="quick-start-text">Going to Production</div>
+                <div class="quick-start-summary">Use Sencha Cmd to make your application lightweight and efficient</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="tree-leaf tree-member">
+    <div class="tree-leaf-content" id="node-quick_start_-_helpful_resources" isLeaf="true">
+        <a class="tree-leaf-text" href="../quick_start/helpful_resources.html">
+            <div class="quick-start-text-ct">
+                <span class="quick-start-count">11</span>
+                <div class="quick-start-text">Helpful Resources</div>
+                <div class="quick-start-summary">Continue your Ext JS education with more helpful resources</div>
+            </div>
+        </a>
+    </div>
+</div>
+
+                    </div>
+            </div>
+        </div>
+        <a href="#" id="back-to-top">top </a>
+        <div id="rightMembers" class="">
+            
+            <div class="context-menu-ct">
+    <div class="context-header">
+        <div id="hide-context-menu" class="fa fa-caret-right"></div>
+    </div>
+    <div class="search">
+        <form autocomplete="off">
+                <div class="toolkit-search-filter-ct">
+                    <span id="modern-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Modern Search Results"><div class="callout callout-b"></div></span>
+                    <span id="classic-search-filter" class="tooltip tooltip-tr-br active" data-tip="Include Classic Search Results"><div class="callout callout-b"></div></span>
+                </div>
+
+            <input type="text" type="search" placeholder="search" id="searchtext">
+            <i id="filtersubmit" class="fa fa-search"></i>
+            <span id="help-btn" data-tip="Docs Help" class="tooltip tooltip-tr-br"><div class="callout callout-b"></div></span>
+        </form>
+    </div>
+    <div id="toc-context-ct">
+        <!-- context content added at runtime -->
+    </div>
+</div>
+<div class="guide-body-wrap">
+    <div class="body-wrap-inner">
+        <div class="classText">
+                <div class="toolkit-badge-ct universal-badge">
+                    Guide applies to:
+                    <span class="toolkit-badge universal">
+                        
+                        
+                        classic &amp; modern
+                    </span>
+                </div>
+
+            <div id="toggleExamples" class="fa fa-code tooltip tooltip-tr-br" data-expand="Expand All Examples" data-collapse="Collapse All Examples"><div class="callout callout-b"></div></div>
+                <div class="toc">
+                    <h2>Contents</h2>
+                        <a class="toc-page-h2" href="#whats_new-_-release_notes_-_new_features">New Features</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_accessibility_3_">Accessibility (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_charts_1_">Charts (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_core_2_">Core (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_d3_2_">D3 (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_direct_2_">Direct (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_draw_1_">Draw (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_forms_4_">Forms (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_grid_2_">Grid (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_locale_1_">Locale (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_misc_3_">Misc (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_pivotgrid_2_">PivotGrid (2)</a>
+                        <a class="toc-page-h2" href="#whats_new-_-release_notes_-_bugs_fixed">Bugs Fixed</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_accessibility_3_">Accessibility (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_animation_1_">Animation (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_bind_1_">Bind (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_button_4_">Button (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_calendar_16_">Calendar (16)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_charts_17_">Charts (17)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_core_19_">Core (19)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_d3_4_">D3 (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_dashboard_5_">Dashboard (5)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_data_6_">Data (6)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_dataview_4_">DataView (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_direct_10_">Direct (10)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_documentation_13_">Documentation (13)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_drag_2_">Drag (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_draw_1_">Draw (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_events_2_">Events (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_examples_31_">Examples (31)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_exporter_2_">Exporter (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_forms_25_">Forms (25)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_grid_61_">Grid (61)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_layouts_2_">Layouts (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_menu_3_">Menu (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_misc_43_">Misc (43)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_panel_3_">Panel (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_pivotgrid_9_">PivotGrid (9)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_scroller_1_">Scroller (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_sparklne_1_">Sparklne (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tabs_4_">Tabs (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_theme_13_">Theme (13)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tooltips_6_">ToolTips (6)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_toolbars_6_">Toolbars (6)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tree_4_">Tree (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_window_5_">Window (5)</a>
+                        <a class="toc-page-h2" href="#whats_new-_-release_notes_-_known_issues">Known Issues</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_accessibility_13_">Accessibility (13)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_calendar_1_">Calendar (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_core_1_">Core (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_dataview_1_">DataView (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_layouts_1_">Layouts (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tabs_1_">Tabs (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_theme_1_">Theme (1)</a>
+                        <a class="toc-page-h2" href="#whats_new-_-release_notes_-_new_features">New Features</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_accessibility_9_">Accessibility (9)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_bind_3_">Bind (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_charts_2_">Charts (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_core_5_">Core (5)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_d3_2_">D3 (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_direct_1_">Direct (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_events_3_">Events (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_examples_2_">Examples (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_exporter_6_">Exporter (6)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_grid_12_">Grid (12)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_pivotgrid_11_">PivotGrid (11)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_scroller_1_">Scroller (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_selection_model_1_">Selection Model (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tooltips_1_">ToolTips (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tree_3_">Tree (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_window_2_">Window (2)</a>
+                        <a class="toc-page-h2" href="#whats_new-_-release_notes_-_bugs_fixed">Bugs Fixed</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_accessibility_22_">Accessibility (22)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_animation_1_">Animation (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_app_1_">App (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_bind_6_">Bind (6)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_button_4_">Button (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_charts_14_">Charts (14)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_cmd_2_">Cmd (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_core_15_">Core (15)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_dashboard_1_">Dashboard (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_data_15_">Data (15)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_direct_3_">Direct (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_documentation_10_">Documentation (10)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_drag_1_">Drag (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_draw_3_">Draw (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_events_6_">Events (6)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_examples_14_">Examples (14)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_forms_51_">Forms (51)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_grid_71_">Grid (71)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_layouts_9_">Layouts (9)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_locale_3_">Locale (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_menu_2_">Menu (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_misc_1_">Misc (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_panel_7_">Panel (7)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_pivotgrid_14_">PivotGrid (14)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_scroller_15_">Scroller (15)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_selection_model_4_">Selection Model (4)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tabs_1_">Tabs (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_templates_1_">Templates (1)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_theme_7_">Theme (7)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tooltips_3_">ToolTips (3)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_toolbars_2_">Toolbars (2)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tree_12_">Tree (12)</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_window_8_">Window (8)</a>
+                        <a class="toc-page-h2" href="#whats_new-_-release_notes_-_known_issues">Known Issues</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_accessibility">Accessibility</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_charts">Charts</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_core">Core</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_dataview">DataView</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_layouts">Layouts</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_tabs">Tabs</a>
+                        <a class="toc-page-h3" href="#whats_new-_-release_notes_-_theme">Theme</a>
+                </div>
+            <h1 id="whats_new-_-release_notes_-_release_notes_for_ext_js_6_2_0">Release Notes for Ext JS 6.2.0<a class="quick-link" href="#whats_new-_-release_notes_-_release_notes_for_ext_js_6_2_0"></a></h1>
+<p>Release Date: September 8, 2016</p>
+<p>Version Number: 6.2.0.981</p>
+<h2 id="whats_new-_-release_notes_-_new_features">New Features<a class="quick-link" href="#whats_new-_-release_notes_-_new_features"></a></h2>
+<h3 id="whats_new-_-release_notes_-_accessibility_3_">Accessibility (3)<a class="quick-link" href="#whats_new-_-release_notes_-_accessibility_3_"></a></h3>
+<ul>
+<li><p>EXTJS-22031 - RowEditor should support screen readers</p>
+</li>
+<li><p>EXTJS-22032 - Checkbox selection model should support screen reader announcement</p>
+</li>
+<li><p>EXTJS-22063 - Grid should support announcing dirty cells to screen readers</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_charts_1_">Charts (1)<a class="quick-link" href="#whats_new-_-release_notes_-_charts_1_"></a></h3>
+<ul>
+<li>EXTJS-16591 - Modern toolkit should provide sparklines</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_core_2_">Core (2)<a class="quick-link" href="#whats_new-_-release_notes_-_core_2_"></a></h3>
+<ul>
+<li><p>EXTJS-19839 - Configs should be nulled when an object is destroyed</p>
+</li>
+<li><p>EXTJS-21976 - Move plugin creation and management to core package</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_d3_2_">D3 (2)<a class="quick-link" href="#whats_new-_-release_notes_-_d3_2_"></a></h3>
+<ul>
+<li><p>EXTJS-21391 - Pack, TreeMap, Partition/Sunburst, Tree/HorizontalTree, HeatMap components should support tooltips</p>
+</li>
+<li><p>EXTJS-21890 - Provide a component that integrates pivot matrix and D3 HeatMap</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_direct_2_">Direct (2)<a class="quick-link" href="#whats_new-_-release_notes_-_direct_2_"></a></h3>
+<ul>
+<li><p>EXTJS-21848 - Should be able to set additional headers for Direct remoting requests</p>
+</li>
+<li><p>EXTJS-21850 - Direct proxy and Form actions should support prefix for method names</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_draw_1_">Draw (1)<a class="quick-link" href="#whats_new-_-release_notes_-_draw_1_"></a></h3>
+<ul>
+<li>EXTJS-21579 - Instancing sprite should support the &#39;instances&#39; config</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_forms_4_">Forms (4)<a class="quick-link" href="#whats_new-_-release_notes_-_forms_4_"></a></h3>
+<ul>
+<li><p>EXTJS-20517 - Ext.form.field.File should support accept attribute</p>
+</li>
+<li><p>EXTJS-20813 - Date field should be able to configure strict date parsing</p>
+</li>
+<li><p>EXTJS-21205 - HtmlEditor should have a buttonDefaults config to configure editor toolbar buttons</p>
+</li>
+<li><p>EXTJS-21479 - Spinner fields should fire a spinend event when value stops changing</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_grid_2_">Grid (2)<a class="quick-link" href="#whats_new-_-release_notes_-_grid_2_"></a></h3>
+<ul>
+<li><p>EXTJS-20407 - Add ability to configure locked grid/tree splitter </p>
+</li>
+<li><p>EXTJS-8111 - Add ability to use flex for grid group child columns</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_locale_1_">Locale (1)<a class="quick-link" href="#whats_new-_-release_notes_-_locale_1_"></a></h3>
+<ul>
+<li>EXTJS-21729 - Update Italian translation</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_misc_3_">Misc (3)<a class="quick-link" href="#whats_new-_-release_notes_-_misc_3_"></a></h3>
+<ul>
+<li><p>EXTJS-18146 - Create circular progress component</p>
+</li>
+<li><p>EXTJS-21520 - split kitchen sink into classic &amp; modern version</p>
+</li>
+<li><p>EXTJS-22409 - Tooltip and Files examples only for desktop?</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_pivotgrid_2_">PivotGrid (2)<a class="quick-link" href="#whats_new-_-release_notes_-_pivotgrid_2_"></a></h3>
+<ul>
+<li><p>EXTJS-22066 - DrillDown plugin should fire events when the view is shown/hidden</p>
+</li>
+<li><p>EXTJS-22077 - RangeEditor plugin should fire events when the view is shown/hidden</p>
+</li>
+</ul>
+<p>Total: 23</p>
+<h2 id="whats_new-_-release_notes_-_bugs_fixed">Bugs Fixed<a class="quick-link" href="#whats_new-_-release_notes_-_bugs_fixed"></a></h2>
+<h3 id="whats_new-_-release_notes_-_accessibility_3_">Accessibility (3)<a class="quick-link" href="#whats_new-_-release_notes_-_accessibility_3_"></a></h3>
+<ul>
+<li><p>EXTJS-18857 - Different behavior of Tab and Shift+Tab in row editor</p>
+</li>
+<li><p>EXTJS-19718 - FocusableContainer does not handle focus moving to its encapsulating element.</p>
+</li>
+<li><p>EXTJS-21457 - activeChildTabIndex of collapsible panel header is not copied to reExpander</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_animation_1_">Animation (1)<a class="quick-link" href="#whats_new-_-release_notes_-_animation_1_"></a></h3>
+<ul>
+<li>EXTJS-22364 - Flip animation is not working in IE</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_bind_1_">Bind (1)<a class="quick-link" href="#whats_new-_-release_notes_-_bind_1_"></a></h3>
+<ul>
+<li>EXTJS-21849 - Bind Stub doesn&#39;t remove its store listener when destroyed</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_button_4_">Button (4)<a class="quick-link" href="#whats_new-_-release_notes_-_button_4_"></a></h3>
+<ul>
+<li><p>EXTJS-15982 - setUI doesn&#39;t change the UI of a button</p>
+</li>
+<li><p>EXTJS-18925 - Overflowing buttons in toolbar don&#39;t fire click handler</p>
+</li>
+<li><p>EXTJS-22184 - Segmented button has wrong value during change event</p>
+</li>
+<li><p>EXTJS-22273 - Button text is not visible, if text overflows button.</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_calendar_16_">Calendar (16)<a class="quick-link" href="#whats_new-_-release_notes_-_calendar_16_"></a></h3>
+<ul>
+<li><p>EXTJS-21197 - When move events, they disappear on WP 8.1 tablet</p>
+</li>
+<li><p>EXTJS-21577 - Month view dates outside current month range aren&#39;t calculated correctly in some scenarios</p>
+</li>
+<li><p>EXTJS-21646 - Button &quot;&gt;&quot; doesn&#39;t work, can&#39;t change month/week/day to next one</p>
+</li>
+<li><p>EXTJS-21648 - Today button navigate to wrong month in month view standalone calendar app</p>
+</li>
+<li><p>EXTJS-21649 - Created event appear in previous day than it should in standalone calendar app</p>
+</li>
+<li><p>EXTJS-21679 - Calendar App: Unexpected Drag &amp; Drop Behaviour</p>
+</li>
+<li><p>EXTJS-21712 - Layout for Edit or Create Calendar Event is broken</p>
+</li>
+<li><p>EXTJS-22042 - Some amount of modal mask should remain in the calendar app in modern view</p>
+</li>
+<li><p>EXTJS-22044 - Calendar example not showing logged in state in modern</p>
+</li>
+<li><p>EXTJS-22052 - Events in day view are missing after navigating between days</p>
+</li>
+<li><p>EXTJS-22055 - Create button in Calendar doesn&#39;t work</p>
+</li>
+<li><p>EXTJS-22073 - Imported google calendar events aren&#39;t shown correctly in Calendar</p>
+</li>
+<li><p>EXTJS-22107 - Calendar - Date is covered by buttons and it is not fully visible</p>
+</li>
+<li><p>EXTJS-22246 - KitchenSink / Calendar Panel: Not possible to fill up From/To field on Chrome and Edge.</p>
+</li>
+<li><p>EXTJS-22271 - Calendar application - not visible switch menu day, week, month</p>
+</li>
+<li><p>EXTJS-22312 - Imported google calendar events are not shown correctly in Month View</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_charts_17_">Charts (17)<a class="quick-link" href="#whats_new-_-release_notes_-_charts_17_"></a></h3>
+<ul>
+<li><p>EXTJS-19890 - Time axis configured renderer not recognized</p>
+</li>
+<li><p>EXTJS-19891 - Gauge chart labels overlap ticks</p>
+</li>
+<li><p>EXTJS-20491 - Can&#39;t scroll legend docked to the top (Classic)</p>
+</li>
+<li><p>EXTJS-20684 - Should be able to update series.label.field config dynamically</p>
+</li>
+<li><p>EXTJS-20759 - Adding minorTickSteps to chart should automatically display</p>
+</li>
+<li><p>EXTJS-20887 - D3 chart Treemap styling issue on Edge/IE</p>
+</li>
+<li><p>EXTJS-21053 - sparklineline shows wrong values in tooltips when moving between different charts</p>
+</li>
+<li><p>EXTJS-21068 - Cannot zoom-in on tablets when pan/zoom interaction not initially allowed</p>
+</li>
+<li><p>EXTJS-21199 - [BarChart] Y axis labes missing</p>
+</li>
+<li><p>EXTJS-21606 - Changes to the Ext.chart.axis.Time.dateFormat config do not trigger axis layout</p>
+</li>
+<li><p>EXTJS-21681 - PieChart 3d with Donut fails to render if any  data is 0, Null Undefined or False</p>
+</li>
+<li><p>EXTJS-21740 - Chart interactions might get messed if you accidentally hover tooltip</p>
+</li>
+<li><p>EXTJS-21747 - Basic barchart example wrong units in table </p>
+</li>
+<li><p>EXTJS-21937 - Stock chart - Cannot move with tittle Bar on Edge</p>
+</li>
+<li><p>EXTJS-22040 - Legend is not properly updated when series title changes.</p>
+</li>
+<li><p>EXTJS-22080 - setHighlightItem does not work for pie chart</p>
+</li>
+<li><p>EXTJS-22091 - Polar chart tooltip problem when store has single value of 100</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_core_19_">Core (19)<a class="quick-link" href="#whats_new-_-release_notes_-_core_19_"></a></h3>
+<ul>
+<li><p>EXTJS-12113 - Task Runner repeat doesn&#39;t work if args are also provided</p>
+</li>
+<li><p>EXTJS-19845 - Boot and Loader are extremely slow</p>
+</li>
+<li><p>EXTJS-21433 - Scroll snapping does not work in modern pickers when using Chrome</p>
+</li>
+<li><p>EXTJS-21502 - Resizing is broken if component is draggable with translated events</p>
+</li>
+<li><p>EXTJS-21533 - inheritableStatics in child can pollute parent values</p>
+</li>
+<li><p>EXTJS-21628 - Chart title covers refresh and reload buttons after screen rotation</p>
+</li>
+<li><p>EXTJS-21706 - Modal window is not centered in nested list example</p>
+</li>
+<li><p>EXTJS-21718 - Blank screen when loading Admin Dashboard on phones</p>
+</li>
+<li><p>EXTJS-21835 - Configs with cached: true can affect subsequent configs</p>
+</li>
+<li><p>EXTJS-21876 - Resizer grabbers appear wrong,</p>
+</li>
+<li><p>EXTJS-21907 - Broken layout in Widgets in admin dashboard</p>
+</li>
+<li><p>EXTJS-21991 - Typo in Ext.promise.Promise#log()</p>
+</li>
+<li><p>EXTJS-22079 - Unable to get plugin instance from the Pluggable mixin</p>
+</li>
+<li><p>EXTJS-22186 - Widgets throw an error when firing a bubbled event</p>
+</li>
+<li><p>EXTJS-22188 - Responsive updates do not always fire and can stop until page is reloaded</p>
+</li>
+<li><p>EXTJS-22201 - Exception in Ext.plugin.PullRefresh</p>
+</li>
+<li><p>EXTJS-22368 - Viewport autoBlurInput can throw exceptions in IE</p>
+</li>
+<li><p>EXTJS-22384 - Observable onFrame config does not work.</p>
+</li>
+<li><p>EXTJS-22411 - Aligned floaters throw error if their alignTo element is destroyed.</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_d3_4_">D3 (4)<a class="quick-link" href="#whats_new-_-release_notes_-_d3_4_"></a></h3>
+<ul>
+<li><p>EXTJS-20902 - [D3] Text in Treemap is badly formated</p>
+</li>
+<li><p>EXTJS-21397 - D3 PanZoom interaction should properly support panning while zooming</p>
+</li>
+<li><p>EXTJS-22151 - Double tap provide zoom in iPads and Edge tablet</p>
+</li>
+<li><p>EXTJS-22412 - D3 Heatmap demo tooltip is blank</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_dashboard_5_">Dashboard (5)<a class="quick-link" href="#whats_new-_-release_notes_-_dashboard_5_"></a></h3>
+<ul>
+<li><p>EXTJS-21209 - [Admin Dashboard] Can&#39;t scroll menu in modern toolkit (except phones)</p>
+</li>
+<li><p>EXTJS-21715 - [Admin Dashboard] in TODO List Checkboxes missing in Chrome and can&#39;t multichoose in FF</p>
+</li>
+<li><p>EXTJS-22134 - Content data of executive dashboard are missing</p>
+</li>
+<li><p>EXTJS-22256 - Admin DashBoard Charts not scrollable</p>
+</li>
+<li><p>EXTJS-22279 - [Admin Dash] Member type buttons are broken [Modern]</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_data_6_">Data (6)<a class="quick-link" href="#whats_new-_-release_notes_-_data_6_"></a></h3>
+<ul>
+<li><p>EXTJS-21359 - Store#onCollectionAdd is not called when a synchronous proxy is used with autoLoad</p>
+</li>
+<li><p>EXTJS-21638 - TreeStore changes on a child node cannot be rejected when its parent node is collapsed</p>
+</li>
+<li><p>EXTJS-21965 - TreeStore#findNode contains typo in optimized path</p>
+</li>
+<li><p>EXTJS-22187 - Keyless associations throw errors updating some fields</p>
+</li>
+<li><p>EXTJS-22189 - Store filter cannot be initially disabled</p>
+</li>
+<li><p>EXTJS-22430 - Linear data is treeified with wrong node depth values</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_dataview_4_">DataView (4)<a class="quick-link" href="#whats_new-_-release_notes_-_dataview_4_"></a></h3>
+<ul>
+<li><p>EXTJS-21405 - Bound title empty when returning from nested item in NestedList</p>
+</li>
+<li><p>EXTJS-21588 - IndexBar in List is not visible</p>
+</li>
+<li><p>EXTJS-21860 - Store remove doesn&#39;t correctly remove dataview item</p>
+</li>
+<li><p>EXTJS-22378 - Selected dataview item is not highlighted - AdminDashboard</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_direct_10_">Direct (10)<a class="quick-link" href="#whats_new-_-release_notes_-_direct_10_"></a></h3>
+<ul>
+<li><p>EXTJS-16255 - Stack overflow exception in Direct proxy with invalid Method configuration</p>
+</li>
+<li><p>EXTJS-18692 - Form submit using Ext Direct does not include params in modern toolkit</p>
+</li>
+<li><p>EXTJS-18756 - Form submit with Ext Direct submits the form.element not the generated <code>&lt;form&gt;</code> on Modern</p>
+</li>
+<li><p>EXTJS-18901 - Form load over Ext Direct does not work with modern</p>
+</li>
+<li><p>EXTJS-19216 - Direct form submit ignores timeout</p>
+</li>
+<li><p>EXTJS-20463 - RemotingProvider should not throw exception while handling Response with no TID</p>
+</li>
+<li><p>EXTJS-21132 - Direct proxy unable to cancel requests correctly</p>
+</li>
+<li><p>EXTJS-21207 - Direct Providers do not abort pending transactions upon destruction</p>
+</li>
+<li><p>EXTJS-21505 - Direct proxy sends object instead of array on destroy</p>
+</li>
+<li><p>EXTJS-5762 - Ext Direct doesn&#39;t fire an exception event if responseText is empty.</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_documentation_13_">Documentation (13)<a class="quick-link" href="#whats_new-_-release_notes_-_documentation_13_"></a></h3>
+<ul>
+<li><p>EXTJS-18379 - Source Code for ExtJS 5.1.1 - Ext.tree.Panel is not actually of version 5.1.1</p>
+</li>
+<li><p>EXTJS-18673 - Improve hasMany documentation</p>
+</li>
+<li><p>EXTJS-20380 - Broken tag in TreeViewDragDrop plugin</p>
+</li>
+<li><p>EXTJS-21517 - Ext.dom.Element center method should be documented as chainable</p>
+</li>
+<li><p>EXTJS-21527 - Ext.dom.Element.getPositioning accidentally has an <code>&lt;h1&gt;</code> in the description</p>
+</li>
+<li><p>EXTJS-21565 - Some links from 6.2.0 goes to documentation of other version</p>
+</li>
+<li><p>EXTJS-21597 - glyph config incorrectly states that xf005 is the home icon</p>
+</li>
+<li><p>EXTJS-21605 - Fix Ext.chart.axis.segmenter.Time.step config documentation</p>
+</li>
+<li><p>EXTJS-21652 - Some private functions are missing doc comments and are not shown</p>
+</li>
+<li><p>EXTJS-21656 - Ext.field.Input declares isFocused as a property but should be a config in Modern</p>
+</li>
+<li><p>EXTJS-22140 - Ext.field.Toggle change event is documented twice in Modern toolkit</p>
+</li>
+<li><p>EXTJS-22227 - Document scrollDocked as a public config option</p>
+</li>
+<li><p>EXTJS-22228 - Evented since version incorrectly states 5.5.0 instead of 6.0.0</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_drag_2_">Drag (2)<a class="quick-link" href="#whats_new-_-release_notes_-_drag_2_"></a></h3>
+<ul>
+<li><p>EXTJS-22330 - Cannot finish Drag&amp;Drop, drop doesn&#39;t work, Firefox</p>
+</li>
+<li><p>EXTJS-22362 - Can&#39;t move Element as proxy with revert: true more than one time in IE</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_draw_1_">Draw (1)<a class="quick-link" href="#whats_new-_-release_notes_-_draw_1_"></a></h3>
+<ul>
+<li>EXTJS-21580 - Surface.add(sprite) should remove the sprite from the old surface (if any)</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_events_2_">Events (2)<a class="quick-link" href="#whats_new-_-release_notes_-_events_2_"></a></h3>
+<ul>
+<li><p>EXTJS-15735 - Ext.event.publisher.Dom#dispatch appends the event target to the args list every time it is called.</p>
+</li>
+<li><p>EXTJS-18439 - Cannot use &quot;element&quot; option with declarative listeners in instance configs with widgets</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_examples_31_">Examples (31)<a class="quick-link" href="#whats_new-_-release_notes_-_examples_31_"></a></h3>
+<ul>
+<li><p>EXTJS-20414 - Filter in Grid with Buffered Store doesn&#39;t work</p>
+</li>
+<li><p>EXTJS-20941 - Add model validation to KS Model Validation example</p>
+</li>
+<li><p>EXTJS-21198 - Reload and download buttons in Column Charts are not visible (Material Theme)</p>
+</li>
+<li><p>EXTJS-21355 - Icons in Kitchen Sink header do not scale when pinch/zoom used.</p>
+</li>
+<li><p>EXTJS-21370 - Message Box - Waiting Dialog show percentage counter</p>
+</li>
+<li><p>EXTJS-21489 - Rendered charts - Refresh button doesn&#39;t work</p>
+</li>
+<li><p>EXTJS-21617 - In MICRO state items in submenu are not selectable</p>
+</li>
+<li><p>EXTJS-21697 - [Resizable Examples] &quot;Customizable Handles&quot; example displays image at wrong position on page</p>
+</li>
+<li><p>EXTJS-21733 - Example landing page - Example links are off</p>
+</li>
+<li><p>EXTJS-21852 - Grid view is not refreshed after adding new child in session</p>
+</li>
+<li><p>EXTJS-21930 - Purchases by day - d3 heatmap example is not properly aligned</p>
+</li>
+<li><p>EXTJS-21938 - Simulated placeholder text not aligned in admin dashboard</p>
+</li>
+<li><p>EXTJS-21969 - Vector Icons - Cannot read property &#39;getXY&#39;</p>
+</li>
+<li><p>EXTJS-21992 - modern Admin dashboard - Pages - mising background</p>
+</li>
+<li><p>EXTJS-22100 - Routing doesn&#39;t work in phone profile of Modern KS</p>
+</li>
+<li><p>EXTJS-22103 - Text of column disappears after clicking on it on Android</p>
+</li>
+<li><p>EXTJS-22106 - Some icons are clipped in Modern Kitchensink on IE11</p>
+</li>
+<li><p>EXTJS-22109 - Configurable Pivot Tree map - incorrect naming of config field groups</p>
+</li>
+<li><p>EXTJS-22112 - Error after clicking on DataView example</p>
+</li>
+<li><p>EXTJS-22121 - Console error during navigate in Kitchen sink</p>
+</li>
+<li><p>EXTJS-22131 - Checkboxs are not visible on Android tablets [Material Theme]</p>
+</li>
+<li><p>EXTJS-22168 - Tree Grid example does not render within a sized (w,h = 50% vs. fit) container</p>
+</li>
+<li><p>EXTJS-22199 - Gauge not working in IE8, getting &quot;Object doesn&#39;t support this property or method&quot;</p>
+</li>
+<li><p>EXTJS-22217 - Typo in example binding - KS&gt;Locking grid with row expander</p>
+</li>
+<li><p>EXTJS-22274 - Navigation text is not displayed, if the text overflows the area.</p>
+</li>
+<li><p>EXTJS-22303 - Button text in buttons example in KS modern is unreadable</p>
+</li>
+<li><p>EXTJS-22313 - [DataView] inline DataView is not visible over whole page</p>
+</li>
+<li><p>EXTJS-22339 - Portal Demo - Minimize creates mask over all panels on iOS tablets</p>
+</li>
+<li><p>EXTJS-22381 - Button doesn&#39;t stretch to full width - AdminDashboard</p>
+</li>
+<li><p>EXTJS-22390 - Admin Dashboard / Chart is not visible on Chrome</p>
+</li>
+<li><p>EXTJS-22395 - Unable to load the Form Panel example on iOS</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_exporter_2_">Exporter (2)<a class="quick-link" href="#whats_new-_-release_notes_-_exporter_2_"></a></h3>
+<ul>
+<li><p>EXTJS-21667 - Export to excel xml should auto-detect cell type correctly depending on the value</p>
+</li>
+<li><p>EXTJS-22237 - Export to ... broken in Pivot Grids/Exporter Plugin example, modern KS</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_forms_25_">Forms (25)<a class="quick-link" href="#whats_new-_-release_notes_-_forms_25_"></a></h3>
+<ul>
+<li><p>EXTJS-14693 - Scrolling a boundlist while resizing blanks out the list</p>
+</li>
+<li><p>EXTJS-14938 - Combobox AutoSelect doesn&#39;t work if the value is typed</p>
+</li>
+<li><p>EXTJS-15228 - Changing emptyText sets value of field to emptyText in browsers that do not support placeholder</p>
+</li>
+<li><p>EXTJS-18639 - Ext.field.Text moves cursor to the end of the field when not appending</p>
+</li>
+<li><p>EXTJS-18730 - Change event fires twice on file field</p>
+</li>
+<li><p>EXTJS-19219 - Tagfield should adhere to grow set to false</p>
+</li>
+<li><p>EXTJS-19657 - form.reset() doesn&#39;t reset model in Modern</p>
+</li>
+<li><p>EXTJS-20768 - Setting the raw value on a date field does not correctly parse the value as a date</p>
+</li>
+<li><p>EXTJS-20978 - Datefield is not validated on change</p>
+</li>
+<li><p>EXTJS-21035 - Custom invalidCls not set on Ext.form.field.Text elements</p>
+</li>
+<li><p>EXTJS-21041 - Keyboard navigation in Radio/Checkbox multi column group does not respect its layout</p>
+</li>
+<li><p>EXTJS-21103 - File field shows blinking caret in IE when button is focused</p>
+</li>
+<li><p>EXTJS-21364 - Grid editor configured as tagfield cannot use array to select multiple values</p>
+</li>
+<li><p>EXTJS-21472 - File field does not propagate tabIndex attribute to trigger</p>
+</li>
+<li><p>EXTJS-21487 - It is almost impossible to choose item in submenu - iPads</p>
+</li>
+<li><p>EXTJS-21528 - ComboBox with &quot;forceSelection:true&quot; and custom &quot;displayTpl&quot; clears selection on blur</p>
+</li>
+<li><p>EXTJS-21620 - Checkbutton couldn&#39;t be unchecked in Edge</p>
+</li>
+<li><p>EXTJS-21622 - Label as PlaceHolder disappear after putting text into textareafield</p>
+</li>
+<li><p>EXTJS-21682 - Clear icon does not clear value in NumberField</p>
+</li>
+<li><p>EXTJS-21920 - Grid with cell editing leaves blank cell after editing when the editor has selectOnFocus:true</p>
+</li>
+<li><p>EXTJS-22056 - Modern checkboxfield body aligment</p>
+</li>
+<li><p>EXTJS-22141 - Change event is not fired in Ext.field.Toggle</p>
+</li>
+<li><p>EXTJS-22266 - Form (Spinner) fields do not render proper in Modern (KS)</p>
+</li>
+<li><p>EXTJS-22295 - Form submit with null value throws exception in latest nightly</p>
+</li>
+<li><p>EXTJS-22357 - Spinner field does not look right next to text fields</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_grid_61_">Grid (61)<a class="quick-link" href="#whats_new-_-release_notes_-_grid_61_"></a></h3>
+<ul>
+<li><p>EXTJS-16685 - Grouped grid does not respect store.insert(index)</p>
+</li>
+<li><p>EXTJS-17874 - RowExpander overrides injectCheckbox position when using checkbox selection model</p>
+</li>
+<li><p>EXTJS-19838 - Cellediting grid doesn&#39;t fire blur or focusleave with tab key</p>
+</li>
+<li><p>EXTJS-20212 - Superfluous rows when load bound store with summary feature</p>
+</li>
+<li><p>EXTJS-20222 - Tabbing + Cellediting in grouped grid fails at row end</p>
+</li>
+<li><p>EXTJS-20420 - Row expansion &quot;sticks&quot; when row is recycled upon scroll.</p>
+</li>
+<li><p>EXTJS-20456 - Big data: resizing columns doesn&#39;t work correctly </p>
+</li>
+<li><p>EXTJS-20535 - Reordering columns after store filter removes groups throws error</p>
+</li>
+<li><p>EXTJS-20538 - Row expander: Click to expand does not bring rowBody into full view</p>
+</li>
+<li><p>EXTJS-20599 - Can&#39;t choose items in Multi-Selector Grid&#39;s submenu</p>
+</li>
+<li><p>EXTJS-20605 - Grid column cannot bind properties</p>
+</li>
+<li><p>EXTJS-20627 - [modern - Big Data] dates are not editable</p>
+</li>
+<li><p>EXTJS-20628 - [modern - Big Data] rows are not editable in IE11</p>
+</li>
+<li><p>EXTJS-20633 - Store.removeAll on autoSync, MemoryProxy store does not remove the unfiltered records.</p>
+</li>
+<li><p>EXTJS-20731 - BufferedRenderer error when removing a row and using rowediting plugin</p>
+</li>
+<li><p>EXTJS-20761 - Same row remains expanded on sorting - Modern toolkit</p>
+</li>
+<li><p>EXTJS-21033 - Grids - Submenu menu disappear, if user want hide column in IE11</p>
+</li>
+<li><p>EXTJS-21044 - Cannot open grid header menu on Windows tablets</p>
+</li>
+<li><p>EXTJS-21083 - Layout run failed with syncRowHeight false</p>
+</li>
+<li><p>EXTJS-21089 - Scrolling of locking grid is not fluent when touch scrolling</p>
+</li>
+<li><p>EXTJS-21124 - Locking grid rows get out of sync on momentum scrolling on Android</p>
+</li>
+<li><p>EXTJS-21140 - Grid row is scrolled out of view when expanded - touch devices</p>
+</li>
+<li><p>EXTJS-21147 - Buffered store load causes scrolled grid to jump back to start</p>
+</li>
+<li><p>EXTJS-21308 - Cell editor remains active if view is refreshed after editing</p>
+</li>
+<li><p>EXTJS-21322 - GridViewDragDrop plugin does not inherit overClass config from dropZone definition</p>
+</li>
+<li><p>EXTJS-21499 - BufferedRenderer refresh of unconnected view at wrong position.</p>
+</li>
+<li><p>EXTJS-21532 - Ext.grid.property.Grid logs warning about stateId</p>
+</li>
+<li><p>EXTJS-21578 - Jump in scrolling when an expended widget row rejoins the rendered block.</p>
+</li>
+<li><p>EXTJS-21586 - Adding new row to grid with summary feature shows duplicate summary rows</p>
+</li>
+<li><p>EXTJS-21595 - Grid summary feature showing duplicate rows on a tree when expand last tree node</p>
+</li>
+<li><p>EXTJS-21600 - Grid with no data duplicates summary row when sorted</p>
+</li>
+<li><p>EXTJS-21644 - Cannot tap/longpress grid header on Android/Windows tablet devices</p>
+</li>
+<li><p>EXTJS-21651 - Grid column doesn&#39;t remove empty text class correctly when setting text</p>
+</li>
+<li><p>EXTJS-21666 - Invisible last row of Big Data table in Modern KS</p>
+</li>
+<li><p>EXTJS-21735 - Focus should not escape from row editor when Shift+Tabbing</p>
+</li>
+<li><p>EXTJS-21742 - Checkbox selection model - can&#39;t unchecked checkbox - FF</p>
+</li>
+<li><p>EXTJS-21812 - Grid filters fires extraneous change events when using key navigation inside field</p>
+</li>
+<li><p>EXTJS-21813 - Header width is changing and grid content changes differently or disappear.</p>
+</li>
+<li><p>EXTJS-21829 - [modern] Typo in grid/cell/Number.js near line 46</p>
+</li>
+<li><p>EXTJS-21838 - Use of IE mergeAttributes keeps previously set cell attributes</p>
+</li>
+<li><p>EXTJS-21851 - Failing to restore focus when removing records from multiselector grid</p>
+</li>
+<li><p>EXTJS-21856 - Widget column does not get updated when records added from inactive page</p>
+</li>
+<li><p>EXTJS-21868 - RowEditor horizontal scroll gets out of sync when columns resized</p>
+</li>
+<li><p>EXTJS-21900 - Spreadsheet selection model does not have selection count correctly when selectionchange is fired</p>
+</li>
+<li><p>EXTJS-21903 - Dragging a grid column with Ext.useShims enabled causes JS error</p>
+</li>
+<li><p>EXTJS-21912 - Exiting Action mode after removing grid rows may cause an exception</p>
+</li>
+<li><p>EXTJS-21918 - Grid view is empty if data is not present initially in modern grid (wrong row height)</p>
+</li>
+<li><p>EXTJS-21988 - Multi-selector grid submenu disappears after click into textfield, on tablets</p>
+</li>
+<li><p>EXTJS-21999 - colorfield in grid editor has wrong CSS applied</p>
+</li>
+<li><p>EXTJS-22027 - Grid row editing on firefox does not place cursor in correct position</p>
+</li>
+<li><p>EXTJS-22037 - Missing font icons in Column customization sheet -  modern grid </p>
+</li>
+<li><p>EXTJS-22038 - Cannot sort column, android tablet</p>
+</li>
+<li><p>EXTJS-22039 - Clicking on column resizer hides column</p>
+</li>
+<li><p>EXTJS-22082 - PagingToolbar plugin fails when used with a remote store</p>
+</li>
+<li><p>EXTJS-22210 - RTL Locking grid - broken scrolling/column position</p>
+</li>
+<li><p>EXTJS-22226 - Auto-config of hideHeaders doesn&#39;t respect &quot;text&quot; binding</p>
+</li>
+<li><p>EXTJS-22302 - Grid has rendering issues (KS Modern)</p>
+</li>
+<li><p>EXTJS-22309 - Row header is not styled over the entire width of grid</p>
+</li>
+<li><p>EXTJS-22349 - Can&#39;t edit values in range editor plugin in IE</p>
+</li>
+<li><p>EXTJS-22383 - Incorrect page number after scrolling in Modern paging grid</p>
+</li>
+<li><p>EXTJS-22416 - List throws exceptions when configured with grouping and no store</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_layouts_2_">Layouts (2)<a class="quick-link" href="#whats_new-_-release_notes_-_layouts_2_"></a></h3>
+<ul>
+<li><p>EXTJS-20052 - Box layout improperly handles object form of split config</p>
+</li>
+<li><p>EXTJS-21911 - Carousel - Horizontal carousel is missing </p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_menu_3_">Menu (3)<a class="quick-link" href="#whats_new-_-release_notes_-_menu_3_"></a></h3>
+<ul>
+<li><p>EXTJS-19340 - When href is defined, menu item click event is not fired</p>
+</li>
+<li><p>EXTJS-21105 - Accordion layout with non-floating menu throws error on expand/collapse</p>
+</li>
+<li><p>EXTJS-21708 - Overflowing menu is closed when scrolled</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_misc_43_">Misc (43)<a class="quick-link" href="#whats_new-_-release_notes_-_misc_43_"></a></h3>
+<ul>
+<li><p>EXTJS-12310 - Wrong thousands separator for Swedish locale</p>
+</li>
+<li><p>EXTJS-18951 - Difficult to navigate nested Ext.menu.Menus (need a delay before switching between menus)</p>
+</li>
+</ul>
+<ul>
+<li><p>EXTJS-20349 - Filefield produces infinite looping when selectOnFocus is enabled</p>
+</li>
+<li><p>EXTJS-20582 - Calling Ext.Msg.<em> in the callback of Ext.Msg.</em> causes TypeError</p>
+</li>
+<li><p>EXTJS-20596 - On Ext JS 6.1&#39;s main page is written Ext JS 6.0 (also in panel)</p>
+</li>
+</ul>
+<ul>
+<li><p>EXTJS-20703 - Ext.dataview.List causes the browser to hang when infinite with empty store</p>
+</li>
+<li><p>EXTJS-20738 - when filtering in Kitchen Sink, navigation Breadcrumb disappear</p>
+</li>
+<li><p>EXTJS-20916 - Ext.toast message goes from bottom to top and out of the page</p>
+</li>
+<li><p>EXTJS-21013 - Grouped list - Indexbar is not visible</p>
+</li>
+<li><p>EXTJS-21067 - Spreadsheet selection model, difficult to check cells via the UI</p>
+</li>
+<li><p>EXTJS-21091 - [TouchEvents]Swipe event is triggered with tap</p>
+</li>
+<li><p>EXTJS-21216 - When swipe carousel in Safari whole page is moving</p>
+</li>
+<li><p>EXTJS-21570 - Modern grid scroller does not have the correct vertical scroll size, resulting in jittery scrollbar</p>
+</li>
+<li><p>EXTJS-21741 - Broken layout in modern Menus example</p>
+</li>
+<li><p>EXTJS-21743 - Nested Loading example has broken layout when clicking on Explaing button</p>
+</li>
+<li><p>EXTJS-21744 - GeoCongress &quot;Finding location&quot; label is not centered</p>
+</li>
+<li><p>EXTJS-21821 - Dragging pivot configurator fields selects text</p>
+</li>
+<li><p>EXTJS-21823 - Error in Form with Grid example when changing value in radio buttons</p>
+</li>
+<li><p>EXTJS-21825 - IndexBar is not displayed</p>
+</li>
+<li><p>EXTJS-21927 - Collapsing grouped grid doesnt work on IE9-8</p>
+</li>
+<li><p>EXTJS-21931 - Cannot scroll in select field, phones</p>
+</li>
+<li><p>EXTJS-21953 - View controller event domain can&#39;t listen to widget events</p>
+</li>
+<li><p>EXTJS-21981 - Paging example is not loading data</p>
+</li>
+<li><p>EXTJS-21995 - Bad alignment of labels in adress book</p>
+</li>
+<li><p>EXTJS-21997 - Issue in navigation beetwen dataviews</p>
+</li>
+<li><p>EXTJS-22024 - window.open does not open phone dial pad on Android</p>
+</li>
+<li><p>EXTJS-22048 - Pivot D3 container should have an xtype</p>
+</li>
+<li><p>EXTJS-22051 - Window with constraints can&#39;t be moved in whole constrained area</p>
+</li>
+<li><p>EXTJS-22096 - Black border around tabs</p>
+</li>
+<li><p>EXTJS-22124 - Layout of Calendar box is broken on modern</p>
+</li>
+<li><p>EXTJS-22125 - Source is not displayed on tablets </p>
+</li>
+<li><p>EXTJS-22175 - Radio buttons are missing in Form Panel example</p>
+</li>
+<li><p>EXTJS-22176 - Basic Buttons example is missing labels on buttons</p>
+</li>
+<li><p>EXTJS-22178 - Checkboxes in Admin Dashbord are chopped</p>
+</li>
+<li><p>EXTJS-22192 - Date picker is broken on iOS8</p>
+</li>
+<li><p>EXTJS-22194 - Pivot treeMap configurator: can&#39;t perform any action when tree label is added </p>
+</li>
+<li><p>EXTJS-22215 - [Nested list] Ok button is not visible properly when user edits an item</p>
+</li>
+<li><p>EXTJS-22219 - Examples are not rendered properly [Modern]</p>
+</li>
+<li><p>EXTJS-22293 - Exception in Editing plugin with Checkbox selection model</p>
+</li>
+<li><p>EXTJS-22348 - Updating the image sprite causes the window to refresh</p>
+</li>
+<li><p>EXTJS-22380 - Toolbar size is incorrect in Modern AdminDashboard phone view</p>
+</li>
+<li><p>EXTJS-22406 - Cannot scroll in Vector icons example, phones, tablets</p>
+</li>
+<li><p>EXTJS-22413 - Chart is not rendering axes - when switched from different tab</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_panel_3_">Panel (3)<a class="quick-link" href="#whats_new-_-release_notes_-_panel_3_"></a></h3>
+<ul>
+<li><p>EXTJS-21507 - Incorrect Panel state when removed from owner while collapsing with animation</p>
+</li>
+<li><p>EXTJS-21625 - View isn&#39;t resized correctly after screen rotation when source window is open iOS 7</p>
+</li>
+<li><p>EXTJS-22185 - Collapsed panels do not restore correctly using placeholder collapseMode</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_pivotgrid_9_">PivotGrid (9)<a class="quick-link" href="#whats_new-_-release_notes_-_pivotgrid_9_"></a></h3>
+<ul>
+<li><p>EXTJS-21214 - Drill down window doesn&#39;t show any data</p>
+</li>
+<li><p>EXTJS-21647 - Formatter is not shown correctly in field settings window</p>
+</li>
+<li><p>EXTJS-21663 - Expanding or collapsing group columns in a pivot grid results in extra refresh cycles</p>
+</li>
+<li><p>EXTJS-21986 - Row styling invisible numeral of total numbers.</p>
+</li>
+<li><p>EXTJS-22070 - The event beforemoveconfigfield should be fired when a configurator field is removed</p>
+</li>
+<li><p>EXTJS-22075 - DrillDown plugin doesn&#39;t work with remote store in modern toolkit</p>
+</li>
+<li><p>EXTJS-22130 - Drag &amp; drop doesn&#39;t work properly in Edge (Configurator plugin and Two Trees examples)</p>
+</li>
+</ul>
+<ul>
+<li><p>EXTJS-22224 - Wrong row heigh in the pivotGrids/Configuration plugin on IE11/Edge</p>
+</li>
+<li><p>EXTJS-22244 - Paging toolbar does not work in modern drill down pivot </p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_scroller_1_">Scroller (1)<a class="quick-link" href="#whats_new-_-release_notes_-_scroller_1_"></a></h3>
+<ul>
+<li>EXTJS-21878 - Scroll state not restored correctly in RTL after layout</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_sparklne_1_">Sparklne (1)<a class="quick-link" href="#whats_new-_-release_notes_-_sparklne_1_"></a></h3>
+<ul>
+<li>EXTJS-22207 - JS error upon hover of zero values in bar sparkline</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tabs_4_">Tabs (4)<a class="quick-link" href="#whats_new-_-release_notes_-_tabs_4_"></a></h3>
+<ul>
+<li>EXTJS-18438 - Issue removing tab panel using removeAll()</li>
+</ul>
+<ul>
+<li><p>EXTJS-20526 - TabBar overflow menu is missing icon</p>
+</li>
+<li><p>EXTJS-21717 - Cannot TAB to tab panel tab bar</p>
+</li>
+<li><p>EXTJS-21872 - Tab focus border in triton theme does not display on IE and Edge</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_theme_13_">Theme (13)<a class="quick-link" href="#whats_new-_-release_notes_-_theme_13_"></a></h3>
+<ul>
+<li><p>EXTJS-17080 - Neptune theme missing required images</p>
+</li>
+<li><p>EXTJS-20854 - Tooltip background is transparent - Modern theme</p>
+</li>
+<li><p>EXTJS-21618 - When button is marked as round and something else together - it is not round</p>
+</li>
+<li><p>EXTJS-21634 - UI of index page is broken on IE8</p>
+</li>
+<li><p>EXTJS-21691 - Ext.Progress renders differently in grid cells depending upon what alias was used to instantiate it (progress, progressbarwidget)</p>
+</li>
+</ul>
+<ul>
+<li><p>EXTJS-21707 - Vertical carousel doesn&#39;t show indicators in some themes</p>
+</li>
+<li><p>EXTJS-22171 - theme-cupertino-all-debug.css is not builded on ext-6.2.0.758</p>
+</li>
+<li><p>EXTJS-22264 - hovered and pressed datetrigger variables have no effect in modern triton</p>
+</li>
+<li><p>EXTJS-22341 - iOS theme has wrong font in IE</p>
+</li>
+<li><p>EXTJS-22345 - Configurator plugin - in configuration text is not visible in IE</p>
+</li>
+<li><p>EXTJS-22347 - Wrong align cell styling pivot grid header in iOS theme - IE</p>
+</li>
+<li><p>EXTJS-22355 - Label should be grey and placeholder bold in IE</p>
+</li>
+<li><p>EXTJS-22363 - Text has almost same color as background in iOS theme</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tooltips_6_">ToolTips (6)<a class="quick-link" href="#whats_new-_-release_notes_-_tooltips_6_"></a></h3>
+<ul>
+<li><p>EXTJS-21538 - Tooltips needs to be &quot;alwaysOnTop&quot;</p>
+</li>
+<li><p>EXTJS-21599 - showBy doesn&#39;t respect offsets</p>
+</li>
+<li><p>EXTJS-21968 - Tooltip manager throws error on drag start</p>
+</li>
+<li><p>EXTJS-22350 - ToolTips demo in Modern KS has issues</p>
+</li>
+<li><p>EXTJS-22405 - Delegated tooltips do not show on a target after showing on that target has been canceled</p>
+</li>
+<li><p>EXTJS-22424 - Targetless tooltip throws error if show() called with no align info.</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_toolbars_6_">Toolbars (6)<a class="quick-link" href="#whats_new-_-release_notes_-_toolbars_6_"></a></h3>
+<ul>
+<li><p>EXTJS-21056 - Store configured with pageSize: 0 causes the PagingToolbar to display an infinite number of pages</p>
+</li>
+<li><p>EXTJS-21506 - Toolbar doesn&#39;t add spacer as a dependency</p>
+</li>
+<li><p>EXTJS-21512 - Drag stops when you drag toolbar button from right to left in IE10</p>
+</li>
+<li><p>EXTJS-21993 - Missing menu in modern toolkit - IOS theme</p>
+</li>
+<li><p>EXTJS-22067 - Material Toolbar padding</p>
+</li>
+<li><p>EXTJS-22243 - Toolbars/Toolbar Input: Text overflows the other element.</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tree_4_">Tree (4)<a class="quick-link" href="#whats_new-_-release_notes_-_tree_4_"></a></h3>
+<ul>
+<li><p>EXTJS-16474 - treeviewdragdrop#copy will not copy node&#39;s children</p>
+</li>
+<li><p>EXTJS-21213 - [iOS theme] When Expand/collapse Tree items or Grid rows (which should be shown) are sometimes missing</p>
+</li>
+<li><p>EXTJS-21273 - Locked TreeGrid throws errors on collapse</p>
+</li>
+<li><p>EXTJS-21908 - Can&#39;t navigate from Two Trees example by breadcrumb - error in console</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_window_5_">Window (5)<a class="quick-link" href="#whats_new-_-release_notes_-_window_5_"></a></h3>
+<ul>
+<li><p>EXTJS-12219 - Container-owned stateful window not restored to the correct page position between page loads</p>
+</li>
+<li><p>EXTJS-21604 - Modern: Ext.Msg.confirm box onAppUpdate() wrong position</p>
+</li>
+<li><p>EXTJS-21709 - Prompt overlay window is not editable in IE</p>
+</li>
+<li><p>EXTJS-21910 - Window can&#39;t be moved to the bottom of the page</p>
+</li>
+<li><p>EXTJS-22426 - Animated Window.hide &quot;forgets&quot; window position on reshow.</p>
+</li>
+</ul>
+<p>Total: 327</p>
+<h2 id="whats_new-_-release_notes_-_known_issues">Known Issues<a class="quick-link" href="#whats_new-_-release_notes_-_known_issues"></a></h2>
+<h3 id="whats_new-_-release_notes_-_accessibility_13_">Accessibility (13)<a class="quick-link" href="#whats_new-_-release_notes_-_accessibility_13_"></a></h3>
+<ul>
+<li><p>EXTJS-10451 - Tree component does not support ARIA expanded state</p>
+</li>
+<li><p>EXTJS-10467 - Menu overflow scrollers are not navigable using the keyboard</p>
+</li>
+<li><p>EXTJS-10475 - ToolTip is not accessible</p>
+</li>
+<li><p>EXTJS-10477 - HtmlEditor is not accessible</p>
+</li>
+<li><p>EXTJS-10480 - Color Picker is not accessible</p>
+</li>
+<li><p>EXTJS-10492 - DragDrop is not accessible</p>
+</li>
+<li><p>EXTJS-10494 - Grid grouping feature is not accessible</p>
+</li>
+<li><p>EXTJS-10495 - Locking grid is announced as two separate widgets by screen readers</p>
+</li>
+<li><p>EXTJS-10497 - Grid row expander is not accessible</p>
+</li>
+<li><p>EXTJS-10498 - Grid RowBody feature is not accessible</p>
+</li>
+<li><p>EXTJS-10499 - Grid CheckboxSelectionModel is not accessible</p>
+</li>
+<li><p>EXTJS-10503 - Grid headers cannot be resized using the keyboard</p>
+</li>
+<li><p>EXTJS-10504 - Grid Headers cannot be reordered using the keyboard</p>
+</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_calendar_1_">Calendar (1)<a class="quick-link" href="#whats_new-_-release_notes_-_calendar_1_"></a></h3>
+<ul>
+<li>EXTJS-22410 - Week view calendar does not display correctly on Windows Phone 10</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_core_1_">Core (1)<a class="quick-link" href="#whats_new-_-release_notes_-_core_1_"></a></h3>
+<ul>
+<li>EXTJS-21139 - View incorrectly resized when changing screen orientation while the virtual keyboard is shown</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_dataview_1_">DataView (1)<a class="quick-link" href="#whats_new-_-release_notes_-_dataview_1_"></a></h3>
+<ul>
+<li>EXTJS-12345 - ComboBox&#39;s bound list becomes transparent on second show on iPad</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_layouts_1_">Layouts (1)<a class="quick-link" href="#whats_new-_-release_notes_-_layouts_1_"></a></h3>
+<ul>
+<li>EXTJS-4768 - Regions overlap when their width is too high to fit within a container in a border layout</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tabs_1_">Tabs (1)<a class="quick-link" href="#whats_new-_-release_notes_-_tabs_1_"></a></h3>
+<ul>
+<li>EXTJS-13538 - Ext.ux.TabScrollerMenu has not been updated to work in Ext JS 5 and 6</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_theme_1_">Theme (1)<a class="quick-link" href="#whats_new-_-release_notes_-_theme_1_"></a></h3>
+<ul>
+<li>EXTJS-17790 - Triton should support tree lines</li>
+</ul>
+<p>Total: 19</p>
+<h1 id="whats_new-_-release_notes_-_release_notes_for_ext_js_6_2_0_ea">Release Notes for Ext JS 6.2.0 EA<a class="quick-link" href="#whats_new-_-release_notes_-_release_notes_for_ext_js_6_2_0_ea"></a></h1>
+<p>Release Date: June 14, 2016</p>
+<p>Version Number: 6.2.0.589</p>
+<h2 id="whats_new-_-release_notes_-_new_features">New Features<a class="quick-link" href="#whats_new-_-release_notes_-_new_features"></a></h2>
+<h3 id="whats_new-_-release_notes_-_accessibility_9_">Accessibility (9)<a class="quick-link" href="#whats_new-_-release_notes_-_accessibility_9_"></a></h3>
+<ul>
+<li>EXTJS-10490 - Progress Bar should be accessible</li>
+<li>EXTJS-14272 - Menu should support horizontal layout</li>
+<li>EXTJS-17298 - Tree should provide basic screen reader support</li>
+<li>EXTJS-17333 - Tag field should be accessible</li>
+<li>EXTJS-19343 - ActionColumn items should have configurable tabIndex and role attributes</li>
+<li>EXTJS-19944 - Components should have a keyMap config that supports declarative handlers</li>
+<li>EXTJS-19977 - Accordion panels should support Ctrl+Up to navigate to panel header</li>
+<li>EXTJS-20054 - MessageBox should be accessible</li>
+<li>EXTJS-21182 - Property grid should support tabbing out in Actionable mode</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_bind_3_">Bind (3)<a class="quick-link" href="#whats_new-_-release_notes_-_bind_3_"></a></h3>
+<ul>
+<li>EXTJS-12719 - Cell widgets in a WidgetColumn now have access to a ViewModel which contains the row&#39;s contextual record in a property called &quot;record&quot;. Binding is now the recommended way for updating cell widgets.</li>
+<li>EXTJS-19738 - Bind templates should support chained and nested formatters</li>
+<li>EXTJS-21434 - Binding expressions should support operators and basic algebra</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_charts_2_">Charts (2)<a class="quick-link" href="#whats_new-_-release_notes_-_charts_2_"></a></h3>
+<ul>
+<li>EXTJS-19342 - Charts should provide a sprite-based legend type</li>
+<li>EXTJS-16706 - Chart line series should treat missing data points as zero or connected instead of as a gap</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_core_5_">Core (5)<a class="quick-link" href="#whats_new-_-release_notes_-_core_5_"></a></h3>
+<ul>
+<li>EXTJS-15817 - Viewport pinch-to-zoom, pan and dblclick-zoom should be supported on touch devices</li>
+<li>EXTJS-16508 - Modern toolkit should support Drag/Drop</li>
+<li>EXTJS-20077 - KeyMap config should be disableable</li>
+<li>EXTJS-20505 - Ext.batchLayouts should wrap user code in try/finally to ensure layouts resume</li>
+<li>EXTJS-20995 - Components should support a touchAction config to specify cross-browser default behaviors</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_d3_2_">D3 (2)<a class="quick-link" href="#whats_new-_-release_notes_-_d3_2_"></a></h3>
+<ul>
+<li>EXTJS-20137 - Create a D3 integration package</li>
+<li>EXTJS-20639 - Implement interaction support for D3</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_direct_1_">Direct (1)<a class="quick-link" href="#whats_new-_-release_notes_-_direct_1_"></a></h3>
+<ul>
+<li>EXTJS-20013 - Polling provider should support request headers</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_events_3_">Events (3)<a class="quick-link" href="#whats_new-_-release_notes_-_events_3_"></a></h3>
+<ul>
+<li>EXTJS-12964 - Gesture system should support nested gesture processing</li>
+<li>EXTJS-20997 - Gesture events should fire synchronously with their triggering native event</li>
+<li>EXTJS-21073 - Allow users to initiate drag gesture via longpress on touch-screen devices</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_examples_2_">Examples (2)<a class="quick-link" href="#whats_new-_-release_notes_-_examples_2_"></a></h3>
+<ul>
+<li>EXTJS-19903 - Add example of double donut chart to Kitchen Sink</li>
+<li>EXTJS-20508 - Add PHP example of server-side data calculation for Pivot Grid</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_exporter_6_">Exporter (6)<a class="quick-link" href="#whats_new-_-release_notes_-_exporter_6_"></a></h3>
+<ul>
+<li>EXTJS-19559 - Modern grid should have an exporter plugin</li>
+<li>EXTJS-19832 - Columns should have an &quot;exportStyle&quot; config for styling exported data</li>
+<li>EXTJS-20343 - Exporter should support XLSX format</li>
+<li>EXTJS-20344 - Exporter should support HTML format</li>
+<li>EXTJS-20345 - Exporter should support CSV/TSV format</li>
+<li>EXTJS-20695 - Exporter plugins should fire events during export</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_grid_12_">Grid (12)<a class="quick-link" href="#whats_new-_-release_notes_-_grid_12_"></a></h3>
+<ul>
+<li>EXTJS-16541 - Modern toolkit grid should support RowBody</li>
+<li>EXTJS-16542 - Modern toolkit grid should support RowExpander</li>
+<li>EXTJS-16551 - Modern toolkit grid should support check column</li>
+<li>EXTJS-16552 - Modern toolkit grid should support column resize grip</li>
+<li>EXTJS-16553 - Modern toolkit grid should support RowNumberer</li>
+<li>EXTJS-17375 - Check columns should be generalized from selectionmodel and allow for a checkbox in the header</li>
+<li>EXTJS-19610 - Grid row expander should support components and data binding in the row body</li>
+<li>EXTJS-20147 - GridPanel should fire beforeitemlongpres and itemlongpress</li>
+<li>EXTJS-20580 - Grid should support grid column formatters in Modern toolkit</li>
+<li>EXTJS-20742 - Grid cell should display the value when no tpl/renderer/formatter available in the modern grid</li>
+<li>EXTJS-20874 - Grid columns now offer an enableTextSelection config to allow more granular configuration of where to allow text selection inside grids.</li>
+<li>EXTJS-20949 - Provide ability to disable extensibility on Spreadsheet selection model</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_pivotgrid_11_">PivotGrid (11)<a class="quick-link" href="#whats_new-_-release_notes_-_pivotgrid_11_"></a></h3>
+<ul>
+<li>EXTJS-17850 - Provide ability to define a set of aggregation functions available for each field in the Configurator</li>
+<li>EXTJS-17851 - Provide ability to style Configurator&#39;s fields</li>
+<li>EXTJS-17852 - Provide ability to limit field usage in the Configurator</li>
+<li>EXTJS-17853 - Pivot grid should provide a cell editing plugin in the classic toolkit</li>
+<li>EXTJS-18142 - Provide a way to use control Configurator&#39;s grid cell formatting</li>
+<li>EXTJS-18961 - Provide the ability to rename the Configurator&#39;s aggregate dimension headers</li>
+<li>EXTJS-19002 - Configurator field menu should be extendable via events</li>
+<li>EXTJS-19003 - Configurator field settings window should be extendable via events</li>
+<li>EXTJS-19505 - Drill down plugin for modern pivot grid</li>
+<li>EXTJS-19565 - Modern toolkit should provide a Pivot Grid</li>
+<li>EXTJS-21344 - Pivot Grid should fire &quot;pivotbeforereconfigure&quot; and &quot;pivotreconfigure&quot; events</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_scroller_1_">Scroller (1)<a class="quick-link" href="#whats_new-_-release_notes_-_scroller_1_"></a></h3>
+<ul>
+<li>EXTJS-20996 - Scrollers should use native scrolling on touch screen devices</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_selection_model_1_">Selection Model (1)<a class="quick-link" href="#whats_new-_-release_notes_-_selection_model_1_"></a></h3>
+<ul>
+<li>EXTJS-21011 - Improve checkbox selection model performance when bulk (de)selecting records</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tooltips_1_">ToolTips (1)<a class="quick-link" href="#whats_new-_-release_notes_-_tooltips_1_"></a></h3>
+<ul>
+<li>EXTJS-16507 - Modern toolkit should support tooltips</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tree_3_">Tree (3)<a class="quick-link" href="#whats_new-_-release_notes_-_tree_3_"></a></h3>
+<ul>
+<li>EXTJS-16556 - Modern toolkit grid should support TreeColumn</li>
+<li>EXTJS-19399 - A Tree node renderer may set the node&#39;s iconCls or glyph config in the metaData object. Panel tools now accept an iconCls config or glyph config. ActionColumn now accepts a glyph config. MenuItems now accept a glyph config.</li>
+<li>EXTJS-20400 - TreeModel.set method should handle direct change to the &quot;visible&quot; field</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_window_2_">Window (2)<a class="quick-link" href="#whats_new-_-release_notes_-_window_2_"></a></h3>
+<ul>
+<li>EXTJS-16515 - Modern toolkit should support floated components</li>
+<li>EXTJS-19952 - Modal Windows should be able to be configured to close mask on click</li>
+</ul>
+<p>Total: 64</p>
+<h2 id="whats_new-_-release_notes_-_bugs_fixed">Bugs Fixed<a class="quick-link" href="#whats_new-_-release_notes_-_bugs_fixed"></a></h2>
+<h3 id="whats_new-_-release_notes_-_accessibility_22_">Accessibility (22)<a class="quick-link" href="#whats_new-_-release_notes_-_accessibility_22_"></a></h3>
+<ul>
+<li>EXTJS-10397 - Datepicker is not accessible</li>
+<li>EXTJS-10479 - LoadMask is not accessible</li>
+<li>EXTJS-10491 - Property Grid is not accessible</li>
+<li>EXTJS-10493 - Paging Toolbar is not accessible</li>
+<li>EXTJS-10496 - Grouped grid headers are not accessible</li>
+<li>EXTJS-10675 - No voice information for &quot;Disabled item&quot; in the &quot;Button w/Menu&quot; drop down menu</li>
+<li>EXTJS-14350 - Screen readers are not reading message boxes</li>
+<li>EXTJS-18308 - File inputs in IE/Edge require two TAB presses to navigate through</li>
+<li>EXTJS-18835 - Mouse click on grid expander adds outline on both cell and icon.</li>
+<li>EXTJS-19476 - If FocusableContainer&#39;s last focused element is removed, it is no longer tabbable.</li>
+<li>EXTJS-19679 - Tabbing from menu with hidden ancestor goes out of the document</li>
+<li>EXTJS-19683 - Menu&#39;s focus using keyboard doesn&#39;t handle first item being disabled.</li>
+<li>EXTJS-19755 - Combo boxes should support Alt-Up/Down arrows</li>
+<li>EXTJS-19758 - NVDA announces Date picker as editable</li>
+<li>EXTJS-19855 - Key navigation isn&#39;t working in Firefox on Linux </li>
+<li>EXTJS-19954 - Tabbing between fields inside a modal Window&#39;s child focuses the parent component</li>
+<li>EXTJS-20103 - Panel should not enable focusable container behavior for &quot;buttons&quot; toolbar</li>
+<li>EXTJS-20190 - Menus should always focus the first item</li>
+<li>EXTJS-20201 - Window close tool should not be focusable</li>
+<li>EXTJS-20897 - Dropdown selection not working when selecting font in notepad component in examples</li>
+<li>EXTJS-21178 - Adding a tabIndex throws off tabbing around a window</li>
+<li>EXTJS-21204 - Buttongroup with enableFocusableContainer: false throws error when clicking disabled buttons</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_animation_1_">Animation (1)<a class="quick-link" href="#whats_new-_-release_notes_-_animation_1_"></a></h3>
+<ul>
+<li>EXTJS-21131 - Animated card panel not shown after animation</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_app_1_">App (1)<a class="quick-link" href="#whats_new-_-release_notes_-_app_1_"></a></h3>
+<ul>
+<li>EXTJS-13843 - menucheckitem breaks #route on Nexus7</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_bind_6_">Bind (6)<a class="quick-link" href="#whats_new-_-release_notes_-_bind_6_"></a></h3>
+<ul>
+<li>EXTJS-17414 - Two-way bind on toggle button not writing pressed state to viewmodel</li>
+<li>EXTJS-19451 - Combobox text input gets cleared in some cases when using forceSelection</li>
+<li>EXTJS-20533 - Unable to remove binding by setting property to null when configured for twoWay: true</li>
+<li>EXTJS-20622 - Destroy method does not remove bindings</li>
+<li>EXTJS-20646 - Setting a field in an associated record via a binding doesn&#39;t work correctly</li>
+<li>EXTJS-21266 - Two-way binding with negation should be marked as read only</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_button_4_">Button (4)<a class="quick-link" href="#whats_new-_-release_notes_-_button_4_"></a></h3>
+<ul>
+<li>EXTJS-19795 - KeyboardInteractive mixin is duplicated in Button</li>
+<li>EXTJS-19880 - Button click() event should be optional</li>
+<li>EXTJS-20094 - SplitButton arrowEl focusable by default when arrowVisible configured false</li>
+<li>EXTJS-20641 - Button text property overrides overflowText property</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_charts_14_">Charts (14)<a class="quick-link" href="#whats_new-_-release_notes_-_charts_14_"></a></h3>
+<ul>
+<li>EXTJS-14177 - Label&#39;s display config does not work when set to &#39;none&#39; on 3D Pie Charts</li>
+<li>EXTJS-14615 - Zoom and Pan buttons are missing in the Kitchen Sink charts on IE10</li>
+<li>EXTJS-16631 - New records of store have incorrect index in pie chart renderer and label renderer</li>
+<li>EXTJS-16954 - majorTickSteps are not rendered properly on numeric axis</li>
+<li>EXTJS-18204 - Legend is not included when downloading image using Sencha Charts</li>
+<li>EXTJS-18820 - A 3D pie chart with a single slice is not rendered correctly</li>
+<li>EXTJS-19858 - Chart component(s) prevent interaction with overlapping items on mobile devices</li>
+<li>EXTJS-20018 - Destroying animated charts can throw uncaught errors</li>
+<li>EXTJS-20158 - Buttons are disabled and cannot be pressed on Plot Charts</li>
+<li>EXTJS-20175 - Area series renderer never called for markers</li>
+<li>EXTJS-20279 - Chart with bar and line series with single data point causes bar to be outlined with the line color</li>
+<li>EXTJS-20573 - legend/sprite.js failing to load on Kitchen Sink example in Modern toolkit</li>
+<li>EXTJS-20862 - 2010 Census Example is not properly loading</li>
+<li>EXTJS-20872 - Sprite legends can cut off part of a polar charts if docked &#39;left&#39; or &#39;top&#39;</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_cmd_2_">Cmd (2)<a class="quick-link" href="#whats_new-_-release_notes_-_cmd_2_"></a></h3>
+<ul>
+<li>EXTJS-20681 - Direct examples don&#39;t work on IE10</li>
+<li>EXTJS-20913 - Loader&#39;s deadlock detection can cause large applications to crash</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_core_15_">Core (15)<a class="quick-link" href="#whats_new-_-release_notes_-_core_15_"></a></h3>
+<ul>
+<li>EXTJS-15584 - DOM element  in Element cache is not the same</li>
+<li>EXTJS-16624 - Ext.ux.IFrame cleanupListeners method throws an error due to element cache collision</li>
+<li>EXTJS-17477 - Scroll snapping does not work in modern pickers</li>
+<li>EXTJS-19341 - Delegated events don&#39;t fire correctly on containers with an itemId</li>
+<li>EXTJS-20039 - Ext.Loader deadlock detecion is not reliable</li>
+<li>EXTJS-20056 - Toast not visible in Modern Triton Theme</li>
+<li>EXTJS-20127 - Animations continue running past completion on Touch devices in the modern toolkit</li>
+<li>EXTJS-20149 - Floating components are hidden behind modal mask when reordering z-index stack</li>
+<li>EXTJS-20245 - Prepare for deprecation of SVGElement.offsetParent in V48 </li>
+<li>EXTJS-20277 - Component findParentByType method does not return container when passing class</li>
+<li>EXTJS-20525 - Resizing elements next to an iframe will lose track of mouse move</li>
+<li>EXTJS-20900 - Hyperlink buttons kill the browser on Safari 8 iPad when text is selected in Desktop example&#39;s notepad window</li>
+<li>EXTJS-21097 - Sheet component is not properly positioned in the modern toolkit</li>
+<li>EXTJS-21120 - Ext.promise.Promise does not resolve/reject correctly when a promise is returned from a then() function</li>
+<li>EXTJS-7419 - callParent does not work with inheritableStatics</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_dashboard_1_">Dashboard (1)<a class="quick-link" href="#whats_new-_-release_notes_-_dashboard_1_"></a></h3>
+<ul>
+<li>EXTJS-19634 - Dashboard component incorrectly positioned by drag and drop</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_data_15_">Data (15)<a class="quick-link" href="#whats_new-_-release_notes_-_data_15_"></a></h3>
+<ul>
+<li>EXTJS-17902 - Root firstChild/lastChild properties contain wrong nodes</li>
+<li>EXTJS-18711 - An options store created from an options list config shouldn&#39;t update when the store changes</li>
+<li>EXTJS-18750 - Incorrect getter is created for inverse side of hasMany association with a specified name</li>
+<li>EXTJS-19911 - Webstorage and LocalStorage are not serializing data</li>
+<li>EXTJS-19942 - Grouped ChainedStore does not update record id correctly on server sync</li>
+<li>EXTJS-19959 - Session does not auto-include records in store for ManyToOne when the owner record is a phantom</li>
+<li>EXTJS-20023 - Descendant nodes are still retrievable by id after calling removeAll() on a tree node</li>
+<li>EXTJS-20031 - Shared id generators are not shared by models within same session</li>
+<li>EXTJS-20045 - SelectAll functionality in grid selection models does not support use with BufferedStore.</li>
+<li>EXTJS-20262 - BufferedStore not requesting enough pages on reload</li>
+<li>EXTJS-20271 - filterFn is removed for filters that specify value or operator via binding</li>
+<li>EXTJS-20309 - Ext.data.proxy.Proxy does not call base destroy()</li>
+<li>EXTJS-20880 - Ext.data.reader.Read incorrectly reads response object when responseText is empty</li>
+<li>EXTJS-20971 - Chained store does not react when removing items from original store</li>
+<li>EXTJS-21431 - Model#setId fails with associated store when there is no foreign key on the association</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_direct_3_">Direct (3)<a class="quick-link" href="#whats_new-_-release_notes_-_direct_3_"></a></h3>
+<ul>
+<li>EXTJS-16245 - RemotingProvider does not fire exception event</li>
+<li>EXTJS-19681 - Aborting store load does not work when using a Direct proxy</li>
+<li>EXTJS-20288 - Direct Proxy paramsAsHash option should only be applied to Read operations</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_documentation_10_">Documentation (10)<a class="quick-link" href="#whats_new-_-release_notes_-_documentation_10_"></a></h3>
+<ul>
+<li>EXTJS-19299 - Ext.app.Application getController has incorrect documentation for preventCreate parameter</li>
+<li>EXTJS-19737 - Document the onResize params in container classes</li>
+<li>EXTJS-20014 - Ext.Container references non-existent &quot;Layouts Guide&quot; in Modern Toolkit</li>
+<li>EXTJS-20272 - Direct proxy API expectations are not fully documented</li>
+<li>EXTJS-20382 - PagingToolbar documentation should mention incompatibility with ChainedStore</li>
+<li>EXTJS-20519 - Typo in the onDataRefresh function of AbstractView</li>
+<li>EXTJS-20570 - Ext.Array&#39;s findBy has incorrect index in documentation</li>
+<li>EXTJS-20736 - Ext.util.HashMap.removeByKey() no longer has return type</li>
+<li>EXTJS-20783 - Dead links in tagfield documentation</li>
+<li>EXTJS-21382 - Menu focusOnToFront default not shown correctly in documentation</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_drag_1_">Drag (1)<a class="quick-link" href="#whats_new-_-release_notes_-_drag_1_"></a></h3>
+<ul>
+<li>EXTJS-20432 - Drop events not fired when drag source and drop target are the same</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_draw_3_">Draw (3)<a class="quick-link" href="#whats_new-_-release_notes_-_draw_3_"></a></h3>
+<ul>
+<li>EXTJS-19573 - Instancing sprite should reset the &#39;surface&#39; config of the template</li>
+<li>EXTJS-20811 - Replace &#39;next&#39;/&#39;previous&#39; configs with &#39;lower&#39;/&#39;upper&#39; in Ext.draw.modifier.Modifier</li>
+<li>EXTJS-21023 - Clear button doesn&#39;t clear the canvas in the Free Draw example</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_events_6_">Events (6)<a class="quick-link" href="#whats_new-_-release_notes_-_events_6_"></a></h3>
+<ul>
+<li>EXTJS-19108 - ComboBox with ForceSelection and rawValue binding is not updating with a typed value</li>
+<li>EXTJS-19870 - Possible undefined parentNode in Ext.event.publisher.Focus.processFocusIn</li>
+<li>EXTJS-20289 - Components don&#39;t react to touch events on the Draw Example</li>
+<li>EXTJS-20303 - Financial chart freezes when user tries to use the zoom feature</li>
+<li>EXTJS-21274 - Clicking a toolbar can throw an exception on some components</li>
+<li>EXTJS-21354 - e.getWheelDelta() always returns zero inside a &#39;wheel&#39; event listener in IE11</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_examples_14_">Examples (14)<a class="quick-link" href="#whats_new-_-release_notes_-_examples_14_"></a></h3>
+<ul>
+<li>EXTJS-19099 - Chart doesn&#39;t load the first time in the US Energy Example on Edge</li>
+<li>EXTJS-20003 - Menu disappears after selecting an item in the Grouped Grid example</li>
+<li>EXTJS-20223 - Kitchen Sink and Kitchen Sink Charts Example won&#39;t load on IE8</li>
+<li>EXTJS-20233 - Color Picker value is not updated when editing color via picker form fields</li>
+<li>EXTJS-20357 - Drag &amp; Drop doesn&#39;t correctly select images in the Image Viewer Example on IE and Edge</li>
+<li>EXTJS-20376 - Chosen items are not always selected in DataView Example</li>
+<li>EXTJS-20710 - Submenu disappears when expanding/collapsing a group in the Grouped grid example </li>
+<li>EXTJS-20748 - Enterprise examples aren&#39;t displaying data in modern toolkit</li>
+<li>EXTJS-20757 - Missing icons for Grid Export, Pivot Grids and Drag &amp; Drop examples in the Kitchen Sink</li>
+<li>EXTJS-20792 - Remove icon deletes a an incorrect item in the Feed Viewer example</li>
+<li>EXTJS-20839 - Sorting column ASC causes chart to disappear in Pivot Grids and Chart example</li>
+<li>EXTJS-20898 - Pivot and Chart integration example has wrong X axis values in grid</li>
+<li>EXTJS-20958 - Ext.ux.statusbar.ValidationStatus throws error when form is invalidated</li>
+<li>EXTJS-21057 - Data associations example doesn&#39;t initialize scrollable correctly</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_forms_51_">Forms (51)<a class="quick-link" href="#whats_new-_-release_notes_-_forms_51_"></a></h3>
+<ul>
+<li>EXTJS-14011 - Search store does not pre-select entries present in multiselector</li>
+<li>EXTJS-14205 - Radio buttons not cleared when selection moved with keyboard</li>
+<li>EXTJS-15307 - UpdateRecord causes checkbox values in model to be true/false instead of inputValues</li>
+<li>EXTJS-15718 - Date picker selection incorrect when rendered into a table element</li>
+<li>EXTJS-16250 - Ext.ux.form.ItemSelector fails to load with an array store</li>
+<li>EXTJS-17471 - createNewOnEnter should not create new tag when some value in dropdown list is selected</li>
+<li>EXTJS-17779 - ComboBox forceSelection is too aggressive in clearing out the field input</li>
+<li>EXTJS-17908 - Combobox doesn&#39;t fire beforeselect/beforedeselect when binding to a new store</li>
+<li>EXTJS-18847 - MultiSelect component loses item selection when using scroolbar in IE</li>
+<li>EXTJS-18992 - Validation of ComboBox doesn&#39;t occur if query is vetoed</li>
+<li>EXTJS-19248 - ComboBox filter is not applied after repeated empty result set</li>
+<li>EXTJS-19250 - Ext.picker.Date not setting an initial value in the modern toolkit</li>
+<li>EXTJS-19317 - Tag field should clear typed value when it matches selection</li>
+<li>EXTJS-19433 - File upload via form.submit() not processing response correctly</li>
+<li>EXTJS-19469 - Selectfield does not automatically scroll to selected value on display</li>
+<li>EXTJS-19590 - Cannot tap/click to select value in modern picker</li>
+<li>EXTJS-19614 - ComboBox picker is visible (and incorrectly aligned) after move/resize of owning Ext.Window</li>
+<li>EXTJS-19646 - emptyCls is not removed from combobox when value is set via binding and store is not loaded</li>
+<li>EXTJS-19775 - Email and telephone hyperlinks remove iframe elements from HtmlEditor</li>
+<li>EXTJS-19865 - Pressing &quot;enter&quot; on a textarea saves form instead of newline with defaultButton</li>
+<li>EXTJS-19932 - getSameGroupFields() in Ext.field.Checkbox does not properly define a root for Ext.query</li>
+<li>EXTJS-19946 - Tagfield selection event not fired when deselecting last selected record.</li>
+<li>EXTJS-20044 - Disabling a filefield after a reset causes exception</li>
+<li>EXTJS-20049 - ComboBox does not clear partial text selection after selection using typeAhead</li>
+<li>EXTJS-20067 - New line character in displayField value of combobox prevents selection</li>
+<li>EXTJS-20107 - Auto height checkboxgroup doesn&#39;t account for labelAlign: &#39;top&#39; in height calculation</li>
+<li>EXTJS-20121 - ColorField preview element has unprefixed class (&quot;filter&quot;)</li>
+<li>EXTJS-20185 - Ext.form.Panel.reset method is missing an argument </li>
+<li>EXTJS-20199 - Destroying tagfield in a non-destroyed panel causes &quot;Uncaught TypeError: Array.prototype.indexOf&quot;</li>
+<li>EXTJS-20232 - ComboBox does not fire onspecialkey event for ENTER key when expanded</li>
+<li>EXTJS-20248 - stripCharsRe for ComboBox doesn&#39;t correctly replace if the same value is re-entered</li>
+<li>EXTJS-20250 - ComboBox setValue returns undefined when value is cleared</li>
+<li>EXTJS-20263 - Key press in Date Picker throws an exception</li>
+<li>EXTJS-20298 - ComboBoxes in a widgetcolumn do not collapse when clicking their triggers</li>
+<li>EXTJS-20335 - Can&#39;t choose month or year in date picker on Windows tablets</li>
+<li>EXTJS-20341 - Menu disappears after touch in multi selector grid</li>
+<li>EXTJS-20372 - After choosing a year in the date picker, the picker won&#39;t hide on Windows tablets</li>
+<li>EXTJS-20394 - Radio buttons are not focused when clicking on the Radio Group label</li>
+<li>EXTJS-20402 - setValue throws an error when binding a combo box with multiSelect while focused</li>
+<li>EXTJS-20436 - Clicking on a toolbar does not dismiss an opened combobox</li>
+<li>EXTJS-20447 - Field before/afterLabelTextTpl is not kept when calling setFieldLabel</li>
+<li>EXTJS-20473 - Destroying a tagfield destroys its store&#39;s proxy</li>
+<li>EXTJS-20480 - Ext.form.Panel.reset is missing its return statement</li>
+<li>EXTJS-20492 - Error destroying a grid with a celleditor when tagfield has focus</li>
+<li>EXTJS-20503 - ComboBox with typeAhead does not select value on blur</li>
+<li>EXTJS-20610 - Datefield does not fire onchange when selecting date</li>
+<li>EXTJS-20716 - Slider widget missing setMaxValue and setMinValue methods</li>
+<li>EXTJS-20833 - Blanking out datefield does not trigger change event</li>
+<li>EXTJS-20985 - Text fields select text on focus regardless of selectOnFocus config</li>
+<li>EXTJS-21060 - Tagfield using plugin to apply list template not rendering template content</li>
+<li>EXTJS-21148 - TextField trigger mousedown handler has incorrect focus check</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_grid_71_">Grid (71)<a class="quick-link" href="#whats_new-_-release_notes_-_grid_71_"></a></h3>
+<ul>
+<li>EXTJS-13581 - Ellipsis is shown in widget column</li>
+<li>EXTJS-16390 - Pasting cells from Excel into a grid with a spreadsheet model and clipboard plugin results in an extra row</li>
+<li>EXTJS-16925 - Cell editing events are out of order when using tab to navigate cells</li>
+<li>EXTJS-17005 - Checkcolumn checkchange should pass the record as a parameter</li>
+<li>EXTJS-17196 - Buffered renderer plugin incorrectly sizes view when view size changes and it is hierarchically hidden</li>
+<li>EXTJS-18351 - Focusing a cell does not scroll it into view when using touch scroller</li>
+<li>EXTJS-18655 - Groups are disapearing in grids after a refresh is performed</li>
+<li>EXTJS-18927 - Error in grouped grid after a store reload and group is collapsed</li>
+<li>EXTJS-18989 - Groups with encoded HTML special chars breaks grouping</li>
+<li>EXTJS-19251 - Containers in a WidgetColumn do not layout properly when scrolling beyond buffer zones</li>
+<li>EXTJS-19280 - Tab does not properly move focus onto property grid in IE</li>
+<li>EXTJS-19289 - List grid filter should not react to store changes that update the menu</li>
+<li>EXTJS-19314 - forceFit configuration on grid causes layout run failures when showing hidden columns</li>
+<li>EXTJS-19474 - CheckboxModel header checkbox should only operate on items available to the current view</li>
+<li>EXTJS-19562 - List filters produce errors when destroyed if the store is a string value before menu is first shown</li>
+<li>EXTJS-19633 - Grid grouping feature does not use value from groupFn if template column is defined</li>
+<li>EXTJS-19675 - Grid with buffered rendering and cell editor sometimes throws errors after scrolling</li>
+<li>EXTJS-19770 - Grid focus can prevent text selection</li>
+<li>EXTJS-19846 - Infinite grid with BufferedStore, buffered renderer, and locked column displays blank view when scrolling quickly</li>
+<li>EXTJS-19863 - Filter menu is not created when grid is configured with sortableColumns and enableColumnHide disabled</li>
+<li>EXTJS-19872 - Stateful width of locked column is not applied</li>
+<li>EXTJS-19875 - Unable to collapse all groups when using groupFn</li>
+<li>EXTJS-19887 - CellModel does not apply styles correctly if the selected cell position changes</li>
+<li>EXTJS-19916 - Docked Summary scrolls vertically with view when grid is locked</li>
+<li>EXTJS-19964 - Cannot activate cell editor when editing was previously cancelled by clicking gridview</li>
+<li>EXTJS-19993 - Dropping a column on a grouped column header can cause column misalignment</li>
+<li>EXTJS-19996 - Grid view displays empty rows when grouping is cleared</li>
+<li>EXTJS-20009 - RowExpander causes selection to be lost with multi selection when clicking on the row body</li>
+<li>EXTJS-20019 - Ext.grid.column.Column setText() updates the wrong element</li>
+<li>EXTJS-20021 - Removing records on grid with grouping does not update selection</li>
+<li>EXTJS-20035 - Editing in locked grid causes change in normal grid scroll position</li>
+<li>EXTJS-20058 - Destroying grid in action column handler creates error</li>
+<li>EXTJS-20063 - Spreadsheet selModel can throw isModel errors when removing last record</li>
+<li>EXTJS-20106 - Widgetcolumn&#39;s onCellsResized causes incorrect iteration though the array</li>
+<li>EXTJS-20134 - Grid filters not applied correctly when using reconfigure with nested columns</li>
+<li>EXTJS-20159 - Locked grid with a viewmodel throws exception on destroy</li>
+<li>EXTJS-20177 - Ext.view.Table#onResize not passing oldWidth/oldHeight</li>
+<li>EXTJS-20181 - Copying cell data from Excel on Windows includes line feeds which produces unexpected paste results in the grid</li>
+<li>EXTJS-20194 - Locked split grid with specified locked size cuts off last locked column</li>
+<li>EXTJS-20219 - Summary count in conjunction with grouping returns list of objects instead of count</li>
+<li>EXTJS-20227 - Adding new record can prevent RowEditor from performing validation</li>
+<li>EXTJS-20235 - MultiSelector view does not realign on resize</li>
+<li>EXTJS-20241 - Spreadsheet selection model with checkboxSelect set to true causes component to uncheck after mousemove</li>
+<li>EXTJS-20244 - Grid filter information not sent in requests for bound viewmodel stores</li>
+<li>EXTJS-20264 - Including a large subtable in a grid will cause it to scroll to top</li>
+<li>EXTJS-20266 - Grouped grid columns cannot be created without a grid</li>
+<li>EXTJS-20351 - Grid focusRow fails to focus new row after reconfiguring with a new column set</li>
+<li>EXTJS-20387 - Spreadsheet model throws error when binding to the store</li>
+<li>EXTJS-20395 - MessageBox has incorrect z-index after editing in a floating grid</li>
+<li>EXTJS-20429 - Cannot scroll over a grid when using a tablet</li>
+<li>EXTJS-20439 - Cannot use native text copy / paste in cell editors with spreadsheet model</li>
+<li>EXTJS-20487 - Clicking an item on a grid that is partially out of view will not select it</li>
+<li>EXTJS-20495 - Collapse/Expand a group with an empty group string causes it to disappear</li>
+<li>EXTJS-20501 - Roweditor with checkboxfield editor throws an error in IE11 </li>
+<li>EXTJS-20548 - Cell editing on a grid swallows events intended for widgets</li>
+<li>EXTJS-20583 - Grid filter creates a store load request when column menu is first expanded</li>
+<li>EXTJS-20606 - RowNumberer background color does not fill entire cell if content spans multiple lines</li>
+<li>EXTJS-20609 - Moving an element which contains focus can leave focus state inconsistent.</li>
+<li>EXTJS-20634 - Grid tries to readd existing filters on refresh</li>
+<li>EXTJS-20694 - CellEditing plugin should handle autosort of store on field mutation.</li>
+<li>EXTJS-20719 - Column renderer passes null instead of meta object</li>
+<li>EXTJS-20814 - CellEditing &#39;validateEdit&#39; event does not contain the correct context values</li>
+<li>EXTJS-20815 - CellEditing &#39;validateEdit&#39; event is fired before editing occurs</li>
+<li>EXTJS-20888 - Grid with checkboxmodel will not re-render checkcolumn upon reconfigure</li>
+<li>EXTJS-20954 - Grid column resize causes parent panel to scroll to top</li>
+<li>EXTJS-21034 - Scrolling a BufferedRenderer grid with an active CellEditor causes an error</li>
+<li>EXTJS-21180 - BufferedStore and SpreadsheetModel throws an exception when rows are selected and Grid.reconfigure() is called</li>
+<li>EXTJS-21328 - Grid with cell editing and a buffered renderer throws exception when activating editor after garbage collection has run</li>
+<li>EXTJS-21334 - Dragging paging thumb doesn&#39;t scroll grid view properly in modern</li>
+<li>EXTJS-21343 - Grid with cell editing and buffered renderer copies active editor value to other cell when scrolling</li>
+<li>EXTJS-21365 - Grid cell inner html doesn&#39;t render full height when value is empty array</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_layouts_9_">Layouts (9)<a class="quick-link" href="#whats_new-_-release_notes_-_layouts_9_"></a></h3>
+<ul>
+<li>EXTJS-15309 - Collapsible panels inside a vbox layout are positioned incorrectly during expanding animation</li>
+<li>EXTJS-18849 - DatePicker&#39;s controls move when the form resizes, which hides the owner container</li>
+<li>EXTJS-18903 - Selected item is obscured under selection highlighting in the modern toolkit&#39;s overlay picker</li>
+<li>EXTJS-19222 - Showing hidden items in an absolute layout do not display correctly</li>
+<li>EXTJS-19721 - Panel with viewport plugin and box layout produces &quot;targetCls is missing&quot; warning</li>
+<li>EXTJS-19791 - Accordion layout does not respect child animCollapse duration</li>
+<li>EXTJS-20532 - Collapsed border layout regions do not show on re-add</li>
+<li>EXTJS-21045 - Border region disappears when placeholder expand tool is tapped.</li>
+<li>EXTJS-21189 - VBox layout does not properly lay out items when their height is set with a percentage</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_locale_3_">Locale (3)<a class="quick-link" href="#whats_new-_-release_notes_-_locale_3_"></a></h3>
+<ul>
+<li>EXTJS-20081 - Russian locale file uses incorrect thousandSeperator</li>
+<li>EXTJS-20726 - Locale configs in Ext.locale.pt_BR.form.field.Date are incorrectly translated</li>
+<li>EXTJS-20752 - &quot;showGroupsText&quot; config is incorrectly translated in Ext.locale.pt_BR.grid.feature.Grouping</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_menu_2_">Menu (2)<a class="quick-link" href="#whats_new-_-release_notes_-_menu_2_"></a></h3>
+<ul>
+<li>EXTJS-17945 - Menu selection changes URL to &#39;#&#39; on touch devices</li>
+<li>EXTJS-20962 - Menu defaults config conflicts with shortcut component &#39;-&#39; separator</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_misc_1_">Misc (1)<a class="quick-link" href="#whats_new-_-release_notes_-_misc_1_"></a></h3>
+<ul>
+<li>EXTJS-20443 - Colorpicker components do not call onChange method from OK button after manually entering values </li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_panel_7_">Panel (7)<a class="quick-link" href="#whats_new-_-release_notes_-_panel_7_"></a></h3>
+<ul>
+<li>EXTJS-19897 - Adding closing bracket in format breaks bind</li>
+<li>EXTJS-19975 - Setting panel title with numeric value does not update the title</li>
+<li>EXTJS-20043 - Panel tools do not get set correctly before render</li>
+<li>EXTJS-20172 - Error collapsing a panel while layouts are suspended such as when using data binding</li>
+<li>EXTJS-20672 - Panel does not respect header: false</li>
+<li>EXTJS-6924 - Expand fails for panel with animation that is initially collapsed</li>
+<li>EXTJS-9961 - Ext.panel.Panel with titleCollapse is not expanding on header click</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_pivotgrid_14_">PivotGrid (14)<a class="quick-link" href="#whats_new-_-release_notes_-_pivotgrid_14_"></a></h3>
+<ul>
+<li>EXTJS-18758 - Pivot configurator panel is not usable via key navigation</li>
+<li>EXTJS-19181 - Range editor plugin does not calculate cell values correctly when &quot;Uniformly&quot; type is used</li>
+<li>EXTJS-19465 - Configurator panel disappears after setting grid height </li>
+<li>EXTJS-19506 - Case sensitive doesn&#39;t work in PivotGrid Configurator</li>
+<li>EXTJS-19519 - Button &quot;Value&quot; is missing after change configurator dock position</li>
+<li>EXTJS-19520 - Width of buttons in configurator dock is too small in Firefox</li>
+<li>EXTJS-19602 - Pivot Grid lost focus after opening grouped column header</li>
+<li>EXTJS-20208 - Error in console when tabbing through cells in Pivot Grid Cell editing plugin</li>
+<li>EXTJS-20451 - Configurator plugin - filter of year value greater than 999 doesn&#39;t work</li>
+<li>EXTJS-21094 - Group header alignment on rows is wrong in RTL</li>
+<li>EXTJS-21211 - [Pivot]RangeEditor plugin missing fields for editing row value </li>
+<li>EXTJS-21238 - [Configurator Plugin] It is hard to move items on touch devices</li>
+<li>EXTJS-21388 - Pivot Grids - Column headers are not aligned</li>
+<li>EXTJS-21442 - Empty cells should not be editable in Pivot grids</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_scroller_15_">Scroller (15)<a class="quick-link" href="#whats_new-_-release_notes_-_scroller_15_"></a></h3>
+<ul>
+<li>EXTJS-10272 - Auto height window with minHeight, scroll jumps after expand child panel</li>
+<li>EXTJS-12640 - Auto height form scrolls to top when radiogroup option selected in container</li>
+<li>EXTJS-15691 - Panel with relative height scrolls to top when adding items</li>
+<li>EXTJS-16080 - Auto height form loses scroll position when modifying a value</li>
+<li>EXTJS-16334 - Adding or removing elements to an auto height form causes it to scroll to the top</li>
+<li>EXTJS-16349 - Auto height form scrolls when modifying value</li>
+<li>EXTJS-18502 - Scroll position resets when a panel is added to a container with maxwidth</li>
+<li>EXTJS-18895 - Binding in border layout can cause grid to scroll to top on selection</li>
+<li>EXTJS-19140 - Clicking on a checkbox scrolls the form if a height is not set</li>
+<li>EXTJS-19756 - When form is vertically scrolled, showing a hidden form field can cause the form to scroll to the top</li>
+<li>EXTJS-6091 - Expanding/Collapsing auto height fieldset causes scroll position to be reset</li>
+<li>EXTJS-7103 - Shrinkwrap auto layout component loses scroll position when layout is updated</li>
+<li>EXTJS-7869 - Scroll position lost when Box layout updates</li>
+<li>EXTJS-8231 - Tab setTitle will reset form panel scrollbar if form panel has auto height children</li>
+<li>EXTJS-9286 - Form panel with auto height fieldset in viewport - setVisible cause scroll reset to top</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_selection_model_4_">Selection Model (4)<a class="quick-link" href="#whats_new-_-release_notes_-_selection_model_4_"></a></h3>
+<ul>
+<li>EXTJS-18018 - SHIFT select not working on Spreadsheet selection</li>
+<li>EXTJS-20226 - Spreadsheet selection is lost after view is refreshed when type is &quot;cells&quot;</li>
+<li>EXTJS-20238 - Spreadsheet selection model causes &#39;isModel() of null&#39; error when calling setLoading() on parent container</li>
+<li>EXTJS-21440 - Cannot select cells/rows in spreadsheet selection on IE11/Edge tablet</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tabs_1_">Tabs (1)<a class="quick-link" href="#whats_new-_-release_notes_-_tabs_1_"></a></h3>
+<ul>
+<li>EXTJS-14334 - Cannot change activeTab via buttons in tabbar overflow menu</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_templates_1_">Templates (1)<a class="quick-link" href="#whats_new-_-release_notes_-_templates_1_"></a></h3>
+<ul>
+<li>EXTJS-20397 -  After resizing charts, doubleclick doesn&#39;t return it to its default state in the Admin Dashboard</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_theme_7_">Theme (7)<a class="quick-link" href="#whats_new-_-release_notes_-_theme_7_"></a></h3>
+<ul>
+<li>EXTJS-14098 - Tab scroller arrows are not being shown correctly for RTL</li>
+<li>EXTJS-18344 - Picker is styled incorrectly in windows theme</li>
+<li>EXTJS-19827 - Load mask spinner animation not working correctly</li>
+<li>EXTJS-19978 - Unexpected CSS token warning in Safari 9.0.1</li>
+<li>EXTJS-20084 - Checkbox label&#39;s font size variable is incorrectly set</li>
+<li>EXTJS-20188 - Sandbox builds display incorrect prefixes for CSS root namespace</li>
+<li>EXTJS-20819 - extjs-checkbox-ui does not apply ui-label-color for the box label</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tooltips_3_">ToolTips (3)<a class="quick-link" href="#whats_new-_-release_notes_-_tooltips_3_"></a></h3>
+<ul>
+<li>EXTJS-14959 - Tooltip&#39;s anchor is incorrectly displayed when the tooltip is shown by another component</li>
+<li>EXTJS-17892 - Tooltips ignore mouseover events on touch devices</li>
+<li>EXTJS-18896 - ToolTip displays an additional layer in IE8 and IE9</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_toolbars_2_">Toolbars (2)<a class="quick-link" href="#whats_new-_-release_notes_-_toolbars_2_"></a></h3>
+<ul>
+<li>EXTJS-20673 - Ext.toolbar.Breadcrumb&#39;s FontAwesome icons are not displaying in IE8 or IE9</li>
+<li>EXTJS-20714 - Breadcrumb toolbars face the wrong direction in RTL in Triton theme</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tree_12_">Tree (12)<a class="quick-link" href="#whats_new-_-release_notes_-_tree_12_"></a></h3>
+<ul>
+<li>EXTJS-17612 - getChanges doesn&#39;t include &quot;index&quot; after insertBefore call</li>
+<li>EXTJS-19391 - Reconfiguring a locked tree sometimes renders empty rows</li>
+<li>EXTJS-19678 - Tree panel does not render correctly if a child node is loading during render</li>
+<li>EXTJS-19808 - Treelist&#39;s floating menu closes when the scrollbar gets focus</li>
+<li>EXTJS-20007 - Tree view no longer applies expander class when mousing over the expander icon</li>
+<li>EXTJS-20117 - TreePanel with a ViewModel store will throw an error if there is a locked column</li>
+<li>EXTJS-20464 - Tree List should support filtering</li>
+<li>EXTJS-20602 - Persistent &quot;index&quot; in node interface not updated correctly when moving node between parents.</li>
+<li>EXTJS-20650 - Expanding and collapsing a Ext.ux.TreePicker node scrolls the picker to the top</li>
+<li>EXTJS-20745 - Treelist doesn&#39;t allow selection of micro second level items in modern toolkit</li>
+<li>EXTJS-20988 - Micro tree incorrectly shows the UI in the modern toolkit</li>
+<li>EXTJS-21084 - Expand/collapse tree node will set normal view scrollLeft to 0</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_window_8_">Window (8)<a class="quick-link" href="#whats_new-_-release_notes_-_window_8_"></a></h3>
+<ul>
+<li>EXTJS-15843 - Window shows restore tool when it starts as maximized</li>
+<li>EXTJS-19686 - Maximized window is draggable when animateTarget is configured</li>
+<li>EXTJS-19984 - Ext.WindowManager.hideAll() does not hide mask when window is modal</li>
+<li>EXTJS-20015 - Clicking on a modal mask causes an error and prevents closing in IE8</li>
+<li>EXTJS-20088 - MessageBox shows scrollbars when displayed more than once on touch/hybrid-enabled devices</li>
+<li>EXTJS-20155 - Toast gets collapsed if you click on the background in Modern toolkit</li>
+<li>EXTJS-20187 - Toast windows throws error when focused</li>
+<li>EXTJS-20846 - Toast window&#39;s stickOnClick config should default to <code>false</code></li>
+</ul>
+<p>Total: 329</p>
+<h2 id="whats_new-_-release_notes_-_known_issues">Known Issues<a class="quick-link" href="#whats_new-_-release_notes_-_known_issues"></a></h2>
+<h3 id="whats_new-_-release_notes_-_accessibility">Accessibility<a class="quick-link" href="#whats_new-_-release_notes_-_accessibility"></a></h3>
+<ul>
+<li>EXTJS-10451 - Tree component does not support ARIA expanded state</li>
+<li>EXTJS-10467 - Menu overflow scrollers are not navigable using the keyboard</li>
+<li>EXTJS-10475 - ToolTip is not accessible</li>
+<li>EXTJS-10477 - HtmlEditor is not accessible</li>
+<li>EXTJS-10480 - Color Picker is not accessible</li>
+<li>EXTJS-10492 - DragDrop is not accessible</li>
+<li>EXTJS-10494 - Grid grouping feature is not accessible</li>
+<li>EXTJS-10495 - Locking grid is announced as two separate widgets by screen readers</li>
+<li>EXTJS-10497 - Grid row expander is not accessible</li>
+<li>EXTJS-10498 - Grid RowBody feature is not accessible</li>
+<li>EXTJS-10499 - Grid CheckboxSelectionModel is not accessible</li>
+<li>EXTJS-10503 - Grid headers cannot be resized using the keyboard</li>
+<li>EXTJS-10504 - Grid Headers cannot be reordered using the keyboard</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_charts">Charts<a class="quick-link" href="#whats_new-_-release_notes_-_charts"></a></h3>
+<ul>
+<li>EXTJS-10739 - RTL Charts do not correctly display bidirectional text</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_core">Core<a class="quick-link" href="#whats_new-_-release_notes_-_core"></a></h3>
+<ul>
+<li>EXTJS-21139 - View incorrectly resized when changing screen orientation while the virtual keyboard is shown</li>
+<li>EXTJS-21433 - Scroll snapping does not work in modern pickers when using Chrome</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_dataview">DataView<a class="quick-link" href="#whats_new-_-release_notes_-_dataview"></a></h3>
+<ul>
+<li>EXTJS-12345 - ComboBox&#39;s bound list becomes transparent on second show on iPad</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_layouts">Layouts<a class="quick-link" href="#whats_new-_-release_notes_-_layouts"></a></h3>
+<ul>
+<li>EXTJS-4768 - Regions overlap when their width is too high to fit within a container in a border layout</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_tabs">Tabs<a class="quick-link" href="#whats_new-_-release_notes_-_tabs"></a></h3>
+<ul>
+<li>EXTJS-13538 - Ext.ux.TabScrollerMenu has not been updated to work in Ext JS 5 and 6</li>
+</ul>
+<h3 id="whats_new-_-release_notes_-_theme">Theme<a class="quick-link" href="#whats_new-_-release_notes_-_theme"></a></h3>
+<ul>
+<li>EXTJS-17790 - Triton should support tree lines</li>
+</ul>
+
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            <a href="https://www.facebook.com/senchainc/" target="_blank"><img class="social" src="../../home-images/fb.png"/></a>
+            <a href="https://www.linkedin.com/company/sencha-inc" target="_blank"><img class="social" src="../../home-images/in.png"/></a>
+            <a href="https://twitter.com/Sencha" target="_blank"><img class="social" src="../../home-images/twt.png"/></a>
+            Ext JS 6.2.0  | <a href='https://www.sencha.com/legal/terms-of-use/' target='_blank'>Terms of Use</a>
+        </p>
+    </div>
+</div>
+
+            
+            
+        </div>
+    </div>
+    <h2 class="product-header"><a href="../../index.html">Ext JS 6.2.0 </a>
+        <span data-tip="Product / Version Menu" class="fa fa-chevron-circle-down product-menu-btn tooltip tooltip-tl-bl"><div class="callout callout-b"></div></span>
+        <div id="peekaboo-input" class="peekaboo-input">
+            <input type="text" id="mobile-input" />
+        </div>
+    </h2>
+
+    <div id="product-tree-ct" class="hide">
+        <div id="product-tree">
+            <div class="product-name-ct">
+                    <div id="product-menu-extjs" class="product-name-item">Ext JS</div>
+                    <div id="product-menu-sencha_test" class="product-name-item">Sencha Test</div>
+                    <div id="product-menu-cmd" class="product-name-item">Cmd</div>
+                    <div id="product-menu-themer" class="product-name-item">Sencha Themer</div>
+                    <div id="product-menu-gxt" class="product-name-item">GXT</div>
+                    <div id="product-menu-ide_plugins" class="product-name-item">IDE Plugins</div>
+                    <div id="product-menu-sencha_inspector" class="product-name-item">Sencha Inspector</div>
+                    <div id="product-menu-architect" class="product-name-item">Architect</div>
+                    <div id="product-menu-fiddle" class="product-name-item">Sencha Fiddle</div>
+                    <div id="product-menu-touch" class="product-name-item">Touch</div>
+            </div>
+                <div class="product-version-ct hide extjs">
+                        <h2>Ext JS</h2>
+                            <h3>6.x</h3>
+                                        <a class="product-item" href="../../index.html">6.2.0</a>
+                                        <a class="product-item" href="../../../6.0.2/index.html">6.0.2</a>
+                                        <a class="product-item" href="../../../6.0.1/index.html">6.0.1</a>
+                                        <a class="product-item" href="../../../6.0.0/index.html">6.0.0</a>
+                            <h3>5.x</h3>
+                                        <a class="product-item" href="../../../5.1.3/index.html">5.1.3</a>
+                                        <a class="product-item" href="../../../5.1.2/index.html">5.1.2</a>
+                                        <a class="product-item" href="../../../5.1.1/index.html">5.1.1</a>
+                                        <a class="product-item" href="../../../5.1.0/index.html">5.1.0</a>
+                                        <a class="product-item" href="../../../5.0.1/index.html">5.0.1</a>
+                                        <a class="product-item" href="../../../5.0.0/index.html">5.0.0</a>
+                            <h3>4.x</h3>
+                                        <a class="product-item" href="../../../4.2.6/">4.2.6</a>
+                                        <a class="product-item" href="../../../4.1.3/">4.1.3</a>
+                                        <a class="product-item" href="../../../4.0.7/">4.0.7</a>
+                            <h3>3.x</h3>
+                                        <a class="product-item" href="../../../3.4.0/">3.4.0</a>
+                </div>
+                <div class="product-version-ct hide sencha_test">
+                        <h2>Sencha Test</h2>
+                                <a class="product-item" href="../../../../sencha_test/2.0.0/">2.0.0 EA</a>
+                                <a class="product-item" href="../../../../sencha_test/1.0.3/">1.0.3</a>
+                </div>
+                <div class="product-version-ct hide cmd">
+                        <h2>Cmd</h2>
+                        <a  href="../../../../cmd/index.html">Cmd</a>
+                </div>
+                <div class="product-version-ct hide themer">
+                        <h2>Sencha Themer</h2>
+                                <a class="product-item" href="../../../../themer/1.1/">1.1.0 EA</a>
+                                <a class="product-item" href="../../../../themer/1.0/">1.0.1</a>
+                </div>
+                <div class="product-version-ct hide gxt">
+                        <h2>GXT</h2>
+                                <a class="product-item" href="../../../../gxt/5.x/index.html">5.x EA</a>
+                                <a class="product-item" href="../../../../gxt/4.x/index.html">4.x</a>
+                                <a class="product-item" href="../../../../gxt/3.x/index.html">3.x</a>
+                </div>
+                <div class="product-version-ct hide ide_plugins">
+                        <h2>IDE Plugins</h2>
+                        <a  href="../../../../ide_plugins/index.html">IDE Plugins</a>
+                </div>
+                <div class="product-version-ct hide sencha_inspector">
+                        <h2>Sencha Inspector</h2>
+                        <a  href="../../../../sencha_inspector/index.html">Sencha Inspector</a>
+                </div>
+                <div class="product-version-ct hide architect">
+                        <h2>Architect</h2>
+                                <a class="product-item" href="../../../../architect/4.1/index.html">Architect 4.1 EA</a>
+                                <a class="product-item" href="../../../../architect/4/index.html">Architect 4</a>
+                                <a class="product-item" href="../../../../architect/3/index.html">Architect 3</a>
+                </div>
+                <div class="product-version-ct hide fiddle">
+                        <h2>Sencha Fiddle</h2>
+                        <a  href="../../../../fiddle/index.html">Sencha Fiddle</a>
+                </div>
+                <div class="product-version-ct hide touch">
+                        <h2>Touch</h2>
+                            <h3>2.x</h3>
+                                        <a class="product-item" href="../../../../touch/2.4/index.html">Touch 2.4</a>
+                                        <a class="product-item" href="../../../../touch/2.3.1/">Touch 2.3</a>
+                                        <a class="product-item" href="../../../../touch/2.2.1/">Touch 2.2</a>
+                                        <a class="product-item" href="../../../../touch/2.0.2/">Touch 2.0</a>
+                </div>
+        </div>
+    </div>
+
+    <div id="historyConfigPanel">
+        <div class="history-type-selector">
+            <input id="historyTypeCurrent" type="radio" name="historyType" value="current" checked="true" />
+            <label for="historyTypeCurrent">Current Product / Version</label><br>
+            <input id="historyTypeAll" type="radio" name="historyType" value="all" />
+            <label for="historyTypeAll">All</label><br>
+            <div id="history-label-toggle">
+                <input id="history-all-labels" type="checkbox" checked="true" />
+                <label for="history-all-labels">Show product details in the history bar</label>
+                <div class="mask"></div>
+            </div>
+            <span id="history-clear" class="history-clear tooltip tooltip-tr-br" data-tip="Clear History"><div class="callout callout-b"></div></span>
+        </div>
+        <div id="history-full-list"></div>
+    </div>
+
+    <div id="search-history-panel"></div>
+
+    <div id="modal-placeholder" class="modal">
+        <span id="modal-close">&times;</span>
+        <img id="modal-content">
+        <div id="modal-caption"></div>
+    </div>
+
+</body>
+    <script type="text/javascript" src="../../js/searchIndex.js"></script>
+    <script type="text/javascript" src="../../js/guideSearch.js"></script>
+<!--[if lt IE 9 ]>
+<script type="text/javascript" src="../../js/media-query-poly.js"></script>
+<style>
+    span.da-inline-fiddle-nav-fiddle.x-fa.fa-play-circle {
+        display: none;
+    }
+</style>
+<![endif]-->
+<script>
+    if (navigator.userAgent.indexOf("Safari") > -1) {
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload()
+            }
+        };
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState == "interactive") {
+            //
+        }
+    }
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1396058-28', 'auto');
+    ga('send', 'pageview');
+</script>
+</html>

@@ -1,0 +1,48 @@
+[
+    {
+        "name": "pusher/pusher-php-server",
+        "version": "dev-composer",
+        "version_normalized": "dev-composer",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pusher/pusher-php-server.git",
+            "reference": "474c38a45d20f619572861aa62d8aea6b3844497"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pusher/pusher-php-server/zipball/474c38a45d20f619572861aa62d8aea6b3844497",
+            "reference": "474c38a45d20f619572861aa62d8aea6b3844497",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2013-09-15 17:23:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "classmap": [
+                "lib/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Library for interacting with the Pusher REST API",
+        "homepage": "https://github.com/pusher/pusher-php-server",
+        "keywords": [
+            "events",
+            "php-pusher-server",
+            "publish",
+            "pusher",
+            "realtime",
+            "rest",
+            "trigger"
+        ]
+    }
+]

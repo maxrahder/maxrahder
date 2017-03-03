@@ -1,0 +1,9 @@
+{
+    success: true,
+    data: [
+        { "first" : "John",   "last" : "Lennon" }, 
+        { "first" : "Paul",   "last" : "McCartney" }, 
+        { "first" : "George", "last" : "Harrison" }, 
+        { "first" : "Ringo",  "last" : "Starr" }
+    ]
+}

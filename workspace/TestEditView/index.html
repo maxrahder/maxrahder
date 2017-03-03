@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>TestEditView</title>
+    <script src="_lib/jsbeautify/lib/beautify.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_lib/String/string.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="_lib/ace/src-min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var Ext = Ext || {}; // Ext namespace won't be defined yet...
+
+        // This function is called by the Microloader after it has performed basic
+        // device detection. The results are provided in the "tags" object. You can
+        // use these tags here or even add custom tags. These can be used by platform
+        // filters in your manifest or by platformConfig expressions in your app.
+        //
+        Ext.beforeLoad = function (tags) {
+            var s = location.search,  // the query string (ex "?foo=1&bar")
+                profile;
+
+            // For testing look for "?classic" or "?modern" in the URL to override
+            // device detection default.
+            //
+            if (s.match(/\bclassic\b/)) {
+                profile = 'classic';
+            }
+            else if (s.match(/\bmodern\b/)) {
+                profile = 'modern';
+            }
+            else {
+                profile = tags.desktop ? 'classic' : 'modern';
+                //profile = tags.phone ? 'modern' : 'classic';
+            }
+
+            Ext.manifest = profile; // this name must match a build profile name
+
+            // This function is called once the manifest is available but before
+            // any data is pulled from it.
+            //
+            //return function (manifest) {
+                // peek at / modify the manifest object
+            //};
+        };
+    </script>
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" data-app="de1525eb-ea45-456b-a62b-cf7c89e27a49" type="text/javascript" src="bootstrap.js"></script>
+</head>
+
+<body style="margin: 1em;" class="x-hidden">
+<pre class="x-hidden classic ">
+// The handler config is easier to use than listeners
+
+Ext.define('MyApp.view.Main', {
+        extend: 'Ext.panel.Panel',
+
+        tbar: [{
+            text: 'Button',
+            listeners: {
+                click: function(button) {
+                    alert('click!');
+                }
+            }
+        }, {
+            text: 'Button',
+            handler: function(button) {
+                alert('click!');
+            }
+        }]
+
+    });
+    Ext.application({
+        name: 'MyApp',
+        mainView: 'MyApp.view.Main'
+    });</pre>
+
+
+<pre class="x-hidden classic 200">
+    // The handler config is easier to use than listeners
+
+    Ext.define('MyApp.view.Main', {
+        extend: 'Ext.panel.Panel',
+
+        tbar: [{
+            text: 'Button',
+            listeners: {
+                click: function(button) {
+                    alert('click!');
+                }
+            }
+        }, {
+            text: 'Button',
+            handler: function(button) {
+                alert('click!');
+            }
+        }]
+
+    });
+    Ext.application({
+        name: 'MyApp',
+        mainView: 'MyApp.view.Main'
+    });</pre>
+
+
+<pre class="x-hidden run classic 200">
+Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Button' }] }); Ext.application({
+name: 'MyApp', mainView: 'MyApp.view.Main' });
+</pre>
+
+
+    <div id="test">
+        <h1>Hi there</h1>
+<pre class="x-hidden run classic 200">
+Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Button' }] }); Ext.application({
+name: 'MyApp', mainView: 'MyApp.view.Main' });
+</pre>
+
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+<pre class="x-hidden run modern">
+Ext.define('MyApp.view.Main', { extend: 'Ext.Container', items: [{ xtype: 'button', text: 'Button' }] }); Ext.application({
+name: 'MyApp', mainView: 'MyApp.view.Main' });
+</pre>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+            ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+            ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+            adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex
+            ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+<pre class="xml 300 readonly">
+<people>
+    <person>John</person>
+    <person>Paul</person>
+    <person>George</person>
+    <person>Ringo</person>
+</people>
+</pre>
+        <p>This is a paragraph.</p>
+<pre class="x-hidden run modern 200 readonly">Ext.create('Ext.Button', { // readonly text: 'Button', fullscreen: true });
+</pre>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<pre class="readonly 40">This is a pre</pre>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</body>
+
+</html>

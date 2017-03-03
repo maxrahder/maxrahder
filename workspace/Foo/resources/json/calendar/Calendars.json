@@ -1,0 +1,19 @@
+[{
+    "title": "Work",
+    "id": 1,
+    "eventStore": {
+        "proxy": {
+            "type": "ajax",
+            "url": "resources/json/calendar/WorkEvents.json"
+        }
+    }
+}, {
+    "title": "Personal",
+    "id": 2,
+    "eventStore": {
+        "proxy": {
+            "type": "ajax",
+            "url": "resources/json/calendar/PersonalEvents.json"
+        }
+    }
+}]

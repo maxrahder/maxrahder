@@ -1,0 +1,49 @@
+[ {
+  first : 'Steven',
+  last : 'Tyler',
+  dob : '1948/03/26',
+  currentmember: true,
+  networth: 130000000
+}, {
+  first : 'Tom',
+  last : 'Hamilton',
+  dob : '1951/12/31',
+  currentmember: true,
+  networth: 75000000
+}, {
+  first : 'Joey',
+  last : 'Kramer',
+  dob : '1950/06/21',
+  currentmember: true,
+  networth: 100000000
+}, {
+  first : 'Joe',
+  last : 'Perry',
+  dob : '1950/09/10',
+  currentmember: true,
+  networth: 120000000
+}, {
+  first: 'Brad',
+  last: 'Whitford',
+  dob: '1952/02/23',
+  currentmember: true,
+  networth: 18000000
+}, {
+  first: 'Ray',
+  last: 'Tabano',
+  dob: '1946/12/23',
+  currentmember: false,
+  networth: 0
+}, {
+  first: 'Jimmy',
+  last: 'Crespo',
+  dob: '1954/07/05',
+  currentmember: false,
+  networth: 0
+}, {
+  first: 'Rick',
+  last: 'Dufay',
+  dob: '1952/02/19',
+  currentmember: false,
+  networth: 5000000
+} ]

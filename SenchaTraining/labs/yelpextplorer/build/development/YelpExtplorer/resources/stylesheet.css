@@ -1,0 +1,36 @@
+.businessesview {
+  overflow: hidden;
+  text-align: center;
+  padding: 2px;
+  height: 140px;
+  width: 113px;
+  margin: 4px;
+  float: left;
+  color: gray;
+  background: #dddddd;
+  border: 4px solid #aaaaaa;
+  opacity: 0.5;
+}
+.businessesview img {
+  height: 100px;
+  width: 100px;
+}
+.businessesview figure {
+  margin: 0;
+}
+.businessesview figcaption {
+  text-align: center;
+  font-size: 7pt;
+  line-height: normal;
+}
+.businessesview.over {
+  border: 4px solid #888888;
+  opacity: 1.0;
+  color: black;
+}
+.businessesview.selected {
+  opacity: 1.0;
+  color: black;
+  border: 4px solid black;
+  background-color: white;
+}

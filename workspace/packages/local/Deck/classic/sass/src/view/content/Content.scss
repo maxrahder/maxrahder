@@ -1,0 +1,168 @@
+.normal-paragraph {
+    font-family: "Open Sans", sans-serif;
+    line-height: 130%;
+    font-size  : 18pt;
+    width      : 80%;
+    color      : $text-color;
+}
+
+.deckcontentview {
+    margin        : 0;
+
+    .x-panel-body {
+        width: 80%;
+    }
+
+    .title {
+        font-size       : $deck-title-font-size;
+        font-weight     : lighter;
+        background-color: white;
+        color           : $deck-title-font-color;
+        padding         : 0.2em 0.4em 0.4em;
+    }
+
+    h1 {
+        font-size  : 2em;
+        font-weight: lighter;
+        color      : $deck-title-font-color;
+        margin     : 1em 0 0.6em 0.4em;
+    }
+
+    div.expander {
+        .expandertitle {
+            color    : lighten(#025B80, 20%);
+            font-size: 125%;
+        }
+        @extend normal-paragraph;
+        margin: 1em 0;
+    }
+
+    div.lab div.expander.expanded .content {
+        width: 60%;
+    }
+
+    div.expander.expanded .content {
+        @include transition-property(opacity, padding);
+        @include transition-duration(1s, 0.3s);
+        height  : auto;
+        opacity : 1;
+        overflow: hidden;
+        padding : 0;
+        margin  : 0.5em 0 2em 1em;
+    }
+
+    div.expander.collapsed .content {
+        @include transition-property(opacity, padding);
+        @include transition-duration(1s, 0.3s);
+        height  : 0;
+        overflow: hidden;
+        opacity : 0;
+        margin  : 0 0 0 1em;
+    }
+
+    div.collapsed span.expandertitle:before {
+        font-family: "FontAwesome";
+        color      : lighten(#025B80, 20%);
+        content    : "\f055";
+        margin     : 0 8px 0 0;
+    }
+
+    div.expanded span.expandertitle:before {
+        font-family: "FontAwesome";
+        color      : lighten(#025B80, 20%);
+        content    : "\f056";
+        margin     : 0 8px 0 0;
+    }
+
+    .path {
+        font-family   : "Courier New",Courier,monospace;
+        font-size     : 1.1em;
+        letter-spacing: 0;
+        color         : blue;
+    }
+
+    .code {
+        font-family   : "Courier New",Courier,monospace;
+        font-size     : 1.1em;
+        letter-spacing: 0;
+        color         : red;
+    }
+    font-family   : "Open Sans", sans-serif;
+    letter-spacing: 1px;
+    font-size     : 1.6em;
+
+    p {
+        @extend .normal-paragraph;
+    }
+
+    kbd {
+        @extend .path;
+    }
+
+    code {
+        @extend .code;
+    }
+
+    em,
+    i {
+        font-family   : 'Palatino', 'Times New Roman', serif;
+        color         : lighten($text-color, 10%);
+        font-size     : 1.1em;
+        letter-spacing: 0.025em;
+        font-style    : italic;
+    }
+
+    ul {
+        font-family: "Open Sans", sans-serif;
+        font-size  : 1.6em;
+        line-height: 130%;
+        color      : $text-color;
+        padding    : 0 0 1em 1em;
+
+        code {
+            @extend .code;
+        }
+
+        kbd {
+            @extend .path;
+        }
+    }
+
+    pre code {
+        font-size  : 1.6em;
+        line-height: 130%;
+    }
+
+    div.lab {
+        @extend .normal-paragraph;
+        font-size: 14pt;
+        width    : 60%;
+
+        p {
+            @extend .normal-paragraph;
+            font-size: 14pt;
+        }
+
+        p.small {
+            line-height: 100%;
+            font-size  : 70%;
+        }
+
+        tt {
+            font: {
+                family: monospace;
+                style : normal;
+            }
+        }
+
+        em,
+        i {
+            font-family: 'Palatino', 'Times New Roman', serif;
+            font-style : italic;
+            font-size  : 1.2em;
+        }
+        strong   : {
+            color: #666;
+        }
+    }
+}

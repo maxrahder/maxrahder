@@ -1,0 +1,25 @@
+[ {name : 'Chico',
+    born : '1887/03/22',
+    died : '1961/10/11',
+    leaf: true
+  }, {
+    name : 'Harpo',
+    born : '1888/11/23',
+    died : '1964/09/28',
+    leaf: true
+  }, {
+    name : 'Groucho',
+    born : '1890/10/02',
+    died : '1977/08/19',
+    leaf: true
+  }, {
+    name : 'Gummo',
+    born : '1892/10/23',
+    died : '1977/04/21',
+    leaf: true
+  }, {
+    name : 'Zeppo',
+    born : '1901/02/25',
+    died : '1979/11/30',
+    leaf: true
+  } ]
